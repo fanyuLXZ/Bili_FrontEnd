@@ -1,0 +1,40 @@
+@import "propertys";
+.bili-link{
+  color:@black;
+  transition: color .3s;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0;
+  font-weight: 500;
+  display: inline-flex;
+}
+.bili-link-hover(@color){
+  &:hover{
+    color: @color;
+  }
+}
+.bili-link-pink{
+  .bili-link-hover(@pink);
+}
+.bili-link-deep-blue{
+  .bili-link-hover(@deep-blue)
+}
+.bili-link-cambridge-blue{
+  .bili-link-hover(@cambridge-blue)
+}
+.bili-link-icon-left{
+  flex-direction: row;
+}
+.bili-link-icon-right{
+  flex-direction: row-reverse;
+}
+.bili-link-icon-top{
+  flex-direction: column;
+}
+.bili-link-icon-bottom{
+  flex-direction: column-reverse;
+}
