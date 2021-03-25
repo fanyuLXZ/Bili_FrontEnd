@@ -34,7 +34,7 @@ export default {
       if (this.size!==''&&this.size!==undefined){
         return this.size*2+10
       }
-      return 12
+      return 14
     }
   }
 }
