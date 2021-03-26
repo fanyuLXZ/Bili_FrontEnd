@@ -1,3 +1,4 @@
+<!--作者:李信志-->
 <template>
   <a :href="href" v-if="to!==''" :class="'bili-link '+ link_icon_position">
     <span :class="link_color" :style="'font-size:' +size_computed+'px;'">
