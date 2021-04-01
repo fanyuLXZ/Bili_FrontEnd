@@ -9,10 +9,10 @@
 </template>
 
 <script>
-import RankTitle from 'g-public/components/international/RankTitle'
-import PgcRankItem from 'g-public/components/international/PgcRankItem'
+import RankTitle from '../../components/international/RankTitle'
+import PgcRankItem from '../../components/international/PgcRankItem'
 
-import { getPGCRank } from 'g-public/apis/home'
+import { getPGCRank } from '../../apis/home'
 
 export default {
   components: {
@@ -55,10 +55,10 @@ export default {
       try {
         const { data } = await getPGCRank({season_type: this.type, day: 3})
         if(data && data.code === 0) {
-          const field = [2,3,4,5].indexOf(this.type) !== -1 ? 'data' : 'result'
-          let arr = data[field] && data[field].list || []
+          let arr = data['result'] && data['result'].list || []
           this.list = arr.slice(0, this.count)
         }
+        /* eslint-disable */
       } catch(err) {}
     }
   }

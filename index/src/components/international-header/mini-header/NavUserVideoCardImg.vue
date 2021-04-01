@@ -41,7 +41,7 @@
 </template>
 
 <script>
-import { formatDuration } from 'g-public/js/utils'
+import { formatDuration } from '../../../public/js/utils'
 
 export default {
   name: 'NavUserVideoCardImg',

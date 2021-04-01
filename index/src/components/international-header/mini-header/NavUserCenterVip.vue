@@ -33,7 +33,7 @@
 
 <script>
 import Vip from './Vip'
-import { allCustomReport } from 'g-public/js/utils'
+import { allCustomReport } from '../../../public/js/utils'
 
 export default {
   name: 'NavUserCenterVip',

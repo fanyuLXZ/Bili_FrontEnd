@@ -8,8 +8,8 @@
 <script>
 import RankTitle from './RankTitle'
 import RankItem from './RankItem'
-import { getRank } from 'g-public/apis/home'
-import rankMenuConfig from 'g-public/js/config/rankMenuConfig'
+import { getRank } from '../../apis/home'
+import rankMenuConfig from '../../js/config/rankMenuConfig'
 
 export default {
   components: {
@@ -44,6 +44,7 @@ export default {
           let arr = data.data && data.data || []
           this.list = arr.slice(0, 10)
         }
+        /* eslint-disable */
       } catch(err) {}
     }
   },

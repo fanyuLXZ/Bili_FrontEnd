@@ -31,8 +31,8 @@
 </template>
 
 <script>
-import {formatNum} from 'g-public/js/utils'
-import PopoverVideoCard from 'g-public/components/international/PopoverVideoCard'
+import {formatNum} from '../../js/utils'
+import PopoverVideoCard from '../../components/international/PopoverVideoCard'
 
 export default {
   components: {

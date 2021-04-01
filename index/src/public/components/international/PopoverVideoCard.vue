@@ -40,7 +40,7 @@
 </template>
 
 <script>
-import {formatNum} from 'g-public/js/utils'
+import {formatNum} from '../../js/utils'
 
 export default {
   props: {
