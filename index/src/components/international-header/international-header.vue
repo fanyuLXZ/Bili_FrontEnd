@@ -35,8 +35,8 @@
 
 <script>
 import Vue from 'vue'
-import { bannerIdMap } from '../../config/bid'
-import { getScript, cookie } from '../../public/js/utils'
+import {bannerIdMap} from '../../config/bid'
+import {cookie, getScript} from '../../public/js/utils'
 import Banner from "./Banner";
 import MiniHeader from './mini-header/index'
 import PrimaryMenu from './primary-menu/index'
@@ -44,28 +44,28 @@ import CN from '../../assets/international-header/languages/zh-cn'
 import TW from '../../assets/international-header/languages/zh-tw'
 import * as menuConfig from '../../public/js/config/menuConfig'
 import * as menuConfigTW from '../../public/js/config/menuConfigTW'
-import { getLocs } from '../../api'
+import {getLocs} from '../../api'
 // 引入van
-import { Popover, Image, Report } from '../../modules/@bilibili/van'
+import {Image, Popover, Report} from '../../modules/@bilibili/van'
 import commonReport from '../../public/directive/commonReport'
 import Bfs from '../../modules/@blink-common/component.bfs-utils'
+import inlineSvgs from '../../lib/inline-svgs'
+// 获取用户状态
+import UserState from '../../lib/UserState'
 
 Vue.use(Popover)
 Vue.use(Image)
 Vue.use(Report)
 Vue.use(commonReport)
-import inlineSvgs from '../../lib/inline-svgs'
 Vue.prototype.inlineSvgs = inlineSvgs
 Vue.prototype.$bfs = new Bfs()
 Vue.prototype.isTouchDevice = false
 // if (process.env.VUE_ENV === 'client') {
-  // 引入iconfong
+// 引入iconfong
   require('../../public/style/bili-iconfont/iconfont.css')
   require('../../public/style/bili-iconfont/iconfont.js')
 
-  // // 获取用户状态
-  import UserState from '../../lib/UserState'
-  const us = new UserState()
+const us = new UserState()
   us.getUserState()
   Vue.prototype.$userStatus = us
   window.UserStatus = us
