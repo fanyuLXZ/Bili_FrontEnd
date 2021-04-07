@@ -1,16 +1,24 @@
-
 import Vue from 'vue'
 import Router from 'vue-router'
-import App from '../App.vue'
+import App from '../components/international-index.vue'
+import aboutBody from '../components/blackboard/aboutUs/aboutBody.vue'
 
 Vue.use(Router)
 
-const createRouter = () =>(new Router({
+const createRouter = () => (new Router({
   mode: 'history',
-  routes: [{
-    path: '/',
-    component: App
-  }],
+  routes: [
+    {
+      path: '/',
+      name: "index",
+      component: App
+    },
+    {
+      path: '/aboutUs',
+      name: "aboutBody",
+      component: aboutBody
+    }
+  ],
 }))
 
 export default createRouter

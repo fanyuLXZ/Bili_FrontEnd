@@ -63,7 +63,7 @@ Vue.prototype.isTouchDevice = false
   require('../../public/style/bili-iconfont/iconfont.css')
   require('../../public/style/bili-iconfont/iconfont.js')
 
-  // // 获取用户状态
+  // 获取用户状态
   import UserState from '../../lib/UserState'
   const us = new UserState()
   us.getUserState()
