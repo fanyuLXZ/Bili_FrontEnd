@@ -3,7 +3,9 @@
     <section class="plat-section-outter-box container-wrapper" data-fid="MM6NjjLB2e"
              style="height:183px;background-color:rgba(80, 156, 220, 1);min-width:980px">
       <div class="t-background-image"
-           style="background-size: cover; background-repeat: no-repeat; background-position: center center;  background-image: url('../../../assets/img/blackboard/S114GfcFE.png');"></div>
+           :style="{backgroundSize: 'cover', backgroundRepeat: 'no-repeat',
+                    backgroundPosition: 'center center',
+                    backgroundImage: 'url('+ img_1 +')'}"></div>
       <div class="t-space-container plat-section-space"
            style="padding: 0; width:980px">
         <div id="MM6NjjLB2e" class="plat-section-inner-box a-wrap-module report-wrap-module report-scroll-module"
@@ -13,7 +15,8 @@
     <section class="plat-section-outter-box container-wrapper" data-fid="MAeLIwEfaQ"
              style="height:69px;min-width:980px">
       <div class="t-background-image"
-           style="background-size: contain; background-repeat: no-repeat; background-position: center center; background-image: url('/assets/img/blackboard/B1xHsGsKE.png');"></div>
+           :style="{backgroundImage: 'url('+ img_2 +')'}"
+           style="background-size: contain; background-repeat: no-repeat; background-position: center center;"></div>
       <div class="t-space-container plat-section-space"
            style="padding: 0;width:980px">
         <div id="MAeLIwEfaQ" class="plat-section-inner-box a-wrap-module report-wrap-module report-scroll-module"
@@ -23,7 +26,8 @@
     <section class="plat-section-outter-box container-wrapper" data-fid="Mr6E9uOr6V"
              style="height:362px;min-width:980px">
       <div class="t-background-image"
-           style="background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url('https://i0.hdslb.com/bfs/activity-plat/static/20190410/7d3fbe1b994526c1fae2b51bb7f2b633/F3mTNKi4D.png');"></div>
+           :style="{backgroundImage: 'url('+ img_3 +')'}"
+           style="background-size: cover; background-repeat: no-repeat; background-position: center center;"></div>
       <div class="t-space-container plat-section-space"
            style="padding: 0;width:980px">
         <div id="Mr6E9uOr6V" class="plat-section-inner-box a-wrap-module report-wrap-module report-scroll-module"
@@ -33,7 +37,8 @@
     <section class="plat-section-outter-box container-wrapper" data-fid="MBaLUYK2mt"
              style="height: 362px; overflow: hidden; min-width: 980px; margin-top: 10px;">
       <div class="t-background-image"
-           style="background-size: contain; background-repeat: no-repeat; background-position: center center; margin-left: -166px; background-image: url('https://i0.hdslb.com/bfs/activity-plat/static/4f3662116d8ab4ee084213142492fc16/3ztk-iAZG_w643_h362.jpeg');"></div>
+           :style="{backgroundImage: 'url('+ img_4 +')'}"
+           style="background-size: contain; background-repeat: no-repeat; background-position: center center; margin-left: -166px;"></div>
       <div class="t-space-container plat-section-space" style="padding-bottom:0;padding-right:0;width:980px">
         <div id="MBaLUYK2mt" class="plat-section-inner-box a-wrap-module report-wrap-module report-scroll-module"
              data-container="section" data-module="Image" scrollshow="true"></div>
@@ -42,7 +47,8 @@
     <section class="plat-section-outter-box container-wrapper" data-fid="MSz_I188nO"
              style="height: 362px; min-width: 980px; margin-top: 10px;">
       <div class="t-background-image"
-           style="background-size: contain; background-repeat: no-repeat; background-position: center center; margin-left: -166px; background-image: url('https://i0.hdslb.com/bfs/activity-plat/static/8a3e1fa14e30dc3be9c5324f604e5991/FNVI55ELv_w980_h551.jpeg');"></div>
+           :style="{backgroundImage: 'url('+ img_5 +')'}"
+           style="background-size: contain; background-repeat: no-repeat; background-position: center center; margin-left: -166px;"></div>
       <div class="t-space-container plat-section-space"
            style="padding: 0;width:980px">
         <div id="MSz_I188nO" class="plat-section-inner-box a-wrap-module report-wrap-module report-scroll-module"
@@ -52,7 +58,8 @@
     <section class="plat-section-outter-box container-wrapper" data-fid="MZ_zsr73Z6"
              style="height: 362px; min-width: 980px; margin-top: 10px;">
       <div class="t-background-image"
-           style="background-size: contain; background-repeat: no-repeat; background-position: center center; margin-left: -166px; background-image: url('https://i0.hdslb.com/bfs/activity-plat/static/8a3e1fa14e30dc3be9c5324f604e5991/t3gdHZpml_w980_h551.jpeg');"></div>
+           :style="{backgroundImage: 'url('+ img_6 +')'}"
+           style="background-size: contain; background-repeat: no-repeat; background-position: center center; margin-left: -166px;"></div>
       <div class="t-space-container plat-section-space"
            style="padding: 0;width:980px">
         <div id="MZ_zsr73Z6" class="plat-section-inner-box a-wrap-module report-wrap-module report-scroll-module"
@@ -62,7 +69,8 @@
     <section class="plat-section-outter-box container-wrapper" data-fid="MLXYEHeL-H"
              style="height: 362px; min-width: 980px; margin-top: 10px;">
       <div class="t-background-image"
-           style="background-size: contain; background-repeat: no-repeat; background-position: center center; margin-left: -166px; background-image: url('https://i0.hdslb.com/bfs/activity-plat/static/8a3e1fa14e30dc3be9c5324f604e5991/9urs1eM~n_w980_h551.jpeg');"></div>
+           :style="{backgroundImage: 'url('+ img_7 +')'}"
+           style="background-size: contain; background-repeat: no-repeat; background-position: center center; margin-left: -166px;"></div>
       <div class="t-space-container plat-section-space"
            style="padding: 0;width:980px">
         <div id="MLXYEHeL-H" class="plat-section-inner-box a-wrap-module report-wrap-module report-scroll-module"
@@ -72,7 +80,8 @@
     <section class="plat-section-outter-box container-wrapper" data-fid="MtatkXFH1x"
              style="height: 362px; min-width: 980px; margin-top: 10px;">
       <div class="t-background-image"
-           style="background-size: contain; background-repeat: no-repeat; background-position: center center; margin-left: -166px; background-image: url('https://i0.hdslb.com/bfs/activity-plat/static/8a3e1fa14e30dc3be9c5324f604e5991/VfxEUHPGb_w980_h551.jpeg');"></div>
+           :style="{backgroundImage: 'url('+ img_8 +')'}"
+           style="background-size: contain; background-repeat: no-repeat; background-position: center center; margin-left: -166px;"></div>
       <div class="t-space-container plat-section-space"
            style="padding: 0;width:980px">
         <div id="MtatkXFH1x" class="plat-section-inner-box a-wrap-module report-wrap-module report-scroll-module"
@@ -82,7 +91,8 @@
     <section class="plat-section-outter-box container-wrapper" data-fid="MVpJ5mxhmU"
              style="height: 362px; min-width: 980px; margin-top: 10px;">
       <div class="t-background-image"
-           style="background-size: contain; background-repeat: no-repeat; background-position: center center; margin-left: -166px; background-image: url('https://i0.hdslb.com/bfs/activity-plat/static/8a3e1fa14e30dc3be9c5324f604e5991/QYspbfWJb_w980_h551.jpeg');"></div>
+           :style="{backgroundImage: 'url('+ img_9 +')'}"
+           style="background-size: contain; background-repeat: no-repeat; background-position: center center; margin-left: -166px;"></div>
       <div class="t-space-container plat-section-space"
            style="padding: 0;width:980px">
         <div id="MVpJ5mxhmU" class="plat-section-inner-box a-wrap-module report-wrap-module report-scroll-module"
@@ -92,7 +102,8 @@
     <section class="plat-section-outter-box container-wrapper" data-fid="MZzUvfSLSD"
              style="height: 362px; min-width: 980px; margin-top: 10px;">
       <div class="t-background-image"
-           style="background-size: contain; background-repeat: no-repeat; background-position: center center; margin-left: -166px; background-image: url('https://i0.hdslb.com/bfs/activity-plat/static/8a3e1fa14e30dc3be9c5324f604e5991/DKiOwtMiw_w980_h551.jpeg');"></div>
+           :style="{backgroundImage: 'url('+ img_10 +')'}"
+           style="background-size: contain; background-repeat: no-repeat; background-position: center center; margin-left: -166px;"></div>
       <div class="t-space-container plat-section-space"
            style="padding: 0;width:980px">
         <div id="MZzUvfSLSD" class="plat-section-inner-box a-wrap-module report-wrap-module report-scroll-module"
@@ -102,7 +113,8 @@
     <section class="plat-section-outter-box container-wrapper" data-fid="MflxcxaGrL"
              style="height: 362px; min-width: 980px; margin-top: 10px;">
       <div class="t-background-image"
-           style="background-size: contain; background-repeat: no-repeat; background-position: center center; margin-left: -166px; background-image: url('https://i0.hdslb.com/bfs/activity-plat/static/8a3e1fa14e30dc3be9c5324f604e5991/97KPs~tMi_w980_h551.jpeg');"></div>
+           :style="{backgroundImage: 'url('+ img_11 +')'}"
+           style="background-size: contain; background-repeat: no-repeat; background-position: center center; margin-left: -166px;"></div>
       <div class="t-space-container plat-section-space"
            style="padding: 0;width:980px">
         <div id="MflxcxaGrL" class="plat-section-inner-box a-wrap-module report-wrap-module report-scroll-module"
@@ -112,7 +124,8 @@
     <section class="plat-section-outter-box container-wrapper" data-fid="MBBwfnF6Mc"
              style="height: 362px; min-width: 980px; margin-top: 10px;">
       <div class="t-background-image"
-           style="background-size: contain; background-repeat: no-repeat; background-position: center center; margin-left: -166px; background-image: url('https://i0.hdslb.com/bfs/activity-plat/static/8a3e1fa14e30dc3be9c5324f604e5991/YIRrggiu8_w980_h551.jpeg');"></div>
+           :style="{backgroundImage: 'url('+ img_12 +')'}"
+           style="background-size: contain; background-repeat: no-repeat; background-position: center center; margin-left: -166px;"></div>
       <div class="t-space-container plat-section-space"
            style="padding: 0;width:980px">
         <div id="MBBwfnF6Mc" class="plat-section-inner-box a-wrap-module report-wrap-module report-scroll-module"
@@ -122,7 +135,8 @@
     <section class="plat-section-outter-box container-wrapper" data-fid="MKderOeWk-"
              style="height: 362px; min-width: 980px; margin-top: 10px;">
       <div class="t-background-image"
-           style="background-size: contain; background-repeat: no-repeat; background-position: center center; margin-left: -166px; background-image: url('https://i0.hdslb.com/bfs/activity-plat/static/8a3e1fa14e30dc3be9c5324f604e5991/p7eIyatzX_w980_h551.jpeg');"></div>
+           :style="{backgroundImage: 'url('+ img_13 +')'}"
+           style="background-size: contain; background-repeat: no-repeat; background-position: center center; margin-left: -166px;"></div>
       <div class="t-space-container plat-section-space"
            style="padding: 0;width:980px">
         <div id="MKderOeWk-" class="plat-section-inner-box a-wrap-module report-wrap-module report-scroll-module"
@@ -132,7 +146,8 @@
     <section class="plat-section-outter-box container-wrapper" data-fid="MwQ1kYbRXi"
              style="height: 362px; min-width: 980px; margin-top: 10px;">
       <div class="t-background-image"
-           style="background-size: contain; background-repeat: no-repeat; background-position: center center; margin-left: -166px; background-image: url('https://i0.hdslb.com/bfs/activity-plat/static/1e4a5e08bfbe76378bc92fcb0c9ec592/QcKZf~nJN_w980_h551.jpeg');"></div>
+           :style="{backgroundImage: 'url('+ img_14 +')'}"
+           style="background-size: contain; background-repeat: no-repeat; background-position: center center; margin-left: -166px;"></div>
       <div class="t-space-container plat-section-space"
            style="padding: 0;width:980px">
         <div id="MwQ1kYbRXi" class="plat-section-inner-box a-wrap-module report-wrap-module report-scroll-module"
@@ -142,7 +157,8 @@
     <section class="plat-section-outter-box container-wrapper" data-fid="MJDvt5BkN6"
              style="height: 362px; min-width: 980px; margin-top: 10px;">
       <div class="t-background-image"
-           style="background-size: contain; background-repeat: no-repeat; background-position: center center; margin-left: -166px; background-image: url('https://i0.hdslb.com/bfs/activity-plat/static/8a3e1fa14e30dc3be9c5324f604e5991/z-AIrpMBP_w980_h551.jpeg');"></div>
+           :style="{backgroundImage: 'url('+ img_15 +')'}"
+           style="background-size: contain; background-repeat: no-repeat; background-position: center center; margin-left: -166px;"></div>
       <div class="t-space-container plat-section-space"
            style="padding: 0;width:980px">
         <div id="MJDvt5BkN6" class="plat-section-inner-box a-wrap-module report-wrap-module report-scroll-module"
@@ -152,7 +168,8 @@
     <section class="plat-section-outter-box container-wrapper" data-fid="M6lhy4-o3u"
              style="height: 362px; min-width: 980px; margin-top: 10px;">
       <div class="t-background-image"
-           style="background-size: contain; background-repeat: no-repeat; background-position: center center; margin-left: -166px; background-image: url('https://i0.hdslb.com/bfs/activity-plat/static/1e4a5e08bfbe76378bc92fcb0c9ec592/iqzTNwMir_w980_h551.jpeg');"></div>
+           :style="{backgroundImage: 'url('+ img_16 +')'}"
+           style="background-size: contain; background-repeat: no-repeat; background-position: center center; margin-left: -166px;"></div>
       <div class="t-space-container plat-section-space"
            style="padding: 0;width:980px">
         <div id="M6lhy4-o3u" class="plat-section-inner-box a-wrap-module report-wrap-module report-scroll-module"
@@ -162,7 +179,8 @@
     <section class="plat-section-outter-box container-wrapper" data-fid="MxGF9zxiBr"
              style="height: 362px; min-width: 980px; margin-top: 10px;">
       <div class="t-background-image"
-           style="background-size: contain; background-repeat: no-repeat; background-position: center center; margin-left: -166px; background-image: url('https://i0.hdslb.com/bfs/activity-plat/static/8a3e1fa14e30dc3be9c5324f604e5991/FlUUAOVJF_w980_h551.jpeg');"></div>
+           :style="{backgroundImage: 'url('+ img_17 +')'}"
+           style="background-size: contain; background-repeat: no-repeat; background-position: center center; margin-left: -166px;"></div>
       <div class="t-space-container plat-section-space"
            style="padding: 0;width:980px">
         <div id="MxGF9zxiBr" class="plat-section-inner-box a-wrap-module report-wrap-module report-scroll-module"
@@ -172,7 +190,8 @@
     <section class="plat-section-outter-box container-wrapper" data-fid="MActyCO22J"
              style="height: 362px; min-width: 980px; margin-top: 10px;">
       <div class="t-background-image"
-           style="background-size: contain; background-repeat: no-repeat; background-position: center center; margin-left: -166px; background-image: url('https://i0.hdslb.com/bfs/activity-plat/static/8a3e1fa14e30dc3be9c5324f604e5991/flfaxQKr5_w980_h551.jpeg');"></div>
+           :style="{backgroundImage: 'url('+ img_18 +')'}"
+           style="background-size: contain; background-repeat: no-repeat; background-position: center center; margin-left: -166px;"></div>
       <div class="t-space-container plat-section-space"
            style="padding: 0;width:980px">
         <div id="MActyCO22J" class="plat-section-inner-box a-wrap-module report-wrap-module report-scroll-module"
@@ -182,7 +201,8 @@
     <section class="plat-section-outter-box container-wrapper" data-fid="MkW_Ntj2Db"
              style="height: 362px; min-width: 980px; margin-top: 10px;">
       <div class="t-background-image"
-           style="background-size: contain; background-repeat: no-repeat; background-position: center center; margin-left: -166px; background-image: url('https://i0.hdslb.com/bfs/activity-plat/static/8a3e1fa14e30dc3be9c5324f604e5991/b1zYSOmLN_w980_h551.jpeg');"></div>
+           :style="{backgroundImage: 'url('+ img_19 +')'}"
+           style="background-size: contain; background-repeat: no-repeat; background-position: center center; margin-left: -166px;"></div>
       <div class="t-space-container plat-section-space"
            style="padding: 0;width:980px">
         <div id="MkW_Ntj2Db" class="plat-section-inner-box a-wrap-module report-wrap-module report-scroll-module"
@@ -192,7 +212,8 @@
     <section class="plat-section-outter-box container-wrapper" data-fid="MzdOK5j9V4"
              style="height: 362px; min-width: 980px; margin-top: 10px;">
       <div class="t-background-image"
-           style="background-size: contain; background-repeat: no-repeat; background-position: center center; margin-left: -166px; background-image: url('https://i0.hdslb.com/bfs/activity-plat/static/8a3e1fa14e30dc3be9c5324f604e5991/cI171S4B2_w980_h551.jpeg');"></div>
+           :style="{backgroundImage: 'url('+ img_20 +')'}"
+           style="background-size: contain; background-repeat: no-repeat; background-position: center center; margin-left: -166px;"></div>
       <div class="t-space-container plat-section-space"
            style="padding: 0;width:980px">
         <div id="MzdOK5j9V4" class="plat-section-inner-box a-wrap-module report-wrap-module report-scroll-module"
@@ -202,7 +223,8 @@
     <section class="plat-section-outter-box container-wrapper" data-fid="Mg-yLgE3rE"
              style="height: 362px; min-width: 980px; margin-top: 10px;">
       <div class="t-background-image"
-           style="background-size: contain; background-repeat: no-repeat; background-position: center center; margin-left: -166px; background-image: url('https://i0.hdslb.com/bfs/activity-plat/static/8a3e1fa14e30dc3be9c5324f604e5991/RaItZX83v_w980_h551.jpeg');"></div>
+           :style="{backgroundImage: 'url('+ img_21 +')'}"
+           style="background-size: contain; background-repeat: no-repeat; background-position: center center; margin-left: -166px;"></div>
       <div class="t-space-container plat-section-space"
            style="padding: 0;width:980px">
         <div id="Mg-yLgE3rE" class="plat-section-inner-box a-wrap-module report-wrap-module report-scroll-module"
@@ -212,7 +234,8 @@
     <section class="plat-section-outter-box container-wrapper" data-fid="MoYmvwyl_0"
              style="height: 362px; min-width: 980px; margin-top: 10px;">
       <div class="t-background-image"
-           style="background-size: contain; background-repeat: no-repeat; background-position: center center; margin-left: -166px; background-image: url('https://i0.hdslb.com/bfs/activity-plat/static/8a3e1fa14e30dc3be9c5324f604e5991/nIlyWZ5sw_w980_h551.jpeg');"></div>
+           :style="{backgroundImage: 'url('+ img_22 +')'}"
+           style="background-size: contain; background-repeat: no-repeat; background-position: center center; margin-left: -166px;"></div>
       <div class="t-space-container plat-section-space"
            style="padding: 0;width:980px">
         <div id="MoYmvwyl_0" class="plat-section-inner-box a-wrap-module report-wrap-module report-scroll-module"
@@ -222,7 +245,8 @@
     <section class="plat-section-outter-box container-wrapper" data-fid="MS6aYQ9JCD"
              style="height: 362px; min-width: 980px; margin-top: 10px;">
       <div class="t-background-image"
-           style="background-size: contain; background-repeat: no-repeat; background-position: center center; margin-left: -166px; background-image: url('https://i0.hdslb.com/bfs/activity-plat/static/8a3e1fa14e30dc3be9c5324f604e5991/v2cYeSuuR_w980_h551.jpeg');"></div>
+           :style="{backgroundImage: 'url('+ img_23 +')'}"
+           style="background-size: contain; background-repeat: no-repeat; background-position: center center; margin-left: -166px;"></div>
       <div class="t-space-container plat-section-space"
            style="padding: 0;width:980px">
         <div id="MS6aYQ9JCD" class="plat-section-inner-box a-wrap-module report-wrap-module report-scroll-module"
@@ -232,7 +256,8 @@
     <section class="plat-section-outter-box container-wrapper" data-fid="Mzs2ghXjSm"
              style="height: 362px; min-width: 980px; margin-top: 10px;">
       <div class="t-background-image"
-           style="background-size: contain; background-repeat: no-repeat; background-position: center center; margin-left: -166px; background-image: url('https://i0.hdslb.com/bfs/activity-plat/static/8a3e1fa14e30dc3be9c5324f604e5991/TPQ~l7h-A_w980_h551.jpeg');"></div>
+           :style="{backgroundImage: 'url('+ img_24 +')'}"
+           style="background-size: contain; background-repeat: no-repeat; background-position: center center; margin-left: -166px;"></div>
       <div class="t-space-container plat-section-space"
            style="padding: 0;width:980px">
         <div id="Mzs2ghXjSm" class="plat-section-inner-box a-wrap-module report-wrap-module report-scroll-module"
@@ -242,7 +267,8 @@
     <section class="plat-section-outter-box container-wrapper" data-fid="MgArUqmhcU"
              style="height: 362px; min-width: 980px; margin-top: 10px;">
       <div class="t-background-image"
-           style="background-size: contain; background-repeat: no-repeat; background-position: center center; margin-left: -166px; background-image: url('https://i0.hdslb.com/bfs/activity-plat/static/8a3e1fa14e30dc3be9c5324f604e5991/raJ2CU3JX_w980_h551.jpeg');"></div>
+           :style="{backgroundImage: 'url('+ img_25 +')'}"
+           style="background-size: contain; background-repeat: no-repeat; background-position: center center; margin-left: -166px;"></div>
       <div class="t-space-container plat-section-space"
            style="padding: 0;width:980px">
         <div id="MgArUqmhcU" class="plat-section-inner-box a-wrap-module report-wrap-module report-scroll-module"
@@ -252,7 +278,8 @@
     <section class="plat-section-outter-box container-wrapper" data-fid="Mqq9YgMc2x"
              style="height: 362px; min-width: 980px; margin-top: 10px;">
       <div class="t-background-image"
-           style="background-size: contain; background-repeat: no-repeat; background-position: center center; margin-left: -166px; background-image: url('https://i0.hdslb.com/bfs/activity-plat/static/8a3e1fa14e30dc3be9c5324f604e5991/deGQmVn1O_w980_h551.jpeg');"></div>
+           :style="{backgroundImage: 'url('+ img_26 +')'}"
+           style="background-size: contain; background-repeat: no-repeat; background-position: center center; margin-left: -166px;"></div>
       <div class="t-space-container plat-section-space"
            style="padding: 0;width:980px">
         <div id="Mqq9YgMc2x" class="plat-section-inner-box a-wrap-module report-wrap-module report-scroll-module"
@@ -262,7 +289,8 @@
     <section class="plat-section-outter-box container-wrapper" data-fid="MaYt1zworv"
              style="height: 362px; min-width: 980px; margin-top: 10px;">
       <div class="t-background-image"
-           style="background-size: contain; background-repeat: no-repeat; background-position: center center; margin-left: -166px; background-image: url('https://i0.hdslb.com/bfs/activity-plat/static/8a3e1fa14e30dc3be9c5324f604e5991/cwhKAbpCY_w980_h551.jpeg');"></div>
+           :style="{backgroundImage: 'url('+ img_27 +')'}"
+           style="background-size: contain; background-repeat: no-repeat; background-position: center center; margin-left: -166px;"></div>
       <div class="t-space-container plat-section-space"
            style="padding: 0;width:980px">
         <div id="MaYt1zworv" class="plat-section-inner-box a-wrap-module report-wrap-module report-scroll-module"
@@ -272,7 +300,8 @@
     <section class="plat-section-outter-box container-wrapper" data-fid="MQGZNaWSwt"
              style="height: 362px; min-width: 980px; margin-top: 10px;">
       <div class="t-background-image"
-           style="background-size: contain; background-repeat: no-repeat; background-position: center center; margin-left: -166px; background-image: url('https://i0.hdslb.com/bfs/activity-plat/static/8a3e1fa14e30dc3be9c5324f604e5991/ECloXgB4z_w980_h551.jpeg');"></div>
+           :style="{backgroundImage: 'url('+ img_28 +')'}"
+           style="background-size: contain; background-repeat: no-repeat; background-position: center center; margin-left: -166px;"></div>
       <div class="t-space-container plat-section-space"
            style="padding: 0;width:980px">
         <div id="MQGZNaWSwt" class="plat-section-inner-box a-wrap-module report-wrap-module report-scroll-module"
@@ -282,7 +311,8 @@
     <section class="plat-section-outter-box container-wrapper" data-fid="M3Yj3Gyo5o"
              style="height: 362px; min-width: 980px; margin-top: 10px;">
       <div class="t-background-image"
-           style="background-size: contain; background-repeat: no-repeat; background-position: center center; margin-left: -166px; background-image: url('https://i0.hdslb.com/bfs/activity-plat/static/8a3e1fa14e30dc3be9c5324f604e5991/e9trwuSZX_w980_h551.jpeg');"></div>
+           :style="{backgroundImage: 'url('+ img_29 +')'}"
+           style="background-size: contain; background-repeat: no-repeat; background-position: center center; margin-left: -166px;"></div>
       <div class="t-space-container plat-section-space"
            style="padding: 0;width:980px">
         <div id="M3Yj3Gyo5o" class="plat-section-inner-box a-wrap-module report-wrap-module report-scroll-module"
@@ -292,7 +322,8 @@
     <section class="plat-section-outter-box container-wrapper" data-fid="Mc6_yESM9n"
              style="height: 362px; min-width: 980px; margin-top: 10px;">
       <div class="t-background-image"
-           style="background-size: contain; background-repeat: no-repeat; background-position: center center; margin-left: -166px; background-image: url('https://i0.hdslb.com/bfs/activity-plat/static/8a3e1fa14e30dc3be9c5324f604e5991/t3UEaQ-RR_w980_h551.jpeg');"></div>
+           :style="{backgroundImage: 'url('+ img_30 +')'}"
+           style="background-size: contain; background-repeat: no-repeat; background-position: center center; margin-left: -166px;"></div>
       <div class="t-space-container plat-section-space"
            style="padding: 0;width:980px">
         <div id="Mc6_yESM9n" class="plat-section-inner-box a-wrap-module report-wrap-module report-scroll-module"
@@ -302,7 +333,8 @@
     <section class="plat-section-outter-box container-wrapper" data-fid="M5jWmcYhd7"
              style="height: 362px; min-width: 980px; margin-top: 10px;">
       <div class="t-background-image"
-           style="background-size: contain; background-repeat: no-repeat; background-position: center center; margin-left: -166px; background-image: url('https://i0.hdslb.com/bfs/activity-plat/static/8a3e1fa14e30dc3be9c5324f604e5991/x3SRlgq0z_w980_h551.jpeg');"></div>
+           :style="{backgroundImage: 'url('+ img_31 +')'}"
+           style="background-size: contain; background-repeat: no-repeat; background-position: center center; margin-left: -166px;"></div>
       <div class="t-space-container plat-section-space"
            style="padding: 0;width:980px">
         <div id="M5jWmcYhd7" class="plat-section-inner-box a-wrap-module report-wrap-module report-scroll-module"
@@ -312,7 +344,8 @@
     <section class="plat-section-outter-box container-wrapper" data-fid="MTkVB_ARVJ"
              style="height: 362px; min-width: 980px; margin-top: 10px;">
       <div class="t-background-image"
-           style="background-size: contain; background-repeat: no-repeat; background-position: center center; margin-left: -166px; background-image: url('https://i0.hdslb.com/bfs/activity-plat/static/8a3e1fa14e30dc3be9c5324f604e5991/gA4LRN~p7_w980_h551.jpeg');"></div>
+           :style="{backgroundImage: 'url('+ img_32 +')'}"
+           style="background-size: contain; background-repeat: no-repeat; background-position: center center; margin-left: -166px;"></div>
       <div class="t-space-container plat-section-space"
            style="padding: 0;width:980px">
         <div id="MTkVB_ARVJ" class="plat-section-inner-box a-wrap-module report-wrap-module report-scroll-module"
@@ -322,7 +355,8 @@
     <section class="plat-section-outter-box container-wrapper" data-fid="MuONJ3TChI"
              style="height: 362px; min-width: 980px; margin-top: 10px;">
       <div class="t-background-image"
-           style="background-size: contain; background-repeat: no-repeat; background-position: center center; margin-left: -166px; background-image: url('https://i0.hdslb.com/bfs/activity-plat/static/1e4a5e08bfbe76378bc92fcb0c9ec592/XjvAeAr7h_w980_h551.jpeg');"></div>
+           :style="{backgroundImage: 'url('+ img_33 +')'}"
+           style="background-size: contain; background-repeat: no-repeat; background-position: center center; margin-left: -166px;"></div>
       <div class="t-space-container plat-section-space"
            style="padding: 0;width:980px">
         <div id="MuONJ3TChI" class="plat-section-inner-box a-wrap-module report-wrap-module report-scroll-module"
@@ -332,7 +366,8 @@
     <section class="plat-section-outter-box container-wrapper" data-fid="MMSwNiitZ7"
              style="height: 362px; min-width: 980px; margin-top: 10px;">
       <div class="t-background-image"
-           style="background-size: contain; background-repeat: no-repeat; background-position: center center; margin-left: -166px; background-image: url('https://i0.hdslb.com/bfs/activity-plat/static/1e4a5e08bfbe76378bc92fcb0c9ec592/7uNxvQ5rU_w980_h551.jpeg');"></div>
+           :style="{backgroundImage: 'url('+ img_34 +')'}"
+           style="background-size: contain; background-repeat: no-repeat; background-position: center center; margin-left: -166px;"></div>
       <div class="t-space-container plat-section-space"
            style="padding: 0;width:980px">
         <div id="MMSwNiitZ7" class="plat-section-inner-box a-wrap-module report-wrap-module report-scroll-module"
@@ -342,7 +377,8 @@
     <section class="plat-section-outter-box container-wrapper" data-fid="MLaCs7S6AK"
              style="height: 362px; min-width: 980px; margin-top: 10px;">
       <div class="t-background-image"
-           style="background-size: contain; background-repeat: no-repeat; background-position: center center; margin-left: -166px; background-image: url('https://i0.hdslb.com/bfs/activity-plat/static/1e4a5e08bfbe76378bc92fcb0c9ec592/T3VXirgfJ_w980_h551.jpeg');"></div>
+           :style="{backgroundImage: 'url('+ img_35 +')'}"
+           style="background-size: contain; background-repeat: no-repeat; background-position: center center; margin-left: -166px;"></div>
       <div class="t-space-container plat-section-space"
            style="padding: 0;width:980px">
         <div id="MLaCs7S6AK" class="plat-section-inner-box a-wrap-module report-wrap-module report-scroll-module"
@@ -352,7 +388,8 @@
     <section class="plat-section-outter-box container-wrapper" data-fid="M-82B2ZuIk"
              style="height: 362px; min-width: 980px; margin-top: 10px;">
       <div class="t-background-image"
-           style="background-size: contain; background-repeat: no-repeat; background-position: center center; margin-left: -166px; background-image: url('https://i0.hdslb.com/bfs/activity-plat/static/1e4a5e08bfbe76378bc92fcb0c9ec592/wzRdJjSTf_w980_h551.jpeg');"></div>
+           :style="{backgroundImage: 'url('+ img_36 +')'}"
+           style="background-size: contain; background-repeat: no-repeat; background-position: center center; margin-left: -166px;"></div>
       <div class="t-space-container plat-section-space"
            style="padding: 0;width:980px">
         <div id="M-82B2ZuIk" class="plat-section-inner-box a-wrap-module report-wrap-module report-scroll-module"
@@ -362,7 +399,8 @@
     <section class="plat-section-outter-box container-wrapper" data-fid="MiRhja8e6u"
              style="height: 362px; min-width: 980px; margin-top: 10px;">
       <div class="t-background-image"
-           style="background-size: contain; background-repeat: no-repeat; background-position: center center; margin-left: -166px; background-image: url('https://i0.hdslb.com/bfs/activity-plat/static/8a3e1fa14e30dc3be9c5324f604e5991/-6SlvGafy_w980_h551.jpeg');"></div>
+           :style="{backgroundImage: 'url('+ img_37 +')'}"
+           style="background-size: contain; background-repeat: no-repeat; background-position: center center; margin-left: -166px;"></div>
       <div class="t-space-container plat-section-space"
            style="padding: 0;width:980px">
         <div id="MiRhja8e6u" class="plat-section-inner-box a-wrap-module report-wrap-module report-scroll-module"
@@ -372,7 +410,8 @@
     <section class="plat-section-outter-box container-wrapper" data-fid="MBQUBYumYY"
              style="height: 362px; min-width: 980px; margin-top: 10px;">
       <div class="t-background-image"
-           style="background-size: contain; background-repeat: no-repeat; background-position: center center; margin-left: -166px; background-image: url('https://i0.hdslb.com/bfs/activity-plat/static/8a3e1fa14e30dc3be9c5324f604e5991/8p-QsYKxO_w980_h551.jpeg');"></div>
+           :style="{backgroundImage: 'url('+ img_38 +')'}"
+           style="background-size: contain; background-repeat: no-repeat; background-position: center center; margin-left: -166px;"></div>
       <div class="t-space-container plat-section-space"
            style="padding: 0;width:980px">
         <div id="MBQUBYumYY" class="plat-section-inner-box a-wrap-module report-wrap-module report-scroll-module"
@@ -382,20 +421,11 @@
     <section class="plat-section-outter-box container-wrapper" data-fid="Mgcby5nf-p"
              style="height: 362px; min-width: 980px; margin-top: 10px;">
       <div class="t-background-image"
-           style="background-size: contain; background-repeat: no-repeat; background-position: center center; margin-left: -166px; background-image: url('https://i0.hdslb.com/bfs/activity-plat/static/8a3e1fa14e30dc3be9c5324f604e5991/hPF0RNqzK_w980_h551.jpeg');"></div>
+           :style="{backgroundImage: 'url('+ img_39 +')'}"
+           style="background-size: contain; background-repeat: no-repeat; background-position: center center; margin-left: -166px;"></div>
       <div class="t-space-container plat-section-space"
            style="padding: 0;width:980px">
         <div id="Mgcby5nf-p" class="plat-section-inner-box a-wrap-module report-wrap-module report-scroll-module"
-             data-container="section" data-module="Image" scrollshow="true"></div>
-      </div>
-    </section>
-    <section class="plat-section-outter-box container-wrapper" data-fid="MEiysb8JC"
-             style="min-width: 980px; display: block; z-index: auto; margin-top: 10px;">
-      <div class="t-background-image"
-           style="background-repeat: no-repeat; background-position: center center; margin-left: -166px; background-image: url('https://i0.hdslb.com/bfs/activity-plat/static/ce4d241380919d495e1e6f11992d3e0f/sO8qYWP3_w2560_h1440.JPG');"></div>
-      <div class="t-space-container plat-section-space"
-           style="padding: 0;width:980px">
-        <div id="MEiysb8JC" class="plat-section-inner-box a-wrap-module report-wrap-module report-scroll-module"
              data-container="section" data-module="Image" scrollshow="true"></div>
       </div>
     </section>
@@ -422,7 +452,50 @@ export default {
     ]
   }, methods: {
     methods1: function () {
+
     }
+  }, data: function () {
+    return {
+      img_1: require("@/assets/img/blackboard/S114GfcFE.png"),
+      img_2: require("@/assets/img/blackboard/B1xHsGsKE.png"),
+      img_3: require("@/assets/img/blackboard/F3mTNKi4D.png"),
+      img_4: require("@/assets/img/blackboard/3ztk-iAZG_w643_h362.jpeg"),
+      img_5: require("@/assets/img/blackboard/FNVI55ELv_w980_h551.jpeg"),
+      img_6: require("@/assets/img/blackboard/t3gdHZpml_w980_h551.jpeg"),
+      img_7: require("@/assets/img/blackboard/9urs1eM_n_w980_h551.jpeg"),
+      img_8: require("@/assets/img/blackboard/VfxEUHPGb_w980_h551.jpeg"),
+      img_9: require("@/assets/img/blackboard/QYspbfWJb_w980_h551.jpeg"),
+      img_10: require("@/assets/img/blackboard/DKiOwtMiw_w980_h551.jpeg"),
+      img_11: require("@/assets/img/blackboard/97KPs_tMi_w980_h551.jpeg"),
+      img_12: require("@/assets/img/blackboard/YIRrggiu8_w980_h551.jpeg"),
+      img_13: require("@/assets/img/blackboard/p7eIyatzX_w980_h551.jpeg"),
+      img_14: require("@/assets/img/blackboard/QcKZf_nJN_w980_h551.jpeg"),
+      img_15: require("@/assets/img/blackboard/z-AIrpMBP_w980_h551.jpeg"),
+      img_16: require("@/assets/img/blackboard/iqzTNwMir_w980_h551.jpeg"),
+      img_17: require("@/assets/img/blackboard/FlUUAOVJF_w980_h551.jpeg"),
+      img_18: require("@/assets/img/blackboard/flfaxQKr5_w980_h551.jpeg"),
+      img_19: require("@/assets/img/blackboard/b1zYSOmLN_w980_h551.jpeg"),
+      img_20: require("@/assets/img/blackboard/cI171S4B2_w980_h551.jpeg"),
+      img_21: require("@/assets/img/blackboard/RaItZX83v_w980_h551.jpeg"),
+      img_22: require("@/assets/img/blackboard/nIlyWZ5sw_w980_h551.jpeg"),
+      img_23: require("@/assets/img/blackboard/v2cYeSuuR_w980_h551.jpeg"),
+      img_24: require("@/assets/img/blackboard/TPQ_l7h-A_w980_h551.jpeg"),
+      img_25: require("@/assets/img/blackboard/raJ2CU3JX_w980_h551.jpeg"),
+      img_26: require("@/assets/img/blackboard/deGQmVn1O_w980_h551.jpeg"),
+      img_27: require("@/assets/img/blackboard/cwhKAbpCY_w980_h551.jpeg"),
+      img_28: require("@/assets/img/blackboard/ECloXgB4z_w980_h551.jpeg"),
+      img_29: require("@/assets/img/blackboard/e9trwuSZX_w980_h551.jpeg"),
+      img_30: require("@/assets/img/blackboard/t3UEaQ-RR_w980_h551.jpeg"),
+      img_31: require("@/assets/img/blackboard/x3SRlgq0z_w980_h551.jpeg"),
+      img_32: require("@/assets/img/blackboard/gA4LRN_p7_w980_h551.jpeg"),
+      img_33: require("@/assets/img/blackboard/XjvAeAr7h_w980_h551.jpeg"),
+      img_34: require("@/assets/img/blackboard/7uNxvQ5rU_w980_h551.jpeg"),
+      img_35: require("@/assets/img/blackboard/T3VXirgfJ_w980_h551.jpeg"),
+      img_36: require("@/assets/img/blackboard/wzRdJjSTf_w980_h551.jpeg"),
+      img_37: require("@/assets/img/blackboard/-6SlvGafy_w980_h551.jpeg"),
+      img_38: require("@/assets/img/blackboard/8p-QsYKxO_w980_h551.jpeg"),
+      img_39: require("@/assets/img/blackboard/hPF0RNqzK_w980_h551.jpeg")
+    };
   }
 }
 
@@ -440,6 +513,11 @@ window.reportConfig = {
 
 <style lang="less" scoped>
 @import '//activity.hdslb.com/blackboard/act-build-long-87f2c17887e28a8a4fda261c8460d4e8/1.149022ba63f354776adf.css';
+
+#app {
+  background-color: #f5f5f5;
+}
+
 
 /*noinspection ALL*/
 .plat-section-outter-box {
