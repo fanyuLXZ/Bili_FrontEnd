@@ -3,7 +3,7 @@
     <section class="plat-section-outter-box container-wrapper" data-fid="MM6NjjLB2e"
              style="height:183px;background-color:rgba(80, 156, 220, 1);min-width:980px">
       <div class="t-background-image"
-           style="background-size: cover; background-repeat: no-repeat; background-position: center center; "></div>
+           style="background-size: cover; background-repeat: no-repeat; background-position: center center;  background-image: url('../../../assets/img/blackboard/S114GfcFE.png');"></div>
       <div class="t-space-container plat-section-space"
            style="padding: 0; width:980px">
         <div id="MM6NjjLB2e" class="plat-section-inner-box a-wrap-module report-wrap-module report-scroll-module"
@@ -13,7 +13,7 @@
     <section class="plat-section-outter-box container-wrapper" data-fid="MAeLIwEfaQ"
              style="height:69px;min-width:980px">
       <div class="t-background-image"
-           style="background-size: contain; background-repeat: no-repeat; background-position: center center; background-image: url('https://i0.hdslb.com/bfs/activity-plat/static/20190410/7d3fbe1b994526c1fae2b51bb7f2b633/B1xHsGsKE.png');"></div>
+           style="background-size: contain; background-repeat: no-repeat; background-position: center center; background-image: url('/assets/img/blackboard/B1xHsGsKE.png');"></div>
       <div class="t-space-container plat-section-space"
            style="padding: 0;width:980px">
         <div id="MAeLIwEfaQ" class="plat-section-inner-box a-wrap-module report-wrap-module report-scroll-module"
@@ -440,7 +440,6 @@ window.reportConfig = {
 
 <style lang="less" scoped>
 @import '//activity.hdslb.com/blackboard/act-build-long-87f2c17887e28a8a4fda261c8460d4e8/1.149022ba63f354776adf.css';
-@import '../../../assets/img/blackboard/S114GfcFE.png';
 
 /*noinspection ALL*/
 .plat-section-outter-box {
@@ -467,7 +466,7 @@ window.reportConfig = {
 .t-background-image {
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url('../../../assets/img/blackboard/S114GfcFE.png');
+  background-image: url('~@/assets/img/blackboard/S114GfcFE.png');
   position: absolute;
   height: 100%;
   width: 100%;
