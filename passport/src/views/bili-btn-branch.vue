@@ -18,5 +18,10 @@ import '@/assets/bili-btn.css'
 export default{
   name:'bili-btn-branch',
   props:['names'],
+  data(){
+    return{
+
+    }
+  }
 }
 </script>
