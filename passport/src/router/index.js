@@ -1,22 +1,31 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
-
+import bilibtn from '../views/bili-btn.vue'
+import bilihome from '../views/bili-home.vue'
+import bilihomes from '../views/bili-homes.vue'
+import bililogin from '../views/bili-login.vue'
 Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
-    name: 'Home',
-    component: Home
+    path: '/bili-btn/:pan/:verify',
+    name: 'bili-btn',
+    component: bilibtn
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    path: '/bili-homes/:identify',
+    name: 'bili-homes',
+    component: bilihomes
+  },
+  {
+    path: '/bili-home',
+    name: 'bili-home',
+    component: bilihome
+  },
+  {
+  path:'/bili-login',
+  name:'bili-login',
+  component: bililogin
   }
 ]
 
