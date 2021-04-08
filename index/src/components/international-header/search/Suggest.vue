@@ -15,7 +15,7 @@
 
   import {  customReport } from '../../../public/js/utils'
   // import { cookie, customReport } from 'g-public/js/utils'
-  // import biliAxios from 'biliAxios'
+  // import biliAxios from '../../../public/js/axios/caxios'
   // import searchHistory from './search_history'
 
   export default {

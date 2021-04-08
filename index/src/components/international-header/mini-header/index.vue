@@ -7,19 +7,19 @@
     >
       <NavLink :locsData="locsData" :menuConfig="menuConfig" :navType="navType" />
       <NavSearch v-if="loginStatus !== 'PENDING'" />
-<!--      <NavUserCenter-->
-<!--        :locsData="locsData"-->
-<!--        :lang="lang"-->
-<!--        :userInfo="userInfo"-->
-<!--        :loginStatus="loginStatus"-->
-<!--      />-->
+      <NavUserCenter
+        :locsData="locsData"
+        :lang="lang"
+        :userInfo="userInfo"
+        :loginStatus="loginStatus"
+      />
     </div>
   </div>
 </template>
 
 <script>
 import NavLink from './NavLink'
-// import NavUserCenter from './NavUserCenter'
+import NavUserCenter from './NavUserCenter'
 import NavSearch from '../search/NavSearch'
 
 // const NavUserCenter = ()=>import(/* webpackMode: "lazy" */ './NavUserCenter.vue')
@@ -29,7 +29,7 @@ export default {
   components: {
     NavLink,
     NavSearch,
-    // NavUserCenter,
+    NavUserCenter,
   },
   props: {
     locsData: {},
@@ -63,6 +63,7 @@ export default {
     },
   },
 }
+
 </script>
 
 <style lang="less">

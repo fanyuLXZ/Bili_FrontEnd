@@ -15,8 +15,8 @@
 </template>
 
 <script>
-  import NavDynamic from '@bplus-common/component.nav-dynamic-v3'
-  import Bus from 'g-public/js/bus'
+  import NavDynamic from '../../../modules/@bplus-common/component.nav-dynamic-v3'
+  import Bus from '../../../public/js/bus'
 
   export default {
     name: 'NavUserCenterDynamic',

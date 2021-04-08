@@ -55,9 +55,9 @@
 
 <script>
 import NavUserVideoCard from './NavUserVideoCard'
-import { getNavHistory } from '../../api'
+import { getNavHistory } from '../../../api'
 import { format, isToday, isYesterday } from 'date-fns'
-import { customReport } from 'g-public/js/utils'
+import { customReport } from '../../../public/js/utils'
 
 export default {
   name: 'NavUserCenterHistory',
@@ -103,6 +103,7 @@ export default {
     }
   },
   computed: {
+    /* eslint-disable */
     currentTabIndex() {
       for(let i = 0; i < this.tabConfigs.length; i++) {
         if(this.tabConfigs[i].type === this.currentTab) {
@@ -128,7 +129,7 @@ export default {
           this.fullData[type] = true
         }
         data.data.list.map(item => {
-          const date = format(item.view_at * 1000, 'YYYY-MM-DD HH:mm:ss')
+          const date = format(item.view_at * 1000, 'yyyy-MM-dd HH:mm:ss')
           const card = {
             title: item.title,
             cover: item.cover || (item.covers && item.covers.length && item.covers[0]),

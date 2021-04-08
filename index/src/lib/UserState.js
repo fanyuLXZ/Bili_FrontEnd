@@ -1,4 +1,4 @@
-import BiliUser from ''
+import BiliUser from '../modules/@bilibili/bili-user'
 export default class {
   constructor() {
     this.userInfo = null
@@ -24,6 +24,7 @@ export default class {
     let info = null
     try {
       const data = await BiliUser.get()
+      console.log(1)
       if(data.code === 0) {
         this.updateInfo(data.data, old && old.isLogin !== data.data.isLogin, params)
       }else if(data.code === -101) {

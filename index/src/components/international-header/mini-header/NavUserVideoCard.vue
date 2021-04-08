@@ -106,6 +106,7 @@ export default {
         }
         return deviceMap[device] || ''
       }
+      return ""
     }
   },
   methods: {
@@ -113,16 +114,14 @@ export default {
       const { business: type, id, bvid, pgcUri, progress, page, cid } = this.card
       // progress -> 观看到第 xx 秒
       // page -> 第几p
+      /* eslint-disable */
       switch (type) {
         case 'live':
           return `//live.bilibili.com/${id}`
-          break;
         case 'pgc':
           return `${pgcUri}${progress > 0 ? `?t=${progress}` : ''}`
-          break;
         case 'cheese':
           return `${pgcUri}${progress > 0 ? `?t=${progress}` : ''}`
-          break;
         case 'archive':
           const query = {
             t: progress > 1 ? progress : '',
@@ -130,16 +129,12 @@ export default {
           }
           const queryString = this.objToQuerystring(query)
           return `//www.bilibili.com/video/${bvid}${this.from === 'FAVORITE' ? '' : queryString}`
-          break;
         case 'article':
           return `//www.bilibili.com/read/cv${id}`
-          break;
         case 'article-list':
           return `//www.bilibili.com/read/cv${cid}`
-          break;
         case 'audio':
           return `//www.bilibili.com/audio/au${id}`
-          break;
         default:
           break;
       }

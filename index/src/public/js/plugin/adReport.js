@@ -1,3 +1,4 @@
+/* eslint-disable */
 import {checkInView, debounce, trimHttp, log} from '../utils'
 import Bus from '../bus'
 
@@ -143,10 +144,10 @@ const adReport = {
 
     // 轮播曝光上报
     Bus.$on('slide-show', d => {
-      if(d.data && d.locId && d.el) {
-        const id = d.data.id || d.data.src_id
-        exposure(slideAds, id)
-      }
+      // if(d.data && d.locId && d.el) {
+      //   const id = d.data.id || d.data.src_id
+      //   exposure(slideAds, id)
+      // }
     })
     
   }

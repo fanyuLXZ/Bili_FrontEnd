@@ -178,8 +178,8 @@
 <script>
 import NavUserCenterVip from './NavUserCenterVip'
 import LoginTipContent from '../login-tip/LoginTipContent'
-import loginTip from '../../lib/loginTip'
-import { customReport, allCustomReport } from 'g-public/js/utils'
+import loginTip from '../../../lib/loginTip'
+import {  allCustomReport } from '../../../public/js/utils'
 
 export default {
   components: {

@@ -1,15 +1,19 @@
 <template>
   <div id="app">
-    <international-header></international-header>
+    <router-view/>
   </div>
 </template>
 
-<style lang="less">
 
-</style>
 <script>
-import InternationalHeader from "./components/international-header/international-header";
+
 export default {
-  components: {InternationalHeader}
+  name: 'App',
+  metaInfo: {
+    meta: [
+      {name: 'referrer', content: 'no-referrer'}
+    ]
+  }
 }
+
 </script>

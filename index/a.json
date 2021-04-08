@@ -1,0 +1,41 @@
+{
+  "code": 0,
+  "message": "0",
+  "ttl": 1,
+  "data": [
+    {
+      "aid": "929797963",
+      "bvid": "BV1JK4y1S7zM",
+      "typename": "综合",
+      "title": "B 界 等 级 修 仙 传",
+      "subtitle": "",
+      "play": 1129532,
+      "review": 16011,
+      "video_review": 9995,
+      "favorites": 49394,
+      "mid": 321422126,
+      "author": "进击的金厂长",
+      "description": "大型沙雕古装仙侠剧《B界修仙传》今日开播！！",
+      "create": "2021-03-29 19:46",
+      "pic": "http://i1.hdslb.com/bfs/archive/dc1cbb3170db68d6c467d475a9bf8098bbbbbb3c.jpg",
+      "coins": 234519,
+      "duration": "5:01",
+      "badgepay": false,
+      "pts": 3039549,
+      "rights": {
+        "bp": 0,
+        "elec": 0,
+        "download": 0,
+        "movie": 0,
+        "pay": 0,
+        "hd5": 1,
+        "no_reprint": 1,
+        "autoplay": 1,
+        "ugc_pay": 0,
+        "is_cooperation": 0,
+        "ugc_pay_preview": 0,
+        "no_background": 0
+      }
+    }
+  ]
+}

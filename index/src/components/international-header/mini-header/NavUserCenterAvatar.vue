@@ -1,15 +1,25 @@
 <template>
   <div>
+<!--    <van-popover-->
+<!--      popper-class="van-popper-nav van-popper-avatar"-->
+<!--      placement="bottom" -->
+<!--      :trigger="isTouchDevice ? 'click' : 'hover'"-->
+<!--      transition="slide-fade"-->
+<!--      :visible-arrow="false"-->
+<!--      @show="popoverVisible = true"-->
+<!--      @hide="popoverVisible = false"-->
+<!--      width="280"-->
+<!--      :open-delay="150">-->
     <van-popover
-      popper-class="van-popper-nav van-popper-avatar"
-      placement="bottom" 
-      :trigger="isTouchDevice ? 'click' : 'hover'"
-      transition="slide-fade"
-      :visible-arrow="false"
-      @show="popoverVisible = true"
-      @hide="popoverVisible = false"
-      width="280"
-      :open-delay="150">
+        popper-class="van-popper-nav van-popper-avatar"
+        placement="bottom"
+        :trigger="'hover'"
+        transition="slide-fade"
+        :visible-arrow="false"
+        @show="popoverVisible = true"
+        @hide="popoverVisible = false"
+        width="280"
+        :open-delay="150">
       <div class="vp-container">
 
         <!-- 大头像 -->
@@ -183,9 +193,9 @@
 
 <script>
 import LangChange from './LangChange'
-import { cookie, localStorage, trimHttp, formatImg, customReport, webp } from 'g-public/js/utils'
+import { cookie, localStorage, trimHttp, formatImg, customReport, webp } from '../../../public/js/utils'
 import { format } from 'date-fns'
-import { getAvatarNav, postLogout } from '../../api'
+import { getAvatarNav } from '../../../api'
 
 export default {
   name: 'NavUserCenterAvatar',
@@ -258,8 +268,8 @@ export default {
   },
 
   mounted() {
-    const UserAvatar = require('@bilibili/userAvatar').default
-    require('@bilibili/userAvatar/dist/user-avatar.css')
+    const UserAvatar = require('../../../modules/@bilibili/userAvatar').default
+    require('../../../modules/@bilibili/userAvatar/dist/user-avatar.css')
     this.avatarObj = new UserAvatar()
     this.avatarObj.append({
       avatar: this.userInfo.face,
@@ -423,6 +433,7 @@ export default {
           }
         })
       } catch (_) {
+        console.log(_)
       }
     }
   },
@@ -782,7 +793,7 @@ export default {
           position: absolute;
           width: 8px;
           height: 8px;
-          background: url('~g-public/images/icon/arrow4.png');
+          background:  url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAA2BAMAAAAIUcVlAAAALVBMVEUAAADQ0NDOzs7MzMzMzMzMzMzMzMzMzMzMzMzMzMz////09PTt7e3m5ube3t7aN2g1AAAACnRSTlMA/PLhbEktF8nGEiCq/wAAAGtJREFUGNNjeFnAwMCw1gxIrDoUACRWi4AJMBcq8aKAgXjwatWqdQy9q1bdZCg+tcacgU17UwIDQ6AoUIbFgYFUwN4HJJJvMTCw6qxiYHDcBSHAXLAESMk8UgyEOAPsILDTII6cu2rVDbDDAfAAJuuGgkdmAAAAAElFTkSuQmCC);
           right: -8px;
           top: 5px;
         }
@@ -801,7 +812,7 @@ export default {
           position: absolute;
           width: 8px;
           height: 8px;
-          background: url('~g-public/images/icon/arrow4.png');
+          background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAA2BAMAAAAIUcVlAAAALVBMVEUAAADQ0NDOzs7MzMzMzMzMzMzMzMzMzMzMzMzMzMz////09PTt7e3m5ube3t7aN2g1AAAACnRSTlMA/PLhbEktF8nGEiCq/wAAAGtJREFUGNNjeFnAwMCw1gxIrDoUACRWi4AJMBcq8aKAgXjwatWqdQy9q1bdZCg+tcacgU17UwIDQ6AoUIbFgYFUwN4HJJJvMTCw6qxiYHDcBSHAXLAESMk8UgyEOAPsILDTII6cu2rVDbDDAfAAJuuGgkdmAAAAAElFTkSuQmCC);
           left: -8px;
           background-repeat: no-repeat;
           background-position: 0px -31px;
