@@ -445,7 +445,7 @@
 export default {
   name: "aboutBody",
   metaInfo: {
-    title: "关于我们 - 哔哩哔哩"
+    title: "关于我们"
   },
   methods: {
     methods1: function () {
