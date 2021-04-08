@@ -17,10 +17,10 @@
 </template>
 
 <script>
-import StoreyTitle from '../../../../public/components/international/StoreyTitle'
-import Exchange from '../../../../public/components/international/Exchange'
+import StoreyTitle from 'g-public/components/international/StoreyTitle'
+import Exchange from 'g-public/components/international/Exchange'
 import LiveCard from './LiveCard'
-import { customReport } from '../../../../public/js/utils'
+import { customReport } from 'g-public/js/utils'
 
 const LIVE_SOURCE = -99998
 

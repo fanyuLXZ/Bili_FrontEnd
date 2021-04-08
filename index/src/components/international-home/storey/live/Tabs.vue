@@ -20,12 +20,12 @@
 
 <script>
 /* eslint-disable */
-import TabSwitch from '../../../../public/components/international/TabSwitch'
+import TabSwitch from 'g-public/components/international/TabSwitch'
 import LiveUpList from './LiveUpList'
 import RecommendActivity from './RecommendActivity'
-import { customReport } from '../../../../public/js/utils'
+import { customReport } from 'g-public/js/utils'
 
-import { getFollowUp } from '../../../../public/apis/home'
+import { getFollowUp } from 'g-public/apis/home'
 
 export default {
   components: {

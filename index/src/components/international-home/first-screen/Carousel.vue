@@ -40,8 +40,8 @@
 </template>
 
 <script>
-import { trimHttp } from '../../../public/js/utils'
-import Bus from '../../../public/js/bus'
+import { trimHttp } from 'g-public/js/utils'
+import Bus from 'g-public/js/bus'
 
 export default {
   props: {

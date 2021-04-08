@@ -35,7 +35,7 @@
 </template>
 
 <script>
-import { trimHttp, customReport } from '../../../../public/js/utils'
+import { trimHttp, customReport } from 'g-public/js/utils'
 
 export default {
   props: {

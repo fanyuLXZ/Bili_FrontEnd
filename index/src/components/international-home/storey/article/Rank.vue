@@ -6,10 +6,10 @@
 </template>
 
 <script>
-import RankTitle from '../../../../public/components/international/RankTitle'
+import RankTitle from 'g-public/components/international/RankTitle'
 import RankItem from './RankItem'
 
-import { getArticleRank } from '../../../../public/apis/home'
+import { getArticleRank } from 'g-public/apis/home'
 
 export default {
   components: {

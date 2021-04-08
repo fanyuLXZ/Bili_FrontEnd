@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import {formatDuration, formatNum, customReport} from '../../../../public/js/utils'
+import {formatDuration, formatNum, customReport} from 'g-public/js/utils'
 
 export default {
   props: {

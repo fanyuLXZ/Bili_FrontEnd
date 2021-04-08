@@ -13,11 +13,11 @@
 
 <script>
 /* eslint-disable */
-import SpaceBetween from '../../../../public/components/international/SpaceBetween'
+import SpaceBetween from 'g-public/components/international/SpaceBetween'
 import LiveList from './LiveList'
 import Tabs from './Tabs'
-import { getLiveRoomRecommend, getLiveRoomgetNewDynamic } from '../../../../public/apis/home'
-import axios from '../../../../public/js/axios/caxios'
+import { getLiveRoomRecommend, getLiveRoomgetNewDynamic } from 'g-public/apis/home'
+import axios from 'g-public/js/axios/caxios'
 
 const MAX_COUNT = 12
 

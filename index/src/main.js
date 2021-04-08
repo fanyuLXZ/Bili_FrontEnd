@@ -1,8 +1,8 @@
 import 'babel-polyfill'
 import Vue from 'vue'
-import {createApp} from './index'
-import {cookie} from './public/js/utils'
-import {BiliIntegration, TrackingReport} from './modules/@bilibili/sentry-integrations'
+import { createApp } from './index'
+import { cookie } from 'g-public/js/utils'
+import { BiliIntegration, TrackingReport } from 'g-public/modules/@bilibili/sentry-integrations'
 import * as Sentry from "http-proxy-middleware/dist/handlers";
 
 if (process.env.NODE_ENV === 'production') {
@@ -11,7 +11,7 @@ if (process.env.NODE_ENV === 'production') {
     dsn: `http${process.env.NODE_ENV === 'production' ? 's' : ''}://7e6c586f1c524c16b92c70affa82fc75@api.bilibili.com/x/traceback/32`,
     debug: process.env.NODE_ENV !== 'production',
     release: process.env.COMMIT_ID,
-    environment: process.env.PUSH_ENV === 'pre' ? 'pre' : process.env.NODE_ENV,
+    environment:  process.env.PUSH_ENV === 'pre' ? 'pre' : process.env.NODE_ENV,
     sampleRate: 0.1, //采样率改为10%
     integrations: [
       new BiliIntegration({
@@ -40,6 +40,7 @@ if (window.onLoginInfoLoaded) {
 }
 
 const { app, router, store } = createApp()
+
 
 // if server-side
 if (window.__INITIAL_STATE__) {

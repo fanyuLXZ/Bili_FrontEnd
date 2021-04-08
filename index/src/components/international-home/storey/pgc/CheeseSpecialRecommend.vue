@@ -76,8 +76,8 @@
 
 <script>
 /* eslint-disable */
-import { trimHttp } from '../../../../public/js/utils'
-import { getSpecialRecommend, getCheeseRecommend } from '../../../../public/apis/home'
+import { trimHttp } from 'g-public/js/utils'
+import { getSpecialRecommend, getCheeseRecommend } from 'g-public/apis/home'
 
 export default {
   props: {

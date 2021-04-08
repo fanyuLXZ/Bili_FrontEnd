@@ -26,8 +26,8 @@
 </template>
 
 <script>
-import { trimHttp, formatNum, customReport } from '../../../../public/js/utils'
-import EmptyState from '../../../../public/components/international/EmptyState'
+import { trimHttp, formatNum, customReport } from 'g-public/js/utils'
+import EmptyState from 'g-public/components/international/EmptyState'
 
 export default {
   components: {

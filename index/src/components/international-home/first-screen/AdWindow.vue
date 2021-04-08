@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import { trimHttp } from '../../../public/js/utils'
+import { trimHttp } from 'g-public/js/utils'
 import OperateCard from '../ad/OperateCard'
 
 export default {

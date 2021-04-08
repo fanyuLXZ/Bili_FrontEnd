@@ -16,7 +16,7 @@
 
 <script>
 import ExVideoCard from './ExVideoCard'
-import StoreyTitle from '../../../public/components/international/StoreyTitle'
+import StoreyTitle from 'g-public/components/international/StoreyTitle'
 
 const MAX_SOURCE_COUNT = 6
 

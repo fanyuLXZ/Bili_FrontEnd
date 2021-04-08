@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import App from '../components/international-index.vue'
+import home from '../components/international-home'
 import aboutBody from '../components/blackboard/aboutBody.vue'
 import contactBody from '../components/blackboard/contactBody.vue'
 import friendsBody from '../components/blackboard/friendsBody.vue'
@@ -16,8 +16,8 @@ const createRouter = () => (new Router({
   routes: [
     {
       path: '/',
-      name: "index",
-      component: App
+      name: "home",
+      component: home
     },
     {
       path: '/blackboard/about',

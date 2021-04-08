@@ -52,14 +52,14 @@
 
 <script>
 /* eslint-disable */
-import StoreyTitle from '../../../../public/components/international/StoreyTitle';
-import Exchange from '../../../../public/components/international/Exchange';
-import TabSwitch from '../../../../public/components/international/TabSwitch';
+import StoreyTitle from 'g-public/components/international/StoreyTitle';
+import Exchange from 'g-public/components/international/Exchange';
+import TabSwitch from 'g-public/components/international/TabSwitch';
 
-import { trimHttp, getRandomInt } from '../../../../public/js/utils';
+import { trimHttp, getRandomInt } from 'g-public/js/utils';
 
-import { getMangaPanel } from '../../../../public/apis/home';
-import { customReport, formatDate } from '../../../../public/js/utils'
+import { getMangaPanel } from 'g-public/apis/home';
+import { customReport, formatDate } from 'g-public/js/utils'
 
 
 const LEFT_MAX_COUNT = 12

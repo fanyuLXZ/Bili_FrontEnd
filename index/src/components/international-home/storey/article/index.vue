@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import SpaceBetween from '../../../../public/components/international/SpaceBetween'
+import SpaceBetween from 'g-public/components/international/SpaceBetween'
 import ArticleList from './ArticleList'
 import Rank from './Rank'
 

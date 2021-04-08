@@ -14,12 +14,12 @@
 </template>
 
 <script>
-import SpaceBetween from '../../../../public/components/international/SpaceBetween'
-import VideoList from '../../../../public/components/international/VideoList'
+import SpaceBetween from 'g-public/components/international/SpaceBetween'
+import VideoList from 'g-public/components/international/VideoList'
 import Timeline from './Timeline'
 
-import PgcRank from '../../../../public/components/international/PgcRank'
-import Rank from '../../../../public/components/international/Rank'
+import PgcRank from 'g-public/components/international/PgcRank'
+import Rank from 'g-public/components/international/Rank'
 
 export default {
   components: {

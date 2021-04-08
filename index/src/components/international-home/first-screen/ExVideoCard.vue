@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import {formatDuration, formatNum, trimHttp} from '../../../public/js/utils'
+import {formatDuration, formatNum, trimHttp} from 'g-public/js/utils'
 // import { addClass } from '../../public/js/utils';
 
 export default {

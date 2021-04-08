@@ -11,13 +11,13 @@
 </template>
 
 <script>
-import SpaceBetween from '../../../public/components/international/SpaceBetween'
-import StoreyTitle from '../../../public/components/international/StoreyTitle'
-import VideoCard from '../../../public/components/international/VideoCard'
+import SpaceBetween from 'g-public/components/international/SpaceBetween'
+import StoreyTitle from 'g-public/components/international/StoreyTitle'
+import VideoCard from 'g-public/components/international/VideoCard'
 import OperateCard from '../ad/OperateCard'
 
 import { mapState } from 'vuex'
-import { getSRecommend } from '../../../public/apis/home'
+import { getSRecommend } from 'g-public/apis/home'
 
 export default {
   components: {

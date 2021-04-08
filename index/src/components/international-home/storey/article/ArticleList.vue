@@ -10,11 +10,11 @@
 </template>
 
 <script>
-import StoreyTitle from '../../../../public/components/international/StoreyTitle'
-import Exchange from '../../../../public/components/international/Exchange'
+import StoreyTitle from 'g-public/components/international/StoreyTitle'
+import Exchange from 'g-public/components/international/Exchange'
 import ArticleCard from './ArticleCard'
 
-import { getArticle } from '../../../../public/apis/home'
+import { getArticle } from 'g-public/apis/home'
 
 export default {
   components: {

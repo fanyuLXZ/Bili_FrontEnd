@@ -34,8 +34,8 @@ import VideoCard from './CheeseVideoCard'
 import Exchange from './CheeseExchange'
 import Nodata from './Nodata'
 
-// import { getRegion, getCheeseRecommend } from '../../../public/apis/home'
-import {  getCheeseRecommend } from '../../../../public/apis/home'
+// import { getRegion, getCheeseRecommend } from 'g-public/apis/home'
+import {  getCheeseRecommend } from 'g-public/apis/home'
 
 export default {
   components: {

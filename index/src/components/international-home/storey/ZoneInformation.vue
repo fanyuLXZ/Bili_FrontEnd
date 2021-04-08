@@ -16,9 +16,9 @@
 </template>
 
 <script>
-import SpaceBetween from '../../../public/components/international/SpaceBetween'
-import VideoList from '../../../public/components/international/VideoList'
-import { getLocs } from '../../../public/apis/home'
+import SpaceBetween from 'g-public/components/international/SpaceBetween'
+import VideoList from 'g-public/components/international/VideoList'
+import { getLocs } from 'g-public/apis/home'
 
 export default {
   components: {

@@ -44,7 +44,7 @@
 </template>
 
 <script>
-import { formatNum, trimHttp } from "../../../../public/js/utils";
+import { formatNum, trimHttp } from "g-public/js/utils";
 
 export default {
   props: {

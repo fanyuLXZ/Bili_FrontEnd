@@ -28,8 +28,8 @@
 </template>
 
 <script>
-import { trimHttp } from '../../../../public/js/utils'
-import { getSpecialRecommend } from '../../../../public/apis/home'
+import { trimHttp } from 'g-public/js/utils'
+import { getSpecialRecommend } from 'g-public/apis/home'
 /* eslint-disable */
 export default {
   props: {

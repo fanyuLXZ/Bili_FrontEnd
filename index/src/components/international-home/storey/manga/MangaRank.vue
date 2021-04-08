@@ -15,12 +15,12 @@
 </template>
 
 <script>
-import RankTitle from '../../../../public/components/international/RankTitle'
+import RankTitle from 'g-public/components/international/RankTitle'
 import MangaRankList from './MangaRankList'
-import TabSwitch from '../../../../public/components/international/TabSwitch'
-import { customReport } from '../../../../public/js/utils'
+import TabSwitch from 'g-public/components/international/TabSwitch'
+import { customReport } from 'g-public/js/utils'
 
-import { getMangaRank } from '../../../../public/apis/home'
+import { getMangaRank } from 'g-public/apis/home'
 
 export default {
   components: {

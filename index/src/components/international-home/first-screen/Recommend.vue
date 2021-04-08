@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import VdieoCardRecommend from '../../../public/components/international/VideoCardRecommend'
+import VdieoCardRecommend from 'g-public/components/international/VideoCardRecommend'
 import { mapState, mapActions } from 'vuex'
 
 /**

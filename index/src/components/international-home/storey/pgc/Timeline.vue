@@ -12,12 +12,12 @@
 </template>
 
 <script>
-import StoreyTitle from '../../../../public/components/international/StoreyTitle'
-import TabSwitch from '../../../../public/components/international/TabSwitch'
+import StoreyTitle from 'g-public/components/international/StoreyTitle'
+import TabSwitch from 'g-public/components/international/TabSwitch'
 import Nodata from './Nodata'
 import TimelineCard from './TimelineCard'
 
-import { getTimeline } from '../../../../public/apis/home'
+import { getTimeline } from 'g-public/apis/home'
 
 export default {
   components: {

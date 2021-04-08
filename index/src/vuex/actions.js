@@ -1,4 +1,4 @@
-import {getRecommend, getLocs} from '../public/apis/home'
+import {getRecommend, getLocs} from 'g-public/apis/home'
 
 export default {
   fetchRecommendData: ({commit}, { query, context }) => {

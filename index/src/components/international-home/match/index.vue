@@ -29,12 +29,12 @@
 </template>
 
 <script>
-import SpaceBetween from '../../../public/components/international/SpaceBetween'
-import StoreyTitle from '../../../public/components/international/StoreyTitle'
+import SpaceBetween from 'g-public/components/international/SpaceBetween'
+import StoreyTitle from 'g-public/components/international/StoreyTitle'
 import VideoCard from './VideoCard'
 import Card from './Card'
 import LiveCard from './LiveCard'
-import { trimHttp } from '../../../public/js/utils'
+import { trimHttp } from 'g-public/js/utils'
 
 import { mapState } from 'vuex'
 
@@ -93,6 +93,7 @@ export default {
         }
         item = item.archive
       }
+      console.log(item)
       return item
     }
   }

@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import {formatDuration, formatNum} from '../../../public/js/utils'
+import {formatDuration, formatNum} from 'g-public/js/utils'
 
 export default {
   props: {

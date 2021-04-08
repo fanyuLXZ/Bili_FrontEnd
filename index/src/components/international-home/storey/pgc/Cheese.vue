@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import SpaceBetween from '../../../../public/components/international/SpaceBetween'
+import SpaceBetween from 'g-public/components/international/SpaceBetween'
 import VideoList from './CheeseVideoList'
 
 import SpecialRecommend from './CheeseSpecialRecommend'

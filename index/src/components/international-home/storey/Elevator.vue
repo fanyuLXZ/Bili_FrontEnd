@@ -18,9 +18,9 @@
 
 <script>
 import { SlickList, SlickItem } from 'vue-slicksort'
-import { getElevatorSort, setElevatorSort } from '../../../public/apis/home'
+import { getElevatorSort, setElevatorSort } from 'g-public/apis/home'
 // import { Cantor, scrollTop, cookie, customReport } from '../../public/js/utils'
-import { Cantor, } from '../../../public/js/utils'
+import { Cantor, } from 'g-public/js/utils'
 import { mapState } from 'vuex'
 
 export default {
@@ -154,7 +154,6 @@ export default {
         this.currentFloor = -1
         return
       }
-
       for(let i = 0; i < this.sortList.length; i++) {
         const el = document.querySelector(`#bili_${this.sortList[i]['type']}`)
         const top = el.offsetTop
@@ -176,7 +175,6 @@ export default {
   },
   mounted() {
     this.getElevatorSortData()
-
     this.scrollHandle()
     window.addEventListener('scroll', e => {
       this.scrollHandle()

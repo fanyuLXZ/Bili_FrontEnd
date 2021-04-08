@@ -38,8 +38,8 @@
 </template>
 
 <script>
-import { trimHttp, formatNum, customReport } from '../../../../public/js/utils'
-import axios from '../../../../public/js/axios/caxios'
+import { trimHttp, formatNum, customReport } from 'g-public/js/utils'
+import axios from 'g-public/js/axios/caxios'
 
 const LIVE_SOURCE = -99998
 

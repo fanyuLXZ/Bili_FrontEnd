@@ -2,22 +2,22 @@ import './assets/style/base.less'
 
 import Vue from 'vue'
 import Meta from 'vue-meta'
-import './modules/@bilibili/van/dist/Popover/style.css'
+import 'g-public/modules/@bilibili/van/dist/Popover/style.css'
 import App from './App.vue'
 
 import createStore from './vuex'
 import createRouter from './router'
 import Vuex from 'vuex'
 
-import './public/js/directive'
-import adReport from './public/js/plugin/adReport'
+import 'g-public/js/directive'
+import adReport from 'g-public/js/plugin/adReport'
 
-import Bfs from './modules/@blink-common/component.bfs-utils'
-import { Image, Danmu, Framepreview, Watchlater, Slide, Lazyload, Backtop, Report } from './modules/@bilibili/van'
-import './modules/bili-collect'
-import './modules/@bilibili/van/dist/style/style.css'
+import Bfs from 'g-public/modules/@blink-common/component.bfs-utils'
+import { Image, Danmu, Framepreview, Watchlater, Slide, Lazyload, Backtop, Report } from 'g-public/modules/@bilibili/van'
+import 'g-public/modules/bili-collect'
+import 'g-public/modules/@bilibili/van/dist/style/style.css'
 
-import LiveLazyload from './public/js/plugin/lazyload'
+import LiveLazyload from 'g-public/js/plugin/lazyload'
 
 
 Vue.use(Image)
@@ -37,8 +37,8 @@ Vue.prototype.$bfs = new Bfs()
 
 // if(process.env.VUE_ENV === 'client'){
     // 引入iconfont
-    require('./public/style/bili-iconfont/iconfont.css')
-    require('./public/style/bili-iconfont/iconfont.js')
+    require('g-public/style/bili-iconfont/iconfont.css')
+    require('g-public/style/bili-iconfont/iconfont.js')
 
     Vue.use(adReport)
 // }
