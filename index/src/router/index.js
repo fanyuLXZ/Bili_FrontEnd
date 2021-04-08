@@ -1,27 +1,60 @@
 import Vue from 'vue'
-import VueRouter from 'vue-router'
+import Router from 'vue-router'
+import App from '../components/international-index.vue'
+import aboutBody from '../components/blackboard/aboutBody.vue'
+import contactBody from '../components/blackboard/contactBody.vue'
+import friendsBody from '../components/blackboard/friendsBody.vue'
+import joinBody from '../components/blackboard/joinBody.vue'
+import privacyBody from '../components/blackboard/privacyBody.vue'
+import blackRoomFileBody from '../components/blackboard/blackRoomFileBody.vue'
+import actListBody from '../components/blackboard/actListBody.vue'
 
-Vue.use(VueRouter)
+Vue.use(Router)
 
-const routes = [
-  {
-    path: '/',
-    name: 'Home',
-  },
-  {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    // component: () => import(/* webpackChunkName: "about" */ )
-  }
-]
-
-const router = new VueRouter({
+const createRouter = () => (new Router({
   mode: 'history',
-  base: process.env.BASE_URL,
-  routes
-})
+  routes: [
+    {
+      path: '/',
+      name: "index",
+      component: App
+    },
+    {
+      path: '/blackboard/about',
+      name: "aboutBody",
+      component: aboutBody
+    },
+    {
+      path: '/blackboard/contact',
+      name: "contactBody",
+      component: contactBody
+    },
+    {
+      path: '/blackboard/friends',
+      name: "friendsBody",
+      component: friendsBody
+    },
+    {
+      path: '/blackboard/join',
+      name: "joinBody",
+      component: joinBody
+    },
+    {
+      path: '/blackboard/privacy',
+      name: "privacyBody",
+      component: privacyBody
+    },
+    {
+      path: '/blackboard/blackroom',
+      name: "blackRoomFileBody",
+      component: blackRoomFileBody
+    },
+    {
+      path: '/blackboard/act_list/:num',
+      name: "actListBody",
+      component: actListBody
+    }
+  ],
+}))
 
-export default router
+export default createRouter

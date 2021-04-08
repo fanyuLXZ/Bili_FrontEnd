@@ -1,6 +1,6 @@
 
 import { checkInViewV2, getScrollParent } from '../utils'
-import { throttle } from 'g-public/js/utils'
+import { throttle } from '../utils'
 
 export default {
   install(Vue, config = {}) {

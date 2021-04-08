@@ -45,7 +45,8 @@
                   height="63">
                 </van-image>
                 <span class="season-icon">
-                  <img src="../../assets/images/icon_ugc_season.svg" alt="">
+<!--                  <img src="../../assets/images/icon_ugc_season.svg" alt="">-->
+                  <img src="#" alt="">
                 </span>
                 <div class="season-info">
                   <p class="season-info__title">{{card.title}}</p>
@@ -104,7 +105,7 @@
 
 <script>
 import NavUserVideoCard from './NavUserVideoCard'
-import { getNavFavList, getNavViewLaterDetail, getNavFavDetail } from '../../api'
+import { getNavFavList, getNavViewLaterDetail, getNavFavDetail } from '../../../api'
 
 export default {
   name: 'NavUserCenterFavorite',

@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import { cookie } from 'g-public/js/utils'
+import { cookie } from '../../../public/js/utils'
 
 export default {
   props: {

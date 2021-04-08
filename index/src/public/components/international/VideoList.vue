@@ -14,7 +14,7 @@ import StoreyTitle from './StoreyTitle'
 import VideoCard from './VideoCard'
 import Exchange from './Exchange'
 
-import { getRegion, getRegionLatest } from 'g-public/apis/home'
+import { getRegion, getRegionLatest } from '../../apis/home'
 
 export default {
   components: {
@@ -64,6 +64,7 @@ export default {
             this.state = true
           }
         }
+        /* eslint-disable */
       } catch(err) {}
     }
   },

@@ -1,3 +1,13 @@
 import Report from "./dist/Report"
 import Popover from "./dist/Popover"
-export {Popover,Report}
+import "./dist/Popover/style.css"
+import Backtop from "./dist/Backtop"
+import Danmu from "./dist/Danmu"
+import Framepreview from "./dist/Framepreview"
+import Image from "./dist/Image"
+import Lazyload from "./dist/Lazyload"
+import Slide from "./dist/Slide"
+import "./dist/Slide/style.css"
+import Watchlater from "./dist/Watchlater"
+import "./dist/Watchlater/style.css"
+export {Popover,Report,Backtop,Danmu,Framepreview,Image,Lazyload,Slide,Watchlater}

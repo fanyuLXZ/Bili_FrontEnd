@@ -42,8 +42,8 @@
 </template>
 
 <script>
-import defaultImg from 'g-public/images/vip-default-banner.png'
-import { customReport, getScript, trimHttp, allCustomReport } from 'g-public/js/utils'
+// import defaultImg from '//i0.hdslb.com/bfs/feed-admin/9c5dc48ca0558b721d8b12fe590772b0e2f0bcba.png'
+import { customReport, getScript, trimHttp, allCustomReport } from '../../../public/js/utils'
 
 export default {
   props: {
@@ -62,7 +62,7 @@ export default {
   },
   data() {
     return {
-      defaultImg,
+      defaultImg:"//i0.hdslb.com/bfs/feed-admin/9c5dc48ca0558b721d8b12fe590772b0e2f0bcba.png",
       trimHttp,
       size: {
         1: {width: 230, height: 68},
@@ -92,9 +92,9 @@ export default {
         return
       }
       customReport('header-vip-locs', Object.assign(item.originData, {resouce: item.resource, event: event}))
-      if(reportObserver && reportObserver.forceCommit) {
-        reportObserver.forceCommit()
-      }
+      // if(reportObserver && reportObserver.forceCommit) {
+      //   reportObserver.forceCommit()
+      // }
     },
     renew() {
       if (!this.isLogin) {
@@ -112,6 +112,7 @@ export default {
         return
       }
       getScript('//s1.hdslb.com/bfs/static/plugin/vip/dist/BiliBiliVipDialog.js', function() {
+        /* eslint-disable */
         new BiliBiliVipDialog({
           type: 1,
           appId: 27,

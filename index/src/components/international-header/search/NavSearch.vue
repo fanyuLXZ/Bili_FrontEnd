@@ -38,7 +38,7 @@
 
 <script>
   // import domain from 'g-public/js/domain'
-  // import biliAxios from 'axios'
+  // import biliAxios from '../../../public/js/axios/caxios'
   import Suggest from './Suggest'
   import History from './History'
   // import searchHistory from './search_history'

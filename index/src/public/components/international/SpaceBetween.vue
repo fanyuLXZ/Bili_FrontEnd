@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <slot class="space-between">
+  <div class="space-between">
+    <slot>
 
     </slot>
   </div>
