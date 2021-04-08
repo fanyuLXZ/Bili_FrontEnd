@@ -445,12 +445,9 @@
 export default {
   name: "aboutBody",
   metaInfo: {
-    meta: [
-      {name: 'renderer', content: 'webkit'},
-      {name: 'spm_prefix', content: '888.157'},
-      {httpequiv: 'Cache-Control', content: 'no-transform'},
-    ]
-  }, methods: {
+    title: "关于我们 - 哔哩哔哩"
+  },
+  methods: {
     methods1: function () {
 
     }
@@ -511,9 +508,11 @@ window.reportConfig = {
 };
 </script>
 
-<style lang="less" scoped>
-@import '//activity.hdslb.com/blackboard/act-build-long-87f2c17887e28a8a4fda261c8460d4e8/1.149022ba63f354776adf.css';
+<style scoped>
+</style>
 
+
+<style lang="less" scoped>
 #app {
   background-color: #f5f5f5;
 }

@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import App from '../components/international-index.vue'
 import aboutBody from '../components/blackboard/aboutUs/aboutBody.vue'
+import contactBody from '../components/blackboard/aboutUs/contactBody.vue'
 
 Vue.use(Router)
 
@@ -14,9 +15,14 @@ const createRouter = () => (new Router({
       component: App
     },
     {
-      path: '/about',
+      path: '/blackboard/about',
       name: "aboutBody",
       component: aboutBody
+    },
+    {
+      path: '/blackboard/contact',
+      name: "contactBody",
+      component: contactBody
     }
   ],
 }))

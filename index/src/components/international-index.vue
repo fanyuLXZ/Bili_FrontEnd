@@ -39,6 +39,9 @@ import {mapMutations, mapState} from 'vuex'
 export default {
   name: 'index',
   components: {InternationalHeader, FirstScreen, Storey, InternationalFooter},
+  metaInfo: {
+    title: "哔哩哔哩 (゜-゜)つロ 干杯~"
+  },
   data() {
     return {
       // 1: 新版
