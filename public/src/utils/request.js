@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { getBrowser } from './index'
 
 //     Zepto.js
