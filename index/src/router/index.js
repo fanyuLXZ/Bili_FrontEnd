@@ -35,7 +35,7 @@ const createRouter = () => (new Router({
       component: friendsBody
     },
     {
-      path: '/blackboard/join',
+      path: '/blackboard/joinUs',
       name: "joinBody",
       component: joinBody
     },

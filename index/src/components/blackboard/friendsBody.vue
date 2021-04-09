@@ -3,19 +3,7 @@
     <div id="app" class="tpl-wrap">
       <div>
         <div class="wrapper">
-          <div id="banner" class="banner a-wrap-module report-wrap-module">
-            <div class="banner-content">
-              <div class="banner-item1 anim-role-fade-in-r"></div>
-              <div class="banner-item2 anim-role-fade-in-l"></div>
-              <div class="banner-item3 anim-role-fade-in-c"></div>
-              <div class="banner-item4 anim-item-fade-in-floating"></div>
-              <div class="banner-item5 anim-item-fade-in-floating"></div>
-              <div class="banner-item6 anim-item-fade-in-floating"></div>
-              <div class="banner-item7 anim-item-fade-in quick"></div>
-              <div class="banner-item8 anim-item-fade-in quick"></div>
-              <a class="logo" href="https://www.bilibili.com/" style="top: 48px;"></a>
-            </div>
-          </div>
+          <Banner/>
           <div class="container">
             <p></p>
             <div class="content left" style="width:100%;min-height: 455px;">
@@ -73,9 +61,16 @@
   </div>
 </template>
 
+<style scoped src="../../assets/style/blackboard/contact_style.css"></style>
+
 <script>
+import Banner from "../../../../public/src/components/blackBoard_Banner/banner";
+
 export default {
   name: "friends-links",
+  components: {
+    Banner
+  },
   metaInfo: {
     title: "友情链接"
   }
@@ -84,6 +79,10 @@ export default {
 
 
 <style scoped>
+#app {
+  background-color: rgb(245, 245, 245);
+}
+
 .article {
   margin: 0;
   padding: 0;

@@ -1,0 +1,75 @@
+div, p, ul, li, a, img, span, h1, h2, h3, h4, h5, h6, header, footer, section, article, form, input, textarea, video, iframe {
+    margin: 0;
+    padding: 0
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    font: 12px 'Helvetica Neue', Helvetica, Arial, 'Microsoft Yahei', 'Hiragino Sans GB', 'Heiti SC', 'WenQuanYi Micro Hei', sans-serif;
+    background: #fff;
+    color: #222;
+    tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: transparent
+}
+
+ul, li {
+    list-style: none
+}
+
+a {
+    color: #222;
+    text-decoration: none
+}
+
+a, input, button, select, textarea {
+    outline: none;
+    cursor: pointer;
+    color: #00a1d6;
+    text-decoration: none
+}
+
+a:hover {
+    color: #f25d8e
+}
+
+a:focus {
+    -moz-outline-style: none
+}
+
+img {
+    border: 0;
+    vertical-align: middle
+}
+
+h1, h2, h3, h4, h5, h6, ul, li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none
+}
+
+textarea {
+    overflow: hidden;
+    resize: none
+}
+
+address, caption, cite, code, dfn, em, i, th, var {
+    font-style: normal;
+    font-weight: normal
+}
+
+.clearfix:after {
+    display: block;
+    visibility: hidden;
+    clear: both;
+    width: 0;
+    height: 0;
+    content: '.'
+}
+
+div[flash-anim-wrap=true] {
+    height: 100%
+}
+
+

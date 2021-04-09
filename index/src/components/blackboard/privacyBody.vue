@@ -372,12 +372,15 @@ export default {
 }
 </script>
 
+<style scoped src="../../assets/style/blackboard/privacyStyle_1.css"></style>
+<style scoped src="../../assets/style/blackboard/privacyStyle_2.css"></style>
 <style scoped>
-@import "https://activity.hdslb.com/blackboard/act-build-long-b185ecc2233a6773f0d2754c18a90e83/1.149022ba63f354776adf.css";
-@import "https://activity.hdslb.com/blackboard/act-build-long-b185ecc2233a6773f0d2754c18a90e83/2.187e46c77cb7477d8d7c.css";
-
 #app {
-  line-height: 1.6em;
   background-color: #fff;
 }
+
+p {
+  line-height: 1.6em;
+}
+
 </style>

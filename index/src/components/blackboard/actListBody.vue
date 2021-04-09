@@ -126,19 +126,8 @@
             <div class="act-info">全舞种狂欢，跳你所爱！</div>
           </li>
         </ul>
-        <div class="pagelist" style="">
-          <div class="flip-left">
-            <span class="prev-page" style="display: none;">上一页</span>
-            <span :to="{name:'actListBody',params:{pageNum:1}}" class="first-page  active">1</span>
-            <span :to="{name:'actListBody',params:{pageNum:2}}" class="first-page  active">2</span>
-            <span :to="{name:'actListBody',params:{pageNum:3}}" class="first-page  active">3</span>
-            <span :to="{name:'actListBody',params:{pageNum:4}}" class="first-page  active">4</span>
-            <strong class="ellipsis">...</strong>
-            <span :to="{name:'actListBody',params:{pageNum:50}}" class="first-page  active">50</span>
-            <span class="next-page" style="">下一页</span>
-          </div>
-          <div class="flip-right"><span>共 50 页，跳至</span><input id="in_blur" type="text"><span>页</span></div>
-        </div>
+
+        <PageBar_simp/>
       </div>
       <div class="back-top" style="display: none;"></div>
     </div>
@@ -146,12 +135,144 @@
 </template>
 
 <script>
+import PageBar_simp from "../../../../public/src/components/pageBar/PageBar(simple)"
+
 export default {
   name: "actListBody",
+  components: {
+    PageBar_simp
+  },
+  metaInfo: {
+    title: "近期活动列表"
+  }
 }
 </script>
 
 <style scoped>
+
+#app {
+  background-color: #fff;
+}
+
+.active-main {
+  width: 1160px;
+  margin: 0 auto;
+  padding: 20px 0 0
+}
+
+.active-main .active-title {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e5e9ef
+}
+
+.active-main .active-title .b-active-i {
+  width: 25px;
+  height: 25px;
+  background: url(//static.hdslb.com/images/base/icons.png) -82px -1624px no-repeat;
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 0;
+  margin-right: 10px
+}
+
+.active-main .active-title .b-active-t {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 18px;
+  line-height: 14px;
+  color: #222
+}
+
+.active-main .act-list {
+  margin-bottom: 20px;
+  overflow: hidden
+}
+
+.active-main .act-list ul li {
+  background: #fff;
+  border-bottom: 1px solid #e5e9ef;
+  padding: 0 0 20px;
+  margin: 20px 0 0;
+  overflow: hidden;
+  position: relative
+}
+
+.active-main .act-list ul li img {
+  float: left;
+  margin-right: 12px;
+  width: 260px;
+  height: 150px;
+  border-radius: 4px
+}
+
+.active-main .act-list ul li h2 {
+  overflow: hidden;
+  margin: 0;
+  line-height: 20px;
+  padding-bottom: 20px
+}
+
+.active-main .act-list ul li h2 a {
+  color: #222
+}
+
+.active-main .act-list ul li h2 a:hover {
+  color: #00a1d6
+}
+
+.active-main .act-list ul li .event_status {
+  overflow: hidden;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  color: #6d757a
+}
+
+.active-main .act-list ul li .event_status .status-ing {
+  color: #00a1d6
+}
+
+.active-main .act-list ul li .event_status .status-ready {
+  color: #f25d8e
+}
+
+.active-main .act-list ul li .act-info {
+  color: #6d757a;
+  line-height: 20px;
+  margin-bottom: 14px;
+  overflow: hidden;
+  word-wrap: break-word;
+  word-break: break-all
+}
+
+.active-main .back-top {
+  position: fixed;
+  top: 710px;
+  right: 220px;
+  width: 50px;
+  height: 48px;
+  background: #f6f9fa url(//static.hdslb.com/images/base/icons.png) -648px -72px no-repeat;
+  border: 1px solid #e5e9ef;
+  overflow: hidden;
+  border-radius: 4px;
+  cursor: pointer;
+  z-index: 1
+}
+
+.active-main .back-top:hover {
+  background: #00a1d6 url(//static.hdslb.com/images/base/icons.png) -713px -72px no-repeat
+}
+
+@media (max-width: 1400px) {
+  .active-main {
+    width: 980px
+  }
+
+  .active-main .back-top {
+    top: 540px
+  }
+}
+
 a, article, body, div, footer, form, h1, h2, h3, h4, h5, h6, header, html, iframe, img, input, li, p, section, span, textarea, ul, video {
   margin: 0;
   padding: 0
@@ -305,4 +426,5 @@ textarea {
     top: 540px
   }
 }
+
 </style>

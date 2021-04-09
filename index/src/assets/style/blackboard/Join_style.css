@@ -1,0 +1,754 @@
+* {
+    margin: 0;
+    padding: 0
+}
+
+html {
+
+}
+
+body {
+    font-family: "Microsoft SanSerf", "Microsoft Yahei", "微软雅黑";
+    overflow-x: hidden;
+}
+
+input, button, select, textarea {
+    outline: 0
+}
+
+textarea {
+    resize: none
+}
+
+h1, h2, h3, h4, h5, h6, ul, li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none
+}
+
+img {
+    border: 0;
+    vertical-align: middle
+}
+
+a {
+    outline: 0;
+    color: #00a1d6;
+    text-decoration: none;
+    cursor: pointer
+}
+
+a:hover {
+    color: #f25d8e
+}
+
+a:focus {
+    -moz-outline-style: none
+}
+
+a img {
+    border: 0
+}
+
+address, caption, cite, code, dfn, em, i, th, var {
+    font-style: normal;
+    font-weight: normal
+}
+
+p, span {
+    margin: 0;
+    padding: 0
+}
+
+
+/*jobs*/
+.main {
+    min-height: 950px;
+}
+
+.pagelistbox {
+    width: 720px;
+    overflow: hidden;
+    line-height: 40px;
+    text-align: center;
+    font-family: Arial;
+    margin: 0 0 5px 120px;
+    display: block;
+}
+
+.pagelistbox span, .pagelistbox a, .pagelistbox strong, .pagelistbox .custompage {
+    min-width: 15px;
+    margin: 0 2px 0 2px;
+    padding: 0 10px;
+    float: left;
+    font-size: 13px;
+    display: block;
+    height: 38px;
+    line-height: 38px
+}
+
+.pagelistbox input[type="text"] {
+    color: #99a2aa;
+    text-align: center;
+    margin-left: 5px;
+    width: 30px;
+    border-radius: 4px
+}
+
+.pagelistbox .custom-right {
+    float: right
+}
+
+.pagelistbox .custom-right .custom-right-inner {
+    padding: 0 2px;
+    font-size: 12px;
+    color: #99a2aa;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1
+}
+
+.pagelistbox .custom-right .custom-right-inner.custompage {
+    padding: 0 10px;
+    height: 24px;
+    line-height: 24px;
+    margin-top: 7px;
+    font-size: 12px;
+    box-shadow: none
+}
+
+.pagelistbox .p {
+    color: #222;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 4px;
+    background-color: #fff;
+    border: solid 1px #ddd;
+    background-image: none;
+    transition: .2s all;
+    font-size: 14px
+}
+
+.pagelistbox .p:hover {
+    background: #00a1d6;
+    color: #fff;
+    border: 1px solid #00a1d6
+}
+
+.pagelistbox .p.active {
+    background: #00a1d6;
+    color: #fff;
+    border: 1px solid #00a1d6
+}
+
+.pagelistbox .p.nextPage, .pagelistbox .p.prevPage {
+    padding: 0 15px
+}
+
+.pagelistbox strong {
+    display: block;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    font-weight: normal;
+    font-size: 14px;
+    font-weight: bold
+}
+
+.pagelistbox.small {
+    margin: 9px 0 7px 0;
+    float: right;
+    font-size: 12px;
+    height: 26px;
+    line-height: 26px;
+    width: auto
+}
+
+.pagelistbox.small span {
+    font-size: 12px;
+    height: 26px;
+    line-height: 26px
+}
+
+.pagelistbox.small .result {
+    padding-left: 0
+}
+
+.pagelistbox.small .p {
+    font-size: 12px;
+    color: #666;
+    border: 0;
+    padding: 0;
+    height: 26px;
+    line-height: 26px
+}
+
+.pagelistbox.small .p:hover {
+    background: transparent;
+    color: #00a1d6;
+    border: 0
+}
+
+.pagelistbox.small .p.active {
+    color: #00a1d6;
+    font-weight: bold;
+    background-color: transparent;
+    border: 0
+}
+
+.pagelistbox.small .endPage, .pagelistbox.small .indexPage, .pagelistbox.small strong {
+    display: none
+}
+
+.mobile .pagelistbox .result {
+    display: none
+}
+
+.main {
+    position: relative;
+    width: 1080px;
+    height: 100%;
+}
+
+.side_main {
+    position: fixed;
+    width: 200px;
+    height: 100%;
+    background: #263546;
+    z-index: 20;
+}
+
+.side_main .shadow {
+    position: absolute;
+    width: 16px;
+    height: 100%;
+    top: 0px;
+    right: 0px;
+    z-index: 10;
+    background: url("http://i0.hdslb.com/u_user/jobs/img/shadow.png");
+}
+
+.side_main .logo {
+    position: relative;
+    width: 200px;
+    height: 100px;
+    margin-bottom: 44px;
+    z-index: 5;
+    background: #00a1d6 url("http://i0.hdslb.com/u_user/jobs/img/jous.png") no-repeat -73px -272px;
+}
+
+.side_select {
+    position: relative;
+    width: 200px;
+    height: 100%;
+    z-index: 25;
+}
+
+.side_main .select_block {
+    position: relative;
+    width: 200px;
+    height: auto;
+}
+
+.side_main .location {
+    position: relative;
+    width: 200px;
+    height: auto;
+}
+
+.side_main .title {
+    position: relative;
+    width: 200px;
+    text-align: center;
+    height: 25px;
+    color: #00a1d6;
+    font-size: 18px;
+}
+
+.title .loca {
+    position: absolute;
+    left: 36px;
+    width: 25px;
+    height: 25px;
+    background: url("http://i0.hdslb.com/u_user/jobs/img/jous.png") no-repeat -96px -166px;
+}
+
+.title .jobs {
+    position: absolute;
+    left: 36px;
+    width: 25px;
+    height: 25px;
+    background: url("http://i0.hdslb.com/u_user/jobs/img/jous.png") no-repeat -96px -236px;
+}
+
+.select {
+    position: relative;
+    margin-top: 12px;
+    width: 200px;
+    height: auto;
+}
+
+.select .block {
+    position: relative;
+    width: 140px;
+    height: 30px;
+    padding-left: 64px;
+    color: #a5c0c9;
+    font-size: 14px;
+    line-height: 30px;
+    cursor: pointer;
+}
+
+.select .block:hover {
+    color: #FFFFFF;
+}
+
+.select .block.active {
+    border-left: solid #00a1d6 8px;
+    background-color: #3a4c5b;
+    color: #FFFFFF;
+    width: 136px;
+    padding-left: 56px;
+}
+
+.job {
+    position: relative;
+    width: 200px;
+    height: auto;
+    margin-top: 30px;
+}
+
+.side_main .tips {
+    position: relative;
+    margin-top: 190px;
+    color: #829ba3;
+    font-size: 12px;
+    padding-left: 36px;
+}
+
+.side_main .tips p {
+    line-height: 24px;
+}
+
+.master_main {
+    position: relative;
+    margin-left: 200px;
+    width: 100%;
+    height: auto;
+    min-height: 1000px;
+}
+
+.master_title {
+    position: relative;
+    width: 600px;
+    height: 62px;
+    padding-top: 48px;
+    padding-left: 78px;
+}
+
+.master_title .big_title {
+    position: relative;
+    float: left;
+    font-size: 36px;
+    font-weight: bold;
+    color: #222;
+    height: 62px;
+    line-height: 62px;
+}
+
+.jobs_numb {
+    position: relative;
+    float: left;
+    line-height: 18px;
+    margin-left: 10px;
+    margin-top: 32px;
+    padding-left: 5px;
+    color: #6d757a;
+    height: 18px;
+    border-left: solid 1px #e5e9ef;
+}
+
+.big_title .icons {
+    position: relative;
+    float: left;
+    width: 50px;
+    height: 53px;
+    margin-right: 10px;
+    background: url("http://i0.hdslb.com/u_user/jobs/img/jous.png") no-repeat -9px -2px;
+}
+
+.icons.all {
+    background-position: -9px -430px;
+}
+
+.icons.tech {
+    background-position: -9px -5px;
+}
+
+.icons.content {
+    background-position: -9px -80px;
+}
+
+.icons.design {
+    background-position: -9px -150px;
+}
+
+.icons.game {
+    background-position: -9px -225px;
+}
+
+.icons.role {
+    background-position: -9px -502px;
+}
+
+.icons.pm {
+    background-position: -9px -289px;
+}
+
+.icons.marketing {
+    background-position: -9px -359px;
+}
+
+.jobs_list {
+    position: relative;
+    width: 720px;
+    height: auto;
+    margin-top: 32px;
+    margin-left: 128px;
+}
+
+.jobs_list_title {
+    position: relative;
+    width: 720px;
+    height: 26px;
+    line-height: 26px;
+    padding-bottom: 20px;
+    color: #00a1d6;
+    font-size: 24px;
+}
+
+.jobs_name {
+    position: relative;
+    float: left;
+    width: 410px;
+    transition: .3s;
+}
+
+.jobs_classification {
+    position: relative;
+    float: left;
+    width: 200px;
+    color: #99a2aa;
+}
+
+.jobs_location {
+    position: relative;
+    float: left;
+    width: 100px;
+    color: #99a2aa;
+}
+
+.color {
+    color: #00a1d6;
+}
+
+.list {
+    position: relative;
+    width: 720px;
+    height: auto;
+    min-height: 600px;
+    margin-bottom: 30px;
+}
+
+.list_block {
+    position: relative;
+    width: 720px;
+    height: 48px;
+    line-height: 48px;
+    border-top: solid 1px #e5e9ef;
+    border-left: solid 1px rgba(255, 255, 255, 0);
+    border-right: solid 1px rgba(255, 255, 255, 0);
+    cursor: pointer;
+    transition: .2s all linear;
+    font-size: 14px;
+}
+
+.list_block:hover {
+    border-radius: 3px;
+    border: solid 1px #e5e9ef;
+    border-bottom: solid 0px #e5e9ef;
+    box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.3);
+    color: #00a1d6;
+}
+
+.list_block:hover .jobs_name {
+    padding-left: 20px;
+    width: 390px;
+}
+
+.list_block:hover .jobs_classification {
+    color: #00a1d6;
+}
+
+.list_block:hover .jobs_location {
+    color: #00a1d6;
+}
+
+.master_list {
+    display: block;
+    width: 860px;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.jobs-icon-blue-dots {
+    width: 8px;
+    height: 8px;
+    margin: 1px 4px;
+    border-radius: 6px;
+    display: inline-block;
+    background-color: #00a1d6;
+}
+
+.master_job {
+    position: absolute;
+    top: 0;
+    width: 880px;
+    height: auto;
+    background-color: rgba(255, 255, 255, 0.9);
+    display: none;
+    z-index: 5;
+    margin-left: -20px;
+}
+
+.master_job .master_title {
+    padding-top: 87px;
+    padding-left: 150px;
+}
+
+.job_blcok {
+    position: relative;
+    margin-top: 46px;
+    margin-left: 150px;
+    font-size: 14px;
+    z-index: 20;
+    width: 700px;
+}
+
+.job_blcok .block {
+    margin-bottom: 40px;
+}
+
+.job_blcok .title {
+    color: #99a2aa;
+    margin-bottom: 14px;
+}
+
+.job_blcok .duty_text {
+    margin-bottom: 5px;
+    line-height: 30px;
+}
+
+.job_blcok .demand_text {
+    margin-bottom: 5px;
+    line-height: 30px;
+}
+
+.title {
+    font-size: 18px;
+}
+
+.back_button {
+    position: absolute;
+    top: 50px;
+    left: 130px;
+    width: 80px;
+    height: 36px;
+    z-index: 400;
+    color: #00a1d6;
+    text-align: center;
+    line-height: 36px;
+    cursor: pointer;
+    transition: .4s;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.back_button:hover {
+    color: #f25d8e;
+}
+
+.Jname {
+    position: relative;
+    float: left;
+}
+
+/*banner*/
+.banner {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.activity.topic-preview-wrapper {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.activity.topic-preview-wrapper .topic-preview li {
+    width: 100%;
+    height: 100%;
+    float: left;
+    overflow: hidden;
+}
+
+.activity.topic-preview-wrapper .topic-preview li img {
+    position: relative;
+    height: 100%;
+}
+
+.activity.topic-preview-wrapper .s-bottom {
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    height: 35px;
+    transition: 0.2s all;
+    background: -webkit-gradient(linear, 0 0, 0 150%, from(rgba(255, 255, 255, 0)), to(rgba(0, 0, 0, 0.64)));
+    background: -moz-linear-gradient(top, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.64));
+}
+
+.activity.topic-preview-wrapper .title {
+    position: absolute;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    left: 20px;
+    top: 0;
+    height: 35px;
+    line-height: 35px;
+    width: 50%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #fff;
+    font-size: 14px;
+}
+
+.activity.topic-preview-wrapper .slider-bar {
+    position: relative;
+    margin: 5px auto;
+    width: 65px;
+    overflow: hidden;
+    padding: 2px 5px;
+    right: 0;
+    bottom: 0;
+}
+
+.activity.topic-preview-wrapper .slider-bar li {
+    float: left;
+    cursor: pointer;
+    width: 8px;
+    height: 6px;
+    margin: 6px 5px;
+    background-color: #FFFFFF;
+    border-radius: 2px;
+}
+
+.activity.topic-preview-wrapper.ex .slider-bar li img {
+    width: 100%;
+    height: 100%;
+}
+
+.activity.topic-preview-wrapper .slider-bar li.on,
+.activity.topic-preview-wrapper .slider-bar li.on:hover {
+    width: 19px;
+    height: 19px;
+    margin: 2px 5px;
+    background: url(http://i1.hdslb.com/u_user/activity/img/icons.png) -468px -408px no-repeat;
+}
+
+.activity.topic-preview-wrapper .page_prev:hover {
+    background-color: rgba(0, 0, 0, 0.31);
+}
+
+.activity.topic-preview-wrapper .page_prev {
+    position: absolute;
+    width: 50px;
+    height: 105px;
+    background: url("http://static.hdslb.com/activity/jobs/img/jous.png") no-repeat -265px -10px;
+    top: 45%;
+    left: 30px;
+    opacity: 1;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.2s all;
+}
+
+.activity.topic-preview-wrapper .page_next:hover {
+    background-color: rgba(0, 0, 0, 0.31);
+}
+
+.activity.topic-preview-wrapper .page_next {
+    position: absolute;
+    width: 50px;
+    height: 105px;
+    background: url("http://static.hdslb.com/activity/jobs/img/jous.png") no-repeat -265px -140px;
+    top: 45%;
+    right: 30px;
+    opacity: 1;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.2s all;
+}
+
+.activity.topic-preview-wrapper .page_next:hover {
+    opacity: 1;
+}
+
+.activity.topic-preview-wrapper .title a {
+    color: #FFFFFF;
+}
+
+.banner .enter_button {
+    position: absolute;
+    z-index: 1000;
+    width: 20%;
+    height: 100px;
+    bottom: 9%;
+    left: 40%;
+    cursor: pointer;
+}
+
+.banner .enter_button img {
+    width: 100%;
+}
+
+.banner_logo {
+    position: absolute;
+    z-index: 1000;
+    width: 15%;
+    top: 6%;
+    left: 0;
+}
+
+.banner .banner_logo img {
+    width: 100%;
+}
+
+.bg_pic {
+    position: fixed;
+    width: 846px;
+    height: 1023px;
+    z-index: 0;
+    bottom: 50%;
+    left: 50%;
+    margin-left: 130px;
+    margin-bottom: -501px;
+    background: url("http://static.hdslb.com/activity/jobs/img/22.png") no-repeat;
+}
+
+.post p.text {
+    line-height: 30px;
+}

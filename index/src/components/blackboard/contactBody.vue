@@ -1,18 +1,6 @@
 <template>
-  <div class="wrapper">
-    <div id="banner" class="banner a-wrap-module report-wrap-module report-scroll-module">
-      <div class="banner-content">
-        <div class="banner-item1 anim-role-fade-in-r"></div>
-        <div class="banner-item2 anim-role-fade-in-l"></div>
-        <div class="banner-item3 anim-role-fade-in-c"></div>
-        <div class="banner-item4 anim-item-fade-in-floating"></div>
-        <div class="banner-item5 anim-item-fade-in-floating"></div>
-        <div class="banner-item6 anim-item-fade-in-floating"></div>
-        <div class="banner-item7 anim-item-fade-in quick"></div>
-        <div class="banner-item8 anim-item-fade-in quick"></div>
-        <a class="logo" href="/" style="top: 48px;"></a>
-      </div>
-    </div>
+  <div id="app" class="wrapper">
+    <Banner/>
     <div class="container">
       <div class="content clearfix">
         <div class="subtitle-new">合作洽谈</div>
@@ -128,13 +116,8 @@
   </div>
 </template>
 
+<style scoped src="../../assets/style/blackboard/contact_style.css"></style>
 <style scoped>
-@import "//activity.hdslb.com/zzjs/aboutUs/css/about-common-new.css";
-
-</style>
-
-<style>
-
 #app {
   background-color: rgb(245, 245, 245);
   zoom: 1;
@@ -143,7 +126,9 @@
   text-align: left;
 }
 
-.content {
+#banner {
+  position: relative;
+  height: 183px;
 }
 
 .clearfix {
@@ -152,7 +137,7 @@
 }
 
 .inner-box {
-  height: 140px;
+  height: 150px;
   padding: 33px 35px 0;
 }
 
@@ -167,8 +152,13 @@ a:active, a {
 </style>
 
 <script>
+import Banner from '../../../../public/src/components/blackBoard_Banner/banner'
+
 export default {
   name: "contactBody",
+  components: {
+    Banner
+  },
   metaInfo: {
     title: "联系我们"
   }

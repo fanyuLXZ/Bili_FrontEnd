@@ -60,7 +60,8 @@
     <div
         class=""
         data-reactroot=""
-        style="background-color: rgb(255, 255, 255); background-size: 740px; background-repeat: no-repeat; background-position: center center; height: 1357px; padding: 0; margin: 0; overflow: hidden; min-width: 980px; background-image: url(//i0.hdslb.com/bfs/activity-plat/static/20181010/f50cdf1118b17672ed22a132ce238078/97kKdF1Xs.png);">
+        :style="{backgroundImage: 'url('+ img_1 +')'}"
+        style="background-color: rgb(255, 255, 255); background-size: 740px; background-repeat: no-repeat; background-position: center center; height: 1357px; padding: 0; margin: 0; overflow: hidden; min-width: 980px;">
       <div id="MSJIM8EricX" class="a-wrap-module report-wrap-module report-scroll-module"
            scrollshow="true" style="margin:0 auto;position:relative;height:100%;border:0;width:980px">
         <div class="" style="position:relative;width:100%;height:1357px;overflow:hidden">
@@ -69,7 +70,7 @@
               style="position:absolute;display:inline-block;width:62px;height:23px;left:259px;top:107px"
               target="_blank"></a><a
               href="https://www.bilibili.com/html/help.html#f7"
-              style="position:absolute;display:inline-block;width:69px;height:25px;left:221px;top:1286px"
+              style="position:absolute;display:inline-block;width:69px;height:25px;left:221px;top:1230px"
               target="_blank"></a></div>
         </div>
       </div>
@@ -143,12 +144,17 @@ export default {
   name: "blackRoomFileBody",
   metaInfo: {
     title: "社区规范"
+  },
+  data() {
+    return {
+      img_1: require("@/assets/img/blackboard/about/97kKdF1Xs.png"),
+    }
   }
 }
 </script>
 
+<style scoped src="../../assets/style/blackboard/blackroomStyle_1.css"></style>
+<style scoped src="../../assets/style/blackboard/blackroomStyle_2.css"></style>
+<style scoped src="../../assets/style/blackboard/blackroomStyle_3.css"></style>
 <style scoped>
-@import "https://static.hdslb.com/phoenix/dist/css/comment.min.css";
-@import "https://activity.hdslb.com/blackboard/activity4050/4050-activity.173acec980a05c27c31ad49f17e3d8eb.css";
-@import "https://activity.hdslb.com/blackboard/act-build-long-b185ecc2233a6773f0d2754c18a90e83/1.149022ba63f354776adf.css";
 </style>
