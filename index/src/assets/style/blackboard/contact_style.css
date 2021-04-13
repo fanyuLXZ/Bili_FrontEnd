@@ -1,0 +1,625 @@
+@charset "UTF-8";
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: rgb(245, 245, 245);
+}
+
+html, body {
+    _zoom: 1;
+    font: 12px/1.125 Arial, Helvetica, sans-serif;
+    color: #7b7f82;
+    text-align: left;
+}
+
+a {
+    outline: none;
+    color: #1184B4;
+    TEXT-DECORATION: none;
+    cursor: pointer;
+}
+
+a:hover {
+    color: #FE3676;
+}
+
+a:focus {
+    -moz-outline-style: none
+}
+
+a img {
+    border: none;
+}
+
+h1, h2, h3, h4, h5, h6, ul, li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.wrapper {
+    position: relative;
+}
+
+.banner {
+    position: relative;
+    height: 183px;
+    background-size: 1200px 700px;
+    overflow: hidden;
+}
+
+.banner .banner-content {
+    width: 970px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.banner .banner-content .logo {
+    position: absolute;
+    left: 0;
+    top: 35px;
+    width: 190px;
+    height: 100px;
+    background-size: 100% auto;
+}
+
+.anim-item-fade-in-floating {
+    animation-name: itemFadeInSp, floating;
+    animation-duration: 2s, 8s;
+    animation-delay: 0.1s, 2s;
+    animation-timing-function: ease, ease;
+    animation-iteration-count: 1, infinite;
+
+    transform-style: 'preserve-3d';
+}
+
+.anim-item-fade-in {
+    animation-name: itemFadeIn;
+    animation-duration: 0.25s;
+    animation-delay: 1.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    transform-style: preserve-3d;
+    backface-visibility: visible;
+    transform: translate3d(0, 0, 0);
+    animation-fill-mode: both;
+}
+
+.anim-role-fade-in-c {
+    animation-name: roleFadeIn-c;
+    animation-duration: 0.7s;
+    animation-delay: 1.1s;
+    animation-timing-function: ease;
+    animation-iteration-count: 1;
+    transform-style: preserve-3d;
+    backface-visibility: visible;
+    transform: translate3d(0, 0, 0);
+    animation-fill-mode: both;
+}
+
+.anim-role-fade-in-r {
+    animation-name: roleFadeIn-r;
+    animation-duration: 0.7s;
+    animation-delay: 1.1s;
+    animation-timing-function: ease;
+    animation-iteration-count: 1;
+    transform-style: preserve-3d;
+    backface-visibility: visible;
+    transform: translate3d(0, 0, 0);
+    animation-fill-mode: both;
+}
+
+.anim-role-fade-in-l {
+    animation-name: roleFadeIn-l;
+    animation-duration: 0.7s;
+    animation-delay: 1.1s;
+    animation-timing-function: ease;
+    animation-iteration-count: 1;
+    transform-style: preserve-3d;
+    backface-visibility: visible;
+    transform: translate3d(0, 0, 0);
+    animation-fill-mode: both;
+}
+
+@keyframes floating {
+    0% {
+        transform: translate(0, 0) scale(1, 1);
+    }
+    25% {
+        transform: translate(0, 20px) scale(1, 1);
+    }
+    50% {
+        transform: translate(0, 0) scale(1, 1);
+    }
+    75% {
+        transform: translate(0, 20px) scale(1, 1);
+    }
+    100% {
+        transform: translate(0, 0) scale(1, 1);
+    }
+}
+
+@keyframes itemFadeInSp {
+    0% {
+        transform: translate(0, 0) scale(0.1, 0.1);
+        opacity: 0;
+    }
+    70% {
+        transform: translate(0, 0) scale(0.1, 0.1);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(0, 0) scale(1, 1);
+        opacity: 1;
+    }
+}
+
+@keyframes itemFadeIn {
+
+    0% {
+        transform: scale(0.5, 0.5);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1, 1);
+        opacity: 1;
+    }
+}
+
+@keyframes roleFadeIn-c {
+    0% {
+        transform: translate3d(0, 120px, 0);
+        opacity: 0;
+    }
+    75% {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+    100% {
+        transform: translate3d(0, 2px, 0);
+    }
+}
+
+@keyframes roleFadeIn-l {
+    0% {
+        transform: translate3d(-20px, 120px, 0);
+        opacity: 0;
+    }
+    75% {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+    100% {
+        transform: translate3d(-2px, 3px, 0);
+    }
+}
+
+@keyframes roleFadeIn-r {
+    0% {
+        transform: translate3d(20px, 120px, 0);
+        opacity: 0;
+    }
+    75% {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+    100% {
+        transform: translate3d(2px, 3px, 0);
+    }
+}
+
+@-webkit-keyframes floating {
+    0% {
+        transform: translate(0, 0) scale(1, 1);
+    }
+    25% {
+        transform: translate(0, 20px) scale(1, 1);
+    }
+    50% {
+        transform: translate(0, 0) scale(1, 1);
+    }
+    75% {
+        transform: translate(0, 20px) scale(1, 1);
+    }
+    100% {
+        transform: translate(0, 0) scale(1, 1);
+    }
+}
+
+@-webkit-keyframes itemFadeInSp {
+    0% {
+        transform: translate(0, 0) scale(0.1, 0.1);
+        opacity: 0;
+    }
+    70% {
+        transform: translate(0, 0) scale(0.1, 0.1);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(0, 0) scale(1, 1);
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes itemFadeIn {
+
+    0% {
+        transform: scale(0.5, 0.5);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1, 1);
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes roleFadeIn-c {
+    0% {
+        transform: translate3d(0, 120px, 0);
+        opacity: 0;
+    }
+    75% {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+    100% {
+        transform: translate3d(0, 2px, 0);
+    }
+}
+
+@-webkit-keyframes roleFadeIn-l {
+    0% {
+        transform: translate3d(-20px, 120px, 0);
+        opacity: 0;
+    }
+    75% {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+    100% {
+        transform: translate3d(-2px, 3px, 0);
+    }
+}
+
+@-webkit-keyframes roleFadeIn-r {
+    0% {
+        transform: translate3d(20px, 120px, 0);
+        opacity: 0;
+    }
+    75% {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+    100% {
+        transform: translate3d(2px, 3px, 0);
+    }
+}
+
+.banner .banner-content .banner-item1 {
+    position: absolute;
+    left: 488px;
+    right: 0;
+    top: -13px;
+    width: 210px;
+    height: 220px;
+    background-size: 100% auto;
+    margin: auto;
+    z-index: 2;
+}
+
+.banner .banner-content .banner-item2 {
+    background-size: 100% auto;
+    position: absolute;
+    left: 130px;
+    right: 0;
+    top: 5px;
+    width: 185px;
+    height: 216px;
+    margin: auto;
+    z-index: 1;
+}
+
+.banner .banner-content .banner-item3 {
+    background-size: 100% auto;
+    position: absolute;
+    left: 269px;
+    right: 0;
+    top: 58px;
+    width: 112px;
+    height: 170px;
+    margin: auto;
+    z-index: 0;
+}
+
+.banner .banner-content .banner-item4 {
+    background-size: 100% auto;
+    position: absolute;
+    left: 250px;
+    right: 0;
+    top: -11px;
+    width: 800px;
+    height: 270px;
+    margin: auto;
+}
+
+.banner .banner-content .banner-item5 {
+    background-size: 100% auto;
+    position: absolute;
+    left: 144px;
+    top: 16px;
+    width: 800px;
+    height: 270px;
+    margin: auto;
+}
+
+.banner .banner-content .banner-item6 {
+    background-size: 100% auto;
+    position: absolute;
+    left: 195px;
+    top: -34px;
+    width: 800px;
+    height: 300px;
+    margin: auto;
+}
+
+.banner .banner-content .banner-item7 {
+    background-size: 100% auto;
+    position: absolute;
+    left: 342px;
+    right: 0;
+    top: 24px;
+    width: 54px;
+    height: 100px;
+    margin: auto;
+    z-index: 4;
+}
+
+.banner .banner-content .banner-item8 {
+    background-size: 100% auto;
+    position: absolute;
+    left: 246px;
+    right: 0;
+    top: 27px;
+    width: 32px;
+    height: 100px;
+    margin: auto;
+    z-index: 4;
+}
+
+
+.container {
+    width: 970px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.container:after {
+    content: "";
+    display: block;
+    visibility: hidden;
+    height: 0;
+    clear: both;
+    font-size: 0px;
+}
+
+*.container {
+    zoom: 1;
+}
+
+.content {
+    padding: 5px 0px;
+    position: relative;
+}
+
+.content.left {
+    float: left;
+    width: 640px;
+}
+
+.content.right {
+    float: right;
+    width: 300px;
+}
+
+.article {
+    margin: 10px 0px;
+    padding: 5px;
+    position: relative;
+    color: #7b7f82;
+    font-size: 14px;
+    line-height: 26px;
+    font-family: "Microsoft YaHei";
+}
+
+.article .arc-cnt-pre {
+    white-space: pre;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.article a img {
+    vertical-align: middle;
+}
+
+.subtitle {
+    background: url(//activity.hdslb.com/zzjs/aboutUs/img/hint_title.png) no-repeat;
+    height: 30px;
+    border-bottom: 4px solid #eee;
+    clear: both;
+}
+
+.subtitle-about-us {
+    background-position: 0px -3px;
+}
+
+.subtitle-contact-us {
+    background-position: 0px -36px;
+}
+
+.subtitle-meetings {
+    background-position: 0px -69px;
+}
+
+.subtitle-other {
+    background-position: 0px -102px;
+}
+
+.subtitle-content {
+    background-position: 0px -135px;
+}
+
+.subtitle-join {
+    background-position: 0px -168px;
+}
+
+.subtitle-issues {
+    background-position: 0px -201px;
+}
+
+.subtitle-new {
+    background: url(//static.hdslb.com/images/v2images/text_01.png) no-repeat 0 3px;
+    display: block;
+    padding: 0 0 0 16px;
+    margin-top: 10px;
+    font-size: 15px;
+    color: #555;
+    font-weight: 700;
+    font-family: "microsoft yahei", simhei;
+    height: 30px;
+    line-height: 24px;
+    border-bottom: 4px solid #eee;
+    clear: both;
+}
+
+.weibo-c {
+    display: block;
+    float: left;
+    height: 20px;
+    padding-top: 57px;
+    margin-right: 40px;
+}
+
+.weibo-c.sina {
+    background: url(//static.hdslb.com/images/base/icons.png) no-repeat -1024px -322px;
+    position: relative;
+    margin-left: 11px;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+}
+
+.weibo-c.qq {
+    background: url(//static.hdslb.com/images/base/icons.png) no-repeat -1024px -66px;
+
+    position: relative;
+    margin-left: 11px;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+}
+
+.weibo-c.qq .weixin-qrcode {
+    width: 130px;
+    height: 130px;
+    background: #fff;
+    top: -140px;
+    left: -37px;
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.2s;
+}
+
+.weixin-qrcode .qr {
+    width: 130px;
+    height: 130px;
+    border: 1px solid #dddddd;
+    background: url(//static.hdslb.com/ad-images/wx.jpg) center center no-repeat;
+}
+
+.weixin-qrcode .wx-arrow {
+    width: 130px;
+    height: 143px;
+    background: url(//static.hdslb.com/ad-images/wx-arrow.png) bottom center no-repeat;
+}
+
+.weibo-c.qq:hover .weixin-qrcode {
+    visibility: visible;
+    opacity: 1;
+}
+
+.clear {
+    clear: both;
+}
+
+.inner-box {
+    background: url(//activity.hdslb.com/zzjs/aboutUs/img/abu_oth.png) no-repeat;
+    margin: 20px 10px;
+    width: 300px;
+    height: 109px;
+    position: relative;
+    text-align: center;
+    line-height: 18px;
+    padding-top: 33px;
+    font-size: 14px;
+    float: left;
+}
+
+.inner-box a img {
+    vertical-align: middle;
+}
+
+.inner-box-title {
+    text-align: center;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 33px;
+    height: 33px;
+}
+
+.attention {
+    border: 1px solid #e3e0e7;
+    background: #f3f5f7;
+    padding: 10px 20px;
+    border-radius: 4px;
+}
+
+.color-alert {
+    color: #f25d8e;
+}
+
+.section {
+    color: #7b7f82;
+    line-height: 22px;
+    font-size: 13px;
+    position: relative;
+    border: 1px solid #e3e0e7;
+    border-radius: 6px;
+    width: 600px;
+    margin: 20px 0px;
+    padding: 15px;
+    padding-top: 47px;
+}
+
+.section-title {
+    width: 610px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: url(//activity.hdslb.com/zzjs/aboutUs/img/tan.gif) no-repeat;
+    height: 32px;
+    line-height: 32px;
+    padding-left: 20px;
+    font-weight: bold;
+    color: white;
+    font-size: 14px;
+    border-bottom: 1px solid #e3e0e7;
+}

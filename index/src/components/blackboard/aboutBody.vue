@@ -1,17 +1,6 @@
 <template>
   <article id="app" class="tpl-wrap">
-    <section class="plat-section-outter-box container-wrapper" data-fid="MM6NjjLB2e"
-             style="height:183px;background-color:rgba(80, 156, 220, 1);min-width:980px">
-      <div class="t-background-image"
-           :style="{backgroundSize: 'cover', backgroundRepeat: 'no-repeat',
-                    backgroundPosition: 'center center',
-                    backgroundImage: 'url('+ img_1 +')'}"></div>
-      <div class="t-space-container plat-section-space"
-           style="padding: 0; width:980px">
-        <div id="MM6NjjLB2e" class="plat-section-inner-box a-wrap-module report-wrap-module report-scroll-module"
-             data-container="section" data-module="Image" scrollshow="true"></div>
-      </div>
-    </section>
+    <Banner/>
     <section class="plat-section-outter-box container-wrapper" data-fid="MAeLIwEfaQ"
              style="height:69px;min-width:980px">
       <div class="t-background-image"
@@ -442,8 +431,14 @@
 </template>
 
 <script>
+import Banner from '../../../../public/src/components/blackBoard_Banner/banner.vue'
+
+
 export default {
   name: "aboutBody",
+  components: {
+    Banner
+  },
   metaInfo: {
     title: "关于我们"
   },
@@ -453,45 +448,45 @@ export default {
     }
   }, data: function () {
     return {
-      img_1: require("@/assets/img/blackboard/S114GfcFE.png"),
-      img_2: require("@/assets/img/blackboard/B1xHsGsKE.png"),
-      img_3: require("@/assets/img/blackboard/F3mTNKi4D.png"),
-      img_4: require("@/assets/img/blackboard/3ztk-iAZG_w643_h362.jpeg"),
-      img_5: require("@/assets/img/blackboard/FNVI55ELv_w980_h551.jpeg"),
-      img_6: require("@/assets/img/blackboard/t3gdHZpml_w980_h551.jpeg"),
-      img_7: require("@/assets/img/blackboard/9urs1eM_n_w980_h551.jpeg"),
-      img_8: require("@/assets/img/blackboard/VfxEUHPGb_w980_h551.jpeg"),
-      img_9: require("@/assets/img/blackboard/QYspbfWJb_w980_h551.jpeg"),
-      img_10: require("@/assets/img/blackboard/DKiOwtMiw_w980_h551.jpeg"),
-      img_11: require("@/assets/img/blackboard/97KPs_tMi_w980_h551.jpeg"),
-      img_12: require("@/assets/img/blackboard/YIRrggiu8_w980_h551.jpeg"),
-      img_13: require("@/assets/img/blackboard/p7eIyatzX_w980_h551.jpeg"),
-      img_14: require("@/assets/img/blackboard/QcKZf_nJN_w980_h551.jpeg"),
-      img_15: require("@/assets/img/blackboard/z-AIrpMBP_w980_h551.jpeg"),
-      img_16: require("@/assets/img/blackboard/iqzTNwMir_w980_h551.jpeg"),
-      img_17: require("@/assets/img/blackboard/FlUUAOVJF_w980_h551.jpeg"),
-      img_18: require("@/assets/img/blackboard/flfaxQKr5_w980_h551.jpeg"),
-      img_19: require("@/assets/img/blackboard/b1zYSOmLN_w980_h551.jpeg"),
-      img_20: require("@/assets/img/blackboard/cI171S4B2_w980_h551.jpeg"),
-      img_21: require("@/assets/img/blackboard/RaItZX83v_w980_h551.jpeg"),
-      img_22: require("@/assets/img/blackboard/nIlyWZ5sw_w980_h551.jpeg"),
-      img_23: require("@/assets/img/blackboard/v2cYeSuuR_w980_h551.jpeg"),
-      img_24: require("@/assets/img/blackboard/TPQ_l7h-A_w980_h551.jpeg"),
-      img_25: require("@/assets/img/blackboard/raJ2CU3JX_w980_h551.jpeg"),
-      img_26: require("@/assets/img/blackboard/deGQmVn1O_w980_h551.jpeg"),
-      img_27: require("@/assets/img/blackboard/cwhKAbpCY_w980_h551.jpeg"),
-      img_28: require("@/assets/img/blackboard/ECloXgB4z_w980_h551.jpeg"),
-      img_29: require("@/assets/img/blackboard/e9trwuSZX_w980_h551.jpeg"),
-      img_30: require("@/assets/img/blackboard/t3UEaQ-RR_w980_h551.jpeg"),
-      img_31: require("@/assets/img/blackboard/x3SRlgq0z_w980_h551.jpeg"),
-      img_32: require("@/assets/img/blackboard/gA4LRN_p7_w980_h551.jpeg"),
-      img_33: require("@/assets/img/blackboard/XjvAeAr7h_w980_h551.jpeg"),
-      img_34: require("@/assets/img/blackboard/7uNxvQ5rU_w980_h551.jpeg"),
-      img_35: require("@/assets/img/blackboard/T3VXirgfJ_w980_h551.jpeg"),
-      img_36: require("@/assets/img/blackboard/wzRdJjSTf_w980_h551.jpeg"),
-      img_37: require("@/assets/img/blackboard/-6SlvGafy_w980_h551.jpeg"),
-      img_38: require("@/assets/img/blackboard/8p-QsYKxO_w980_h551.jpeg"),
-      img_39: require("@/assets/img/blackboard/hPF0RNqzK_w980_h551.jpeg")
+      img_1: require("@/assets/img/blackboard/about/S114GfcFE.png"),
+      img_2: require("@/assets/img/blackboard/about/B1xHsGsKE.png"),
+      img_3: require("@/assets/img/blackboard/about/F3mTNKi4D.png"),
+      img_4: require("@/assets/img/blackboard/about/3ztk-iAZG_w643_h362.jpeg"),
+      img_5: require("@/assets/img/blackboard/about/FNVI55ELv_w980_h551.jpeg"),
+      img_6: require("@/assets/img/blackboard/about/t3gdHZpml_w980_h551.jpeg"),
+      img_7: require("@/assets/img/blackboard/about/9urs1eM_n_w980_h551.jpeg"),
+      img_8: require("@/assets/img/blackboard/about/VfxEUHPGb_w980_h551.jpeg"),
+      img_9: require("@/assets/img/blackboard/about/QYspbfWJb_w980_h551.jpeg"),
+      img_10: require("@/assets/img/blackboard/about/DKiOwtMiw_w980_h551.jpeg"),
+      img_11: require("@/assets/img/blackboard/about/97KPs_tMi_w980_h551.jpeg"),
+      img_12: require("@/assets/img/blackboard/about/YIRrggiu8_w980_h551.jpeg"),
+      img_13: require("@/assets/img/blackboard/about/p7eIyatzX_w980_h551.jpeg"),
+      img_14: require("@/assets/img/blackboard/about/QcKZf_nJN_w980_h551.jpeg"),
+      img_15: require("@/assets/img/blackboard/about/z-AIrpMBP_w980_h551.jpeg"),
+      img_16: require("@/assets/img/blackboard/about/iqzTNwMir_w980_h551.jpeg"),
+      img_17: require("@/assets/img/blackboard/about/FlUUAOVJF_w980_h551.jpeg"),
+      img_18: require("@/assets/img/blackboard/about/flfaxQKr5_w980_h551.jpeg"),
+      img_19: require("@/assets/img/blackboard/about/b1zYSOmLN_w980_h551.jpeg"),
+      img_20: require("@/assets/img/blackboard/about/cI171S4B2_w980_h551.jpeg"),
+      img_21: require("@/assets/img/blackboard/about/RaItZX83v_w980_h551.jpeg"),
+      img_22: require("@/assets/img/blackboard/about/nIlyWZ5sw_w980_h551.jpeg"),
+      img_23: require("@/assets/img/blackboard/about/v2cYeSuuR_w980_h551.jpeg"),
+      img_24: require("@/assets/img/blackboard/about/TPQ_l7h-A_w980_h551.jpeg"),
+      img_25: require("@/assets/img/blackboard/about/raJ2CU3JX_w980_h551.jpeg"),
+      img_26: require("@/assets/img/blackboard/about/deGQmVn1O_w980_h551.jpeg"),
+      img_27: require("@/assets/img/blackboard/about/cwhKAbpCY_w980_h551.jpeg"),
+      img_28: require("@/assets/img/blackboard/about/ECloXgB4z_w980_h551.jpeg"),
+      img_29: require("@/assets/img/blackboard/about/e9trwuSZX_w980_h551.jpeg"),
+      img_30: require("@/assets/img/blackboard/about/t3UEaQ-RR_w980_h551.jpeg"),
+      img_31: require("@/assets/img/blackboard/about/x3SRlgq0z_w980_h551.jpeg"),
+      img_32: require("@/assets/img/blackboard/about/gA4LRN_p7_w980_h551.jpeg"),
+      img_33: require("@/assets/img/blackboard/about/XjvAeAr7h_w980_h551.jpeg"),
+      img_34: require("@/assets/img/blackboard/about/7uNxvQ5rU_w980_h551.jpeg"),
+      img_35: require("@/assets/img/blackboard/about/T3VXirgfJ_w980_h551.jpeg"),
+      img_36: require("@/assets/img/blackboard/about/wzRdJjSTf_w980_h551.jpeg"),
+      img_37: require("@/assets/img/blackboard/about/-6SlvGafy_w980_h551.jpeg"),
+      img_38: require("@/assets/img/blackboard/about/8p-QsYKxO_w980_h551.jpeg"),
+      img_39: require("@/assets/img/blackboard/about/hPF0RNqzK_w980_h551.jpeg")
     };
   }
 }
@@ -509,14 +504,10 @@ window.reportConfig = {
 </script>
 
 <style scoped>
-</style>
 
-
-<style lang="less" scoped>
 #app {
   background-color: #f5f5f5;
 }
-
 
 /*noinspection ALL*/
 .plat-section-outter-box {
@@ -543,7 +534,7 @@ window.reportConfig = {
 .t-background-image {
   background-position: center;
   background-repeat: no-repeat;
-  background-image: url('~@/assets/img/blackboard/S114GfcFE.png');
+  background-image: url('~@/assets/img/blackboard/about/S114GfcFE.png');
   position: absolute;
   height: 100%;
   width: 100%;

@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <international-header :nav-type="1"/>
+    <international-header v-if="$store.state.isHeadShow" :nav-type="0"/>
     <router-view/>
-    <international-footer/>
+    <international-footer v-if="$store.state.isFootShow"/>
   </div>
 </template>
 
@@ -11,6 +11,7 @@
 import InternationalHeader from "./components/international-header";
 import InternationalFooter from "../../public/src/components/international-footer";
 import {mapMutations, mapState} from "vuex";
+
 export default {
   name: 'App',
   components: {InternationalHeader,InternationalFooter},
