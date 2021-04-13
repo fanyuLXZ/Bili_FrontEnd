@@ -46,7 +46,8 @@ data(){
     home:{
         phone:'155****112',
         email:'sdad',
-        numinput:'',
+        //邮箱和手机号的初验证
+           numinput:'',
          biliemailinput:'',
          phonetwo:{
              placeholder: '',

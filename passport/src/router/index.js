@@ -4,6 +4,7 @@ import bilibtn from '../views/bili-btn.vue'
 import bilihome from '../views/bili-home.vue'
 import bilihomes from '../views/bili-homes.vue'
 import bililogin from '../views/bili-login.vue'
+import  register from '../views/bili-register.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -26,6 +27,11 @@ const routes = [
   path:'/bili-login',
   name:'bili-login',
   component: bililogin
+  },
+  {
+    path:'/bili-register',
+    name:'bili-register',
+    component: register
   }
 ]
 
