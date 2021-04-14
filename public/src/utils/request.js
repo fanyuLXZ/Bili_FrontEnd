@@ -1,5 +1,5 @@
 /* eslint-disable */
-import {getBrowser} from './index'
+import { getBrowser } from './index'
 
 //     Zepto.js
 //     (c) 2010-2016 Thomas Fuchs
@@ -423,7 +423,6 @@ function adPostJSON (options) {
   if (typeof (options.data) === 'string') {
     try {
       options.data = JSON.parse(options.data)
-      // eslint-disable-next-line no-empty
     } catch (e) {
     }
   }

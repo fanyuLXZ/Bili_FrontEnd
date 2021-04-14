@@ -105,7 +105,7 @@
 
 <script>
 import NavUserVideoCard from './NavUserVideoCard'
-import { getNavFavList, getNavViewLaterDetail, getNavFavDetail } from '../api'
+import { getNavFavList, getNavViewLaterDetail, getNavFavDetail } from '../../../api'
 
 export default {
   name: 'NavUserCenterFavorite',

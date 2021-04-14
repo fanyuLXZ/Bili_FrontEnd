@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import { formatImg, trimHttp, customReport } from 'g-public/js/utils'
+import { formatImg, trimHttp, customReport } from '../../../public/js/utils'
 
 export default {
   data() {

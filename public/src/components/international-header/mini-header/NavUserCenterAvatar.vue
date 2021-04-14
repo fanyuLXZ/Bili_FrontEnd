@@ -193,9 +193,9 @@
 
 <script>
 import LangChange from './LangChange'
-import { cookie, localStorage, trimHttp, formatImg, customReport, webp } from 'g-public/js/utils'
+import { cookie, localStorage, trimHttp, formatImg, customReport, webp } from '../../../public/js/utils'
 import { format } from 'date-fns'
-import { getAvatarNav } from '../api'
+import { getAvatarNav } from '../../../api'
 
 export default {
   name: 'NavUserCenterAvatar',
@@ -268,8 +268,8 @@ export default {
   },
 
   mounted() {
-    const UserAvatar = require('g-public/modules/@bilibili/userAvatar').default
-    require('g-public/modules/@bilibili/userAvatar/dist/user-avatar.css')
+    const UserAvatar = require('../../../modules/@bilibili/userAvatar').default
+    require('../../../modules/@bilibili/userAvatar/dist/user-avatar.css')
     this.avatarObj = new UserAvatar()
     this.avatarObj.append({
       avatar: this.userInfo.face,

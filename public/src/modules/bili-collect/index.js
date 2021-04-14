@@ -2,8 +2,8 @@
 'use strict'
 
 import Config from './config'
-import { adPostJSONLite } from 'g-public/utils/request'
-import { extend, getNowTs, isNumber, getBrowser } from 'g-public/utils/index'
+import { adPostJSONLite } from '../../utils/request'
+import { extend, getNowTs, isNumber, getBrowser } from '../../utils/index'
 
 if (!window.BiliCm || !window.bilicm) {
   window.BiliCm = window.bilicm = {}

@@ -18,7 +18,7 @@
     </div>
     
     <!-- pending 状态不展示，避免展示抖动 -->
-    <div class="user-con signin" v-else-if="loginStatus === 'LOGIN'">
+    <div class="unser-co signin" v-else-if="loginStatus === 'LOGIN'">
 
       <!-- 头像 -->
       <NavUserCenterAvatar v-van-report:mininav-hover.mouseenter="`头像`" class="item" :userInfo="userInfo" :lang="lang" />
@@ -67,7 +67,7 @@ import NavUserCenterMessage from './NavUserCenterMessage'
 import NavUserCenterVip from './NavUserCenterVip'
 import NavUserCenterUnlogin from './NavUserCenterUnlogin'
 
-import { allCustomReport } from 'g-public/js/utils'
+import { allCustomReport } from '../../../public/js/utils'
 
 export default {
   name: 'NavUserCenter',

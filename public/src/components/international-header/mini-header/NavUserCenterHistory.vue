@@ -55,9 +55,9 @@
 
 <script>
 import NavUserVideoCard from './NavUserVideoCard'
-import { getNavHistory } from '../api'
+import { getNavHistory } from '../../../api'
 import { format, isToday, isYesterday } from 'date-fns'
-import { customReport } from 'g-public/js/utils'
+import { customReport } from '../../../public/js/utils'
 
 export default {
   name: 'NavUserCenterHistory',

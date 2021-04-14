@@ -50,7 +50,7 @@
 
 <script>
 import LangChange from './LangChange'
-import { customReport } from 'g-public/js/utils'
+import { customReport } from '../../../public/js/utils'
 
 export default {
   name: 'NavUserCenterLogin',

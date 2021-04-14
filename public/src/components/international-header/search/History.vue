@@ -17,7 +17,7 @@
 
 <script>
   // import searchHistory from './search_history'
-  import { customReport } from 'g-public/js/utils'
+  import { customReport } from '../../../public/js/utils'
 
   export default {
     props: {

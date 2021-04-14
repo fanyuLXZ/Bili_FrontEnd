@@ -13,7 +13,7 @@
 </template>
 
 <script>
-  import NavImNew from 'g-public/modules/@bplus-common/component.im-nav-v6'
+  import NavImNew from '../../../modules/@bplus-common/component.im-nav-v6'
 
   export default {
     name: 'NavUserCenterMessage',

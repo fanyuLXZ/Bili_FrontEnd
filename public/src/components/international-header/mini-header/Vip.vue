@@ -43,7 +43,7 @@
 
 <script>
 // import defaultImg from '//i0.hdslb.com/bfs/feed-admin/9c5dc48ca0558b721d8b12fe590772b0e2f0bcba.png'
-import { customReport, getScript, trimHttp, allCustomReport } from 'g-public/js/utils'
+import { customReport, getScript, trimHttp, allCustomReport } from '../../../public/js/utils'
 
 export default {
   props: {
