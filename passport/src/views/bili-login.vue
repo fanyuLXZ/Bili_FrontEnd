@@ -69,7 +69,9 @@
                                    
                                   
                <div class="btn-box"><a class="btn btn-login" @click="btnclick()">登录</a> 
-               <a href="https://passport.bilibili.com/register/phone.html#/phone" class="btn btn-reg">注册</a></div> 
+               <router-link to="/bili-register" class="btn btn-reg">注册</router-link>
+               
+               </div> 
                <!----></div>
                </div> <!----></div></div></div>
                 <p data-v-2c844fd9="">登录即代表你同意<a data-v-2c844fd9="" target="_blank" href="https://www.bilibili.com/protocal/licence.html">用户协议</a>和<a data-v-2c844fd9="" target="_blank" href="https://www.bilibili.com/blackboard/privacy-pc.html">隐私政策</a></p></div>
@@ -85,10 +87,12 @@ export default{
       login:{
         userename:'',
         userphone:'',
-        userpwd:'',
-        mge:'',
         status:false,
         note:true,
+      },
+      loginpho:{
+       userpwd:'',
+        mge:'',
       },
         sjtishi:'',
         tishi:'',
