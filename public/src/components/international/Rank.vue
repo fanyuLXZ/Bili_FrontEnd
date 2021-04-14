@@ -49,7 +49,7 @@ export default {
     }
   },
   mounted() {
-    // this.getRankData()
+    this.getRankData()
   }
 }
 </script>

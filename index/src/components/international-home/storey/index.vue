@@ -37,10 +37,10 @@ export default {
         newZoneList.push(item)
       }
 
-      // 加入广告位
-      for(let j = 0; j < this.config.FloorAdConfig.length; j++) {
-        newZoneList[this.config.FloorAdConfig[j]['pos']]['ad'] = this.config.FloorAdConfig[j]['dataLocId']
-      }
+      // // 加入广告位
+      // for(let j = 0; j < this.config.FloorAdConfig.length; j++) {
+      //   newZoneList[this.config.FloorAdConfig[j]['pos']]['ad'] = this.config.FloorAdConfig[j]['dataLocId']
+      // }
       this.zoneList = newZoneList
     }
   }

@@ -16,7 +16,7 @@
         <div class="info">
           <p class="title" :title="info.title">{{info.title}}</p>
           <p class="up"><i class="bilifont bili-icon_xinxi_UPzhu"></i>{{info.owner && info.owner.name}}</p>
-          <p class="play">{{formatNum(info.stat && info.stat.view)}}111</p>
+          <p class="play">{{formatNum(info.stat && info.stat.view)}}{{$HomeLang['27']}}</p>
         </div>
       </a>
     </div>
