@@ -1,9 +1,6 @@
+const webpack_config = require("../webpack.config");
 module.exports = {
-    configureWebpack:{
-        resolve: {
-            alias: {
-                'g-public': 'E:\\Bili_FrontEnd\\public\\src',
-            },
-        }
+    configureWebpack: {
+        webpack_config,
     }
 }

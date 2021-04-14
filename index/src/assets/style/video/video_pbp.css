@@ -1,0 +1,121 @@
+#bilibili_pbp {
+    display: flex;
+    cursor: pointer;
+    position: absolute;
+    bottom: 3px;
+    left: -12px;
+    width: calc(100% + 24px);
+    height: 28px;
+    opacity: 0;
+    z-index: 0
+}
+
+#bilibili_pbp.show {
+    bottom: calc(100% - 2px);
+    opacity: 1;
+    left: 0;
+    width: 100%
+}
+
+.webfullscreen #bilibili_pbp.show,
+.bilibili-player.mode-fullscreen #bilibili_pbp.show {
+    bottom: calc(100% + 4px + 1px)
+}
+
+.bui-thumb {
+    z-index: 1
+}
+
+.bilibili-player-video-toast-wrp {
+    z-index: 1000
+}
+
+.bui-slider .bui-track.bui-track-video-progress {
+    height: 4px !important;
+    border-radius: 0
+}
+
+.bui-slider .bui-track .bui-bar-wrap {
+    border-radius: 0
+}
+
+.bilibili-player-video-state {
+    z-index: 998
+}
+
+.video-control-show .subtitle-position.subtitle-position-bc {
+    bottom: 74px
+}
+
+.mode-fullscreen .video-control-show .subtitle-position.subtitle-position-bc {
+    bottom: 84px
+}
+
+.mode-webfullscreen .video-control-show .subtitle-position.subtitle-position-bc {
+    bottom: 84px
+}
+
+#bilibili_pbp.pin {
+    opacity: 1
+}
+
+.video-control-show .bilibili-player-video-interactive {
+    margin-bottom: 16px
+}
+
+.webfullscreen .bilibili-player-video-interactive,
+.mode-fullscreen .bilibili-player-video-interactive {
+    margin-bottom: 24px
+}
+
+#bilibili_pbp_pin {
+    cursor: pointer;
+    position: absolute;
+    bottom: calc(8%);
+    z-index: 1;
+    color: white;
+    opacity: 0;
+    line-height: 16px;
+    text-align: center
+}
+
+.bilibili-player .bilibili-player-area.video-control-show #bilibili_pbp #bilibili_pbp_pin,
+.bilibili-player .bilibili-player-area .bilibili-player-video-control-wrap:hover #bilibili_pbp #bilibili_pbp_pin {
+    right: -8px;
+    opacity: 1
+}
+
+.pbp-tips {
+    position: absolute;
+    font-size: 12px;
+    color: #fff;
+    border-radius: 4px;
+    line-height: 18px;
+    padding: 4px 8px;
+    background-color: #000;
+    background: rgba(0, 0, 0, .8);
+    white-space: nowrap;
+    right: 0;
+    top: 0;
+    display: none
+}
+
+#bilibili_pbp_pin:hover .pbp-tips {
+    top: -30px;
+    display: block;
+    transition: all .3 ease-in-out;
+    -webkit-transition: all .3 ease-in-out
+}
+
+.pbp-icon {
+    width: 16px;
+    height: 16px;
+    background-size: contain;
+    transform: rotate(45deg)
+}
+
+.pbp-icon:hover {
+    transform: rotate(60deg) scale(1.2);
+    transition: all .1s ease-in-out;
+    -webkit-transition: all .1s ease-in-out
+}
