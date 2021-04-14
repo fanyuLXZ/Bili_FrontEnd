@@ -53,6 +53,7 @@ if(this.placeholder==""||this.placeholder==null||this.placeholder==undefined){
   this.tisi="验证码不能为空"
 }else{
   this.$emit("phoneid",this.phcoid);
+  this.$emit("placeholder",[this.placeholder,this.verification])
 }
                   
      },

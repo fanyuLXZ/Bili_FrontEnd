@@ -36,6 +36,7 @@ export default{
  this.tisi="验证码不能为空";
   }else{
 this.$emit("emailid",this.phcoid);
+this.$emit("fromemail",[this.fromemail,this.yanzm]);
   }
      },
      verification(){

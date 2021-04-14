@@ -27,7 +27,7 @@
 
 
                                           <div data-v-21ab2178="" class="form-group">
-                                            <button data-v-21ab2178="" type="button" class="el-button btn-full el-button--primary" @click="clicks();sendMsg()">
+                                            <button data-v-21ab2178="" type="button" class="el-button btn-full el-button--primary" @click="clicks();sendMsg();numinput()">
                                               <!----><!----><span>下一步</span></button></div></div></div>
                                              
 </template>
@@ -53,6 +53,7 @@ export default{
             
              this.tisi= "输入";
               this.$emit("sendMsg",this.msg);
+              this.$emit("numinput",this.numinput);
           }
        
 

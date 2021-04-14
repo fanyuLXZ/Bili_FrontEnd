@@ -38,6 +38,7 @@ export default{
         this.tisi="密码不一致"
      }else{
          this.$emit("phcoid",this.phcoid);
+           this.$emit("passd",[this.passd,this.newpassd]);
 
      }
                   

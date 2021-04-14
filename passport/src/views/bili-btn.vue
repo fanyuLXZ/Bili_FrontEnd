@@ -9,12 +9,12 @@
                  <bilibratwo :namess="namess" :namesss="namesss" :colorid="colorid"></bilibratwo>
 
 
-                 <bilibraphone :phone="phone" v-show="this.pan=='phone'&&colorid==1" @sendMsg="getMsg" ></bilibraphone>
-                 <biliemail v-show="this.pan=='email'&&colorid==1"  @sendMsg="getMsg"></biliemail>
+                 <bilibraphone :phone="phone" v-show="this.pan=='phone'&&colorid==1" @sendMsg="getMsg" @numinput="getMsg"></bilibraphone>
+                 <biliemail v-show="this.pan=='email'&&colorid==1"  @sendMsg="getMsg" @biliemailinput="s"></biliemail>
                  
-                 <bilipwd v-if="verifys=='setpwd'&&colorid==2" @phcoid="getMsg"></bilipwd>
-                <biliemailtwo v-if="verifys=='setemail'&&colorid==2" @emailid="getMsg"></biliemailtwo>
-                <biliphonetwo v-if="verifys=='setphones'&&colorid==2" @phoneid="getMsg"></biliphonetwo>
+                 <bilipwd v-if="verifys=='setpwd'&&colorid==2" @phcoid="getMsg" @passd="getpassd"></bilipwd>
+                <biliemailtwo v-if="verifys=='setemail'&&colorid==2" @emailid="getMsg" @fromemail="getfromemail"></biliemailtwo>
+                <biliphonetwo v-if="verifys=='setphones'&&colorid==2" @phoneid="getMsg" @placeholder="getplaceholder"></biliphonetwo>
                   <!-- <bilipwd v-show="this.pan=='eamil'"></bilipwd> -->
                 <!-- <biliphone v-show="!np" v-model="iocnid" v-if="!iocnid" @phcoid= "getpoclid"></biliphone> -->
                   <biliiocn  v-if="colorid==3"></biliiocn>
@@ -103,10 +103,27 @@ this.verifys=this.$route.params.verify;
 methods:{
   getMsg(data){
 this.colorid = data;
+  },
+  getnuminput(data){
+this.numinput=data;
+  },
+  getbiliemailinput(data){
+    this.biliemailinput=data;
+  },
+  getfromemail(a,b){
+  
+    this.emailtwo.fromemail=a;
+       this.emailtwo.yanzm=b;
+        
+  },
+  getplaceholder(a,b){
+    this.phonetwo.placeholder=a;
+     this.phonetwo.verification=b;
+  },
+  getpassd(a,b){
+    this.pwd.passd=a;
+      this.pwd.newpassd=b;
   }
-  //   getpoclid(data){
-  // this.colorid = data;
-  // }
 },
  components:{
 bilibranch,
