@@ -8,6 +8,8 @@ import joinBody from '../components/blackboard/joinBody.vue'
 import privacyBody from '../components/blackboard/privacyBody.vue'
 import blackRoomFileBody from '../components/blackboard/blackRoomFileBody.vue'
 import actListBody from '../components/blackboard/actListBody.vue'
+import protocolMenuBody from "../components/blackboard/ProtocolMenuBody";
+import player from "../components/video/Player";
 
 Vue.use(Router)
 
@@ -53,7 +55,17 @@ const createRouter = () => (new Router({
       path: '/blackboard/act_list/:num',
       name: "actListBody",
       component: actListBody
-    }
+    },
+    {
+      path: '/blackboard/protocolMenu',
+      name: "ProtocolMenuBody",
+      component: protocolMenuBody
+    },
+    {
+      path: '/video',
+      name: "Player",
+      component: player
+    },
   ],
 }))
 

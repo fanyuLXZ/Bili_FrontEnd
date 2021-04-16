@@ -26,7 +26,7 @@
 </template>
 <script>
 import LoginTipContent from './LoginTipContent'
-import { allCustomReport } from 'g-public/js/utils'
+import { allCustomReport } from '../../../public/js/utils'
 
 export default {
   components: {

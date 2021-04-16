@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import {trimHttp} from 'g-public/js/utils'
+import {trimHttp} from '../../public/js/utils'
 import AnimatedBanner from "./animated-banner/index.vue"
 
 export default {
@@ -100,7 +100,12 @@ export default {
     },
   },
   beforeMount() {
-    this.locsData = {
+    // 用于管理后台预览时不从接口获取配置
+    if (/\.bilibili\.co$/.test(window.location.host)) {
+      this.bannerDataFetched = Promise.resolve(true)
+      return
+    }
+    let a = {
       "code": 0, "message": "0", "ttl": 1, "data": {
         "id": 1,
         "title": "",
@@ -116,7 +121,9 @@ export default {
         "etime": 0,
         "resource_id": 0
       }
-    }.data
+    }
+    this.bannerDataFetched = a
+    this.locsData = a.data
   },
   mounted() {
     this.animatedBanner()

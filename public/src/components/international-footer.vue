@@ -40,8 +40,8 @@
 </template>
 
 <script>
-import b from "../assets/international-footer/footer"
-export default b
+import a from "../assets/international-footer/footer"
+export default a
 </script>
 
 <style scoped>

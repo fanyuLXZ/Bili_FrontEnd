@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import { getOnline } from '../api'
+import { getOnline } from '../../../api'
 
 export default {
   props: {

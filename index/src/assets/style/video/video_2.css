@@ -1,0 +1,22 @@
+.v-wrap {
+    width: 1163px;
+    padding: 0 68px;
+}
+
+.l-con {
+    width: 813px;
+}
+
+#bilibili-player {
+    width: 813px;
+    height: 591px;
+    position: static;
+}
+
+#danmukuBox {
+    margin-top: 0;
+}
+
+#playerWrap {
+    height: auto;
+}

@@ -66,9 +66,9 @@
 </template>
 
 <script>
-import Bus from 'g-public/js/bus'
-import { getChannelUpdate, postDynamicEntranceClick } from '../api'
-import { customReport } from 'g-public/js/utils'
+import Bus from '../../../public/js/bus'
+import { getChannelUpdate, postDynamicEntranceClick } from '../../../api'
+import { customReport } from '../../../public/js/utils'
 
 export default {
   data() {

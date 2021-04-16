@@ -42,7 +42,7 @@
   import Suggest from './Suggest'
   import History from './History'
   // import searchHistory from './search_history'
-  import { isChildOf, customReport } from 'g-public/js/utils'
+  import { isChildOf, customReport } from '../../../public/js/utils'
 
   export default {
     components: {

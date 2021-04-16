@@ -1,0 +1,133 @@
+.bui-switch {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    position: relative;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    cursor: pointer
+}
+
+.bui-switch.bui-disabled,
+.bui-switch.bui-disabled:hover {
+    cursor: default
+}
+
+.bui-switch.bui-disabled .bui-switch-name,
+.bui-switch.bui-disabled:hover .bui-switch-name {
+    color: #757575 !important
+}
+
+.bui-switch.bui-disabled .bui-switch-body,
+.bui-switch.bui-disabled:hover .bui-switch-body {
+    opacity: .4
+}
+
+.bui-switch:hover .bui-switch-name {
+    color: #00a1d6
+}
+
+.bui-switch .bui-switch-input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    margin: 0;
+    cursor: pointer;
+    z-index: 1
+}
+
+.bui-switch .bui-switch-input:checked + .bui-switch-label .bui-switch-body {
+    background: #00a1d6
+}
+
+.bui-switch .bui-switch-input:checked + .bui-switch-label .bui-switch-body .bui-switch-dot {
+    left: 100%;
+    margin-left: -18px;
+    color: #00a1d6;
+    fill: #00a1d6
+}
+
+.bui-switch .bui-switch-label {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    vertical-align: middle;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between
+}
+
+.bui-switch .bui-switch-name {
+    position: relative
+}
+
+.bui-switch .bui-switch-name .bui-switch-reddot {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #f25d8e;
+    top: 8px;
+    right: -8px
+}
+
+.bui-switch .bui-switch-body {
+    display: inline-block;
+    width: 30px;
+    height: 20px;
+    outline: none;
+    border-radius: 10px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    background: #757575;
+    vertical-align: middle
+}
+
+.bui-switch .bui-switch-body,
+.bui-switch .bui-switch-dot {
+    position: relative;
+    -webkit-transition: all .3s;
+    -o-transition: all .3s;
+    transition: all .3s;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0)
+}
+
+.bui-switch .bui-switch-dot {
+    top: 2px;
+    left: 2px;
+    border-radius: 100%;
+    width: 16px;
+    height: 16px;
+    background-color: #fff;
+    color: #757575;
+    fill: #757575;
+    line-height: 16px;
+    text-align: center;
+    -webkit-box-shadow: 0 3px 1px 0 rgba(0, 0, 0, .05), 0 2px 2px 0 rgba(0, 0, 0, .1), 0 3px 3px 0 rgba(0, 0, 0, .05);
+    box-shadow: 0 3px 1px 0 rgba(0, 0, 0, .05), 0 2px 2px 0 rgba(0, 0, 0, .1), 0 3px 3px 0 rgba(0, 0, 0, .05);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center
+}
+
+.bui-switch .bui-switch-dot span {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    font-size: 0
+}
