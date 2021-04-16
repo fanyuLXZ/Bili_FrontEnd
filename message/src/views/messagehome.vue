@@ -32,8 +32,13 @@
                                   <div data-v-1c9150a9="" class="title">
                                     <div data-v-1c9150a9=""><!----><!---->
                                     <span data-v-1c9150a9="">收到的赞</span>
-                                    </div><!----></div></div>
-                                        <love :tae="tae"></love> 
+                                    <span data-v-1c9150a9="">&nbsp;>&nbsp;&nbsp;</span>
+                                     <span data-v-1c9150a9="">sda</span>
+                                    </div><!----></div>
+                                    </div>
+                                    
+                                        <love :tae="tae" @getmessage="getmess" v-if="this.plid==0"></love> 
+                                        <loveid v-if="this.plid!=0" ></loveid> 
                                   
                                </div> 
                                                             
@@ -42,32 +47,51 @@
 <script>
 import '@/assets/index.css'
 import love from '../views/messagelove.vue'
-
+import loveid from '../views/messageloveid.vue'
 export default ({
   data() {
     return {
     tae:[
       {
-      name:'千羽亦溪',
+        id:1,
       comment:'神评论',
-      times:'2021年4月11日 17:40'
+      userperple:[
+            {name:'千羽亦溪',times:'2021年4月11日 17:40',imageiocn:''},
+             {name:'千羽亦溪2',times:'2021年4月21日 17:40',imageiocn:''},
+             {name:'千羽亦溪3',times:'2021年2月21日 17:40',imageiocn:''}
+      ]
       },
        {
-      name:'太宰志的先生',
-      comment:'神评论',
-      times:'2021年4月11日 17:40'
-      },
-        {
-      name:'太宰志的sd先生',
-      comment:'神评论',
-      times:'2021年4月11日 17:40'
-      }
+           id:2,
+      comment:'sada',
+      userperple:[
+            {name:'太宰治1',times:'2021年4月11日 15:40',imageiocn:''},
+             {name:'太宰治2',times:'2021年4月21日 16:40',imageiocn:''}   
       ]
+      },
+       {
+          id:3,
+      comment:'sqwada',
+      userperple:[
+            {name:'太宰治1',times:'2021年4月11日 15:40',imageiocn:''},
+             {name:'太宰治2',times:'2021年4月21日 16:40',imageiocn:''}   
+      ]
+      }         
+      ],
+
+      plid:0,
     }
   },
  components:{
-  love
- }
+  love,
+  loveid
+ },
+ methods: {
+   getmess(a){
+      this.plid=a;
+      console.log(this.plid)
+   }
+ },
 })
 </script>
 
