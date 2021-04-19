@@ -1568,7 +1568,8 @@
 
 <script>
 import "../../assets/js/jquery-3.5.1.js"
-import "../../assets/js/video/jsc-player.js"
+// import "../../assets/js/video/pbp.js"
+// import "../../assets/js/video/jsc-player.js"
 
 export default {
   name: "Player",

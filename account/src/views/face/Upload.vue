@@ -41,8 +41,7 @@
             </div>
             <div class="border-line"></div>
             <div class="img-preview-wrap">
-              <div class="pre-container"
-                   style="background-image: url(&quot;https://i1.hdslb.com/bfs/face/31f967d648f65c5754981fe6b4b6a21def194dc2.jpg@150w_150h.jpg&quot;);">
+              <div class="pre-container" :style="{backgroundImage:'url(${store.state.face})'}">
                 <img id="clip_res_img" style="display: none;"></div>
               <div class="pre-info">当前头像</div>
             </div>

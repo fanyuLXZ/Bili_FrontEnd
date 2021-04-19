@@ -5,11 +5,11 @@
         <!-- 过滤空帧 null_frame为true则代表这一帧是空帧 -->
         <div v-if="!item.null_frame" class="item" :key="`gg-c-${item.src_id}`" :style="`z-index:${list.length - index};`">
           <a v-adReport="{data: item, locId: locId, noExposure: true}" :data-loc-id="locId" target="_blank">
-            <!-- <van-image 
+            <!-- <van-image
               :src="item.pic"
               :alt="item.name"
               :options="{c: 1, q: 100}"
-              width="1100" 
+              width="1100"
               height="484">
             </van-image> -->
 
@@ -40,7 +40,7 @@
 </template>
 
 <script>
-import { trimHttp } from 'g-public/js/utils'
+import {trimHttp} from 'g-public/js/utils'
 import Bus from 'g-public/js/bus'
 
 export default {

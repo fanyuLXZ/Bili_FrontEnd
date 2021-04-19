@@ -14,7 +14,7 @@
           </a>
           <div class="tool-face-box" style="">
             <div class="tool-face-box" style="">
-              <img alt="" class="tool-user-face" src="https://i1.hdslb.com/bfs/face/e625b00cc11186a7ed7fed76e7e607407bb1ee44.jpg">
+              <img alt="" class="tool-user-face" :src="$store.state.face">
             </div>
           </div>
           <div class="disable tool-uninstall-pendant">

@@ -3,7 +3,7 @@
   <div class="el-form-item user-nick-rel-name">
     <label class="el-form-item__label">用户名:</label>
     <div class="el-form-item__content">
-      <span class="userinfo-username">bili_34305173340</span><!---->
+      <span class="userinfo-username">{{ $store.state.userid }}</span><!---->
     </div>
   </div>
 </template>

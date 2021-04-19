@@ -2,11 +2,11 @@
 <template>
   <div id="reportVipName" class="big-name-warp report-scroll-module" scrollshow="true">
     <div class="big-head">
-      <img :src="face" lazy="loaded">
+      <img src={{$store.state.face}} lazy="loaded">
     </div>
     <div class="big-name-left">
       <div class="big-name-top">
-        <span class="big-user-name">{{ uname }}</span>
+        <span class="big-user-name">{{ $store.state.uname }}</span>
         <span class="big-label" style="background: rgb(62, 181, 89); color: rgb(255, 255, 255);" v-if="vip.status&vip.type===0">小会员</span>
         <span class="big-label"  v-if="vip.status&vip.type===1">大会员</span>
       </div>
@@ -124,15 +124,9 @@ export default {
   name: "reportVipName",
   data(){
     return{
-      uname:"江浙沪子笑",  //用户姓名
-      face:"https://i1.hdslb.com/bfs/face/e625b00cc11186a7ed7fed76e7e607407bb1ee44.jpg",  //用户头像
-      vip:{
-        status:true,  //是否是会员
-        type:1,  //会员类型
-        automatic_Renew:true,  //是否是自动续费
-        valid_period:"2021-04-15",  //会员有效时间
-        automatic_buckle:"2020-04-13"  //自动扣费时间
-      },
+      status:true,  //是否是会员
+      type:1,  //会员类型
+      valid_period:"2021-04-15",  //会员有效时间
       show:false,
       showMore:false,
     }
