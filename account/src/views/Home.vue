@@ -32,9 +32,9 @@
 
 <script>
 
-import reward from "../components/home/homeDialiyExp"  //每日奖励
-import security from "../components/home/hContentSafe"  //账号安全
-import img_head from "../components/home/homeHead"  //用户头像
+import reward from "../components/home/homeDialiyExp" //每日奖励
+import security from "../components/home/hContentSafe" //账号安全
+import img_head from "../components/home/homeHead" //用户头像
 export default {
   name: 'Home',
   components: {
@@ -45,7 +45,7 @@ export default {
 }
 </script>
 
-<style type="text/css">
+<style scoped type="text/css">
 @import "../assets/personalcenter/index.css";
 @import "https://s1.hdslb.com/bfs/static/account-fe/static/css/app.d70533e21fd1ad58c30455ac07bba416.css";
 
@@ -171,7 +171,7 @@ export default {
   outline-width: 0;
 }
 </style>
-<style type="text/css">
+<style scoped type="text/css">
 .loc-menu-box {
   background: #fff;
   width: 399px;
@@ -270,7 +270,7 @@ export default {
   }
 }
 </style>
-<style type="text/css">.channel-menu-mini {
+<style scoped type="text/css">.channel-menu-mini {
   padding: 10px 5px;
   background: #fff;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
@@ -331,7 +331,7 @@ export default {
   overflow: hidden;
 }
 </style>
-<style type="text/css">.nav-link .bili-icon_dingdao_xiazaiapp {
+<style scoped type="text/css">.nav-link .bili-icon_dingdao_xiazaiapp {
   margin-right: 2px;
   font-size: 18px;
   vertical-align: middle;
@@ -445,7 +445,7 @@ export default {
   top: 45px !important;
 }
 </style>
-<style type="text/css">.lang-change {
+<style scoped type="text/css">.lang-change {
   width: 100%;
   border-bottom: 1px solid #F4F4F4;
   padding: 7px 0;
@@ -534,14 +534,14 @@ export default {
   color: #979797;
 }
 </style>
-<style type="text/css">.van-popper-login{
+<style scoped type="text/css">.van-popper-login {
   background: #FFFFFF;
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
   border-radius: 2px;
   width: 360px;
 }
 
-.van-popper-login .vp-container{
+.van-popper-login .vp-container {
   width: 100%;
   padding: 16px 20px 12px 20px;
   display: flex;
@@ -624,7 +624,7 @@ export default {
   color: #fff;
 }
 </style>
-<style type="text/css">.van-popover.van-popper.van-popper-login {
+<style scoped type="text/css">.van-popover.van-popper.van-popper-login {
   padding: 0;
   border: none;
   top: 44px !important;
@@ -635,7 +635,7 @@ export default {
   left: -240px;
 }
 </style>
-<style type="text/css">.mini-avatar  {
+<style scoped type="text/css">.mini-avatar {
   width: 36px;
   height: 36px;
   border-radius: 50%;
@@ -643,7 +643,7 @@ export default {
   margin-right: 10px;
 }
 
-.mini-avatar > div  {
+.mini-avatar > div {
   height: 100%;
   transform: translate(0, 0);
   transition: transform 0.2s ease;
@@ -1148,14 +1148,14 @@ export default {
   }
 }
 </style>
-<style type="text/css">.van-popover.van-popper.van-popper-avatar {
+<style scoped type="text/css">.van-popover.van-popper.van-popper-avatar {
   padding: 0;
   border: none;
   top: 44px !important;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 6px !important;
 }
 </style>
-<style type="text/css">li{
+<style scoped type="text/css">li {
   list-style: none;
   color: #222;
 }
@@ -1274,7 +1274,7 @@ a {
   height: 100%;
 }
 </style>
-<style type="text/css">.video-card-img .default-img{
+<style scoped type="text/css">.video-card-img .default-img {
   flex-shrink: 0;
   width: 108px;
   height: 61px;
@@ -1324,7 +1324,7 @@ a {
   color: #fff;
 }
 </style>
-<style type="text/css">.header-video-card{
+<style scoped type="text/css">.header-video-card {
   display: flex;
   flex-shrink: 0;
   padding: 8px 5px 8px 20px;
@@ -1458,7 +1458,7 @@ a {
   white-space: nowrap;
 }
 </style>
-<style type="text/css">.van-popper-history{
+<style scoped type="text/css">.van-popper-history {
   background: #FFFFFF;
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
   border-radius: 2px;
@@ -1543,14 +1543,14 @@ a {
   background: #E7E7E7;
 }
 </style>
-<style type="text/css">.van-popover.van-popper.van-popper-history {
+<style scoped type="text/css">.van-popover.van-popper.van-popper-history {
   padding: 0;
   border: none;
   top: 44px !important;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 6px !important;
 }
 </style>
-<style type="text/css">.van-popper-upload{
+<style scoped type="text/css">.van-popper-upload {
   background: #FFFFFF;
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
   border-radius: 2px;
@@ -1614,14 +1614,14 @@ a {
   }
 }
 </style>
-<style type="text/css">.van-popover.van-popper.van-popper-upload {
+<style scoped type="text/css">.van-popover.van-popper.van-popper-upload {
   padding: 0;
   border: none;
   top: 44px !important;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 6px !important;
 }
 </style>
-<style type="text/css">.van-popper-favorite {
+<style scoped type="text/css">.van-popper-favorite {
   width: 520px;
   border-radius: 2px;
   background: #FFFFFF;
@@ -1847,7 +1847,7 @@ a {
   color: #999;
 }
 </style>
-<style type="text/css">.van-popover {
+<style scoped type="text/css">.van-popover {
   position: absolute;
   left: 300px;
 }
@@ -1859,7 +1859,7 @@ a {
   box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 6px !important;
 }
 </style>
-<style type="text/css">li{
+<style scoped type="text/css">li {
   list-style: none;
   color: #222;
 }
@@ -2050,7 +2050,7 @@ a {
   height: 100%;
 }
 </style>
-<style type="text/css">/* stylelint-disable */
+<style scoped type="text/css">/* stylelint-disable */
 .vip-m {
   width: 260px;
 }
@@ -2240,14 +2240,14 @@ a {
 
 /* stylelint-enable */
 </style>
-<style type="text/css">.van-popper-favorite {
+<style scoped type="text/css">.van-popper-favorite {
   background: #FFFFFF;
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
   border-radius: 2px;
   width: 280px;
 }
 
-.vip-icon  {
+.vip-icon {
   width: 28px;
   height: 28px;
   vertical-align: middle;
@@ -2305,18 +2305,18 @@ a {
   border-color: #00b5e5;
 }
 
-.mini-vip  {
+.mini-vip {
   position: relative;
 }
 </style>
-<style type="text/css">.van-popover.van-popper.van-popper-vip {
+<style scoped type="text/css">.van-popover.van-popper.van-popper-vip {
   padding: 0;
   border: none;
   top: 44px !important;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 6px !important;
 }
 </style>
-<style type="text/css">.content{
+<style scoped type="text/css">.content {
   display: flex;
   flex-wrap: wrap;
 }
@@ -2360,7 +2360,7 @@ a {
   color: #212121;
 }
 </style>
-<style type="text/css">.lt-row {
+<style scoped type="text/css">.lt-row {
   position: fixed;
   bottom: 0;
   display: flex;
@@ -2452,7 +2452,7 @@ a {
   background: #00b5e5;
 }
 </style>
-<style type="text/css">.unlogin-avatar{
+<style scoped type="text/css">.unlogin-avatar {
   width: 36px;
   height: 36px;
   border-radius: 50%;
@@ -2568,7 +2568,7 @@ a {
   cursor: pointer;
 }
 </style>
-<style type="text/css">.nav-user-center {
+<style scoped type="text/css">.nav-user-center {
   display: flex;
   flex-shrink: 0;
 }
@@ -2670,14 +2670,14 @@ a {
   text-shadow: none;
 }
 </style>
-<style type="text/css">.nav-user-center .bilifont {
+<style scoped type="text/css">.nav-user-center .bilifont {
   color: #fff;
   vertical-align: middle;
   font-size: 28px;
   cursor: pointer;
 }
 </style>
-<style type="text/css">.bilibili-search-suggest {
+<style scoped type="text/css">.bilibili-search-suggest {
   position: absolute;
   width: 100%;
   border: 1px solid #e5e9ef;
@@ -2730,7 +2730,7 @@ a {
   color: #f25d8e;
 }
 </style>
-<style type="text/css">.bilibili-search-history {
+<style scoped type="text/css">.bilibili-search-history {
   position: absolute;
   width: 100%;
   border: 1px solid #e5e9ef;
@@ -2788,7 +2788,7 @@ a {
   color: #00a1d6;
 }
 </style>
-<style type="text/css">.bili-header-m .nav-search-box,
+<style scoped type="text/css">.bili-header-m .nav-search-box,
 .international-header .nav-search-box {
   margin: 0 10px;
   width: 500px;
@@ -2883,7 +2883,7 @@ a {
   font-size: 12px;
 }
 </style>
-<style type="text/css">.mini-header {
+<style scoped type="text/css">.mini-header {
   position: absolute;
   z-index: 1;
   width: 100%;
@@ -2907,7 +2907,7 @@ a {
   }
 }
 </style>
-<style type="text/css">.animated-banner {
+<style scoped type="text/css">.animated-banner {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -2916,7 +2916,7 @@ a {
   overflow: hidden;
 }
 </style>
-<style type="text/css">.animated-banner > .layer {
+<style scoped type="text/css">.animated-banner > .layer {
   position: absolute;
   left: 0;
   top: 0;
@@ -2927,7 +2927,7 @@ a {
   justify-content: center;
 }
 </style>
-<style type="text/css">.bili-banner {
+<style scoped type="text/css">.bili-banner {
   margin: 0 auto;
   position: relative;
   z-index: 0;
@@ -2998,7 +2998,7 @@ a {
   width: 100%;
 }
 </style>
-<style type="text/css">.page-tab {
+<style scoped type="text/css">.page-tab {
   display: flex;
   align-items: center;
 }
@@ -3105,7 +3105,7 @@ a {
   -webkit-line-clamp: 1;
 }
 </style>
-<style type="text/css">.van-popper-channel {
+<style scoped type="text/css">.van-popper-channel {
   padding: 5px 10px;
   border-radius: 3px;
   min-width: 0;
@@ -3186,7 +3186,7 @@ a {
   transform: rotate(180deg);
 }
 </style>
-<style type="text/css">.friendship-link {
+<style scoped type="text/css">.friendship-link {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -3218,7 +3218,7 @@ a {
   overflow: hidden;
 }
 </style>
-<style type="text/css">.primary-menu-itnl {
+<style scoped type="text/css">.primary-menu-itnl {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -3237,7 +3237,7 @@ a {
   margin: 0 24px 0 0px;
 }
 </style>
-<style type="text/css">@font-face {
+<style scoped type="text/css">@font-face {
   font-family: "bilifont";
   src: url(//s1.hdslb.com/bfs/seed/jinkela/header-v2/asserts/iconfont.eot);
   /* IE9 */
@@ -3701,7 +3701,7 @@ a {
   content: "\E74A";
 }
 </style>
-<style type="text/css">* {
+<style scoped type="text/css">* {
   margin: 0;
   padding: 0;
 }
@@ -3995,7 +3995,7 @@ a {
   color: #00a1d6;
 }
 </style>
-<style type="text/css">.identity-dialog-wrap {
+<style scoped type="text/css">.identity-dialog-wrap {
   position: fixed;
   top: 0;
   left: 0;
@@ -4146,7 +4146,7 @@ a {
   font-size: 12px;
 }
 </style>
-<style type="text/css">@font-face {
+<style scoped type="text/css">@font-face {
   font-family: "bili-footer-font";
   src: url(data:application/vnd.ms-fontobject;base64,nAoAANQJAAABAAIAAAAAAAIABQMAAAAAAAABAJABAAAAAExQAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAqgl/EgAAAAAAAAAAAAAAAAAAAAAAACAAYgBpAGwAaQAtAGYAbwBvAHQAZQByAC0AZgBvAG4AdAAAAA4AUgBlAGcAdQBsAGEAcgAAABYAVgBlAHIAcwBpAG8AbgAgADEALgAwAAAAIABiAGkAbABpAC0AZgBvAG8AdABlAHIALQBmAG8AbgB0AAAAAAAAAQAAAAsAgAADADBHU1VCsP6z7QAAATgAAABCT1MvMj2SSUQAAAF8AAAAVmNtYXDP2j23AAAB5AAAAZRnbHlmcEahngAAA4QAAAMsaGVhZBYiSfcAAADgAAAANmhoZWEH3gOFAAAAvAAAACRobXR4EAAAAAAAAdQAAAAQbG9jYQJOAUIAAAN4AAAACm1heHABFgCAAAABGAAAACBuYW1lJ9Nd9wAABrAAAALNcG9zdJ35CLEAAAmAAAAAUgABAAADgP+AAFwEAAAAAAAEAAABAAAAAAAAAAAAAAAAAAAABAABAAAAAQAAEn8Jql8PPPUACwQAAAAAANmBgv0AAAAA2YGC/QAA/4AEAAOAAAAACAACAAAAAAAAAAEAAAAEAHQACAAAAAAAAgAAAAoACgAAAP8AAAAAAAAAAQAAAAoAHgAsAAFERkxUAAgABAAAAAAAAAABAAAAAWxpZ2EACAAAAAEAAAABAAQABAAAAAEACAABAAYAAAABAAAAAAABBAABkAAFAAgCiQLMAAAAjwKJAswAAAHrADIBCAAAAgAFAwAAAAAAAAAAAAAAAAAAAAAAAAAAAABQZkVkAEDnHOdSA4D/gABcA4AAgAAAAAEAAAAAAAAEAAAABAAAAAQAAAAEAAAAAAAABQAAAAMAAAAsAAAABAAAAWAAAQAAAAAAWgADAAEAAAAsAAMACgAAAWAABAAuAAAABgAEAAEAAucc51L//wAA5xznUf//AAAAAAABAAYABgAAAAEAAgADAAABBgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAAAAAA0AAAAAAAAAAMAAOccAADnHAAAAAEAAOdRAADnUQAAAAIAAOdSAADnUgAAAAMAAAAAALgBQgGWAAAACAAA/4AEAAOAAAsAHQA0AEsAVwBgAGoAcwAABSYAJzYANxYAFwYAAzI3NTQmJw4BFBYXMx4BBxQWJyYGBz4BJyYGBw4BFx4BNz4BJyYnPgEXNDYzNS4BJyMiBhQWFzMeAQcVHgEyNgU2FhcWBgcGJicmNhc+AS4BDgEeATcyFgcOAiY0NgceAgYiJj4BAgDa/t8FBQEh2toBIQUF/t8XEAExIwgMDAgKFBMCDEkxTAIBCgsZPg5pZRwhuW94RyQaIwMKmwEDAmVMAwoQEAoUNDsHARAVEP6ITm0EAWVOTW0FAWVbKSsPQ1MrEEMtBQcCAQYGBwU0DBEBEhkSARGABQEh2toBIQUF/t/a2v7fAk8YByIxAQEMDwwBBR4SCAwhEiUFAzkSFwcKPbhNRjciLIYsGQUFTA4BAw1LZQIQFRABCE00BAoQEC8COjM0SQYEPDM0Sc0LOUcgFTlIH3IIBgMGAQULCAoBERoREhkRAAAHAAD/gAQAA4AACwAfAC8AOABBAEoAUwAABSYAJzYANxYAFwYAAT4BNzMuAScOAQceARcHNxY7ASYFPgE3LgEnDgEHHgEXMjcXATIWFAYiJj4BIzIWFAYiJjQ2BR4BFAYiJjQ2Jx4BFAYiJjQ2AgDa/t8FBQEh2toBIQUF/t/+3gJyVhIPgFxkiAMBMSwVWicpFQoBQiMoAQJtUVFtAgJtUSUgQf7tDhITGhQBEo4OEhMaExMBewsODhYODngLDw8WDg6ABQEh2toBIQUF/t/a2v7fAbBJYgJDWQICa1EwTRpHKgoWZxhBJkNZAgJZQ0RZAgsjAaYSGxISGxISGxISGxKeAQ0WDQ0WDQEBDRYNDRYNAAADAAD/gAQAA4AACwAjADMAAAEGAAcWABc2ADcmAAE2OwE1NDY7ATIWHQEzHgEPAQYiLwEuAQEUBiMhIiY9ATQ2MyEyFhUCANr+3wUFASHa2gEhBQX+3/5sBghRCgiSCApRDQgIrQUOBa0FAQGICwf+kgcLCwcBbggKA4AF/t/a2v7fBQUBIdraASH+NgaSCAoKCJIBFgmeBQWeBQ/++ggLCwgkCAoKCAAAABIA3gABAAAAAAAAABUAAAABAAAAAAABABAAFQABAAAAAAACAAcAJQABAAAAAAADABAALAABAAAAAAAEABAAPAABAAAAAAAFAAsATAABAAAAAAAGABAAVwABAAAAAAAKACsAZwABAAAAAAALABMAkgADAAEECQAAACoApQADAAEECQABACAAzwADAAEECQACAA4A7wADAAEECQADACAA/QADAAEECQAEACABHQADAAEECQAFABYBPQADAAEECQAGACABUwADAAEECQAKAFYBcwADAAEECQALACYByQpDcmVhdGVkIGJ5IGljb25mb250CmJpbGktZm9vdGVyLWZvbnRSZWd1bGFyYmlsaS1mb290ZXItZm9udGJpbGktZm9vdGVyLWZvbnRWZXJzaW9uIDEuMGJpbGktZm9vdGVyLWZvbnRHZW5lcmF0ZWQgYnkgc3ZnMnR0ZiBmcm9tIEZvbnRlbGxvIHByb2plY3QuaHR0cDovL2ZvbnRlbGxvLmNvbQAKAEMAcgBlAGEAdABlAGQAIABiAHkAIABpAGMAbwBuAGYAbwBuAHQACgBiAGkAbABpAC0AZgBvAG8AdABlAHIALQBmAG8AbgB0AFIAZQBnAHUAbABhAHIAYgBpAGwAaQAtAGYAbwBvAHQAZQByAC0AZgBvAG4AdABiAGkAbABpAC0AZgBvAG8AdABlAHIALQBmAG8AbgB0AFYAZQByAHMAaQBvAG4AIAAxAC4AMABiAGkAbABpAC0AZgBvAG8AdABlAHIALQBmAG8AbgB0AEcAZQBuAGUAcgBhAHQAZQBkACAAYgB5ACAAcwB2AGcAMgB0AHQAZgAgAGYAcgBvAG0AIABGAG8AbgB0AGUAbABsAG8AIABwAHIAbwBqAGUAYwB0AC4AaAB0AHQAcAA6AC8ALwBmAG8AbgB0AGUAbABsAG8ALgBjAG8AbQAAAAACAAAAAAAAAAoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQBAgEDAQQBBQAKaWNvbl93ZWlibwtpY29uX3dlY2hhdA1pY29uX2Rvd25sb2FkAAAAAA==);
   /* IE9 */
@@ -4174,7 +4174,7 @@ a {
   content: "\E752";
 }
 </style>
-<style type="text/css">body {
+<style scoped type="text/css">body {
   margin: 0;
   padding: 0;
 }
@@ -4445,7 +4445,7 @@ a {
   background-position: -18px -3px;
 }
 </style>
-<style type="text/css">/*!
+<style scoped type="text/css">/*!
  * @bilibili/userAvatar
  * version: 0.0.11. Powered by main-frontend
  * 用户头像公共组件.
@@ -4582,11 +4582,11 @@ a {
   padding: 0;
 }
 </style>
-<style type="text/css">.secuity-right-home{
+<style scoped type="text/css">.secuity-right-home {
   padding: 50px 20px 0;
   width: 789px
 }</style>
-<style type="text/css">.top-header{
+<style scoped type="text/css">.top-header {
   width: 100%;
   height: 106px;
   background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAABWCAYAAADlqUfFAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAK6wAACusBgosNWgAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNui8sowAAAAbSURBVCiRY2RYcOM/AwMDAxMDFIwyRhkjjQEAc4gDI5wD87YAAAAASUVORK5CYII=) repeat-x;
@@ -4599,8 +4599,8 @@ a {
   margin: 0 auto;
   background: url(https://s1.hdslb.com/bfs/static/account-fe/static/img/rl_top.35edfde.png) no-repeat
 }</style>
-<style type="text/css">
-.security-left{
+<style scoped type="text/css">
+.security-left {
   float: left;
   width: 150px;
   height: 100%;
@@ -4792,13 +4792,13 @@ a {
   right: 14px
 }
 </style>
-<style type="text/css">.index-info  {
+<style scoped type="text/css">.index-info {
   border-bottom: 1px solid #e5e9ef;
   padding-bottom: 40px;
   position: relative
 }
 
-.home-head  {
+.home-head {
   display: inline-block;
   vertical-align: top;
   position: relative;
@@ -4962,26 +4962,26 @@ a {
   background-position: -150px -470px
 }
 
-.loading-icon-box  {
+.loading-icon-box {
   width: 789px;
   height: 150px;
   position: relative
 }
 
-.hide  {
+.hide {
   display: none
 }</style>
-<style type="text/css">.home-top-level  {
+<style scoped type="text/css">.home-top-level {
   position: relative
 }
 
-.home-top-level-all  {
+.home-top-level-all {
   display: inline-block;
   width: 684px;
   margin-top: 10px
 }
 
-.home-top-progress-wrap  {
+.home-top-progress-wrap {
   display: inline-block;
   position: relative
 }
@@ -5144,7 +5144,7 @@ a {
   color: #222
 }
 
-.home-top-level-mask-warp a  {
+.home-top-level-mask-warp a {
   font-size: 12px;
   color: #00a1d6;
   float: right
@@ -5154,7 +5154,7 @@ a {
   font-size: 12px;
   color: #6d757a
 }</style>
-<style type="text/css">.index-invition-box {
+<style scoped type="text/css">.index-invition-box {
   width: 789px;
   height: 120px;
   margin-top: 30px;
@@ -5273,7 +5273,7 @@ a {
 .btn-ok:hover {
   background-color: #00b5e5
 }</style>
-<style type="text/css">.loading-icon {
+<style scoped type="text/css">.loading-icon {
   width: 100px;
   height: 100px;
   position: absolute;
@@ -5284,7 +5284,7 @@ a {
   background: url(https://s1.hdslb.com/bfs/static/account-fe/static/img/loadTV.99606e2.gif) no-repeat;
   background-size: 100% 100%
 }</style>
-<style type="text/css">.home-daily-task-warp {
+<style scoped type="text/css">.home-daily-task-warp {
   padding: 36px 0;
   border-bottom: 1px solid #e5e9ef;
   position: relative
@@ -5399,16 +5399,16 @@ a {
   height: 270px;
   position: relative
 }</style>
-<style type="text/css">
+<style scoped type="text/css">
 
-.h-reward-info  {
+.h-reward-info {
   font-size: 20px;
   color: #222;
   margin-right: 6px;
   vertical-align: top
 }
 
-.h-mp-space .m-arrow  {
+.h-mp-space .m-arrow {
   top: 0;
   vertical-align: middle;
   background: url(https://s1.hdslb.com/bfs/static/account-fe/static/img/icons_m_2.57e5263.png) no-repeat;
@@ -5555,22 +5555,22 @@ a {
   margin-top: 11px
 }
 
-.loading-icon-box  {
+.loading-icon-box {
   width: 789px;
   height: 300px;
   position: relative
 }
 
-.h-list-name-active  {
+.h-list-name-active {
   color: #00a1d6
 }</style>
-<style type="text/css">.home-safe  {
+<style scoped type="text/css">.home-safe {
   padding: 36px 0 34px;
   display: inline-block;
   position: relative
 }
 
-.h-reward-icon  {
+.h-reward-icon {
   display: inline-block;
   width: 30px;
   height: 30px;
@@ -5731,12 +5731,12 @@ a {
   cursor: pointer
 }
 
-.loading-icon-box  {
+.loading-icon-box {
   width: 789px;
   height: 300px;
   position: relative
 }</style>
-<style type="text/css">.common-dialog-wrap {
+<style scoped type="text/css">.common-dialog-wrap {
   position: fixed;
   width: 100%;
   height: 100%;
@@ -5853,7 +5853,7 @@ a {
 .close-btn:hover {
   background-color: #00b5e5
 }</style>
-<style type="text/css">.swiper-container {
+<style scoped type="text/css">.swiper-container {
   margin-left: auto;
   margin-right: auto;
   position: relative;
@@ -6410,13 +6410,13 @@ button.swiper-pagination-bullet {
     transform: rotate(1turn)
   }
 }</style>
-<style type="text/css">.security-right-title {
+<style scoped type="text/css">.security-right-title {
   height: 50px;
   padding-left: 30px;
   border-bottom: 1px solid #ddd
 }
 
-.security-right-title-icon  {
+.security-right-title-icon {
   float: left;
   width: 4px;
   height: 16px;
@@ -6441,7 +6441,7 @@ button.swiper-pagination-bullet {
   color: #878787
 }</style>
 
-<style type="text/css">.continuity-dialog-wrapper {
+<style scoped type="text/css">.continuity-dialog-wrapper {
   position: fixed;
   width: 100%;
   height: 100%;
@@ -6542,7 +6542,7 @@ button.swiper-pagination-bullet {
   overflow: hidden;
   overflow-y: scroll
 }</style>
-<style type="text/css">.tabs-wrapper {
+<style scoped type="text/css">.tabs-wrapper {
   width: 100%
 }
 
@@ -6587,7 +6587,7 @@ button.swiper-pagination-bullet {
 .tab-disable .tabs-normal-txt {
   color: #e5e9ef
 }</style>
-<style type="text/css">.big-continuity-card-item {
+<style scoped type="text/css">.big-continuity-card-item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -6650,7 +6650,7 @@ button.swiper-pagination-bullet {
   text-align: center;
   line-height: 24px
 }</style>
-<style type="text/css">.common-noimg-warpper {
+<style scoped type="text/css">.common-noimg-warpper {
   position: fixed;
   width: 100%;
   height: 100%;
@@ -6738,7 +6738,7 @@ button.swiper-pagination-bullet {
   right: 20px;
   top: 14px
 }</style>
-<style type="text/css">.pay-dialog-wrapper {
+<style scoped type="text/css">.pay-dialog-wrapper {
   position: fixed;
   width: 100%;
   height: 100%;
@@ -6899,7 +6899,7 @@ button.swiper-pagination-bullet {
 .pay-left-btn-alone {
   margin-right: 0 !important
 }</style>
-<style type="text/css">.big-banner-warp {
+<style scoped type="text/css">.big-banner-warp {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   margin: 20px 20px 0;
@@ -6946,7 +6946,7 @@ button.swiper-pagination-bullet {
   background-size: 100% 100%;
   vertical-align: text-bottom
 }</style>
-<style type="text/css">.big-privilege-warp {
+<style scoped type="text/css">.big-privilege-warp {
   position: relative;
   margin: 0 20px;
   padding: 20px 0;
@@ -7042,7 +7042,7 @@ button.swiper-pagination-bullet {
   top: 5px;
   right: 0
 }</style>
-<style type="text/css">.big-watch-wrapper {
+<style scoped type="text/css">.big-watch-wrapper {
   position: relative;
   margin: 0 20px;
   padding: 20px 0;
@@ -7056,7 +7056,7 @@ button.swiper-pagination-bullet {
   vertical-align: top;
   margin-bottom: 18px
 }</style>
-<style type="text/css">.member-list-item img[lazy=loading] {
+<style scoped type="text/css">.member-list-item img[lazy=loading] {
   display: inline-block
 }
 
@@ -7141,7 +7141,7 @@ button.swiper-pagination-bullet {
   top: 4px;
   right: 4px
 }</style>
-<style type="text/css">.big-watch-wrapper {
+<style scoped type="text/css">.big-watch-wrapper {
   position: relative;
   margin: 0 20px;
   padding: 20px 0;
@@ -7155,7 +7155,7 @@ button.swiper-pagination-bullet {
   vertical-align: top;
   margin-bottom: 18px
 }</style>
-<style type="text/css">.big-game-gift-warp img[lazy=loading] {
+<style scoped type="text/css">.big-game-gift-warp img[lazy=loading] {
   display: inline-block
 }
 
@@ -7270,7 +7270,7 @@ button.swiper-pagination-bullet {
   line-height: 12px;
   text-decoration: line-through
 }</style>
-<style type="text/css">.big-pendant-warp {
+<style scoped type="text/css">.big-pendant-warp {
   position: relative;
   margin: 0 20px;
   padding: 20px 0;
@@ -7360,7 +7360,7 @@ button.swiper-pagination-bullet {
   color: #222;
   line-height: 14px
 }</style>
-<style type="text/css">.bottom-help {
+<style scoped type="text/css">.bottom-help {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -7386,7 +7386,7 @@ button.swiper-pagination-bullet {
 .array-bottom {
   margin-left: 22px
 }</style>
-<style type="text/css">.big-gift-dialog img[src=""] {
+<style scoped type="text/css">.big-gift-dialog img[src=""] {
   opacity: 0
 }
 
@@ -7493,8 +7493,8 @@ button.swiper-pagination-bullet {
 }
 </style>
 
-<style type="text/css">
-.tabs-nav{
+<style scoped type="text/css">
+.tabs-nav {
   height: 50px;
   border-bottom: 1px solid #ddd;
   line-height: 50px
@@ -7516,7 +7516,7 @@ button.swiper-pagination-bullet {
   color: #00a1d6
 }
 </style>
-<style type="text/css">
+<style scoped type="text/css">
 .points-header-warp {
   margin-top: 40px;
   padding: 0 20px;
@@ -7541,7 +7541,7 @@ button.swiper-pagination-bullet {
   color: #00a1d6
 }
 </style>
-<style type="text/css">
+<style scoped type="text/css">
 .points-exchange-warp {
   padding: 0 20px;
   margin-top: 30px
@@ -7620,7 +7620,7 @@ button.swiper-pagination-bullet {
   background-color: #00b5e5
 }
 </style>
-<style type="text/css">
+<style scoped type="text/css">
 .points-pendant-warp {
   padding-bottom: 30px;
   margin: 0 20px 30px;
@@ -7690,7 +7690,7 @@ button.swiper-pagination-bullet {
 }
 </style>
 
-<style type="text/css">
+<style scoped type="text/css">
 .points-record-warp {
   border-bottom: 1px solid #e5e9ef;
   padding: 20px 0 40px;
@@ -7762,8 +7762,8 @@ table.viptable td:nth-child(4) {
   float: right !important
 }
 </style>
-<style type="text/css">
-.security-right-bottom{
+<style scoped type="text/css">
+.security-right-bottom {
   padding: 0 20px
 }
 
@@ -7771,8 +7771,8 @@ table.viptable td:nth-child(4) {
   padding-top: 10px
 }
 </style>
-<style type="text/css">
-.pos-center{
+<style scoped type="text/css">
+.pos-center {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -7859,7 +7859,7 @@ table.viptable td:nth-child(4) {
   transform: translate(-50%, -50%)
 }
 </style>
-<style type="text/css">
+<style scoped type="text/css">
 .pos-center {
   position: absolute;
   top: 50%;
@@ -7893,8 +7893,8 @@ table.viptable td:nth-child(4) {
   z-index: 1
 }
 </style>
-<style type="text/css">
-.face-nav{
+<style scoped type="text/css">
+.face-nav {
   margin: 0 auto;
   border-bottom: 1px solid #e5e9ef
 }
@@ -7936,12 +7936,12 @@ table.viptable td:nth-child(4) {
   background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAADCAYAAABbNsX4AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA3FpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDowY2YzZmZkNy05MWYxLWJjNDktYTMzNy0xZWE1ZDlmOTRlNzUiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QjNDQkVEOURCNUVCMTFFNUIyRkNBMTcwQUQzNUMxRTAiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QjNDQkVEOUNCNUVCMTFFNUIyRkNBMTcwQUQzNUMxRTAiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjA5NDM5MzQ4LTU3MGYtZDI0NC1hOThiLTlkNjJjYmFkZTJlNyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDowY2YzZmZkNy05MWYxLWJjNDktYTMzNy0xZWE1ZDlmOTRlNzUiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6k9jasAAAAMElEQVR42mJkWHiNAQhEgXgREMcB8WsmIMEFxJuB2ANKc4EElwOxOQMEgOjlAAEGAPtdBvsKf21nAAAAAElFTkSuQmCC)
 }
 </style>
-<style type="text/css">
-.pendant-mail-margin{
+<style scoped type="text/css">
+.pendant-mail-margin {
   margin-top: 30px
 }
 
-.pendant-mail-margin h3{
+.pendant-mail-margin h3 {
   font-size: 14px;
   color: #000;
   line-height: 20px;
@@ -7949,8 +7949,8 @@ table.viptable td:nth-child(4) {
   margin-bottom: 20px
 }
 </style>
-<style type="text/css">
-.pendant-nav li{
+<style scoped type="text/css">
+.pendant-nav li {
   float: left;
   margin-right: 15px
 }
@@ -7973,7 +7973,7 @@ table.viptable td:nth-child(4) {
   margin-right: 0
 }
 </style>
-<style type="text/css">
+<style scoped type="text/css">
 .pendant-list li {
   width: 158px;
   height: 158px;
@@ -8028,7 +8028,7 @@ table.viptable td:nth-child(4) {
   border: 1px solid #00a1d6
 }
 </style>
-<style type="text/css">
+<style scoped type="text/css">
 .user-setting-warp .padding-dom {
   width: 789px;
   height: 39px;
@@ -8152,8 +8152,8 @@ table.viptable td:nth-child(4) {
   border-color: #22a1d6 !important
 }
 </style>
-<style type="text/css">
-.dialog-wrap{
+<style scoped type="text/css">
+.dialog-wrap {
   position: fixed;
   width: 100%;
   height: 100%;
