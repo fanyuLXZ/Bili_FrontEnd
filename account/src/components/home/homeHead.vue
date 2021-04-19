@@ -4,12 +4,12 @@
     <img class="user-vip-icon" src="//i0.hdslb.com/bfs/vip/icon_Certification_small_member_22_3x.png" v-if="vip.type===0">
     <span class="user-vip-icon user-vip-icon-vip" v-else></span>
     <div class="home-head">
-      <img :src="face">
+      <img :src="$store.state.face">
       <a target="_blank" class="gotoSpace">个人空间</a>
     </div>
     <div class="home-right">
       <div class="home-top-msg">
-        <span class="home-top-msg-name">江浙沪子笑</span>
+        <span class="home-top-msg-name">{{ $store.state.uname }}</span>
         <span class="home-user-spec" style="background-color: rgb(62, 181, 89); color: rgb(255, 255, 255);" v-if="vip.status&vip.type===0">
           小会员
         </span>
@@ -59,8 +59,6 @@ export default {
   },
   data(){
     return{
-      uname:"江浙沪子笑",  //用户姓名
-      face:"https://i1.hdslb.com/bfs/face/e625b00cc11186a7ed7fed76e7e607407bb1ee44.jpg",  //用户头像
       level_info: {
         current_level: 2,  //用户等级
         current_min: 200,  //用户当前等级最小值
