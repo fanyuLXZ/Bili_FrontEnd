@@ -1,10 +1,10 @@
 <template>
   <div class="fav-share">
     <div class="mask"></div>
-    <iframe class='share-iframe' name="fav-share"
-      width="610" height="425"
-      :src="`//t.bilibili.com/share/card/index?type=4300&rid=${this.favListDetails.info.id}&repost_code=20000`"
-      frameborder="0">
+    <iframe :src="`//t.bilibili.com/share/card/index?type=4300&rid=${this.favListDetails.info.id}&repost_code=20000`" class='share-iframe'
+            frameborder="0" height="425"
+            name="fav-share"
+            width="610">
     </iframe>
   </div>
 </template>
@@ -33,11 +33,11 @@ export default {
         this.$store.commit('SHOWFAVSHARE_SUCCESS', false)
       } else if (res === 'dynamic-share-succeed') {
         // 成功，但是不必关闭弹出
-        this.sharePlayList({
-          rid: this.favListDetails.info.id,
-          r_type: 11,
-          cnt_type: 1,
-        })
+        // this.sharePlayList({
+        //   rid: this.favListDetails.info.id,
+        //   r_type: 11,
+        //   cnt_type: 1,
+        // })
         this.$store.commit('SHAREPLAYLIST_SUCCESS')
       }
     },
@@ -46,7 +46,7 @@ export default {
 </script>
 
 <style lang="less">
-.fav-share{
+.fav-share {
   position: fixed;
   top: 0;
   right: 0;
@@ -54,7 +54,8 @@ export default {
   left: 0;
   background-color: rgba(0, 0, 0, 0.65);
   z-index: 2001;
-  .share-iframe{
+
+  .share-iframe {
     position: absolute;
     left: 50%;
     top: 50%;

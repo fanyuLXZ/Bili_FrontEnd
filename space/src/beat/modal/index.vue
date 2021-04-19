@@ -1,33 +1,35 @@
 <template>
   <transition name="fade">
-    <div class="modal-container"
-      v-show="show">
-      <div class="modal-mask"
-        v-if="mask"></div>
-      <div class="modal-wrapper"
-        :style="styles">
+    <div v-show="show"
+         class="modal-container">
+      <div v-if="mask"
+           class="modal-mask"></div>
+      <div :style="styles"
+           class="modal-wrapper">
         <div class="modal">
           <div class="modal-header">
             <i class="modal-header-close iconfont icon-ic_close"
-              @click="cancel"></i>
+               @click="cancel"></i>
             <div class="modal-title">
               <slot v-if="$slots.title"
-                name="title"></slot>
-              <p v-else>{{title}}</p>
+                    name="title"></slot>
+              <p v-else>{{ title }}</p>
             </div>
           </div>
           <div class="modal-body">
             <slot v-if="$slots.body"
-              name="body"></slot>
-            <p v-else>{{body}}</p>
+                  name="body"></slot>
+            <p v-else>{{ body }}</p>
           </div>
           <be-button-group class="modal-footer">
             <be-button v-if="confirmButton.show"
-              @click.native="confirm"
-              :type="confirmButton.type">{{confirmButton.text}}</be-button>
+                       :type="confirmButton.type"
+                       @click.native="confirm">{{ confirmButton.text }}
+            </be-button>
             <be-button v-if="cancelButton.show"
-              @click.native="cancel"
-              :type="cancelButton.type">{{cancelButton.text}}</be-button>
+                       :type="cancelButton.type"
+                       @click.native="cancel">{{ cancelButton.text }}
+            </be-button>
           </be-button-group>
         </div>
       </div>
@@ -113,4 +115,4 @@ export default {
 }
 </script>
 <style lang="less"
-  src="./modal.less"></style>
+       src="./modal.less"></style>

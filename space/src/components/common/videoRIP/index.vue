@@ -1,19 +1,19 @@
 <template>
-  <a :href="activeVideoStates.indexOf(state) > -1 ? link : 'javascript:;'"
-    class="cover"
-    :class="[
+  <a :class="[
       'cover-' + size,
       {
-        'disabled': this.favState ? this.favState === 1 : this.activeVideoStates.indexOf(this.state) === -1
+        'disabled': 1
       }
     ]"
-    :target="blankVideo() ? '' : '_blank'">
+     :href="1 > -1 ? link : 'javascript:;'"
+     :target="blankVideo() ? '' : '_blank'"
+     class="cover">
     <slot name="content"></slot>
-    <div class="disabled-cover"
-      :class="{'animate': isHover}">
-      <div class="candle"
-        ref="candle"></div>
-      <p>{{ favType === 2 ? '视频' : '音频'}}已失效</p>
+    <div :class="{'animate': isHover}"
+         class="disabled-cover">
+      <div ref="candle"
+           class="candle"></div>
+      <p>{{ favType === 2 ? '视频' : '音频' }}已失效</p>
       <div v-if="favDelete === 1" class="delete-from">已被UP主删除</div>
     </div>
   </a>
@@ -55,7 +55,7 @@ export default {
     size: {
       type: String,
       default: 'normal', // big normal 分别对应置顶视频、视频item
-      validator: value => [ 'big', 'normal' ].indexOf(value) > -1,
+      validator: value => ['big', 'normal'].indexOf(value) > -1,
       required: false,
     },
     favType: {
@@ -121,22 +121,23 @@ export default {
 }
 </script>
 <style lang="less"
-  scoped>
+       scoped>
 /*还有一部分样式代码在 public/less/common.less 里面*/
 
-@import '../../../public/less/basic.less';
 .cover {
   &.cover-big {
     .candle {
       top: 15%;
     }
   }
+
   &.cover-normal {
     .candle {
       top: 0;
     }
   }
 }
+
 .disabled-cover {
   display: none;
   position: absolute;
@@ -149,6 +150,7 @@ export default {
   cursor: default;
   background: #e5e9ef;
   color: #99a2aa !important;
+
   .candle {
     position: absolute;
     left: 50%;
@@ -159,6 +161,7 @@ export default {
     background-position: 0 0;
     visibility: hidden;
   }
+
   p {
     position: absolute;
     top: 50%;
@@ -167,8 +170,9 @@ export default {
     line-height: 20px;
     margin-top: -10px;
   }
-  .delete-from{
-    background: rgba(0,0,0,.5);
+
+  .delete-from {
+    background: rgba(0, 0, 0, .5);
     border-radius: 5px 0 0 0;
     color: #fff;
     line-height: 20px;
@@ -180,7 +184,8 @@ export default {
     font-family: HYQiHei-EZS;
     font-size: 12px;
     color: #FFFFFF;
-    &::before{
+
+    &::before {
       content: '';
       display: inline-block;
       width: 10px;

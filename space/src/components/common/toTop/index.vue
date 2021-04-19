@@ -1,13 +1,15 @@
 <template>
   <!-- 返回顶部 start -->
   <div class="to-top"
-    @click="fly"></div>
+       @click="fly"></div>
   <!-- 返回顶部 end -->
 </template>
 <script>
 let interval = null
+import $ from "jquery";
 
 export default {
+
   name: 'to-top',
   data() {
     return {
@@ -23,40 +25,40 @@ export default {
     const self = this
 
     $(window)
-      .off('scroll.toTop')
-      .on('scroll.toTop', function() {
-        const top = $(window).scrollTop()
-        const lastTrace = self.lastTrace
+        .off('scroll.toTop')
+        .on('scroll.toTop', function () {
+          const top = $(window).scrollTop()
+          const lastTrace = self.lastTrace
 
-        if (top - lastTrace > 0) {
-          // 向下滑
-          // 清除各种定时器
-          if (self.isClick) {
-            toTop.removeClass('transition')
-            self.$nextTick(() => {
-              toTop.removeClass('fly')
-            })
-            clearInterval(interval)
+          if (top - lastTrace > 0) {
+            // 向下滑
+            // 清除各种定时器
+            if (self.isClick) {
+              toTop.removeClass('transition')
+              self.$nextTick(() => {
+                toTop.removeClass('fly')
+              })
+              clearInterval(interval)
+            }
+
+            // 如果达到了一半的时候，就把小飞机展示出来
+            if (top >= winH / 2) {
+              !self.isVisible && toTop.stop().fadeIn(100)
+              self.isVisible = true
+              self.keyframes = 0
+              toTop.css('background-position-x', -40 + 'px')
+            }
+            self.isClick = false
+          } else {
+            // 向上滑
+            if (top < winH / 2) {
+              self.isVisible && toTop.stop().fadeOut(100)
+              self.isVisible = false
+            }
           }
 
-          // 如果达到了一半的时候，就把小飞机展示出来
-          if (top >= winH / 2) {
-            !self.isVisible && toTop.stop().fadeIn(100)
-            self.isVisible = true
-            self.keyframes = 0
-            toTop.css('background-position-x', -40 + 'px')
-          }
-          self.isClick = false
-        } else {
-          // 向上滑
-          if (top < winH / 2) {
-            self.isVisible && toTop.stop().fadeOut(100)
-            self.isVisible = false
-          }
-        }
-
-        self.lastTrace = top
-      })
+          self.lastTrace = top
+        })
   },
   methods: {
     fly() {
@@ -90,7 +92,7 @@ export default {
 }
 </script>
 <style lang="less">
-@import '../../../public/less/basic.less';
+//@import '../../../public/less/basic.less';
 .to-top {
   position: fixed;
   display: none;
@@ -101,17 +103,19 @@ export default {
   height: 85px;
   margin-left: 602px;
   cursor: pointer;
-  .bgimg('space-to-top.png');
+  background-image: url(//s1.hdslb.com/bfs/static/jinkela/space/assets/space-to-top.png);
   background-position: -40px -44px;
+
   &.transition {
     transition: transform ease-in .3s;
   }
+
   &.fly {
     transform: translateY(-1000px);
   }
 }
 
-@media( min-width: 1420px) {
+@media ( min-width: 1420px) {
   .to-top {
     margin-left: 712px;
   }

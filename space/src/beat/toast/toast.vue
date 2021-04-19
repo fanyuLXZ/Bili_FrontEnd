@@ -1,7 +1,8 @@
 <template>
   <transition name="fade">
-    <div class="be-toast"
-      v-show="show">{{ text }}</div>
+    <div v-show="show"
+         class="be-toast">{{ text }}
+    </div>
   </transition>
 </template>
 <script>

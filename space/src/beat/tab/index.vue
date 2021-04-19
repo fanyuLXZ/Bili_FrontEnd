@@ -2,23 +2,23 @@
   <div class="be-tab">
     <ul class="be-tab-inner clearfix">
       <li v-for="(tab, index) in tabs"
-        :key="index"
-        :ref="tab.name"
-        :class="{'is-active': tab.name === value}"
-        class="be-tab-item">
-        <input class="be-tab-input"
-          type="radio"
-          :name="`be-tab-${uid}`"
-          @change="handleChange"
-          :value="tab.name" />
-        <span>{{tab.alias}}</span>
+          :key="index"
+          :ref="tab.name"
+          :class="{'is-active': tab.name === value}"
+          class="be-tab-item">
+        <input :name="`be-tab-${uid}`"
+               :value="tab.name"
+               class="be-tab-input"
+               type="radio"
+               @change="handleChange"/>
+        <span>{{ tab.alias }}</span>
       </li>
     </ul>
-    <div class="be-tab-cursor"
-      :style="{
+    <div :style="{
         transform: `translateX(${left}px)`,
         width: `${width}px`
-      }"></div>
+      }"
+         class="be-tab-cursor"></div>
   </div>
 </template>
 <script>
@@ -46,7 +46,7 @@ export default {
       },
     },
     value: {
-      type: [ String, Number ],
+      type: [String, Number],
       default: '',
     },
   },
@@ -79,6 +79,7 @@ export default {
 // 普通tab
 .be-tab {
   position: relative;
+
   &-item {
     position: relative;
     float: left;
@@ -87,13 +88,16 @@ export default {
     line-height: 28px;
     vertical-align: top;
     cursor: pointer;
+
     &:last-child {
       margin-right: 0;
     }
+
     &.is-active {
       color: #00a1d6;
     }
   }
+
   &-input {
     position: absolute;
     top: 0;
@@ -105,6 +109,7 @@ export default {
     opacity: 0;
     cursor: pointer;
   }
+
   &-cursor {
     position: absolute;
     bottom: 0;
@@ -114,6 +119,7 @@ export default {
     border-bottom: 1px #00a1d6 solid;
     transform: translateX(0);
     transition: width ease .2s, transform ease .2s;
+
     &:after {
       content: "";
       position: absolute;

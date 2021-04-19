@@ -24,7 +24,8 @@ let count = 0
  * Noop function.
  */
 
-function noop() {}
+function noop() {
+}
 
 /**
  * JSONP handler
@@ -41,62 +42,62 @@ function noop() {}
  */
 
 function jsonp(url, opts = {}) {
-  return new Promise((resolve, reject) => {
-    const _param = []
-    const params = opts.params || {}
-    params.jsonp = 'jsonp'
+    return new Promise((resolve, reject) => {
+        const _param = []
+        const params = opts.params || {}
+        params.jsonp = 'jsonp'
 
-    const keys = Object.keys(params)
-    for (const key of keys) {
-      _param.push(`${key}=${params[key]}`)
-    }
+        const keys = Object.keys(params)
+        for (const key of keys) {
+            _param.push(`${key}=${params[key]}`)
+        }
 
-    opts.param = _param.join('&') + '&callback'
-    const prefix = opts.prefix || '__jp'
+        opts.param = _param.join('&') + '&callback'
+        const prefix = opts.prefix || '__jp'
 
-    // use the callback name that was passed if one was provided.
-    // otherwise generate a unique name by incrementing our counter.
-    const id = opts.name || (prefix + (count++))
+        // use the callback name that was passed if one was provided.
+        // otherwise generate a unique name by incrementing our counter.
+        const id = opts.name || (prefix + (count++))
 
-    const param = opts.param || 'callback'
-    const timeout = opts.timeout != null ? opts.timeout : 60000  // eslint-disable-line
-    const enc = encodeURIComponent
-    const target = document.getElementsByTagName('script')[0] || document.head
-    let script // eslint-disable-line prefer-const
-    let timer
+        const param = opts.param || 'callback'
+        const timeout = opts.timeout != null ? opts.timeout : 60000  // eslint-disable-line
+        const enc = encodeURIComponent
+        const target = document.getElementsByTagName('script')[0] || document.head
+        let script // eslint-disable-line prefer-const
+        let timer
 
-    if (timeout) {
-      timer = setTimeout(function() {
-        cleanup()
-        reject('400')
-      }, timeout)
-    }
+        if (timeout) {
+            timer = setTimeout(function () {
+                cleanup()
+                reject('400')
+            }, timeout)
+        }
 
-    function cleanup() {
-      if (script.parentNode) script.parentNode.removeChild(script)
-      window[id] = noop
-      if (timer) clearTimeout(timer)
-    }
+        function cleanup() {
+            if (script.parentNode) script.parentNode.removeChild(script)
+            window[id] = noop
+            if (timer) clearTimeout(timer)
+        }
 
-    window[id] = function(data) {
-      debug('jsonp got', data)
-      cleanup()
-      resolve(data)
-    }
+        window[id] = function (data) {
+            debug('jsonp got', data)
+            cleanup()
+            resolve(data)
+        }
 
-    // add qs component
-    url += (~url.indexOf('?') ? '&' : '?') + param + '=' + enc(id)
-    url = url.replace('?&', '?')
+        // add qs component
+        url += (~url.indexOf('?') ? '&' : '?') + param + '=' + enc(id)
+        url = url.replace('?&', '?')
 
-    debug('jsonp req "%s"', url)
+        debug('jsonp req "%s"', url)
 
-    // create script
-    script = document.createElement('script')
-    script.src = url
-    script.onerror = function() {
-      reject('400')
-    }
+        // create script
+        script = document.createElement('script')
+        script.src = url
+        script.onerror = function () {
+            reject('400')
+        }
 
-    target.parentNode.insertBefore(script, target)
-  })
+        target.parentNode.insertBefore(script, target)
+    })
 }

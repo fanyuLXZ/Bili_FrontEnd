@@ -1,9 +1,10 @@
 <template>
-  <div class="be-tags-container" v-if="tagList.length">
+  <div v-if="tagList.length" class="be-tags-container">
     <div v-for="(item, index) in tagList"
-      :key="index"
-      :class="[ 'tag', `${item.class}`]"
-    >{{ item.name }}</div>
+         :key="index"
+         :class="[ 'tag', `${item.class}`]"
+    >{{ item.name }}
+    </div>
   </div>
 </template>
 <script>
@@ -34,12 +35,12 @@ export default {
   },
   computed: {
     tagList() {
-      const { isPay, isCoop, isInter, isNew } = this
+      const {isPay, isCoop, isInter, isNew} = this
       const list = [
-        { 'key': isPay, 'class': 'pay-tag', 'name': '付费' },
-        { 'key': isCoop, 'class': 'coop-tag', 'name': '合作' },
-        { 'key': isInter, 'class': 'inter-tag', 'name': '互动' },
-        { 'key': isNew, 'class': 'new-tag', 'name': 'NEW' },
+        {'key': isPay, 'class': 'pay-tag', 'name': '付费'},
+        {'key': isCoop, 'class': 'coop-tag', 'name': '合作'},
+        {'key': isInter, 'class': 'inter-tag', 'name': '互动'},
+        {'key': isNew, 'class': 'new-tag', 'name': 'NEW'},
       ].filter(item => Object.values(item)[0]).slice(0, 2)
       return list
     },
@@ -47,11 +48,12 @@ export default {
 }
 </script>
 <style lang="less">
-.be-tags-container{
+.be-tags-container {
   position: absolute;
   top: 4px;
   right: 4px;
-  .tag{
+
+  .tag {
     display: inline-block;
     padding: 0 4px;
     font-size: 10px;
@@ -60,14 +62,17 @@ export default {
     line-height: 14px;
     border-radius: 2px;
     margin-left: 4px;
-    &.pay-tag{
+
+    &.pay-tag {
       background-color: #FAAB4B;
     }
+
     &.coop-tag,
-    &.inter-tag{
+    &.inter-tag {
       background-color: #FB7299;
     }
-    &.new-tag{
+
+    &.new-tag {
       background-color: #42a0c4;
     }
   }

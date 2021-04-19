@@ -1,11 +1,12 @@
 <template>
   <transition name="fade">
-    <div class="be-tooltip"
-      :style="{
+    <div v-show="show"
+         :style="{
         left: left + 'px',
         top: top + 'px'
       }"
-      v-show="show">{{ text }}</div>
+         class="be-tooltip">{{ text }}
+    </div>
   </transition>
 </template>
 <script>

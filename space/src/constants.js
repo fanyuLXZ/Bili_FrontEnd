@@ -8,4 +8,4 @@
  */
 
 // 可观看视频的state，除开此三者，均为失效视频
-export const activeVideoStates = [ 0, 1, -6 ]
+export const activeVideoStates = [0, 1, -6]

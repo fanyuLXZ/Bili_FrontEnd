@@ -1,0 +1,1 @@
+export let click_bus = {}

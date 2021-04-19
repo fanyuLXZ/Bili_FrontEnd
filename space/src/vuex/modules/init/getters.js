@@ -55,28 +55,28 @@ export const _bili_space_global_message = state => state._bili_space_global_mess
 
 // !! 这里所有的字段都是当前空间UP主的信息
 export const isVip = state => {
-  return state._bili_space_vip.type !== 0
+    return state._bili_space_vip.type !== 0
 }
 export const isVipFrozen = state => {
-  const vip = state._bili_space_vip
-  return vip.type !== 0 && vip.status === 2
+    const vip = state._bili_space_vip
+    return vip.type !== 0 && vip.status === 2
 }
 export const isVipNormal = state => {
-  const vip = state._bili_space_vip
-  return vip.type !== 0 && vip.status === 1
+    const vip = state._bili_space_vip
+    return vip.type !== 0 && vip.status === 1
 }
 export const isVipAnnual = state => {
-  const vip = state._bili_space_vip
-  return vip.type === 2 && vip.status === 1
+    const vip = state._bili_space_vip
+    return vip.type === 2 && vip.status === 1
 }
 
 export const isFoolsDay = state => {
-  const vip = state._bili_space_vip
-  return vip.label.label_theme.includes('fool')
+    const vip = state._bili_space_vip
+    return vip.label.label_theme.includes('fool')
 }
 
 // !!这里只能是用当前登录用户的信息
 export const isVipAboutToEnd = state => {
-  const { type, status, expire } = state._bili_login_info.vip
-  return status === 1 && type !== 0 && expire < 8
+    const {type, status, expire} = state._bili_login_info.vip
+    return status === 1 && type !== 0 && expire < 8
 }

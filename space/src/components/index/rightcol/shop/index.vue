@@ -1,21 +1,21 @@
 <template>
   <!-- 空间所有者账户信息 -->
-  <div class="section shop"
-    v-show="_bili_space_state === 'owner' && isShop">
+  <div v-show="_bili_space_state === 'owner' && isShop"
+       class="section shop">
     <h3 class="section-title">商家中心</h3>
-    <a class="shop-link"
-      :href="shopUrl"
-      target="_blank">进入 ></a>
+    <a :href="shopUrl"
+       class="shop-link"
+       target="_blank">进入 ></a>
     <div class="info">
       <div class="content">
         <div class="detail clearfix">
           <div class="item">
             <span class="title">在售商品</span>
-            <span class="number">{{goodsNumber | toWan}}</span>
+            <span class="number">{{ goodsNumber | toWan }}</span>
           </div>
           <div class="item">
             <span class="title">本月销量</span>
-            <span class="number">{{sales | toWan}}</span>
+            <span class="number">{{ sales | toWan }}</span>
           </div>
         </div>
       </div>
@@ -23,7 +23,7 @@
   </div>
 </template>
 <script>
-import { mapGetters, mapActions } from 'vuex'
+import {mapActions, mapGetters} from 'vuex'
 
 export default {
   name: 'shop',
@@ -42,11 +42,12 @@ export default {
         this.goodsNumber = rs.goods_num
         this.sales = rs.month_sales
         this.shopUrl = rs.url
-      }).catch(() => {})
+      }).catch(() => {
+      })
     }
   },
-  methods: { ...mapActions(['getShop']) },
-  computed: { ...mapGetters(['_bili_space_state']) },
+  methods: {...mapActions(['getShop'])},
+  computed: {...mapGetters(['_bili_space_state'])},
 }
 </script>
 <style lang="less">
@@ -60,23 +61,28 @@ export default {
     color: #99a2aa;
     font-size: 12px;
     font-weight: normal;
+
     &:hover {
       color: #00a1d6;
     }
   }
+
   .detail {
     .item {
       float: left;
       width: 50%;
+
       span {
         display: block;
         margin: 0 auto;
         text-align: center;
       }
+
       .title {
         color: #6d757a;
         font-size: 12px;
       }
+
       .number {
         color: #222;
         font-size: 14px;

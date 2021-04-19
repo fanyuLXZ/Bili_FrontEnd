@@ -1,13 +1,13 @@
 <template>
   <transition name="zoom">
-    <ul class="be-dropdown-menu"
-      :style="{
+    <ul v-show="open"
+        :class="[`menu-align-${align}`]"
+        :style="{
         left: left + 'px',
         top: top + 'px',
         transformOrigin: transformOrigin
       }"
-      :class="[`menu-align-${align}`]"
-      v-show="open">
+        class="be-dropdown-menu">
       <slot></slot>
     </ul>
   </transition>

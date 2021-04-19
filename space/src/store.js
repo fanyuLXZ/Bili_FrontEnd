@@ -10,18 +10,18 @@
  * @return {String}
  */
 function _stringifyObject(obj) {
-  if (!obj) {
-    return ''
-  } else {
-    const params = []
-    for (const o in obj) {
-      // 跳过时间戳字段
-      // 圈子的请求里跳过 space_callback 字段
-      if (o === '_' || o === 'ts' || o === 'space_callback') continue
-      params.push(`${o}=${obj[o]}`)
+    if (!obj) {
+        return ''
+    } else {
+        const params = []
+        for (const o in obj) {
+            // 跳过时间戳字段
+            // 圈子的请求里跳过 space_callback 字段
+            if (o === '_' || o === 'ts' || o === 'space_callback') continue
+            params.push(`${o}=${obj[o]}`)
+        }
+        return params.join('&')
     }
-    return params.join('&')
-  }
 }
 
 /**
@@ -34,7 +34,7 @@ function _stringifyObject(obj) {
  * @return {String}
  */
 function _getCacheKey(mid, api, queryString) {
-  return `${mid}_${api}_${queryString}`
+    return `${mid}_${api}_${queryString}`
 }
 
 /**
@@ -46,14 +46,14 @@ function _getCacheKey(mid, api, queryString) {
  * @return {Promise}
  */
 export const getLocalCache = (api, params, mid = 0) => {
-  const queryString = _stringifyObject(params)
-  const localCache = sessionStorage.getItem(_getCacheKey(mid, api, queryString))
+    const queryString = _stringifyObject(params)
+    const localCache = sessionStorage.getItem(_getCacheKey(mid, api, queryString))
 
-  if (localCache) {
-    return Promise.resolve(JSON.parse(localCache))
-  } else {
-    return Promise.reject()
-  }
+    if (localCache) {
+        return Promise.resolve(JSON.parse(localCache))
+    } else {
+        return Promise.reject()
+    }
 }
 
 /**
@@ -65,10 +65,10 @@ export const getLocalCache = (api, params, mid = 0) => {
  * @param {Number} mid  用户mid，不传则默认0
  */
 export const setLocalCache = (api, params, data, mid = 0) => {
-  const queryString = _stringifyObject(params)
-  const cacheKey = _getCacheKey(mid, api, queryString)
+    const queryString = _stringifyObject(params)
+    const cacheKey = _getCacheKey(mid, api, queryString)
 
-  sessionStorage.setItem(cacheKey, JSON.stringify(data))
+    sessionStorage.setItem(cacheKey, JSON.stringify(data))
 }
 
 /**
@@ -80,22 +80,22 @@ export const setLocalCache = (api, params, data, mid = 0) => {
  * @param {Number} mid  用户mid，不传则默认0
  */
 export const updateLocalCache = (api, params, update, mid = 0) => {
-  const queryString = _stringifyObject(params)
-  const cacheKey = _getCacheKey(mid, api, queryString)
-  const oldData = sessionStorage.getItem(cacheKey)
+    const queryString = _stringifyObject(params)
+    const cacheKey = _getCacheKey(mid, api, queryString)
+    const oldData = sessionStorage.getItem(cacheKey)
 
-  if (oldData) {
-    const oldDataFormatted = JSON.parse(oldData)
-    const keys = Object.keys(update)
-    let i = keys.length
-    let key
+    if (oldData) {
+        const oldDataFormatted = JSON.parse(oldData)
+        const keys = Object.keys(update)
+        let i = keys.length
+        let key
 
-    while (i--) {
-      key = keys[i]
-      oldDataFormatted[key] = update[key]
+        while (i--) {
+            key = keys[i]
+            oldDataFormatted[key] = update[key]
+        }
+        sessionStorage.setItem(cacheKey, JSON.stringify(oldDataFormatted))
     }
-    sessionStorage.setItem(cacheKey, JSON.stringify(oldDataFormatted))
-  }
 }
 
 /**
@@ -106,7 +106,7 @@ export const updateLocalCache = (api, params, update, mid = 0) => {
  * @param {Number} mid  用户mid，不传则默认0
  */
 export const removeLocalCache = (api, params, mid = 0) => {
-  const queryString = _stringifyObject(params)
-  const cacheKey = _getCacheKey(mid, api, queryString)
-  sessionStorage.removeItem(cacheKey)
+    const queryString = _stringifyObject(params)
+    const cacheKey = _getCacheKey(mid, api, queryString)
+    sessionStorage.removeItem(cacheKey)
 }

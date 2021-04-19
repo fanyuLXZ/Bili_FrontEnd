@@ -1,6 +1,6 @@
 <template>
-  <div class="btn-container"
-    :class="styleClass">
+  <div :class="styleClass"
+       class="btn-container">
     <slot></slot>
   </div>
 </template>
@@ -21,19 +21,23 @@ export default {
 }
 </script>
 <style lang="less"
-  scoped>
+       scoped>
 .btn-container {
   font-size: 0;
   white-space: nowrap;
+
   &.btn-center {
     text-align: center;
   }
+
   &.btn-left {
     text-align: left;
   }
+
   &.btn-right {
     text-align: right;
   }
+
   .btn:last-of-type {
     margin-right: 0;
   }

@@ -1,25 +1,25 @@
 <template>
-  <div class="be-dropdown"
-    @mouseenter="handleMouseenter"
-    @mouseleave="handleMouseleave"
-    @click="handleClick"
-    v-clickoutside="hide">
+  <div v-clickoutside="hide"
+       class="be-dropdown"
+       @click="handleClick"
+       @mouseleave="handleMouseleave">
     <!-- 如果用户没有提供这个触发的模块，默认就给三个点 -->
     <slot v-if="$slots.trigger"
-      name="trigger"></slot>
+          name="trigger"></slot>
     <div v-else
-      class="be-dropdown-trigger">
+         class="be-dropdown-trigger">
       <i class="iconfont icon-ic_more"
-        title="更多操作"></i>
+         title="更多操作"></i>
     </div>
     <slot name="menu"></slot>
     <!-- 如果没有 trigger slot，也没有 menu slot，就把 default slot设置成 menu slot -->
     <slot v-if="!$slots.trigger && !$slots.menu"
-      name="default"></slot>
+          name="default"></slot>
   </div>
 </template>
 <script>
-import { debounce } from 'throttle-debounce'
+import {debounce} from 'throttle-debounce'
+
 export default {
   name: 'be-dropdown',
   data() {
@@ -34,14 +34,14 @@ export default {
       type: String,
       default: 'click',
       validator(val) {
-        return [ '', 'click', 'hover' ].indexOf(val) > -1
+        return ['', 'click', 'hover'].indexOf(val) > -1
       },
     },
     align: {
       type: String,
       default: '',
       validator(val) {
-        return [ '', 'right', 'left', 'middle' ].indexOf(val) > -1
+        return ['', 'right', 'left', 'middle'].indexOf(val) > -1
       },
     },
     append: {
@@ -50,11 +50,11 @@ export default {
     },
   },
   provide() {
-    return { dropdown: this }
+    return {dropdown: this}
   },
   methods: {
     /* eslint-disable */
-    handleMouseenter: debounce(300, true, function() {
+    handleMouseenter: debounce(300, true, function () {
       if (this.trigger === 'hover') {
         clearTimeout(this.timer)
         this.timer = null
@@ -84,11 +84,13 @@ export default {
   position: relative;
   display: inline-block;
   cursor: pointer;
+
   &-trigger {
     width: 24px;
     height: 24px;
     margin: auto;
     text-align: center;
+
     .icon-ic_more {
       display: block;
       line-height: 24px;

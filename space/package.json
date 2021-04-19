@@ -9,7 +9,12 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "jquery": "^3.6.0",
+    "perfect-scrollbar": "^1.5.0",
+    "promised-jsonp": "0.0.1",
+    "throttle-debounce": "^3.0.1",
     "vue": "^2.6.11",
+    "vue-meta": "^2.4.0",
     "vue-router": "^3.2.0",
     "vuex": "^3.4.0"
   },

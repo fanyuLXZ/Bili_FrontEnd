@@ -1,10 +1,10 @@
 <template>
-  <div class="be-scrollbar"
-    ref="scrollbar"
-    @ps-y-reach-end="psYReachEnd"
-    @ps-x-reach-end="psXReachEnd"
-    @ps-y-reach-start="psYReachStart"
-    @ps-x-reach-start="psXReachStart">
+  <div ref="scrollbar"
+       class="be-scrollbar"
+       @ps-y-reach-end="psYReachEnd"
+       @ps-x-reach-end="psXReachEnd"
+       @ps-y-reach-start="psYReachStart"
+       @ps-x-reach-start="psXReachStart">
     <slot></slot>
   </div>
 </template>
@@ -18,7 +18,7 @@ export default {
     source: {
       type: Array,
       required: true,
-      default: function() {
+      default: function () {
         return []
       },
     },
@@ -26,8 +26,8 @@ export default {
     // https://github.com/utatti/perfect-scrollbar#options
     options: {
       type: Object,
-      default: function() {
-        return { suppressScrollX: true }
+      default: function () {
+        return {suppressScrollX: true}
       },
     },
   },
