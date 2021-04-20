@@ -1,3 +1,4 @@
+/* eslint-disable */
 (window.videoWidgetsJsonP = window.videoWidgetsJsonP || []).push([[11], Array(222).concat([function (i, e, t) {
     "use strict";
     var a = function () {

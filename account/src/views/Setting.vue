@@ -14,7 +14,7 @@
           <!--  用户名  -->
           <userNickRelName></userNickRelName>
           <!--  我的签名  -->
-          <userMySign></userMySign>
+<!--          <userMySign></userMySign>-->
           <!--  性别  -->
           <userMySex></userMySex>
           <!--  出生日期  -->
@@ -58,7 +58,7 @@
 <script>
 import userNickName from "@/components/setting/userNickName";
 import userNickRelName from "@/components/setting/userNickRelName";
-import userMySign from "@/components/setting/userMySign";
+// import userMySign from "@/components/setting/userMySign";
 import userMySex from "@/components/setting/userMySex";
 import userMyDate from "@/components/setting/userMyDate";
 export default {
@@ -66,11 +66,10 @@ export default {
   components:{
     userNickName,
     userNickRelName,
-    userMySign,
+    // userMySign,
     userMySex,
     userMyDate
   },
-
 }
 </script>
 

@@ -10,6 +10,7 @@ import blackRoomFileBody from '../components/blackboard/blackRoomFileBody.vue'
 import actListBody from '../components/blackboard/actListBody.vue'
 import protocolMenuBody from "../components/blackboard/ProtocolMenuBody";
 import player from "../components/video/Player";
+import douga from "../components/Zoning/normalZone";
 
 Vue.use(Router)
 
@@ -65,6 +66,11 @@ const createRouter = () => (new Router({
       path: '/video',
       name: "Player",
       component: player
+    },
+    {
+      path: '/zone/douga',
+      name: "douga",
+      component: douga
     },
   ],
 }))
