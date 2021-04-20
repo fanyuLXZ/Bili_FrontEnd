@@ -14,13 +14,13 @@
                             <vue-custom-scrollbar class="scroll-area "  :settings="settings" @ps-scroll-y="scrollHanle">
     
            
-                          <div data-v-bdf166be="" data-v-2cde8a84=""   class="love-item" data-v-fb77dc7a="" v-for="(item,index) in tae " :key="item.comments" >
+                          <div data-v-bdf166be="" data-v-2cde8a84=""   class="love-item" data-v-fb77dc7a="" v-for="(item,index) in tae " :key="index" >
                             
                                               <div data-v-657577a0="" data-v-bdf166be="" class="basic-list-item">
 <div data-v-657577a0="" class="left-box count-2">
-  <a data-v-657577a0="" href="//space.bilibili.com/35803982" target="_blank" title="耀世小武" class="avatar" style="background-image: url(&quot;//i2.hdslb.com/bfs/face/b0e0db604c4aee7de4427bf37969ce2c0b97bfee.jpg@46w_46h_1c.webp&quot;);"></a>
+  <!-- <a data-v-657577a0="" href="//space.bilibili.com/35803982" target="_blank" title="耀世小武" class="avatar" style="background-image: url(&quot;//i2.hdslb.com/bfs/face/b0e0db604c4aee7de4427bf37969ce2c0b97bfee.jpg@46w_46h_1c.webp&quot;);"></a>
   <a data-v-657577a0="" href="//space.bilibili.com/177797949" target="_blank" title="小琳家的最毒" class="avatar" style="background-image: url(&quot;//i0.hdslb.com/bfs/face/43437014fe244e19636dbf8f219628bdfc95e1ad.jpg@46w_46h_1c.webp&quot;);"></a>
-  </div>
+  --> </div>
                                        <div data-v-657577a0="" class="center-box">
                                         <div data-v-657577a0="" class="line-1" >
                                                       <span data-v-657577a0="" class="name-field" >
@@ -28,7 +28,7 @@
                                                         <span data-v-657577a0="">、</span>
                                                         <a data-v-657577a0="" href="" target="_blank" title="">{{item.userperple[1].name}}</a><!---->
                                                       </span>
-                                                      <span data-v-657577a0="" class="desc-field like-item" @click="setMag(item.id)">等总计{{item.userperple.length}}人赞了我的评论</span>
+                                                      <span data-v-657577a0="" class="desc-field like-item" @click="setMag(index)">等总计{{item.userperple.length}}人赞了我的评论</span>
                                                     </div>
 
                <div data-v-657577a0="" class="line-2"></div>
@@ -117,7 +117,7 @@ methods: {
       console.log(evt)
     },
     setMag(id){
-      this.$emit('getmessage',id)
+      this.$emit('getmessage',id+1)
     }
 },
 
