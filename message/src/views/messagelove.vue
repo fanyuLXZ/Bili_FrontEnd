@@ -18,9 +18,9 @@
                             
                                               <div data-v-657577a0="" data-v-bdf166be="" class="basic-list-item">
 <div data-v-657577a0="" class="left-box count-2">
-  <!-- <a data-v-657577a0="" href="//space.bilibili.com/35803982" target="_blank" title="耀世小武" class="avatar" style="background-image: url(&quot;//i2.hdslb.com/bfs/face/b0e0db604c4aee7de4427bf37969ce2c0b97bfee.jpg@46w_46h_1c.webp&quot;);"></a>
-  <a data-v-657577a0="" href="//space.bilibili.com/177797949" target="_blank" title="小琳家的最毒" class="avatar" style="background-image: url(&quot;//i0.hdslb.com/bfs/face/43437014fe244e19636dbf8f219628bdfc95e1ad.jpg@46w_46h_1c.webp&quot;);"></a>
-  --> </div>
+   <a data-v-657577a0="" href="//space.bilibili.com/35803982" target="_blank" title="耀世小武" class="avatar" style="background-image:  url(&quot;https://i0.hdslb.com/bfs/face/090f863403e37162465a6085f9dbc46519211698.jpg@42w_42h_1c.webp&quot;);"></a>
+  <a data-v-657577a0="" href="//space.bilibili.com/177797949" target="_blank" title="小琳家的最毒" class="avatar" style="background-image:  url(&quot;https://i0.hdslb.com/bfs/face/090f863403e37162465a6085f9dbc46519211698.jpg@42w_42h_1c.webp&quot;);"></a>
+   </div>
                                        <div data-v-657577a0="" class="center-box">
                                         <div data-v-657577a0="" class="line-1" >
                                                       <span data-v-657577a0="" class="name-field" >

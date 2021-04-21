@@ -6,7 +6,7 @@
           <div data-v-7d37e619="" data-v-1c9150a9="" class="side-bar">
             <div data-v-7d37e619="" class="title">
               <div data-v-7d37e619="" class="icon"></div>
-              <div data-v-7d37e619="">消息中心</div>
+              <div data-v-7d37e619="" >消息中心</div>
               </div>
 
               <ul data-v-7d37e619="" class="list" >           
@@ -27,7 +27,7 @@
 
                          <!----></div></div>
 
-                              <div data-v-1c9150a9="" class="space-right">
+                              <div data-v-1c9150a9="" class="space-right" >
 
                                 <div data-v-1c9150a9="" class="space-right-top">
                                   <div data-v-1c9150a9="" class="title">
@@ -40,7 +40,7 @@
                                     
                                         <love :tae="tae" @getmessage="getmess" v-if="this.plid<=0&&active==1"></love> 
                                         <loveid v-if="this.plid!=0&&active==1" :taes="this.tae[plid-1]"></loveid> 
-                                      <reply v-if="active==2" :replys="replys"></reply>
+                                      <reply v-if="active==2" :replys="replys" @giveclick="giveclick"></reply>
                                       <whisper v-if="active==3" :whistle="whistle"></whisper>
                                </div> 
                                                             
@@ -132,13 +132,27 @@ export default ({
     ],
   replys:[
     {
-      id:'',
+      id:'1',
       comment:'我很喜欢艾伦的一句话：呐 莱拉 妈莱拉 妈妈莱拉 妈妈莱拉 妈妈莱拉 妈妈妈为什么会被吃',
+      dzan:true,
      perple:{name:'千羽亦溪',times:'2021年4月11日 17:40',imageiocn:'',leng:'你头像和id有点东西[热词系列_知识增加]'},
 
     },
+     {
+      id:'2',
+      dzan:false,
+      comment:'我很喜欢艾伦的一句话：呐 莱拉 妈莱拉 妈妈莱拉 妈妈莱拉 妈妈莱拉 妈妈妈为什么会被吃',
+     perple:{name:'千羽亦溪',times:'2021年4月11日 17:40',imageiocn:'',leng:'你头像和id有点东西[热词系列_知识增加]'},
+
+    }
     
     
+  ],
+  gives:[
+   {
+     givet:'',
+     replysid:''
+   }
   ],
     active:1,
      plid:0,
@@ -170,7 +184,13 @@ export default ({
  messloveclickss(){
    this.active=3;
    
- }
+ },
+ giveclick(a,b){
+  this.gives.givet=a;
+   console.log(a,b);
+  console.log(this.replys[0].id);
+  
+}
  },
 
 })
