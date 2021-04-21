@@ -9,7 +9,7 @@
                  <bilibratwo :namess="namess" :namesss="namesss" :colorid="colorid"></bilibratwo>
 
 
-                 <bilibraphone :phone="phone" v-show="this.pan=='phone'&&colorid==1" @sendMsg="getMsg" @numinput="getMsg"></bilibraphone>
+                 <bilibraphone :phone="phone" v-show="this.pan=='phone'&&colorid==1" @sendMsg="getMsg" @getnuminput="getMsg"></bilibraphone>
                  <biliemail v-show="this.pan=='email'&&colorid==1"  @sendMsg="getMsg" @biliemailinput="s"></biliemail>
                  
                  <bilipwd v-if="verifys=='setpwd'&&colorid==2" @phcoid="getMsg" @passd="getpassd"></bilipwd>

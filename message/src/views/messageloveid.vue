@@ -13,7 +13,7 @@
                   <div data-v-14a23a55="" data-v-fb77dc7a="" class="liked-user">
                     <div data-v-657577a0="" data-v-5a558a68="" data-v-14a23a55="" class="basic-list-item" data-v-fb77dc7a="">
                       <div data-v-657577a0="" class="left-box count-1">
-                        <a data-v-657577a0="" href="//space.bilibili.com/439679586" target="_blank" title="" class="avatar" >
+                        <a data-v-657577a0="" href="//space.bilibili.com/439679586" target="_blank" title="" class="avatar" style="background-image:  url(&quot;https://i0.hdslb.com/bfs/face/090f863403e37162465a6085f9dbc46519211698.jpg@42w_42h_1c.webp&quot;);" >
                         </a></div>
 
                         <div data-v-657577a0="" class="center-box">
