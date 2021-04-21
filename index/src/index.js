@@ -19,7 +19,6 @@ import 'g-public/modules/@bilibili/van/dist/style/style.css'
 
 import LiveLazyload from 'g-public/js/plugin/lazyload'
 
-
 Vue.use(Image)
 Vue.use(Danmu)
 Vue.use(Framepreview)

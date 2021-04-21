@@ -6,7 +6,7 @@
       <span class="h-role-icon d-arrow d-arrow-dark"></span>
     </div>
     <transition name="zoom">
-      <ul class="be-dropdown-menu menu-align-"  style="left: 6px; top: 40px; transform-origin: center top; " v-show="isShow" ref="be-dropdown-menu">
+      <ul class="be-dropdown-menu menu-align-"  style="left: 6px; top: 40px; transform-origin: center top; " v-show="isShow" ref="be-dropdown-menu"  @click.stop="">
         <li class="be-dropdown-item">新访客</li>
         <li class="be-dropdown-item">我的粉丝</li>
       </ul>

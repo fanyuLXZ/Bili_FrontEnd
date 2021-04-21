@@ -1,5 +1,5 @@
 /* eslint-disable */
-import axios from '../../../../../public/src/js/axios/caxios'
+import axios from 'g-public/js/axios/caxios'
 
 // 获取登录信息
 export const getUserInfo = () => {
@@ -67,60 +67,60 @@ export const getNavHistory = (type) => {
 
 // 获取收藏夹列表
 export const getNavFavList = () => {
-  return {
-    data:{"code":0,"message":"0","ttl":1,"data":[{"id":1,"name":"我创建的收藏夹","mediaListResponse":{"count":1,"list":[{"id":84144890,"fid":841448,"mid":26119890,"attr":1,"title":"默认收藏夹","cover":"http://i0.hdslb.com/bfs/archive/3dcb4539ad14b7a433b82c3e08c84977acb99e7c.jpg","upper":{"mid":26119890,"name":"","face":""},"cover_type":2,"intro":"","ctime":1458354728,"mtime":1591072611,"state":0,"fav_state":0,"media_count":1,"view_count":0,"type":0,"link":""}],"has_more":false}},{"id":2,"name":"稍后再看","mediaListResponse":{"count":1,"list":null,"has_more":false}}]}
-  }
-  // axios({
-  //   url: '//api.bilibili.com/x/v3/fav/folder/list4navigate',
-  //   withCredentials: true,
-  // })
+  return axios({
+    url: '/api/fav/folder',
+    withCredentials: true,
+  })
+  // {
+  //   data:{"code":0,"message":"0","ttl":1,"data":[{"id":1,"name":"我创建的收藏夹","mediaListResponse":{"count":1,"list":[{"id":84144890,"fid":841448,"mid":26119890,"attr":1,"title":"默认收藏夹","cover":"http://i0.hdslb.com/bfs/archive/3dcb4539ad14b7a433b82c3e08c84977acb99e7c.jpg","upper":{"mid":26119890,"name":"","face":""},"cover_type":2,"intro":"","ctime":1458354728,"mtime":1591072611,"state":0,"fav_state":0,"media_count":1,"view_count":0,"type":0,"link":""}],"has_more":false}},{"id":2,"name":"稍后再看","mediaListResponse":{"count":1,"list":null,"has_more":false}}]}
+  // }
 }
 
 // 获取收藏夹详情
 export const getNavFavDetail = (media_id) => {
-  return {
-    data:{
-      "code": 0,
-      "message": "0",
-      "ttl": 1,
-      "data": [
-        {
-          "id": 288620563,
-          "type": 2,
-          "title": "标题",
-          "cover": "http://i0.hdslb.com/bfs/archive/3dcb4539ad14b7a433b82c3e08c84977acb99e7c.jpg",
-          "intro": "简介",
-          "page": 1,
-          "duration": 420,
-          "upper": {
-            "mid": 4390920,
-            "name": "用户id",
-            "face": "http://i0.hdslb.com/bfs/face/d58ab0f12d84cf3ef3eda6818f26351c26addef2.jpg"
-          },
-          "attr": 0,
-          "cnt_info": {
-            "collect": 254519,
-            "play": 1228249,
-            "danmaku": 5780
-          },
-          "link": "bilibili://video/288620563",
-          "ctime": 1610101651,
-          "pubtime": 1610161442,
-          "fav_time": 1611804676,
-          "bv_id": "BV1df4y1r7pP",
-          "bvid": "BV1df4y1r7pP",
-          "season": null
-        }
-      ]
-    }}
-  // axios({
-  //   url: '//api.bilibili.com/x/v3/fav/resource/list4navigate',
-  //   withCredentials: true,
-  //   query: {
-  //     platform: 'web',
-  //     media_id,
-  //   },
-  // })
+  // return {
+  //   data:{
+  //     "code": 0,
+  //     "message": "0",
+  //     "ttl": 1,
+  //     "data": [
+  //       {
+  //         "id": 288620563,
+  //         "type": 2,
+  //         "title": "标题",
+  //         "cover": "http://i0.hdslb.com/bfs/archive/3dcb4539ad14b7a433b82c3e08c84977acb99e7c.jpg",
+  //         "intro": "简介",
+  //         "page": 1,
+  //         "duration": 420,
+  //         "upper": {
+  //           "mid": 4390920,
+  //           "name": "用户id",
+  //           "face": "http://i0.hdslb.com/bfs/face/d58ab0f12d84cf3ef3eda6818f26351c26addef2.jpg"
+  //         },
+  //         "attr": 0,
+  //         "cnt_info": {
+  //           "collect": 254519,
+  //           "play": 1228249,
+  //           "danmaku": 5780
+  //         },
+  //         "link": "bilibili://video/288620563",
+  //         "ctime": 1610101651,
+  //         "pubtime": 1610161442,
+  //         "fav_time": 1611804676,
+  //         "bv_id": "BV1df4y1r7pP",
+  //         "bvid": "BV1df4y1r7pP",
+  //         "season": null
+  //       }
+  //     ]
+  //   }}
+  return axios({
+    url: '/api/fav/resource',
+    withCredentials: true,
+    query: {
+      platform: 'web',
+      media_id,
+    },
+  })
 }
 
 // 获取稍后再看详情

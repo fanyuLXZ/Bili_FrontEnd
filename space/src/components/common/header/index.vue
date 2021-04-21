@@ -9,7 +9,7 @@
         <h-gradient/>
         <h-user :vip_info="_bili_space_vip" :space_info="_bili_space_info"/>
         <div v-if="_bili_space_state==='owner'" class="space-theme-trigger icon" style="background-position: 0 0;" title="更换皮肤"></div>
-        <h-version v-if="_bili_space_state==='owner'"/>
+        <h-version/>
         <h-action/>
       </h-inner>
     </div>

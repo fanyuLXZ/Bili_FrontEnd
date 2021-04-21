@@ -133,10 +133,30 @@ export default {
   name: "el-picker-panel",
   data(){
     return{
-      isShow:true
+      isShow:true,
+      now_Date:new Date()
     }
   },
-  props:["year","month","day"],
+  props:{
+    "year":{
+      type:Number,
+      default:function (){
+        return this.now_Date.getFullYear()
+      }
+    },
+    "month":{
+      type:Number,
+      default:function (){
+        return this.now_Date.getMonth()
+      }
+    },
+    "day":{
+      type:Number,
+      default:function (){
+        return this.now_Date.getDay()
+      }
+    }
+  },
   computed:{
     getDays(){
       let day_count = new Date(this.year,this.month,0)

@@ -1,6 +1,7 @@
 import axios from 'axios'
 import jsonp from 'jsonp'
 import querystring from 'querystring'
+axios.defaults.withCredentials = true;
 
 export default function(config) {
   if (config.jsonp) {

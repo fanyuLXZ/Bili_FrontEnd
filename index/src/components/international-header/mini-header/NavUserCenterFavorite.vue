@@ -161,7 +161,7 @@ export default {
 
       this.lastTrigglerTime = new Date().getTime()
 
-      const viewLaterCount = data.data[1].mediaListResponse.count
+      // const viewLaterCount = data.data[1].mediaListResponse.count
       this.favListCount = data.data[0].mediaListResponse.count
 
       const navList = data.data[0].mediaListResponse.list.map((item, index) => {
@@ -174,12 +174,12 @@ export default {
         }
       })
       // 稍後再看 拼接到第二位
-      navList.splice(1, 0, {
-        title: this.$HeadLang['49'],
-        key: 'LATER_VIEW',
-        count: viewLaterCount,
-        active: false,
-      })
+      // navList.splice(1, 0, {
+      //   title: this.$HeadLang['49'],
+      //   key: 'LATER_VIEW',
+      //   count: viewLaterCount,
+      //   active: false,
+      // })
       this.tabs = navList
       this.toggleTab(index, this.tabs[index].id)
     },
@@ -230,6 +230,7 @@ export default {
 
       if(data && data.data) {
         const cardList = data.data.map(item => {
+          console.log(item)
           return {
             title: item.title,
             cover: item.cover,
