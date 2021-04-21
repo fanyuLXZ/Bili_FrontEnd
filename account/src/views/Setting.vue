@@ -10,15 +10,15 @@
       <div>
         <form class="el-form clearfix" mode="[object Object]">
           <!--  昵称  -->
-          <userNickName></userNickName>
+          <userNickName :uname="uname"></userNickName>
           <!--  用户名  -->
-          <userNickRelName></userNickRelName>
+          <userNickRelName :userid="userid"></userNickRelName>
           <!--  我的签名  -->
 <!--          <userMySign></userMySign>-->
           <!--  性别  -->
-          <userMySex></userMySex>
+          <userMySex :sex="sex"></userMySex>
           <!--  出生日期  -->
-          <userMyDate></userMyDate>
+          <userMyDate :birthday="birthday"></userMyDate>
           <div class="el-form-item user-my-btn"><!---->
             <div class="el-form-item__content">
               <div class="padding-dom"></div>
@@ -61,8 +61,19 @@ import userNickRelName from "@/components/setting/userNickRelName";
 // import userMySign from "@/components/setting/userMySign";
 import userMySex from "@/components/setting/userMySex";
 import userMyDate from "@/components/setting/userMyDate";
+import axios from "axios";
 export default {
   name: "setting",
+
+  data(){
+    return{
+      uname:"",   //昵称
+      userid:"",    //用户名
+      sex:"",    //性别
+      birthday:"2021-01-01",    //出生日期
+    }
+  },
+
   components:{
     userNickName,
     userNickRelName,
@@ -70,6 +81,19 @@ export default {
     userMySex,
     userMyDate
   },
+
+  mounted() {
+    console.log(1)
+    axios.get("/api/member/account/info").then(
+        (res)=>{
+          //获取返回的json对象
+          console.log(res)
+          this.uname = res.data.data.uname
+          this.userid = res.data.data.userid
+          this.birthday = res.data.data.birthday
+          this.sex = res.data.data.sex
+        })
+  }
 }
 </script>
 
