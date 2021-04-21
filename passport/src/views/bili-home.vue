@@ -45,6 +45,7 @@
 </template>
 <script>
 import '@/assets/bili-btn.css'
+import axios from 'axios'
 export default{
   name:'bili-home',
    data() {
@@ -57,10 +58,16 @@ export default{
        bind_mail:false,
         
        }
-      }
+      },
+        taes:{}
      }
-   },
    
+   },
+   created(){
+     axios.post("http://bilibili.org/member/vip/info").then((res)=>{
+   console.log(res)
+})
+   }
    
 }
 </script>
