@@ -8,11 +8,12 @@
   <div data-v-8142435e="" data-v-1df9d092="" class="reply-item" data-v-fb77dc7a="" v-for="(item,index) in replys " :key="index ">
     <div data-v-657577a0="" data-v-8142435e="" class="basic-list-item">
       <div data-v-657577a0="" class="left-box count-1">
-        <a data-v-657577a0="" href="//space.bilibili.com/179411352" target="_blank" title="" class="avatar" style="background-image:  url(&quot;https://i0.hdslb.com/bfs/face/090f863403e37162465a6085f9dbc46519211698.jpg@42w_42h_1c.webp&quot;);"></a></div>
+        <!--background-image:  url(&quot;https://i0.hdslb.com/bfs/face/090f863403e37162465a6085f9dbc46519211698.jpg@42w_42h_1c.webp&quot;);-->
+        <a data-v-657577a0="" href="#" target="_blank" title="" class="avatar" style=""></a></div>
         <div data-v-657577a0="" class="center-box">
           <div data-v-657577a0="" class="line-1">
             <span data-v-657577a0="" class="name-field">
-              <a data-v-657577a0="" href="//space.bilibili.com/179411352" target="_blank" title="">{{item.perple.name}}</a><!----></span><span data-v-657577a0="" class="desc-field">
+              <a data-v-657577a0="" href="#" target="_blank" title="">{{item.perple.name}}</a><!----></span><span data-v-657577a0="" class="desc-field">
         回复了我的评论
       </span></div>
       <div data-v-657577a0="" class="line-2">
@@ -87,7 +88,7 @@ methods: {
 this.replys[c].dzan=!this.replys[c].dzan;
  if(this.replys[c].dzan){
 
-  
+  this.$emit("giveclick",this.replys[c].dzan,this.replys[c].id);
       
       this.toptopsMsg =true
       setTimeout(()=>{
@@ -96,9 +97,14 @@ this.replys[c].dzan=!this.replys[c].dzan;
     }else{
           this.toptopsMsg=false
     }
-     this.$emit("giveclick",[this.replys[c].dzan,this.replys[c].id]);
-    } 
     
+    } 
+    //[this.replys[c].dzan,this.replys[c].id]
+},
+updated(){
+
+ 
+  
 },
 components:{
   vueCustomScrollbar

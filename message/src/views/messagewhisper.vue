@@ -13,7 +13,8 @@
        <!----><div data-v-12ea5675="" class="list" >
          <div data-v-18829612="" data-v-12ea5675="" class="list-item " v-for="(item,index) in whistle " :key="index" @click="indexclick(index)">
            <!--active-->
-           <div data-v-18829612="" class="avatar" style="background-image: url(&quot;https://i0.hdslb.com/bfs/face/090f863403e37162465a6085f9dbc46519211698.jpg@42w_42h_1c.webp&quot;);" title=""></div>
+           <!--background-image: url(&quot;https://i0.hdslb.com/bfs/face/090f863403e37162465a6085f9dbc46519211698.jpg@42w_42h_1c.webp&quot;);-->
+           <div data-v-18829612="" class="avatar" style="" title=""></div>
            <div data-v-18829612="" class="verify-box">
              <div data-v-18829612="" class="single"></div>
              <!----><!----></div>
@@ -52,7 +53,7 @@
       </div><!---->
 
       <div data-v-50547f2d="" data-v-339477fc="" class="msg-item not-me">
-        <a data-v-50547f2d="" href="//space.bilibili.com/84674730" title="" target="_blank" class="avatar" style="background-image: url(&quot;https://i0.hdslb.com/bfs/face/090f863403e37162465a6085f9dbc46519211698.jpg@30w_30h_1c.webp&quot;);"></a><!---->
+        <a data-v-50547f2d="" href="#" title="" target="_blank" class="avatar" style="background-image: url(&quot;https://i0.hdslb.com/bfs/face/090f863403e37162465a6085f9dbc46519211698.jpg@30w_30h_1c.webp&quot;);"></a><!---->
         <div data-v-50547f2d="" class="message">
           <div data-v-50547f2d="" data-key="6950677255500603324" class="message-content not-img">
             {{lengin.dtal}}
@@ -81,12 +82,15 @@
                     <button data-v-7762b962="" title="表情" class="emotion-btn-box"></button>
                     <!----></div></div>
                     <div data-v-b2e4822a="" data-v-7762b962="" placeholder="回复一下吧～" class="input-box">
-                      <div data-v-b2e4822a="" id="editor" class="core-style" contenteditable="true" style="height: 60px;">‍
-</div><div data-v-b2e4822a="" class="indicator" style="bottom: -30px; right: 100px;">
-  <span data-v-b2e4822a="" class="">0</span>/<span data-v-b2e4822a="">500</span></div></div>
+                      <div data-v-b2e4822a="" id="editor" class="core-style" contenteditable="true" style="height: 60px;" >
+                        
+                     
+                        </div>
+                        <div data-v-b2e4822a="" class="indicator" style="bottom: -30px; right: 100px;">
+  <span data-v-b2e4822a="" class="">{{this.lengtht}}</span>/<span data-v-b2e4822a="">500</span></div></div>
   <div data-v-7762b962="" class="row right">
-    <button data-v-6cbfef24="" data-v-7762b962="" class="btn-box send-btn" title="enter 发送
-shift + enter 换行">发送</button></div></div>
+    <button data-v-6cbfef24="" data-v-7762b962="" class="btn-box send-btn active" title="enter 发送
+shift + enter 换行" @click="whisperclick()">发送</button></div></div>
 
 <!----></div>
 
@@ -116,7 +120,9 @@ export default {
         suppressScrollY: false,
         suppressScrollX: true,
         wheelPropagation: false
-      }
+      },
+      inputvalue:'',
+      lengtht:0,
     }
   },
 methods: {
@@ -125,11 +131,13 @@ methods: {
     } ,
     indexclick(obj){
       this.atindex=obj;
-    }
+    },
+   
 },
 components:{
   vueCustomScrollbar
-}
+},
+
 }
 </script>
 

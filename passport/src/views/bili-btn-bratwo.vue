@@ -4,17 +4,17 @@
              <div data-v-1ab5ef3c="">
                <div data-v-5c16aaea="" data-v-1ab5ef3c="" class="steps-box">
                  <div data-v-5c16aaea="" class="clearfix steps-list">
-                   <a data-v-5c16aaea="" href="#/setquestion/phone/verify" :class="color(1)">
+                   <a data-v-5c16aaea="" href="#" :class="color(1)">
                    <span data-v-5c16aaea="" class="float-left steps-icon">1</span> 
                    <div data-v-5c16aaea="" class="float-left steps-title">验证身份</div>
                     <i data-v-5c16aaea="" class="steps-line float-left"></i>
                   </a>
-                  <a data-v-5c16aaea="" href="#/setquestion/phone/set" :class="color(2)">
+                  <a data-v-5c16aaea="" href="#" :class="color(2)">
                   <span data-v-5c16aaea="" class="float-left steps-icon">2</span>
                    <div data-v-5c16aaea="" class="float-left steps-title">{{namess}}</div>
                     <i data-v-5c16aaea="" class="steps-line float-left"></i>
                   </a>
-                  <a data-v-5c16aaea="" href="#/setquestion/phone/result" :class="color(3)">
+                  <a data-v-5c16aaea="" href="#" :class="color(3)">
                   <span data-v-5c16aaea="" class="float-left steps-icon">3</span> 
                   <div data-v-5c16aaea="" class="float-left steps-title">{{namesss}}</div>
                    <!----></a>
