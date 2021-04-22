@@ -26,8 +26,8 @@
               <div data-ori-did="0" class="post-content">
                 <div class="original-card-content">
                   <div class="text p-rel description">
-                    <div class="content"><!---->
-                      <div class="content-full">{{ item.text }}</div>
+                    <div class="content">
+                      <a href="/article" class=""> <div class="content-full">{{ item.text }}</div> </a>
                     </div>
                   </div>
                 </div>
@@ -63,17 +63,19 @@
     <div class="div-load-more tc-slate">
       <div class="load-more"><span>{{status===1?'加载更多':'加载中。。。'}}</span></div>
     </div>
-
+    <meInfo class="meInfo"></meInfo>
   </div>
 </template>
 
 <script>
 import {formatDate} from "@/assets/js/time";
 import operating from "@/components/Operating"
+import meInfo from "@/components/MeInfo"
 export default {
   name: "Content",
   components:{
     operating,
+    meInfo,
   },
   data() {
     return {

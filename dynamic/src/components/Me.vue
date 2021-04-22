@@ -30,21 +30,19 @@
         </div>
       </div>
     </div>
-    <meInfo class="meInfo"></meInfo>
     <div class="adaptive-scroll" style="min-height: 0px;">
       <div style="margin-top: 0px;"></div>
       <div class="scroll-content" style="bottom: 0px; position: static;"></div>
     </div>
+
   </div>
+
 </template>
 
 <script>
-import meInfo from "@/components/MeInfo"
   export default {
     name: "me",
-    components:{
-      meInfo
-    },
+
     data(){
       return{
         myself:{
