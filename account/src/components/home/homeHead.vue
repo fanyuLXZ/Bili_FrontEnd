@@ -24,14 +24,14 @@
           <span class="home-top-level-head home-top-level-head-active">LV{{level_info.current_level}}</span>
           <span class="home-top-level-up">
             进度条
-            <span class="home-top-level-upgo" style="width: 14.33%;"></span>
+            <span class="home-top-level-upgo" :style="'width:'+level_info.next_exp/level_info.current_exp*100+'%;'"></span>
           </span>
           <mask_warp></mask_warp>
         </div>
         <span class="home-top-level-number">
-          <i class="now-num">{{ level_info.current_exp }}</i>
+          <i class="now-num">{{ level_info.next_exp }}</i>
           <i class="num-icon">/</i>
-          <i class="max-num">{{ level_info.next_exp }}</i>
+          <i class="max-num">{{ level_info.current_exp }}</i>
         </span>
         <span class="home-to-update">修改资料</span>
         <a class="home-to-space">
@@ -52,6 +52,7 @@
 
 <script>
 import mask_warp from "./homeTopLevelMaskWarp"
+import axios from "axios";
 export default {
   name: "home-head",
   components:{
@@ -60,18 +61,32 @@ export default {
   data(){
     return{
       level_info: {
-        current_level: 2,  //用户等级
-        current_min: 200,  //用户当前等级最小值
-        current_exp: 215,  ////用户当前等级值
-        next_exp: 1500  //用户当前等级最大值
+        current_level: 0,  //用户等级
+        current_min: 0,  //用户当前等级最小值
+        current_exp: 0,  ////用户当前等级值
+        next_exp: 0  //用户当前等级最大值
       },
       vip:{
-        status:true,  //是否是会员
-        type:1,  //会员类型
+        status:false,  //是否是会员
+        type:0,  //会员类型
       },
-      money:2,  //硬币数
+      money:0,  //硬币数
       bcoin_balance:0  //B币
     }
+  },
+  mounted() {
+    axios.get("/api/member/all-info").then(
+        (res)=>{
+          //获取返回的json对象
+          this.level_info.current_level = res.data.data.level_info.current_level
+          this.level_info.current_min = res.data.data.level_info.current_min
+          this.level_info.current_exp = res.data.data.level_info.current_exp
+          this.level_info.next_exp = res.data.data.level_info.next_exp
+          this.vip.status = res.data.data.vip.status
+          this.vip.type = res.data.data.vip.type
+          this.money = res.data.data.money
+          this.bcoin_balance = res.data.data.bcoin_balance
+        })
   }
 }
 </script>

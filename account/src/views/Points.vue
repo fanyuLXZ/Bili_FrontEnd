@@ -11,7 +11,7 @@
       </li>
     </ul>
     <div class="points-index" style="">
-      <points_header_warp></points_header_warp>
+      <points_header_warp :vPoint="vPoint"></points_header_warp>
       <pointsExchangeWarp></pointsExchangeWarp>
       <pointHow></pointHow>
     </div>
@@ -30,12 +30,29 @@
 import points_header_warp from "../components/points/pointsHeaderWarp"
 import pointsExchangeWarp from "@/components/points/pointsExchangeWarp";
 import pointHow from "@/components/points/pointHow";
+import axios from "axios";
 export default {
   name: "points",
+
+  data(){
+    return{
+      vPoint:0,   //会员积分
+    }
+  },
+
   components:{
     points_header_warp,
     pointsExchangeWarp,
     pointHow
+  },
+
+  mounted() {
+    axios.get("/api/member/Vip").then(
+        (res)=>{
+          //获取返回的json对象
+          console.log(res)
+          this.vPoint = res.data.vPoint
+        })
   }
 }
 </script>

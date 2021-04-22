@@ -4,7 +4,7 @@
     <div class="coin-index-title">
       <p class="coin-rest-p">
         硬币余额:
-        <i class="coin-num">{{num}}</i>
+        <i class="coin-num">{{money}}</i>
       </p>
     </div>
   </div>
@@ -13,10 +13,9 @@
 <script>
 export default {
   name: "coinIndexLeft",
-  data(){
-    return{
-      num:7
-    }
+
+  props:{
+    money:Number
   }
 }
 </script>

@@ -20,6 +20,7 @@
 </template>
 
 <script>
+
 export default {
   name: "clickPrivilegeReport",
   data(){
@@ -31,6 +32,8 @@ export default {
         {img:"http://i0.hdslb.com/bfs/vip/f42c20d25e10700a2bc5e7257abb7fec91634822.png",title:"空间自主头图"},
       ]
     }
+  },
+  mounted() {
   }
 }
 </script>
