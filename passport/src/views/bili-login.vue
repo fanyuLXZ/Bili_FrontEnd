@@ -51,7 +51,7 @@
                      <!----><!----><!----><!----><!----></span>
                      <!----></span><!----><!----></div>
                     </div></div>
-                                 <input type="text" autocomplete="off" name="tel" placeholder="填写常用手机号" maxlength="16" class="el-input__inner" v-model="login.userphone"><!----><!----><!----><!----></div> 
+                                 <input type="text" autocomplete="off" name="tel" placeholder="填写常用手机号" maxlength="16" class="el-input__inner" v-model="loginpho.userphone"><!----><!----><!----><!----></div> 
                                  <span class="status"></span></div> 
                                  <div class="text clearfix">
                                    <p class="tips">
@@ -60,7 +60,7 @@
                                      </div> 
                                  <div class="form-group status-box">
                                    <div class="code-input input-width el-input"><!---->
-                                   <input type="text" autocomplete="off" placeholder="请输入短信验证码" maxlength="8" class="el-input__inner" v-model="login.mge">
+                                   <input type="text" autocomplete="off" placeholder="请输入短信验证码" maxlength="8" class="el-input__inner" v-model="loginpho.mge">
                                    <!----><!----><!----><!----></div> 
                                    <button type="button" class="el-button captcha-buttom el-button--primary" @click="magclick()"><!----><!----><span>获取验证码</span></button> 
                                    <span class="status"></span></div>
@@ -79,6 +79,8 @@
 <script>
 import '@/assets/bili-btn.css'
 import '@/assets/bili-login.css'
+import crypto from 'crypto'
+import axios from 'axios'
 export default{
   
   name:'bili-login',
@@ -86,18 +88,20 @@ export default{
     return {
       login:{
         userename:'',
-        userphone:'',
+          userpwd:'',
+       
         status:false,
         note:true,
       },
       loginpho:{
-       userpwd:'',
+      userphone:'',
         mge:'',
       },
         sjtishi:'',
         tishi:'',
         phonetishi:'',
-        mgetishi:''
+        mgetishi:'',
+        code:12,
     }
   },
     methods: {
@@ -112,8 +116,8 @@ export default{
        console.log(this.login.status+""+this.login.note)
       },
       noteclock(){
-        this.login.userphone=""
-        this.login.mge=""
+        this.loginpho.userphone=""
+        this.loginpho.mge=""
         this.phonetishi=""
         this.mgetishi=""
         this.login.status=true;
@@ -123,33 +127,56 @@ export default{
        btnclick(){
        if(this.login.userename==""||this.login.userename==null||this.login.userename==undefined&&this.login.note){
            this.sjtishi='请输入注册时用的邮箱或者手机号呀'
-           console.log(1+"this.login.note"+this.login.note)      
         }else{  
           this.sjtishi=""
         }    
         if(this.login.userpwd==""||this.login.userpwd==null||this.login.userpwd==undefined&&this.login.note){
-               this.tishi='喵，你没输入密码么？' 
-               console.log(2)   
+               this.tishi='喵，你没输入密码么？'         
         }else{
              this.tishi=""
            }
-        
-        if(this.login.userphone==""||this.login.userphone==null||this.login.userphone==undefined&&this.login.status){
+        if(this.loginpho.userphone==""||this.loginpho.userphone==null||this.loginpho.userphone==undefined&&this.login.status){
                this.phonetishi='手机号不能为空哦'
-               console.log(3+"this.login.status"+this.login.status)  
+               
         }else{
           this.phonetishi=""
         }
-       if(this.login.mge==""||this.login.mge==null||this.login.mge==undefined&&this.login.status){
+       if(this.loginpho.mge==""||this.loginpho.mge==null||this.loginpho.mge==undefined&&this.login.status){
                this.mgetishi='短信验证码不能为空'     
+              
         }else{
              this.mgetishi=""
         }
-       
+        
+      
+        if(this.sjtishi==""&& this.tishi==""){
+          const md5 = crypto.createHash('md5')
+          md5.update(this.login.userpwd)
+          let md5password = md5.digest('hex')
+         
+          axios({
+            method:'post',
+            url:"api/safety/login",
+            params:{username:this.login.userename,password:md5password}
+          }).then((res)=>{
+            console.log(res.data)
+            this.code=res.data.code
+              if(this.code==-400){
+          console.log(1)
+        this.tishi="用户名或密码错误"
+         this.sjtishi="用户名或密码错误"
+        }
+         if(this.code==0){
+           this.$router.push({path:'/bili-home'})
+
+         }
+          })
+          
+        }
         
        },
        magclick(){
-      if(this.login.userphone==""||this.login.userphone==null||this.login.userphone==undefined&&this.login.status){
+      if(this.loginpho.userphone==""||this.loginpho.userphone==null||this.loginpho.userphone==undefined&&this.login.status){
                this.phonetishi='手机号不能为空哦'
                 
         }else{
@@ -157,7 +184,8 @@ export default{
         }
        }
        
-    }
+    },
+  
     
 }
 </script>

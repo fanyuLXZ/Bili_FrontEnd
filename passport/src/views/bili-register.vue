@@ -81,7 +81,7 @@
                   <input data-v-5641f300="" name="agree" type="checkbox" @click="checkclick">
                   
                   </label>
-          我已同意<a data-v-4ec3110e="" target="_blank" href="https://www.bilibili.com/protocal/licence.html">《哔哩哔哩弹幕网用户使用协议》</a>和<a data-v-4ec3110e="" target="_blank" href="https://www.bilibili.com/blackboard/privacy-pc.html">《哔哩哔哩隐私政策》</a></label>
+          我已同意<a data-v-4ec3110e="" target="_blank" href="#">《哔哩哔哩弹幕网用户使用协议》</a>和<a data-v-4ec3110e="" target="_blank" href="#">《哔哩哔哩隐私政策》</a></label>
    
  <div data-v-4ec3110e="" class="form-group">
    <button data-v-4ec3110e="" type="button" :class="['el-button', 'btn-full', 'el-button--primary',!this.check?'is-disabled':'']" :disabled="disabled" @click="submitclick">

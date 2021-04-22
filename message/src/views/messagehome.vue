@@ -52,6 +52,7 @@ import love from '../views/messagelove.vue'
 import loveid from '../views/messageloveid.vue'
 import whisper from '../views/messagewhisper.vue'
 import reply from '../views/messagereply.vue'
+
 export default ({
   data() {
     return {
@@ -134,7 +135,7 @@ export default ({
     {
       id:'1',
       comment:'我很喜欢艾伦的一句话：呐 莱拉 妈莱拉 妈妈莱拉 妈妈莱拉 妈妈莱拉 妈妈妈为什么会被吃',
-      dzan:true,
+      dzan:false,
      perple:{name:'千羽亦溪',times:'2021年4月11日 17:40',imageiocn:'',leng:'你头像和id有点东西[热词系列_知识增加]'},
 
     },
@@ -186,13 +187,20 @@ export default ({
    
  },
  giveclick(a,b){
-  this.gives.givet=a;
-   console.log(a,b);
-  console.log(this.replys[0].id);
+  // this.gives.givet=a;
+  //  console.log(a,b);
+this.gives.givet=a;
+this.gives.replysid=b;
+  console.log(this.gives.givet,this.gives.replysid);
   
 }
  },
-
+ 
+  created(){
+//      axios.post("api/member/vip/info").then((res)=>{
+//    console.log(res)
+// })
+}
 })
 </script>
 
