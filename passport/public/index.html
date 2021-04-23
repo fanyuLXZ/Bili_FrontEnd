@@ -6,20 +6,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <title><%= htmlWebpackPlugin.options.title %></title>
-    <script type="text/javascript">
-        var ua = window.navigator.userAgent,
-        agents = ["Android", "iPhone", "SymbianOS", "Windows Phone", "iPod"],
-        pathname = /\d+/.exec(window.location.pathname), getCookie = function (e) {
-            return decodeURIComponent(document.cookie.replace(new RegExp("(?:(?:^|.*;)\\s*" + encodeURIComponent(e).replace(/[\-\.\+\*]/g, "\\$&") + "\\s*\\=\\s*([^;]*).*$)|^.*$"), "$1")) || null
-        }, DedeUserID = getCookie("DedeUserID"), mid = pathname ? +pathname[0] : null === DedeUserID ? 0 : +DedeUserID;
-        if (mid < 1) window.location.href = "https://passport.bilibili.com/login?gourl=https://space.bilibili.com";
-        else {
-        window._bili_space_mid = mid, window._bili_space_mymid = null === DedeUserID ? 0 : +DedeUserID;
-        for (var prefix = /^\/v/.test(pathname) ? "/v" : "", i = 0; i < agents.length; i++) if (-1 < ua.indexOf(agents[i]) && !/\sVR\s/g.test(ua)) {
-            window.location.href = "https://m.bilibili.com/space/" + mid;
-            break
-        }
-    }</script>
+   
 </head>
 <body>
 <noscript>

@@ -43,15 +43,15 @@ export function formatDate(timestamp) {
             return date.getFullYear() + '年' + zero(date.getMonth() + 1) + '月' + zero(date.getDate()) + '日';
         })();
     } else if (monthC >= 1) {
-        return parseInt(monthC) + '月前';
+        return parseInt(monthC) + ' 月前';
     } else if (weekC >= 1) {
-        return parseInt(weekC) + '周前';
+        return parseInt(weekC) + ' 周前';
     } else if (dayC >= 1) {
-        return parseInt(dayC) + '天前';
+        return parseInt(dayC) + ' 天前';
     } else if (hourC >= 1) {
-        return parseInt(hourC) + '小时前';
+        return parseInt(hourC) + ' 小时前';
     } else if (minC >= 1) {
-        return parseInt(minC) + '分钟前';
+        return parseInt(minC) + ' 分钟前';
     }
     return '刚刚';
 }

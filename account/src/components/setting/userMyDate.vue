@@ -6,8 +6,8 @@
       <div class="el-form-item__content">
         <div class="el-date-editor el-input el-date-editor--date" id="el-date-pick"><!---->
           <i class="el-input__icon el-icon-date"></i>
-          <input autocomplete="off" placeholder="选择日期" readonly="readonly" type="text" rows="2" class="el-input__inner"><!----><!---->
-        </div><!---->
+          <input autocomplete="off" placeholder="选择日期"  v-model=birthday readonly="readonly" type="text" rows="2" class="el-input__inner"><!----><!---->
+        </div>
       </div>
     </div>
     <!--  日历  -->
@@ -23,15 +23,10 @@ export default {
   components:{
     elPickerPanel
   },
-  data(){
-    return{
 
-    }
-  },
-  methods:{
-
+  props:{
+    birthday:String
   }
-
 }
 </script>
 

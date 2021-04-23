@@ -10,6 +10,7 @@
     "lint:style:fix": "stylelint 'src/**/*.{css,sass,scss,less,vue}' --fix"
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "core-js": "^3.6.5",
     "css-loader": "^5.2.4",
     "element-ui": "^2.15.1",

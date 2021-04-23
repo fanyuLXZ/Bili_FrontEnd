@@ -84,7 +84,7 @@ export default {
 
     this.timer = setInterval(() => {
       this.showDeleteSu()
-    }, 3000);
+    }, 5000);
 
   }
 }

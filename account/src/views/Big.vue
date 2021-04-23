@@ -5,7 +5,7 @@
       <span class="security-right-title-icon"></span>
       <span class="security-right-title-text">大会员</span> <!---->
     </div>
-    <reportVipName></reportVipName>
+    <report-vip-name></report-vip-name>
     <click-privilege-report></click-privilege-report>
   </div>
 

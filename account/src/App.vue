@@ -10,8 +10,9 @@
 
 import sidebar from "./components/home/securityUl"  //侧边栏s
 export default {
+  name:"App",
   components: {
     sidebar,
-  }
+  },
 }
 </script>

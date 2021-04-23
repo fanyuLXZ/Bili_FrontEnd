@@ -14,14 +14,14 @@
         </div>
         <div>
           <!--每日奖励-->
-          <reward></reward>
+          <reward :is-login="isLogin" :watch="watch" :coins="coins" :share="share"></reward>
           <div class="loading-icon-box" style="display: none;">
             <div class="loading-icon"></div>
           </div>
         </div>
         <div>
           <!--账号安全-->
-          <security></security>
+          <security :email="email" :tel="tel"></security>
           <div class="loading-icon-box" style="display: none;">
             <div class="loading-icon"></div>
           </div>
@@ -34,13 +34,40 @@
 
 import reward from "../components/home/homeDialiyExp"  //每日奖励
 import security from "../components/home/hContentSafe"  //账号安全
-import img_head from "../components/home/homeHead"  //用户头像
+import img_head from "../components/home/homeHead"
+import axios from "axios";  //用户头像
 export default {
   name: 'Home',
+
+  data(){
+    return{
+      isLogin: false,   //是否登录
+      watch:false,    //是否观看视频
+      coins:5,    //今日投币
+      share:false,   //是否分享视频
+      email: false,    //是否绑定邮箱
+      tel: false,    //是否绑定手机号
+    }
+  },
+
   components: {
     reward,
     security,
     img_head
+  },
+
+  mounted() {
+    console.log(1)
+    axios.get("/api/member/exp/reward").then(
+        (res)=>{
+          //获取返回的json对象
+          this.isLogin = res.data.data.login
+          this.watch = res.data.data.watch
+          this.coins = res.data.data.coins
+          this.share = res.data.data.share
+          this.email = res.data.data.email
+          this.tel = res.data.data.tel
+        })
   }
 }
 </script>

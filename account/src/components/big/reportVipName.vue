@@ -1,26 +1,18 @@
 <!--  作者:欧阳苏蓉 大会员-基本信息  -->
 <template>
-  <div id="reportVipName" class="big-name-warp report-scroll-module" scrollshow="true">
+  <div id="reportVipName" class="big-name-warp report-scroll-module" >
     <div class="big-head">
-      <img src={{$store.state.face}} lazy="loaded">
+      <img :src="$store.state.face" lazy="loaded">
     </div>
     <div class="big-name-left">
       <div class="big-name-top">
         <span class="big-user-name">{{ $store.state.uname }}</span>
-        <span class="big-label" style="background: rgb(62, 181, 89); color: rgb(255, 255, 255);" v-if="vip.status&vip.type===0">小会员</span>
-        <span class="big-label"  v-if="vip.status&vip.type===1">大会员</span>
+        <span class="big-label" style="background: rgb(62, 181, 89); color: rgb(255, 255, 255);" v-if="status&type===0">小会员</span>
+        <span class="big-label"  v-if="status&type===1">大会员</span>
       </div>
       <div class="big-nane-bottom">
         <p>
-          大会员有效期至{{ vip.valid_period }}
-          <span class="big-name-record" v-if="vip.automatic_Renew" @click="showCont">
-              自动续费管理 &gt;
-        <div class="big-name-record-hover">
-          <div class="big-name-record-hover-icon"></div>
-          <p>当前是自动续费大会员</p>
-          <p>下次扣费时间为{{ vip.automatic_buckle }}</p>
-        </div>
-        </span>
+          大会员有效期至{{ valid_period }}
         </p>
       </div>
       <div class="big-member-btn"><i style="display: none;"></i>
@@ -120,26 +112,37 @@
 </template>
 
 <script>
+
+import axios from "axios";
+
 export default {
   name: "reportVipName",
   data(){
     return{
-      status:true,  //是否是会员
-      type:1,  //会员类型
-      valid_period:"2021-04-15",  //会员有效时间
       show:false,
       showMore:false,
+      status:true,  //是否是会员
+      type:1,  //会员类型
+      valid_period:"2021-03-15",  //会员有效时间
     }
   },
   methods:{
-    //自动续费管理
-    showCont:function (){
-      this.show=!this.show
-    },
     //下拉框
     showMoreClick:function (){
       this.showMore=!this.showMore
     },
+  },
+  mounted() {
+    axios.get("/api/member/vip/info")
+        .then(
+            (res)=>{
+              //获取返回的json对象
+              console.log(res)
+              this.status = res.data.data.vip_status
+              this.type = res.data.data.vip_type
+              this.valid_period = res.data.data.due_date
+            }
+        )
   }
 }
 </script>

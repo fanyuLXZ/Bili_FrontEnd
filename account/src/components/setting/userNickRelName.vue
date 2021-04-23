@@ -3,14 +3,17 @@
   <div class="el-form-item user-nick-rel-name">
     <label class="el-form-item__label">用户名:</label>
     <div class="el-form-item__content">
-      <span class="userinfo-username">{{ $store.state.userid }}</span><!---->
+      <span class="userinfo-username">{{ userid }}</span><!---->
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "userNickRelName"
+  name: "userNickRelName",
+  props:{
+    userid:String
+  }
 }
 </script>
 
