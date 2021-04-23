@@ -1,16 +1,37 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import Article from "@/views/dynamic/Article";
+import Dynamic from "@/views/Dynamic";
+import Index from "@/views/dynamic/Index"
 
 Vue.use(VueRouter)
 
-const routes = [
-
-]
-
 const router = new VueRouter({
   mode: 'history',
-  base: process.env.BASE_URL,
-  routes
+  routes:[
+    {
+      path:"/",
+      component:Dynamic,
+      children:[
+        {
+          path:"/dynamic",
+          component:Index
+        },
+        {
+          path:"/article",
+          component:Article
+        },
+        {
+          path:"",
+          redirect:"/index"
+        }
+      ]
+    },
+    {
+      path:"*",
+      redirect:"/dynamic"
+    }
+  ]
 })
 
 export default router
