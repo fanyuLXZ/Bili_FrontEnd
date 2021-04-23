@@ -3,6 +3,7 @@
   <div class="section-block">
     <div>
       <div class="publish-panel">
+        <vue-editor />
         <div class="editor">
           <div >
             <div placeholder="有什么想和大家分享的？" class="editor">

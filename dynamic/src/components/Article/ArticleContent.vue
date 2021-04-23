@@ -35,24 +35,8 @@
               <div></div>
             </div>
             <div class="button-bar tc-slate">
-              <div class="single-button c-pointer">
-                <span class="text-bar">
-                  <i class="bp-svg-icon single-icon transmit"></i>
-                  <span class="text-offset"> {{ item.repost }} </span>
-                </span>
-              </div>
-              <div class="single-button c-pointer">
-                <span class="text-bar selected">
-                  <i class="bp-svg-icon single-icon comment"></i>
-                  <span class="text-offset"> {{ item.comment }} </span>
-                </span>
-              </div>
-              <div class="single-button c-pointer p-rel">
-                <span class="text-bar">
-                  <i class="custom-like-icon zan"></i>
-                  <span class="text-offset">{{ item.like }}</span>
-                </span>
-              </div>
+              <single-button :icon_style="['bp-svg-icon','single-icon','comment','comment-hover']" :num="item.comment" :disable_click="true" :selected="true"/>
+              <single-button :icon_style="['custom-like-icon','zan']" :num="item.like" :click_style="'zan-hover'" :hover_style="'zan-a-hover'"/>
             </div>
             <!--  操作  -->
             <operating></operating>
@@ -65,11 +49,14 @@
 
 <script>
 import {formatDate} from "@/assets/js/time";
-import operating from "@/components/Operating"
+import operating from "@/components/Article/Operating";
+import singleButton from "@/components/single-button"
+
 export default {
   name: "Content",
   components:{
     operating,
+    singleButton
   },
   data() {
     return {

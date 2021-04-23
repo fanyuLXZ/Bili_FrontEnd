@@ -1,10 +1,10 @@
 <!--  作者：欧阳苏蓉 文章详情 评论楼主-->
 <template>
   <div>
-    <div data-id="4443545546" data-index="1" class="list-item reply-wrap " v-for="(item,index) in commentList"
+    <div data-index="1" class="list-item reply-wrap " v-for="(item,index) in commentList"
          :key="index">
       <div class="user-face">
-        <a href="//space.bilibili.com/397398868" target="_blank" data-usercard-mid="397398868">
+        <a href="//space.bilibili.com/397398868" target="_blank">
           <div class="bili-avatar">
             <img width="48" height="48"
                  src="https://i1.hdslb.com/bfs/face/a651f41455167f0dfa6e30d46001274c195ba30a.jpg@96w_96h_1c.webp" alt=""
@@ -27,10 +27,12 @@
           <span class="time">2021-04-20 22:53</span>
           <span class="like "><i></i><span v-if="item.like!==0">{{ item.like }}</span></span>
           <span class="hate"><i></i><span v-if="item.dislike!==0">{{ item.dislike }}</span></span>
-          <span class="reply btn-hover">回复</span>
+          <span class="reply btn-hover" @click="click(index)">回复</span>
         </div>
         <!--  子评论组件  -->
         <subComments :item="item" :index="index"></subComments>
+        <div class="paging-box"></div>
+        <post-comment v-if="reply===index"></post-comment>
       </div>
     </div>
   </div>
@@ -38,16 +40,19 @@
 
 <script>
 import subComments from "../Article/SubComments"
+import PostComment from "@/components/Article/PostComment";
 
 export default {
   name: "OriginalPoster",
 
   components: {
+    PostComment,
     subComments
   },
 
   data() {
     return {
+      reply:-1,
       commentList: [
         {
           mid:1,    //uid
@@ -121,14 +126,125 @@ export default {
               like: 1,   //赞
             }
           ]
-        }
+        },
+        {
+          mid:5,    //uid
+          uname: "我有852林静恒你没有",   //用户名称
+          face: "//i0.hdslb.com/bfs/face/aa9a2adb15baae90b95304cb9515482fb80c5804.jpg@52w_52h.webp",   //用户头像
+          text: "？怎么了",    //评论内容
+          date: "2021-04-20 21:50",    //评论时间
+          current_level: 8,    //用户等级
+          like: 10,   //赞同
+          dislike: 1,    //不赞同
+          page: {
+            count:58,    //总评论数
+            current: 6,    //页码
+            size: 10,    //每页数据
+          },
+          SubCommentsList: [
+            {
+              mid:6,    //uid
+              uname: "我有林963静恒你没有",   //用户名称
+              face: "//i0.hdslb.com/bfs/face/aa9a2adb15baae90b95304cb9515482fb80c5804.jpg@52w_52h.webp",   //用户头像
+              text: "？怎么了",    //评论内容
+              date: "2021-04-20 21:50",    //评论时间
+              current_level: 5,    //用户等级
+              like: 1,   //赞
+            }
+          ]
+        },
+        {
+          mid:5,    //uid
+          uname: "我有852林静恒你没有",   //用户名称
+          face: "//i0.hdslb.com/bfs/face/aa9a2adb15baae90b95304cb9515482fb80c5804.jpg@52w_52h.webp",   //用户头像
+          text: "？怎么了",    //评论内容
+          date: "2021-04-20 21:50",    //评论时间
+          current_level: 8,    //用户等级
+          like: 10,   //赞同
+          dislike: 1,    //不赞同
+          page: {
+            count:58,    //总评论数
+            current: 6,    //页码
+            size: 10,    //每页数据
+          },
+          SubCommentsList: [
+            {
+              mid:6,    //uid
+              uname: "我有林963静恒你没有",   //用户名称
+              face: "//i0.hdslb.com/bfs/face/aa9a2adb15baae90b95304cb9515482fb80c5804.jpg@52w_52h.webp",   //用户头像
+              text: "？怎么了",    //评论内容
+              date: "2021-04-20 21:50",    //评论时间
+              current_level: 5,    //用户等级
+              like: 1,   //赞
+            }
+          ]
+        },
+        {
+          mid:5,    //uid
+          uname: "我有852林静恒你没有",   //用户名称
+          face: "//i0.hdslb.com/bfs/face/aa9a2adb15baae90b95304cb9515482fb80c5804.jpg@52w_52h.webp",   //用户头像
+          text: "？怎么了",    //评论内容
+          date: "2021-04-20 21:50",    //评论时间
+          current_level: 8,    //用户等级
+          like: 10,   //赞同
+          dislike: 1,    //不赞同
+          page: {
+            count:58,    //总评论数
+            current: 6,    //页码
+            size: 10,    //每页数据
+          },
+          SubCommentsList: [
+            {
+              mid:6,    //uid
+              uname: "我有林963静恒你没有",   //用户名称
+              face: "//i0.hdslb.com/bfs/face/aa9a2adb15baae90b95304cb9515482fb80c5804.jpg@52w_52h.webp",   //用户头像
+              text: "？怎么了",    //评论内容
+              date: "2021-04-20 21:50",    //评论时间
+              current_level: 5,    //用户等级
+              like: 1,   //赞
+            }
+          ]
+        },
+        {
+          mid:5,    //uid
+          uname: "我有852林静恒你没有",   //用户名称
+          face: "//i0.hdslb.com/bfs/face/aa9a2adb15baae90b95304cb9515482fb80c5804.jpg@52w_52h.webp",   //用户头像
+          text: "？怎么了",    //评论内容
+          date: "2021-04-20 21:50",    //评论时间
+          current_level: 8,    //用户等级
+          like: 10,   //赞同
+          dislike: 1,    //不赞同
+          page: {
+            count:58,    //总评论数
+            current: 6,    //页码
+            size: 10,    //每页数据
+          },
+          SubCommentsList: [
+            {
+              mid:6,    //uid
+              uname: "我有林963静恒你没有",   //用户名称
+              face: "//i0.hdslb.com/bfs/face/aa9a2adb15baae90b95304cb9515482fb80c5804.jpg@52w_52h.webp",   //用户头像
+              text: "？怎么了",    //评论内容
+              date: "2021-04-20 21:50",    //评论时间
+              current_level: 5,    //用户等级
+              like: 1,   //赞
+            }
+          ]
+        },
       ],
 
     }
   },
 
-
-
+  methods:{
+    click(index){
+      if(this.reply===index){
+        this.reply=-1
+      }else {
+        this.reply=index
+      }
+    },
+  }
 }
 </script>
 <style>.paging-box {

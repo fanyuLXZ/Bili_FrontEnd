@@ -4,8 +4,8 @@
     <div class="tabs-order">
       <ul class="clearfix">
         <li data-sort="0" class="default-sort" style="display: none;">全部评论</li>
-        <li data-sort="2" class="hot-sort ">按热度排序</li>
-        <li data-sort="0" class="new-sort on" style="display: list-item;">按时间排序</li>
+
+        <li data-sort="2" class="hot-sort" :class="{'on':currentSort==index}" v-for="(item,index) in sort" :key="index" @click="active(index)">{{ item }}</li>
       </ul>
     </div>
     <div class="header-interaction"></div>
@@ -16,6 +16,18 @@
 export default {
   name: "Sort",
 
+  data(){
+    return{
+      currentSort:0,
+      sort:["按热度排序","按时间排序"]
+    }
+  },
+
+  methods: {
+    active(index) {
+      this.currentSort  =  index;
+    }
+  },
 
 }
 </script>

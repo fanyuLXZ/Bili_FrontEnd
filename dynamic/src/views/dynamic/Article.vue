@@ -52,7 +52,8 @@ export default {
     return{
       comment:14,   //评论数
     }
-  }
+  },
+
 }
 </script>
 
@@ -394,6 +395,8 @@ body.preventScroll {
   display: none;
   box-sizing: border-box;
 }
+
+
 
 .bb-comment .comment-send.comment-send-lite .textarea-container,
 .comment-bilibili-fold .comment-send.comment-send-lite .textarea-container,

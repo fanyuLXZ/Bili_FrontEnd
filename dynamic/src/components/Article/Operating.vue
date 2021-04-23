@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import deleteBtn from "@/components/Delete"
+import deleteBtn from "@/components/Article/Delete"
 import deleteSu from "@/components/DeleteSuccess"
 export default {
   name: "Operating",
@@ -89,3 +89,9 @@ export default {
   }
 }
 </script>
+<style>
+a {
+  color: white;
+  text-decoration: none;
+}
+</style>

@@ -1,6 +1,6 @@
 <!--  作者：欧阳苏蓉 动态--我自己  -->
 <template>
-  <div class="user-card" style="top: 110px; left: 44px;">
+  <div :class="mid===433899970?'userinfo-wrapper':'user-card'" style="top: 110px; left: 44px;" v-show="false">
     <div class="userinfo-content">
       <div class="bg"
            style="background-image: url('//i1.hdslb.com/bfs/space/768cc4fd97618cf589d23c2711a1d1a729f42235.png@120h.webp');"></div>
@@ -27,9 +27,9 @@
         </p><!---->
       </div>
       <div class="btn-box">
-        <a class="like liked" v-if="following">
+        <a class="like liked" v-if="following&&mid!==433899970">
           <span class="default-text">已关注</span>
-          <span class="hover-text">取消关注</span>
+          <span class="hover-text" >取消关注</span>
         </a>
         <a class="like" v-else>
           <span>+关注</span>
@@ -58,7 +58,7 @@ export default {
         type: 1,    //会员类型 1大会员  0小会员
         status: 1,    //是否是会员
       },
-      following: true,    //是否关注他
+      following: false,    //是否关注他
     }
   }
 }
