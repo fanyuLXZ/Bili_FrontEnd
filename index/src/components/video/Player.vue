@@ -1588,19 +1588,19 @@ export default {
 }
 </script>
 
-<style scoped src="../../assets/style/video/stardust-video.css"></style>
-<style scoped src="../../assets/style/video/video_main.css"></style>
-<style scoped src="../../assets/style/video/video_pbp.css"></style>
-<style scoped src="../../assets/style/video/video_1.css"></style>
-<style scoped src="../../assets/style/video/video_2.css"></style>
-<style scoped src="../../assets/style/video/video_3.css"></style>
-<style scoped src="../../assets/style/video/video_4.css"></style>
-<style scoped src="../../assets/style/video/video_5.css"></style>
-<style scoped src="../../assets/style/video/video_6.css"></style>
-<style scoped src="../../assets/style/video/video_7.css"></style>
-<style scoped src="../../assets/style/video/video_8.css"></style>
-<style scoped src="../../assets/style/video/video_9.css"></style>
-<style scoped src="../../assets/style/video/video_10.css"></style>
+<style scoped src="@/assets/style/video/stardust-video.css"></style>
+<style scoped src="@/assets/style/video/video_main.css"></style>
+<style scoped src="@/assets/style/video/video_pbp.css"></style>
+<style scoped src="@/assets/style/video/video_1.css"></style>
+<style scoped src="@/assets/style/video/video_2.css"></style>
+<style scoped src="@/assets/style/video/video_3.css"></style>
+<style scoped src="@/assets/style/video/video_4.css"></style>
+<style scoped src="@/assets/style/video/video_5.css"></style>
+<style scoped src="@/assets/style/video/video_6.css"></style>
+<style scoped src="@/assets/style/video/video_7.css"></style>
+<style scoped src="@/assets/style/video/video_8.css"></style>
+<style scoped src="@/assets/style/video/video_9.css"></style>
+<style scoped src="@/assets/style/video/video_10.css"></style>
 <style scoped>
 .st0 {
   fill: #fff
