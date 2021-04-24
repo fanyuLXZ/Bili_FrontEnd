@@ -24,6 +24,7 @@ import viewtag from './Videocomponent/viewtag'
 import reolist from './Videocomponent/reolist'
 import rupinfo from './Videocomponent/rupinfo'
 
+
 export default {
     name:'videohome',
     components:{

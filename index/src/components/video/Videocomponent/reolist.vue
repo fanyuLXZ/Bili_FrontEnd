@@ -18,7 +18,7 @@
                <a href="#" class="">
                <span :title="item.titles" class="title">{{item.titles}}</span></a>
                <div class="count up"><a href="#" target="_blank">{{item.upname}}</a></div>
-                 <div class="count">{{item.play}} 播放</div>
+                 <div class="count">{{get_views(item.play)}} 播放</div>
       </div>
       </div>
         <div class="split-line" v-if="index==0"></div>
@@ -33,6 +33,7 @@
 </template>
 
 <script>
+import {formatNum} from 'g-public/js/utils'
 export default {
 props:{
     details:{
@@ -40,6 +41,7 @@ props:{
     defaul:()=>[]
    }
 },
+
 data() {
   return {
     fornum:20
@@ -51,6 +53,9 @@ methods: {
   },
   spblicks(){
     this.fornum=20
+  },
+  get_views(a) {
+      return formatNum(a)
   }
 },
 }
