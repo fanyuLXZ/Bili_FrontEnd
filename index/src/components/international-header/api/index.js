@@ -78,41 +78,6 @@ export const getNavFavList = () => {
 
 // 获取收藏夹详情
 export const getNavFavDetail = (media_id) => {
-  // return {
-  //   data:{
-  //     "code": 0,
-  //     "message": "0",
-  //     "ttl": 1,
-  //     "data": [
-  //       {
-  //         "id": 288620563,
-  //         "type": 2,
-  //         "title": "标题",
-  //         "cover": "http://i0.hdslb.com/bfs/archive/3dcb4539ad14b7a433b82c3e08c84977acb99e7c.jpg",
-  //         "intro": "简介",
-  //         "page": 1,
-  //         "duration": 420,
-  //         "upper": {
-  //           "mid": 4390920,
-  //           "name": "用户id",
-  //           "face": "http://i0.hdslb.com/bfs/face/d58ab0f12d84cf3ef3eda6818f26351c26addef2.jpg"
-  //         },
-  //         "attr": 0,
-  //         "cnt_info": {
-  //           "collect": 254519,
-  //           "play": 1228249,
-  //           "danmaku": 5780
-  //         },
-  //         "link": "bilibili://video/288620563",
-  //         "ctime": 1610101651,
-  //         "pubtime": 1610161442,
-  //         "fav_time": 1611804676,
-  //         "bv_id": "BV1df4y1r7pP",
-  //         "bvid": "BV1df4y1r7pP",
-  //         "season": null
-  //       }
-  //     ]
-  //   }}
   return axios({
     url: '/api/fav/resource',
     withCredentials: true,

@@ -230,7 +230,6 @@ export default {
 
       if(data && data.data) {
         const cardList = data.data.map(item => {
-          console.log(item)
           return {
             title: item.title,
             cover: item.cover,
