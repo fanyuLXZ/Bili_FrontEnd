@@ -6,6 +6,7 @@
   <viewtoolbar :triplet="video.triplet"></viewtoolbar>
   <viewdesc :subhead="video.subhead"></viewdesc>
   <viewtag  :classify="video.classify"></viewtag>
+  <viewArticle></viewArticle>
   </div>
 
   <div class="r-con">
@@ -23,7 +24,7 @@ import viewdesc from './Videocomponent/viewdesc'
 import viewtag from './Videocomponent/viewtag'
 import reolist from './Videocomponent/reolist'
 import rupinfo from './Videocomponent/rupinfo'
-
+import viewArticle from './Videocomponent/viewArticle'
 
 export default {
     name:'videohome',
@@ -34,7 +35,8 @@ export default {
     viewdesc,
     viewtag,
     rupinfo,
-    reolist
+    reolist,
+    viewArticle
     },
     data() {
       return {
