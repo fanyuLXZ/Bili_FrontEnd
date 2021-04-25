@@ -29,7 +29,7 @@
         <div></div>
       </div>
       <div class="button-bar tc-slate">
-        <single-button :icon_style="['bp-svg-icon','single-icon','comment']" @buttonClick="isComment = !isComment" :num="item.comment" :hover_style="'comment-hover'"/>
+        <single-button :icon_style="['bp-svg-icon','single-icon','comment']" @buttonClick="showComment = !showComment" :num="item.comment" :hover_style="'comment-hover'"/>
         <single-button :icon_style="['custom-like-icon','zan']" :num="item.like" :click_style="'zan-hover'" :hover_style="'zan-a-hover'"/>
       </div>
       <!--  操作  -->
