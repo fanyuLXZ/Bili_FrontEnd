@@ -210,4 +210,4 @@ export default {
 }
 </script>
 <style lang="less"
-       src="./pagination.less"></style>
+       src=""></style>

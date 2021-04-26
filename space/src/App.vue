@@ -3,12 +3,50 @@
     <common-header/>
     <common-nav/>
     <to-top/>
+    <div class="s-space">
+      <div>
+        <!--主页-->
+         <div id="page-index" class="wrapper clearfix" style="display:none;">
+             <div class="col-1">
+                <section-title/> 
+             </div>
+             <div class="col-2">
+             <section-user/>
+             </div>
+         </div>
+        <!--动态-->
+         <div id="page-index" class="wrapper clearfix" style="display:none;">
+             <div class="col-1">
+                <feed-card/>  
+             </div>
+             <div class="col-2">
+             <section-user/>
+             </div>
+         </div>
+       <!--投稿-->
+       <div id="page-video" class="wrapper" style="display:none;">
+        
+           
+          <page-video></page-video>
+         
+       </div>
+       <!--收藏-->
+       <div id="page-fav" class="wrapper" style="display:none;">
+          <siden-ve/>
+       </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import CommonHeader from './components/common/header'
 import CommonNav from "@/components/common/nav";
+import SectionTitle from "./components/index/left/sectiontitle"//TA的视频
+import SectionUser from "./components/index/right/sectionuser"//uid的显示
+import FeedCard from "./components/index/left/feedcard" //动态显示//欧阳苏蓉
+import PageVideo from "./components/index/left/Pagevideo"//投稿
+import SidenVe from "./components/index/right/sidenve"//收藏
 // import CommonFixedNav from './components/common/fixNav'
 import toTop from './components/common/toTop'
 // import Auth from "./components/index/rightcol/auth";
@@ -16,17 +54,23 @@ import toTop from './components/common/toTop'
 // import { mapGetters, mapActions } from 'vuex'
 import {click_bus} from "@/bus";
 
+
 let FakeDanmu = null
 let CoverPreview = null
 export default {
   name: 'app',
   components: {
+    SidenVe,
+    FeedCard,
     CommonNav,
+    SectionTitle,
+    SectionUser,
+    PageVideo,
     // Auth,
     CommonHeader,
     // CommonNav,
     // CommonFixedNav,
-    toTop,
+    toTop
     // favShare,
   },
   mounted() {
@@ -152,6 +196,14 @@ export default {
 }
 </script>
 <style lang="less">
+ .bili-wrapper, .wrapper {
+    width: 1283px!important;
+}
+.wrapper {
+    width: 1101px;
+    margin: 0 auto;
+    position: relative;
+}
 .fade-enter-active, .fade-leave-active {
   transition: opacity .3s
 }
