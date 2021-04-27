@@ -4,7 +4,8 @@ import {createApp} from './index'
 import {cookie} from 'g-public/js/utils'
 import {BiliIntegration, TrackingReport} from 'g-public/modules/@bilibili/sentry-integrations'
 import * as Sentry from "http-proxy-middleware/dist/handlers";
-
+import 'swiper/dist/js/swiper.min'
+import 'swiper/dist/css/swiper.min.css'
 
 if (process.env.NODE_ENV === 'production') {
   Sentry.init({
