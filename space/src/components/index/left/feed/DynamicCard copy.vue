@@ -41,9 +41,9 @@
 </template>
 
 <script>
-import comment from "@/components/Comment";
-import operating from "@/components/Operating";
-import SingleButton from "@/components/single-button";
+import comment from "./Comment";
+import operating from "./Operating";
+import SingleButton from "./single-button";
 
 export default {
   name: "DynamicCard",
