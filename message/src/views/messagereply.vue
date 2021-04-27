@@ -9,7 +9,7 @@
     <div data-v-657577a0="" data-v-8142435e="" class="basic-list-item">
       <div data-v-657577a0="" class="left-box count-1">
         <!--background-image:  url(&quot;https://i0.hdslb.com/bfs/face/090f863403e37162465a6085f9dbc46519211698.jpg@42w_42h_1c.webp&quot;);-->
-        <a data-v-657577a0="" href="#" target="_blank" title="" class="avatar" :style="{'background-image': 'url('+item.user.avatar+')',}"></a></div>
+        <a data-v-657577a0="" href="#" target="_blank" title="" class="avatar" :style="{'background-image': 'url('+item.user.avatar+')',}" ></a></div>
         <div data-v-657577a0="" class="center-box">
           <div data-v-657577a0="" class="line-1">
             <span data-v-657577a0="" class="name-field">

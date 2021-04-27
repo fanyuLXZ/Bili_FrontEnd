@@ -5,7 +5,7 @@ Vue.use(VueRouter)
 
 const routes = [
  {
-   path:'/message-home',
+   path:'/',
    name:'messagehome',
    component: messagehome
  }

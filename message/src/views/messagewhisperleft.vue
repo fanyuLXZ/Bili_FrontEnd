@@ -5,13 +5,14 @@
         <div data-v-12ea5675="" class="list-container ps" >
           <vue-custom-scrollbar class="scroll-area"  :settings="settings" @ps-scroll-y="scrollHanle">
         <div data-v-12ea5675="" class="list" >
-          <div data-v-18829612="" data-v-12ea5675="" :class="['list-item',index==atindex?'active':'']" v-for="(item,index) in session_list  " :key="index" @click="indexclick(index)">
-            <div data-v-18829612="" class="avatar" v-for="itemt in session_list.length " :key="itemt" :style="'background-image: url(\''+(item.talker_id==datauser[itemt-1].mid?datauser[itemt-1].face:'')+'\');'" v-show="item.talker_id==datauser[itemt-1].mid" title="" >
+          <div data-v-18829612="" data-v-12ea5675="" :class="['list-item',index==atindex?'active':'']" v-for="(item,index) in datauser " :key="index" @click="indexclick(index,item.mid)">
+            <div data-v-18829612="" class="avatar" :style="'background-image: url(\''+(item.face)+'\');'"  title="" >
            </div>
               <div data-v-33c4e9c4="" class="name-box">
-                <div data-v-18829612="" class="name" title="" v-for="items in session_list.length " :key="items+session_list.length" v-show="item.talker_id==datauser[items-1].mid" >{{item.talker_id==datauser[items-1].mid?datauser[items-1].uname:''}}</div>
-               <div data-v-18829612="" title="" class="last-word">
-                {{item.last_msg.content}}</div></div>
+                <div data-v-18829612="" class="name" title="">{{item.uname}}</div>
+               <div data-v-18829612="" title="" class="last-word" v-for="(itemt,index) in session_list " :key="index" v-show="itemt.talker_id==item.mid">
+                {{itemt.talker_id==item.mid?itemt.last_msg.content:'11'}}</div>
+                </div>
         </div>
         </div>
          </vue-custom-scrollbar>
@@ -48,9 +49,10 @@ export default {
     }
   },
   methods:{
-    indexclick(obj){
+    indexclick(obj,b){
       this.atindex=obj;  
       this.$emit('sindex',obj)  
+      this.$emit('userid',b)
     },
     scrollHanle(evt) {
       console.log(evt)

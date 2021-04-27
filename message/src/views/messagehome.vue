@@ -52,7 +52,7 @@ import love from '../views/messagelove.vue'
 import loveid from '../views/messageloveid.vue'
 import whisper from '../views/messagewhisper.vue'
 import reply from '../views/messagereply.vue'
-
+// import axios from 'axios'
 export default ({
   data() {
     return {
@@ -193,9 +193,14 @@ this.gives.replysid=b;
  },
  
   created(){
-//      axios.post("api/member/vip/info").then((res)=>{
-//    console.log(res)
-// })
+  //    axios.get("api/message/like").then((res)=>{
+  //  this.Reply=res.data.data.item
+  //  console.log(this.Reply=res.data.data)
+  //    })
+  //   axios.get("api/message/reply").then((res)=>{
+  //  console.log(res)
+  //    })
+    
 }
 })
 </script>
