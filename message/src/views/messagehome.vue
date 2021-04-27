@@ -41,7 +41,7 @@
                                         <love :total="total.itmes"  v-if="this.plid<=0&&active==1"></love> 
                                         <loveid v-if="this.plid!=0&&active==1" :taes="this.tae[plid-1]"></loveid> 
                                       <reply v-if="active==2" :Reply="Reply" @giveclick="giveclick"></reply>
-                                      <whisper v-if="active==3" :whistle="whistle"></whisper>
+                                      <whisper v-if="active==3"></whisper>
                                </div> 
                                                             
                                                           </div></div></div>
@@ -108,7 +108,8 @@ export default ({
           ctime:'2020-2-2 12: 21:12',//点赞时间
         },
         counts:243//此评论的总人数
-      }
+      },
+      
      ]
     },
     Reply:[
@@ -136,7 +137,8 @@ export default ({
           mid:402923390,//评论人id
           nickname:'冰12丿繁羽 ',//名字
           avatar:'http://i2.hdslb.com/bfs/face/55ed7639eca1155dcfaf319c9611726ae80454df.jpg',//头像
-          follow:true //是否点赞
+          follow:true, //是否点赞
+      
         },
         item:{
           source_content:'其实这不是问“我妈妈为什么会被吃掉”，而是问“为什么非得这样才能拯救莱德岛',//评论了我的评论
@@ -149,46 +151,7 @@ export default ({
         }
       }
     ],
-    session_list:[
-      {
-        talker_id:1213,//对话id 值只能是最后发送数据的发送者id
-        ack_seqno:1,//此对话id的长度
-        last_msg:{
-          sender_uid:1213,//最后一条数据的发送者id
-          receiver_id:1235,//最后一条数据的接受这者
-          content:'asas' // 传最后一条数据
-        }
-      },
-       {
-        talker_id:1235,
-        ack_seqno:1,
-        last_msg:{
-          sender_uid:1213,
-          receiver_id:1235,
-          content:'asaasaas'
-        }
-      }
-    ],
-    datauser:[
-     {
-       mid:1213,
-       uname:'sda',
-       face:'http://i2.hdslb.com/bfs/face/55ed7639eca1155dcfaf319c9611726ae80454df.jpg'
-     },
-     {
-       mid:1235,
-       uname:'sda',
-       face:'http://i2.hdslb.com/bfs/face/55ed7639eca1155dcfaf319c9611726ae80454df.jpg'
-     }
-    ],
-    messages:[
-      {
-        sender_uid: 123,
-        receiver_id: 123,
-        content:'1212',
-        timestamp:'2020-21-23'
-      }
-    ],
+
 
   gives:[
    {

@@ -3,9 +3,11 @@
     <span ref="btn">
       <slot name="btn"/>
     </span>
-    <div v-show="isShow" class="z-toggle-content" :style="'left: '+offsetX+';right: '+offsetY+';'">
-      <slot name="default"/>
-    </div>
+    <transition :name="transition_name">
+      <div v-show="isShow" class="z-toggle-content" :style="'left: '+offsetX+';right: '+offsetY+';'">
+        <slot name="default"/>
+      </div>
+    </transition>
   </span>
   <div v-else-if="display==='block'" class="z-toggle">
     <div ref="btn">
@@ -21,8 +23,8 @@
 export default {
   name: "z-toggle",
   data(){
-    return{
-      isShow:false,
+    return {
+      isShow:this.is_show
     }
   },
   props: {
@@ -46,6 +48,18 @@ export default {
       type:Number,
       default:function (){
         return 0
+      }
+    },
+    "is_show":{
+      type:Boolean,
+      default:function (){
+        return false
+      }
+    },
+    "transition_name":{
+      type:String,
+      default:function (){
+        return ""
       }
     }
   },
@@ -86,6 +100,14 @@ export default {
         this.isShow=false
       }
     }
+  },
+  watch:{
+    isShow(){
+      this.$emit("display_update",this.isShow)
+    },
+    is_show(){
+      this.isShow=this.is_show
+    }
   }
 }
 </script>
@@ -95,6 +117,7 @@ export default {
     position: relative;
     .z-toggle-content{
       position: absolute;
+      z-index: 9999;
     }
   }
 </style>

@@ -20,11 +20,12 @@
         <span class="has-charge">
           <i class="van-icon-general_addto_s" v-if="!gnuflag"></i>
           关注
-          <span>{{uploader.Payattention}}</span></span><!----></div>
+          <span>{{views}}</span></span><!----></div>
           </div></div></div>
 </template>
 
 <script>
+import {formatNum} from 'g-public/js/utils'
 export default {
 props:{
     uploader:{
@@ -32,6 +33,11 @@ props:{
     defaul:()=>[]
    }
 },
+computed:{
+    views() {
+      return formatNum(this.uploader.Payattention)
+    }
+  },
 data() {
   return {
     gnuflag:false
