@@ -10,7 +10,7 @@
       </div>
     </transition>
   </span>
-  <div v-else-if="tag==='div'" class="z-toggle">
+  <div ref="toggle" v-else-if="tag==='div'" class="z-toggle">
     <div ref="btn">
       <slot name="btn"/>
     </div>
@@ -18,7 +18,7 @@
       <slot name="default"/>
     </div>
   </div>
-  <li v-else-if="tag==='li'" class="z-toggle">
+  <li ref="toggle" v-else-if="tag==='li'" class="z-toggle">
     <div ref="btn">
       <slot name="btn"/>
     </div>
