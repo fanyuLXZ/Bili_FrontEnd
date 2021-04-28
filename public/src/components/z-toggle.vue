@@ -1,16 +1,16 @@
 <!--  作者:李信志 切换控件  -->
 <template>
-  <span ref="toggle" v-if="display==='inline'" class="z-toggle">
+  <span ref="toggle" v-if="display==='span'" class="z-toggle">
     <span ref="btn">
       <slot name="btn"/>
     </span>
     <transition :name="transition_name">
-      <div v-show="isShow" class="z-toggle-content" :style="'left: '+offsetX+';right: '+offsetY+';'">
+      <div v-show="isShow" class="z-toggle-content" :style="'left: '+offsetX+'px'+';right: '+offsetY+'px'+';'">
         <slot name="default"/>
       </div>
     </transition>
   </span>
-  <div v-else-if="display==='block'" class="z-toggle">
+  <div v-else-if="display==='div'" class="z-toggle">
     <div ref="btn">
       <slot name="btn"/>
     </div>
@@ -18,6 +18,14 @@
       <slot name="default"/>
     </div>
   </div>
+  <li v-else-if="display==='li'" class="z-toggle">
+    <div ref="btn">
+      <slot name="btn"/>
+    </div>
+    <div v-show="isShow" class="z-toggle-content" :style="'left: '+offsetX+';right: '+offsetY+';'">
+      <slot name="default"/>
+    </div>
+  </li>
 </template>
 
 <script>
@@ -34,9 +42,9 @@ export default {
         return "click"
       }
     },
-    "display":{
+    "tage":{
       default:function (){
-        return "inline"
+        return "div"
       }
     },
     "offsetX":{
