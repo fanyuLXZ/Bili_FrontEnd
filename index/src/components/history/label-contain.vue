@@ -1,6 +1,6 @@
-<!--  作者：欧阳苏蓉 历史记录 时间范围轴  -->
+<!--  作者：李信志 历史记录 时间范围轴  -->
 <template>
-  <div class="label-contain" @scroll="onScroll">
+  <div ref="listContain" class="label-contain" @scroll="onScroll">
     <!--  视频时间范围  -->
     <time-label v-for="(time_label_config,index) in time_label_config_s"
                 :top="time_label_config.top"
@@ -11,53 +11,26 @@
                 :is-show="time_label_config.isShow"
                 :text="time_label_config.text"
                 :key="index"
-    />
+                :class-name="time_label_config['class-name']"
+    ></time-label>
   </div>
 </template>
 
 <script>
 import TimeLabel from "./time-label";
+import historyConfig from "../../config/history_config";
 export default {
   name: "label-contain",
   components: {
     TimeLabel
   },
-
+  props:{'history_list':Array},
   data(){
     return {
-      time_label_config_s:[
-        {
-          text:"11111111111111",
-          isActive:true,
-          is_flex_top:false,
-          is_flex_bottom:false,
-          flex_bottom:0,
-          top:18,
-          isShow:true,
-        },
-        {
-          text:"222",
-          isActive:true,
-          is_flex_top:false,
-          is_flex_bottom:false,
-          flex_bottom:20,
-          top:200,
-          isShow:true,
-        },
-        {
-          text:"3333",
-          isActive:false,
-          is_flex_top:false,
-          is_flex_bottom:true,
-          flex_bottom:20,
-          top:700,
-          isShow:true,
-        }
-      ],
-      index:0,
+      time_label_config_s:[],
+      topHeight:0
     }
   },
-
   methods:{
     // 获取滚动条当前的位置
     getScrollTop () {
@@ -88,46 +61,63 @@ export default {
 
     // 滚动事件触发下拉加载
     onScroll () {
-      if (this.getScrollTop() > this.time_label_config_s[this.index].top) {
-        if(!this.time_label_config_s[this.index].is_flex_top){
-          this.time_label_config_s[this.index].is_flex_top=true
-          // console.log(this.index)
-          if (this.time_label_config_s[this.index+1]!==undefined){
-            this.index+=1
-            // console.log(this.index)
-          }
-        }
-      }else{
-        if(this.time_label_config_s[this.index].is_flex_top){
-          this.time_label_config_s[this.index].is_flex_top=false
-          if (this.index!==0){
-            this.index-=1
-          }
-        }
-      }
-      if (this.time_label_config_s[this.index+1]!==undefined){
-        if(this.getScrollTop()>this.time_label_config_s[this.index+1].is_flex_top-this.getClientHeight ()-30){
-          if (this.time_label_config_s[this.index+1].is_flex_bottom){
-            this.time_label_config_s[this.index+1].isActive=true
-            this.time_label_config_s[this.index+1].is_flex_bottom=false
-          }
+      this.time_label_config_s.forEach((v)=>{
+        let distance_top =this.$refs["listContain"].getBoundingClientRect().top + v.top
+        if (distance_top < 0){
+          v.is_flex_top = true
+          v.is_flex_bottom = false
+          v.isActive = true
+        }else if (distance_top + v.flex_bottom + 20 +20 - document.body.clientHeight > 0){
+          v.is_flex_top = false
+          v.is_flex_bottom = true
+          v.isActive = false
         }else {
-          if (!this.time_label_config_s[this.index+1].is_flex_bottom){
-            this.time_label_config_s[this.index+1].isActive=false
-            this.time_label_config_s[this.index+1].is_flex_bottom=true
-          }
+          v.is_flex_top = false
+          v.is_flex_bottom = false
+          v.isActive = true
         }
-      }
+      })
     },
 
   },
-
   mounted () {
+    this.onScroll()
     //监听滚动事件
     this.$nextTick(function () {
       window.addEventListener('scroll', this.onScroll)
     })
   },
+  watch:{
+    history_list:{
+      handler:function(){
+        this.time_label_config_s=[]
+        let history_list = this.history_list
+        // 初始化time_label_config_s
+        historyConfig.forEach(v=>{
+          try {
+            history_list.forEach((val,i)=>{
+              if (v.condition(val.viewAt)){
+                this.time_label_config_s.push({
+                  text:v.label,
+                  isActive:true,
+                  is_flex_top:false,
+                  is_flex_bottom:false,
+                  flex_bottom:this.time_label_config_s.length*50+20,
+                  top:i*123+18,
+                  isShow:true,
+                  'class-name':v.class,
+                })
+                // 跳出循环节省性能
+                throw new Error('end')
+              }
+            })
+          }catch (e) { if(!(e.message==="end")) throw e }
+        })
+        this.time_label_config_s=this.time_label_config_s.reverse()
+      },
+      immediate: true
+    }
+  }
 }
 </script>
 

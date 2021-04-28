@@ -22,7 +22,7 @@
       </div>
       <div class="list-contain" style="position:relative">
         <!--    时间范围轴   -->
-        <label-contain :viewAt="list.viewAt"></label-contain>
+        <label-contain :history_list="list"></label-contain>
         <ul class="history-list" id="history_list">
           <li class="history-record todayitem" v-for="item in list" :key="item.kid">
             <!--    视频时间    -->
@@ -52,13 +52,13 @@
 
 <script>
 
-import HeadSearch from "./components/history/head-search";
-import HistoryBtn from "./components/history/history-btn";
-import CoverContain from "./components/history/cover-contain";
-import RTxt from "./components/history/r-txt";
-import LInfo from "./components/history/l-info";
-import GoTop from "./components/history/go-top";
-import LabelContain from "./components/history/label-contain";
+import HeadSearch from "../components/history/head-search";
+import HistoryBtn from "../components/history/history-btn";
+import CoverContain from "../components/history/cover-contain";
+import RTxt from "../components/history/r-txt";
+import LInfo from "../components/history/l-info";
+import GoTop from "../components/history/go-top";
+import LabelContain from "../components/history/label-contain";
 
 export default {
   name: 'history',
@@ -83,7 +83,7 @@ export default {
           cover:"http://i1.hdslb.com/bfs/archive/c7a5ef971a680a7ae2fafec116a4202af11df20a.jpg",   //视频预览图
           title:"相声厂牌活死人雷迪被绑架八贼法老在线解救！！#我粪了",    //视频标题
           tagName:"搞笑",    //视频分类
-          viewAt:"2021-04-20",   //观看时间
+          viewAt:"2021-04-28",   //观看时间
           progress:"13",    //观看时长 -1为看完
         },
         {
@@ -93,7 +93,7 @@ export default {
           cover:"http://i1.hdslb.com/bfs/archive/c7a5ef971a680a7ae2fafec116a4202af11df20a.jpg",   //视频预览图
           title:"相声厂牌活死人雷迪被绑架八贼法老在线解救！！#我粪了",    //视频标题
           tagName:"搞笑",    //视频分类
-          viewAt:"2021-04-20",   //观看时间
+          viewAt:"2021-04-27",   //观看时间
           progress:"13",    //观看时长 -1为看完
         },{
           kid:34052,    //视频id
@@ -102,7 +102,7 @@ export default {
           cover:"http://i1.hdslb.com/bfs/archive/c7a5ef971a680a7ae2fafec116a4202af11df20a.jpg",   //视频预览图
           title:"相声厂牌活死人雷迪被绑架八贼法老在线解救！！#我粪了",    //视频标题
           tagName:"搞笑",    //视频分类
-          viewAt:"2021-04-20",   //观看时间
+          viewAt:"2021-04-25",   //观看时间
           progress:"13",    //观看时长 -1为看完
         },{
           kid:34052,    //视频id
@@ -111,7 +111,7 @@ export default {
           cover:"http://i1.hdslb.com/bfs/archive/c7a5ef971a680a7ae2fafec116a4202af11df20a.jpg",   //视频预览图
           title:"相声厂牌活死人雷迪被绑架八贼法老在线解救！！#我粪了",    //视频标题
           tagName:"搞笑",    //视频分类
-          viewAt:"2021-04-20",   //观看时间
+          viewAt:"2021-04-18",   //观看时间
           progress:"13",    //观看时长 -1为看完
         },{
           kid:34052,    //视频id
@@ -120,7 +120,7 @@ export default {
           cover:"http://i1.hdslb.com/bfs/archive/c7a5ef971a680a7ae2fafec116a4202af11df20a.jpg",   //视频预览图
           title:"相声厂牌活死人雷迪被绑架八贼法老在线解救！！#我粪了",    //视频标题
           tagName:"搞笑",    //视频分类
-          viewAt:"2021-04-20",   //观看时间
+          viewAt:"2021-04-17",   //观看时间
           progress:"13",    //观看时长 -1为看完
         },{
           kid:34052,    //视频id
@@ -129,7 +129,7 @@ export default {
           cover:"http://i1.hdslb.com/bfs/archive/c7a5ef971a680a7ae2fafec116a4202af11df20a.jpg",   //视频预览图
           title:"相声厂牌活死人雷迪被绑架八贼法老在线解救！！#我粪了",    //视频标题
           tagName:"搞笑",    //视频分类
-          viewAt:"2021-04-20",   //观看时间
+          viewAt:"2021-04-16",   //观看时间
           progress:"13",    //观看时长 -1为看完
         },{
           kid:34052,    //视频id
@@ -138,7 +138,7 @@ export default {
           cover:"http://i1.hdslb.com/bfs/archive/c7a5ef971a680a7ae2fafec116a4202af11df20a.jpg",   //视频预览图
           title:"相声厂牌活死人雷迪被绑架八贼法老在线解救！！#我粪了",    //视频标题
           tagName:"搞笑",    //视频分类
-          viewAt:"2021-04-20",   //观看时间
+          viewAt:"2021-04-15",   //观看时间
           progress:"13",    //观看时长 -1为看完
         },{
           kid:34052,    //视频id
@@ -147,7 +147,7 @@ export default {
           cover:"http://i1.hdslb.com/bfs/archive/c7a5ef971a680a7ae2fafec116a4202af11df20a.jpg",   //视频预览图
           title:"相声厂牌活死人雷迪被绑架八贼法老在线解救！！#我粪了",    //视频标题
           tagName:"搞笑",    //视频分类
-          viewAt:"2021-04-20",   //观看时间
+          viewAt:"2021-04-14",   //观看时间
           progress:"13",    //观看时长 -1为看完
         },{
           kid:34052,    //视频id
@@ -156,7 +156,7 @@ export default {
           cover:"http://i1.hdslb.com/bfs/archive/c7a5ef971a680a7ae2fafec116a4202af11df20a.jpg",   //视频预览图
           title:"相声厂牌活死人雷迪被绑架八贼法老在线解救！！#我粪了",    //视频标题
           tagName:"搞笑",    //视频分类
-          viewAt:"2021-04-20",   //观看时间
+          viewAt:"2021-04-13",   //观看时间
           progress:"13",    //观看时长 -1为看完
         },{
           kid:34052,    //视频id
@@ -165,7 +165,7 @@ export default {
           cover:"http://i1.hdslb.com/bfs/archive/c7a5ef971a680a7ae2fafec116a4202af11df20a.jpg",   //视频预览图
           title:"相声厂牌活死人雷迪被绑架八贼法老在线解救！！#我粪了",    //视频标题
           tagName:"搞笑",    //视频分类
-          viewAt:"2021-04-20",   //观看时间
+          viewAt:"2021-04-12",   //观看时间
           progress:"13",    //观看时长 -1为看完
         },{
           kid:34052,    //视频id
@@ -174,7 +174,7 @@ export default {
           cover:"http://i1.hdslb.com/bfs/archive/c7a5ef971a680a7ae2fafec116a4202af11df20a.jpg",   //视频预览图
           title:"相声厂牌活死人雷迪被绑架八贼法老在线解救！！#我粪了",    //视频标题
           tagName:"搞笑",    //视频分类
-          viewAt:"2021-04-20",   //观看时间
+          viewAt:"2021-04-11",   //观看时间
           progress:"13",    //观看时长 -1为看完
         },{
           kid:34052,    //视频id
@@ -183,7 +183,7 @@ export default {
           cover:"http://i1.hdslb.com/bfs/archive/c7a5ef971a680a7ae2fafec116a4202af11df20a.jpg",   //视频预览图
           title:"相声厂牌活死人雷迪被绑架八贼法老在线解救！！#我粪了",    //视频标题
           tagName:"搞笑",    //视频分类
-          viewAt:"2021-04-20",   //观看时间
+          viewAt:"2021-04-10",   //观看时间
           progress:"13",    //观看时长 -1为看完
         },{
           kid:34052,    //视频id
@@ -192,7 +192,7 @@ export default {
           cover:"http://i1.hdslb.com/bfs/archive/c7a5ef971a680a7ae2fafec116a4202af11df20a.jpg",   //视频预览图
           title:"相声厂牌活死人雷迪被绑架八贼法老在线解救！！#我粪了",    //视频标题
           tagName:"搞笑",    //视频分类
-          viewAt:"2021-04-20",   //观看时间
+          viewAt:"2021-04-9",   //观看时间
           progress:"13",    //观看时长 -1为看完
         },{
           kid:34052,    //视频id
@@ -201,7 +201,7 @@ export default {
           cover:"http://i1.hdslb.com/bfs/archive/c7a5ef971a680a7ae2fafec116a4202af11df20a.jpg",   //视频预览图
           title:"相声厂牌活死人雷迪被绑架八贼法老在线解救！！#我粪了",    //视频标题
           tagName:"搞笑",    //视频分类
-          viewAt:"2021-04-20",   //观看时间
+          viewAt:"2021-04-8",   //观看时间
           progress:"13",    //观看时长 -1为看完
         },{
           kid:34052,    //视频id
@@ -210,7 +210,7 @@ export default {
           cover:"http://i1.hdslb.com/bfs/archive/c7a5ef971a680a7ae2fafec116a4202af11df20a.jpg",   //视频预览图
           title:"相声厂牌活死人雷迪被绑架八贼法老在线解救！！#我粪了",    //视频标题
           tagName:"搞笑",    //视频分类
-          viewAt:"2021-04-20",   //观看时间
+          viewAt:"2021-02-7",   //观看时间
           progress:"13",    //观看时长 -1为看完
         },
       ]

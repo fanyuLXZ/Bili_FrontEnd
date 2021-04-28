@@ -40,6 +40,9 @@ export default {
   },
   methods: {
     ...mapMutations(['SET_LOCS_DATA']),
+  },
+  mounted() {
+    console.log(this.locsData[3197])
   }
 }
 </script>
