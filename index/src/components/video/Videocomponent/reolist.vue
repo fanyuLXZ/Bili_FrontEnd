@@ -1,27 +1,27 @@
 <template>
   <div data-v-53290334 data-v-531ade5e id="reco_list" class="recommend-list report-wrap-module report-scroll-module" scrollshow="true">
     <div data-v-531ade5e="" class="rec-list">
-     <div class="video-page-card" v-for="(item,index) in details" :key="index" >
+     <div class="video-page-card" v-for="(item,index) in related" :key="index" >
        <!--video-page-operator-card-->
        <div class="card-box" v-if="index<=fornum">
        <div class="pic-box">
          <div class="pic">
            <a href="#" class="">
-           <img :src="item.imagefrom" :alt="item.titles" width="168" height="95"></a>
+           <img :src="item.pic" :alt="item.titles" width="168" height="95"></a>
            <span class="mask-video"></span>
-           <span class="duration">{{item.time}}</span>
+           <span class="duration">111</span>
            </div>
            <div class="watch-later-video van-watchlater">
              <span class="wl-tips" style=""></span>
              </div></div>
              <div class="info">
                <a href="#" class="">
-               <span :title="item.titles" class="title">{{item.titles}}</span></a>
-               <div class="count up"><a href="#" target="_blank">{{item.upname}}</a></div>
-                 <div class="count">{{get_views(item.play)}} 播放</div>
+               <span :title="item.titles" class="title" style=" padding: 0;">{{item.title}}</span></a>
+               <div class="count up"><a href="#" target="_blank">{{item.owner.name}}</a></div>
+                 <div class="count">{{get_views(item.stat.view)}} 播放</div>
       </div>
       </div>
-        <div class="split-line" v-if="index==0"></div>
+       
     </div>
       
    
@@ -36,7 +36,7 @@
 import {formatNum} from 'g-public/js/utils'
 export default {
 props:{
-    details:{
+    related:{
     type:Array,
     defaul:()=>[]
    }
@@ -63,9 +63,13 @@ methods: {
 <style scoped src="@/assets/style/video/stardust-video.css"></style>
 
 <style>
-.split-line{
-  margin-right: 20px;
+.split-line {
+    
+     position: static; 
+  
+    border-top: 1px solid #e9eaec;
 }
+
 .sfou{
   display: none;
 }

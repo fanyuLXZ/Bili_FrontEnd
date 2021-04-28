@@ -1,27 +1,31 @@
 <template>
 <div class="v-wrap">
   <div class="l-con">
-  <viewbox :boxreport="video.boxreport"></viewbox>
+  <viewbox :video="videoData.video" :view="videoData.stat.view"> </viewbox>
   <player></player>
-  <viewtoolbar :triplet="video.triplet"></viewtoolbar>
-  <viewdesc :subhead="video.subhead"></viewdesc>
-  <viewtag  :classify="video.classify"></viewtag>
-  <viewArticle></viewArticle>
+   <viewtoolbar :stat="videoData.stat"></viewtoolbar>
+    <viewtag :mainpartition="videoData.mainpartition"  :deputydivision="videoData.deputydivision"></viewtag>
+  <viewdesc :desc="videoData.video.desc"></viewdesc>
+
+ <viewArticle></viewArticle> 
   </div>
 
   <div class="r-con">
-    <rupinfo :uploader="video.uploader"></rupinfo>
-    <reolist :details="video.details"></reolist>
+     <rupinfo :owner=" videoData.owner"></rupinfo>
+    
+    <reolist :related="videoData.related"></reolist> 
   </div>
+   
 </div>
 </template>
 
 <script>
+
 import viewbox from './Videocomponent/viewboxreport'
 import player from './Player'
 import viewtoolbar from './Videocomponent/viewtoolbar'
 import viewdesc from './Videocomponent/viewdesc'
-import viewtag from './Videocomponent/viewtag'
+import viewtag from './Videocomponent/viewtwg'
 import reolist from './Videocomponent/reolist'
 import rupinfo from './Videocomponent/rupinfo'
 import viewArticle from './Videocomponent/viewArticle'
@@ -29,91 +33,99 @@ import viewArticle from './Videocomponent/viewArticle'
 export default {
     name:'videohome',
     components:{
+     
+    viewtag,
     viewbox,
     player,
     viewtoolbar,
     viewdesc,
-    viewtag,
     rupinfo,
     reolist,
     viewArticle
     },
     data() {
       return {
-       video:{
-         bvid:1,
-          boxreport:{
-            id:1,//视频id
-            titles:'【打泥泥】生命最后的30天，该如何度过?',//标题
-            times:'2021-04-21 17:47:07',//发布时间
-            play:410000,//播放量
+       videoData:{
+
+         aid: 587836792,
+          video:{
+             id:1,//视频id
+             title: "“深房理”事件——国家才是人民幸福生活的保障",//标题
+             desc:'深房理不止炒房？ 地产证券化，亏你也敢！',//副标题
+             ctime:'2021-04-21 17:47:07',//发布时间
+            
             rank:20//排名
           },
-          triplet:{
-            Thumbup:23299,//点赞数
-            insertcoins:523101,//投币数
-            collect:41200//收藏数
-
-          },
-          subhead:{
-            name:'视频里有两个关于我的彩蛋，你们能找到吗？'//副标题
-          },
-          classify:
-          {
-             mainpartition:[
-              {name:'互动视频',froms:'dizhi'},
-              {name:'科幻',froms:'dizhi'},
-              {name:'互动视频',froms:'dizhi'},
-              {name:'科幻',froms:'dizhi'},
-               ], //主分类
-            sortable:[
-              {names:'冒险',from:'dizhi'},
-              {names:'亲情',from:'dizhi'},
-              {names:'原创',from:'dizhi'},
-              {names:'互动游戏',from:'dizhi'},
-              {names:'单机联机',from:'dizhi'}
-              ]
-          },
-         uploader:{ 
-            id:'1',//up主id
-            upname:'打泥泥',//up主名字
-            manifesto:'目标是做出最棒的互动视频！  wb：打泥泥呀',//个人简历
-            Payattention:123135//关注数
-          },
-         details:[
+          owner: {
+            mid: 490265189,//up主id
+            upname: "荷包兔时间",//up主名字
+           fans: 425594,//关注数
+           sign: "直播间请不要刷需要花钱的礼物哈~大家赚钱不易，都先留着。以后的，以后再给：）",//个人简历
+            face: "http:\u002F\u002Fi2.hdslb.com\u002Fbfs\u002Fface\u002Fe2518023fc82d92ad53b2ee3305b4bf6fb1fbbf2.jpg"//头像
+            },          
+          stat:{
+              view: 130674,//播放量
+              favorite: 3292,//收藏数
+              coin: 7474,//投币数
+                like: 13207,//点赞数
+              },
+              //列表
+         related:[
            {
-             bvid:1,
-             titles:'【打泥泥】生命最后的30天，该如何度过?',
-              upname:'打泥泥',//up主名字
-              play:410000,//播放量
-              time:'1:10',
-              imagefrom:'//i1.hdslb.com/bfs/archive/a0376f8e41c0eab3ee2d31b47271ce80a10bbb2f.jpg@336w_190h.webp'
-           }
-         ]
+                    aid: 887552099,//视频id
+                    pic: "http:\u002F\u002Fi2.hdslb.com\u002Fbfs\u002Farchive\u002Fce26b419c9e737b4f8faad2143b655f9a3d1f676.jpg",//图片
+                    title: "那个惊动七大部门的男人，撕开了深圳楼市大内幕",//标题
+                    owner: {
+                        name: "大猫财经",//up名字
+                        mid: 519978853//upid
+                    },
+                    stat: {
+                        view: 183630//播放量
+                    },
+                
+                },
+                {
+                    aid: 887552099,//视频id
+                    pic: "http:\u002F\u002Fi2.hdslb.com\u002Fbfs\u002Farchive\u002Fce26b419c9e737b4f8faad2143b655f9a3d1f676.jpg",//图片
+                    title: "那个惊动七大部门的男人，撕开了深圳楼市大内幕",//标题
+                    owner: {
+                        name: "大猫财经",//up名字
+                        mid: 519978853//upid
+                    },
+                    stat: {
+                        view: 183630//播放量
+                    },
+                
+                },  {
+                    aid: 887552099,//视频id
+                    pic: "http:\u002F\u002Fi2.hdslb.com\u002Fbfs\u002Farchive\u002Fce26b419c9e737b4f8faad2143b655f9a3d1f676.jpg",//图片
+                    title: "那个惊动七大部门的男人，撕开了深圳楼市大内幕",//标题
+                    owner: {
+                        name: "大猫财经",//up名字
+                        mid: 519978853//upid
+                    },
+                    stat: {
+                        view: 183630//播放量
+                    },
+                
+                },   
+         ],
+         mainpartition:["111","13"],//主分区
+         deputydivision:["!2313","!231"],//副分区
+        
        }
       }
     },
     beforeMount(){
       //在这里做播放量的加一
-         this.video.boxreport.play++;
+         //this.video.video.play++;
          
     }
 }
 </script>
 <style scoped src="@/assets/style/video/stardust-video.css"></style>
 <!--下面与主页无关-->
-<style scoped src="@/assets/style/video/video_main.css"></style>
-<style scoped src="@/assets/style/video/video_pbp.css"></style>
-<style scoped src="@/assets/style/video/video_1.css"></style>
-<style scoped src="@/assets/style/video/video_2.css"></style>
-<style scoped src="@/assets/style/video/video_3.css"></style>
-<style scoped src="@/assets/style/video/video_4.css"></style>
-<style scoped src="@/assets/style/video/video_5.css"></style>
-<style scoped src="@/assets/style/video/video_6.css"></style>
-<style scoped src="@/assets/style/video/video_7.css"></style>
-<style scoped src="@/assets/style/video/video_8.css"></style>
-<style scoped src="@/assets/style/video/video_9.css"></style>
-<style scoped src="@/assets/style/video/video_10.css"></style>
+
 <style>
 
 /* 主页样式 */
