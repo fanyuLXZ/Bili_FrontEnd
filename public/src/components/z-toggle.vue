@@ -5,7 +5,7 @@
       <slot name="btn"/>
     </span>
     <transition :name="transition_name">
-      <div v-show="isShow" class="z-toggle-content" :style="'left: '+offsetX+';right: '+offsetY+';'">
+      <div v-show="isShow" class="z-toggle-content" :style="'left: '+offsetX+'px'+';right: '+offsetY+'px'+';'">
         <slot name="default"/>
       </div>
     </transition>
