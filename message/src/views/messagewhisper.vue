@@ -4,7 +4,7 @@
 <div data-v-247edaf8="" data-v-1c9150a9="" class="d">
 <div data-v-12ea5675="" data-v-247edaf8="" class="bili-im">
 
-<whisperleft :session_list="session_list" :datauser="datauser" @sindex="sindex"></whisperleft>
+<whisperleft :session_list="session_list" :datauser="datauser" @sindex="sindex" @userid="userid"></whisperleft>
 <whisperright :session_list="session_list" :datauser="datauser" :messages="messages" :sindext="sindext"></whisperright>
 
      
@@ -71,12 +71,7 @@ export default {
       }
     ],
     datauser:[
-       {
-       mid:1235,
-       uname:'他十大达2',
-       face:'http://i2.hdslb.com/bfs/face/6de37a72ea5aeab569c8892be527c70df570a5bf.jpg',
-     
-     },
+       
        {
        mid:1223134,
        uname:'他十大达2',
@@ -120,7 +115,8 @@ export default {
         timestamp:'2020-21-23'
       }
     ],
-   sindext:0
+   sindext:0,
+   usermuber:0
     } 
   },
  
@@ -128,6 +124,9 @@ export default {
 methods: {
    sindex(a){
   this.sindext=a
+   },
+   userid(a){
+this.usermuber=a
    }
 },
 components:{
