@@ -5,7 +5,7 @@
       <slot name="btn"/>
     </span>
     <transition :name="transition_name">
-      <div v-show="isShow" class="z-toggle-content" :style="'left: '+String(offsetX)+'px'+';top: '+String(offsetY)+'px'+';'">
+    <div v-show="isShow" class="z-toggle-content" :style="'left: '+String(offsetX)+'px;top: '+String(offsetY)+'px;'">
         <slot name="default"/>
       </div>
     </transition>
@@ -14,7 +14,7 @@
     <div ref="btn">
       <slot name="btn"/>
     </div>
-    <div v-show="isShow" class="z-toggle-content" :style="'left: '+String(offsetX)+';top: '+String(offsetY)+';'">
+    <div v-show="isShow" class="z-toggle-content" :style="'left: '+String(offsetX)+'px;top: '+String(offsetY)+'px;'">
       <slot name="default"/>
     </div>
   </div>
@@ -22,7 +22,7 @@
     <div ref="btn">
       <slot name="btn"/>
     </div>
-    <div v-show="isShow" class="z-toggle-content" :style="'left: '+String(offsetX)+';top: '+String(offsetY)+';'">
+    <div v-show="isShow" class="z-toggle-content" :style="'left: '+String(offsetX)+'px;top: '+String(offsetY)+'px;'">
       <slot name="default"/>
     </div>
   </li>
@@ -73,6 +73,7 @@ export default {
     }
   },
   mounted() {
+    console.log('left: '+String(this.offsetX)+'px'+';top: '+String(this.offsetY)+'px'+';')
     if (this.trigger==="click"){
       // 绑定点击事件
       this.$refs.toggle.addEventListener("click",this.click)
