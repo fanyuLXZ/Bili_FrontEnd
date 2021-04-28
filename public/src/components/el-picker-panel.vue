@@ -1,4 +1,4 @@
-<!--  作者:欧阳苏蓉 我的信息-日历  -->
+<!--  作者:李信志 日历  -->
 <template>
   <div class="el-picker-panel el-date-picker">
     <div class="el-picker-panel__body-wrapper"><!---->

@@ -1,3 +1,4 @@
+<!--  作者:李信志 切换控件  -->
 <template>
   <span ref="toggle" v-if="display==='inline'" class="z-toggle">
     <span ref="btn">
