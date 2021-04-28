@@ -14,8 +14,8 @@
 </template>
 
 <script>
-import secondFloor from "../Article/SecondFloor"
-import pagination from "../Article/Pagination"
+import secondFloor from "./SecondFloor"
+import pagination from "./Pagination"
 export default {
   name: "SubComments",
 

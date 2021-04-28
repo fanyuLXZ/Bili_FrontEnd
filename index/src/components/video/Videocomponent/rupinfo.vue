@@ -8,11 +8,11 @@
     </div>
   </a></div><div class="up-info_right"><div class="name" style="line-height:20px;height:20px;"><!---->
   <a href="//space.bilibili.com/357229416" target="_blank" report-id="name" class="username is_vip" style="color:#FB7299;">
-        {{uploader.upname}}
+        {{owner.upname}}
         <span class="mask"></span></a><a href="/message-home" target="_blank" class="message"><i class="van-icon-videodetails_messag"></i>
           发消息
-      </a></div><div :title="uploader.manifesto" class="desc">
-      {{uploader.manifesto}}
+      </a></div><div class="desc">
+      {{owner.sign}}
     </div>
     <div class="btn-panel">
       <!----><!--default-btn follow-btn btn-transition b-gz following-->
@@ -28,14 +28,14 @@
 import {formatNum} from 'g-public/js/utils'
 export default {
 props:{
-    uploader:{
+    owner:{
     type:Object,
     defaul:()=>[]
    }
 },
 computed:{
     views() {
-      return formatNum(this.uploader.Payattention)
+      return formatNum(this.owner.fans)
     }
   },
 data() {

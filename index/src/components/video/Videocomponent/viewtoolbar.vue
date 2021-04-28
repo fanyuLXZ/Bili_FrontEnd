@@ -1,7 +1,7 @@
 <template>
   <div id="arc_toolbar_report" class="video-toolbar report-wrap-module report-scroll-module" scrollshow="true" style="height:40px" >
     <div class="ops"  >
-      <span :title="triplet.Thumbup" class="like">
+      <span  class="like">
         <!----><!----><!----><!--no--><i class="van-icon-videodetails_like" style="color:;"></i>{{thumbup}}
         <div class="svga-container svga-top" style="text-align: left; left: 177.8px; top: 536px;">
           <canvas width="360" height="360" style="background-color: transparent; transform: matrix(0.333333, 0, 0, 0.333333, -120, -120);"></canvas></div>
@@ -26,20 +26,20 @@
 import {formatNum} from 'g-public/js/utils'
 export default {
  props:{
-   triplet:{
+   stat:{
        type:Object,
     defaul:()=>[]
    }
  },
  computed:{
     thumbup() {
-      return formatNum(this.triplet.Thumbup)
+      return formatNum(this.stat.like)
     },
      insertcoins() {
-      return formatNum(this.triplet.insertcoins)
+      return formatNum(this.stat.coin)
     },
      collect() {
-      return formatNum(this.triplet.collect)
+      return formatNum(this.stat.favorite)
     }
   },
 }
