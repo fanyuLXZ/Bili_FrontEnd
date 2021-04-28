@@ -1,6 +1,6 @@
 <!--  作者：欧阳苏蓉 动态--我自己  -->
 <template>
-  <div :class="mid===433899970?'userinfo-wrapper':'user-card'" style="top:60px; left:10px;" v-if="true">
+  <div :class="mid===433899970?'userinfo-wrapper':'user-card'" style="top:5px; left:10px;">
     <div class="userinfo-content">
       <div class="bg"
            style="background-image: url('//i1.hdslb.com/bfs/space/768cc4fd97618cf589d23c2711a1d1a729f42235.png@120h.webp');"></div>

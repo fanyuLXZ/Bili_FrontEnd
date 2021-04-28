@@ -57,6 +57,7 @@ export default {
             rank:20//排名
           },
           owner: {
+            attention: true, //是否关注
             mid: 490265189,//up主id
             upname: "荷包兔时间",//up主名字
            fans: 425594,//关注数

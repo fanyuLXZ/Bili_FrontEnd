@@ -1,14 +1,15 @@
 <template>
   <div id="v_upinfo" class="up-info report-wrap-module report-scroll-module" scrollshow="true"><div class="u-face"><a href="//space.bilibili.com/357229416" target="_blank" report-id="head" class="fa">
-    
-    <div class="bili-avatar"  @mouseout="flagclick">
-    
+    <z-toggle trigger="hover">
+      <template v-slot:btn>
+    <div class="bili-avatar"  > 
       <img class="bili-avatar-img bili-avatar-face bili-avatar-img-radius" data-src="https://i1.hdslb.com/bfs/face/c2352354e38287a6b36ffcfce7437220f4436fe6.jpg@96w_96h_1c.webp" alt="" src="https://i1.hdslb.com/bfs/face/c2352354e38287a6b36ffcfce7437220f4436fe6.jpg@96w_96h_1c.webp">
-    
-      
       <span class="bili-avatar-icon bili-avatar-icon--personal"></span>
     </div>
-   
+    </template>
+       <meinfo ></meinfo>
+    </z-toggle>
+
   </a></div><div class="up-info_right">
        
     <div class="name" style="line-height:20px;height:20px;"><!---->
@@ -19,10 +20,12 @@
         <span class="mask"></span></a>
     <a href="/message-home" target="_blank" class="message">   <i class="van-icon-videodetails_messag"></i>
           发消息
-            <meinfo v-if="flag"></meinfo>
+          
+           
       </a></div><div class="desc">
       {{owner.sign}}
     </div>
+     
     <div class="btn-panel">
        
       <!----><!--default-btn follow-btn btn-transition b-gz following-->
@@ -37,9 +40,12 @@
 <script>
 import {formatNum} from 'g-public/js/utils'
 import meinfo from './MeInfo'
+import ZToggle from 'g-public/components/z-toggle'
+
 export default {
   components:{
-    meinfo
+    meinfo,
+    ZToggle
   },
 props:{
     owner:{
@@ -54,7 +60,7 @@ computed:{
   },
 data() {
   return {
-    flag: false,
+    
     gnuflag:false
   }
 },
@@ -66,9 +72,7 @@ methods: {
 beforeUpdate() {
   console.log(this.flag)
 },
-flagclick(){
-  this.flag=!this.flag
-}
+
 }
 </script>
 <style scoped src="@/assets/style/video/stardust-video.css"></style>
