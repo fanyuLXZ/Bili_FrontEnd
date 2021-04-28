@@ -1,6 +1,6 @@
 <!--  作者:李信志 切换控件  -->
 <template>
-  <span ref="toggle" v-if="display==='span'" class="z-toggle">
+  <span ref="toggle" v-if="tag==='span'" class="z-toggle">
     <span ref="btn">
       <slot name="btn"/>
     </span>
@@ -10,7 +10,7 @@
       </div>
     </transition>
   </span>
-  <div v-else-if="display==='div'" class="z-toggle">
+  <div v-else-if="tag==='div'" class="z-toggle">
     <div ref="btn">
       <slot name="btn"/>
     </div>
@@ -18,7 +18,7 @@
       <slot name="default"/>
     </div>
   </div>
-  <li v-else-if="display==='li'" class="z-toggle">
+  <li v-else-if="tag==='li'" class="z-toggle">
     <div ref="btn">
       <slot name="btn"/>
     </div>
@@ -42,7 +42,7 @@ export default {
         return "click"
       }
     },
-    "tage":{
+    "tag":{
       default:function (){
         return "div"
       }
