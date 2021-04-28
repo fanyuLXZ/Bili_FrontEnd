@@ -16,12 +16,12 @@
              </div></div>
              <div class="info">
                <a href="#" class="">
-               <span :title="item.titles" class="title">{{item.title}}</span></a>
+               <span :title="item.titles" class="title" style=" padding: 0;">{{item.title}}</span></a>
                <div class="count up"><a href="#" target="_blank">{{item.owner.name}}</a></div>
                  <div class="count">{{get_views(item.stat.view)}} 播放</div>
       </div>
       </div>
-        <div class="split-line" v-if="index==0"></div>
+       
     </div>
       
    
@@ -63,9 +63,13 @@ methods: {
 <style scoped src="@/assets/style/video/stardust-video.css"></style>
 
 <style>
-.split-line{
-  margin-right: 20px;
+.split-line {
+    
+     position: static; 
+  
+    border-top: 1px solid #e9eaec;
 }
+
 .sfou{
   display: none;
 }

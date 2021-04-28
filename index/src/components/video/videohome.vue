@@ -4,6 +4,7 @@
   <viewbox :video="videoData.video" :view="videoData.stat.view"> </viewbox>
   <player></player>
    <viewtoolbar :stat="videoData.stat"></viewtoolbar>
+    <viewtag :mainpartition="videoData.mainpartition"  :deputydivision="videoData.deputydivision"></viewtag>
   <viewdesc :desc="videoData.video.desc"></viewdesc>
 
  <viewArticle></viewArticle> 
@@ -11,35 +12,41 @@
 
   <div class="r-con">
      <rupinfo :owner=" videoData.owner"></rupinfo>
+    
     <reolist :related="videoData.related"></reolist> 
   </div>
+   
 </div>
 </template>
 
 <script>
+
 import viewbox from './Videocomponent/viewboxreport'
 import player from './Player'
 import viewtoolbar from './Videocomponent/viewtoolbar'
 import viewdesc from './Videocomponent/viewdesc'
-
- import reolist from './Videocomponent/reolist'
+import viewtag from './Videocomponent/viewtwg'
+import reolist from './Videocomponent/reolist'
 import rupinfo from './Videocomponent/rupinfo'
- import viewArticle from './Videocomponent/viewArticle'
+import viewArticle from './Videocomponent/viewArticle'
 
 export default {
     name:'videohome',
     components:{
+     
+    viewtag,
     viewbox,
     player,
-     viewtoolbar,
-     viewdesc,
-     rupinfo,
-     reolist,
-     viewArticle
+    viewtoolbar,
+    viewdesc,
+    rupinfo,
+    reolist,
+    viewArticle
     },
     data() {
       return {
        videoData:{
+
          aid: 587836792,
           video:{
              id:1,//视频id
@@ -55,8 +62,7 @@ export default {
            fans: 425594,//关注数
            sign: "直播间请不要刷需要花钱的礼物哈~大家赚钱不易，都先留着。以后的，以后再给：）",//个人简历
             face: "http:\u002F\u002Fi2.hdslb.com\u002Fbfs\u002Fface\u002Fe2518023fc82d92ad53b2ee3305b4bf6fb1fbbf2.jpg"//头像
-            },
-            
+            },          
           stat:{
               view: 130674,//播放量
               favorite: 3292,//收藏数
@@ -103,8 +109,9 @@ export default {
                     },
                 
                 },   
-         ]
-       
+         ],
+         mainpartition:["111","13"],//主分区
+         deputydivision:["!2313","!231"],//副分区
         
        }
       }
