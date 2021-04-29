@@ -1,28 +1,28 @@
 <!--  作者:李信志 切换控件  -->
 <template>
-  <span ref="toggle" v-if="display==='span'" class="z-toggle">
+  <span ref="toggle" v-if="tag==='span'" class="z-toggle">
     <span ref="btn">
       <slot name="btn"/>
     </span>
     <transition :name="transition_name">
-      <div v-show="isShow" class="z-toggle-content" :style="'left: '+offsetX+'px'+';right: '+offsetY+'px'+';'">
+    <div v-show="isShow" class="z-toggle-content" :style="'left: '+String(offsetX)+'px;top: '+String(offsetY)+'px;'">
         <slot name="default"/>
       </div>
     </transition>
   </span>
-  <div v-else-if="display==='div'" class="z-toggle">
+  <div ref="toggle" v-else-if="tag==='div'" class="z-toggle">
     <div ref="btn">
       <slot name="btn"/>
     </div>
-    <div v-show="isShow" class="z-toggle-content" :style="'left: '+offsetX+';right: '+offsetY+';'">
+    <div v-show="isShow" class="z-toggle-content" :style="'left: '+String(offsetX)+'px;top: '+String(offsetY)+'px;'">
       <slot name="default"/>
     </div>
   </div>
-  <li v-else-if="display==='li'" class="z-toggle">
+  <li ref="toggle" v-else-if="tag==='li'" class="z-toggle">
     <div ref="btn">
       <slot name="btn"/>
     </div>
-    <div v-show="isShow" class="z-toggle-content" :style="'left: '+offsetX+';right: '+offsetY+';'">
+    <div v-show="isShow" class="z-toggle-content" :style="'left: '+String(offsetX)+'px;top: '+String(offsetY)+'px;'">
       <slot name="default"/>
     </div>
   </li>
@@ -42,7 +42,7 @@ export default {
         return "click"
       }
     },
-    "tage":{
+    "tag":{
       default:function (){
         return "div"
       }
@@ -73,6 +73,7 @@ export default {
     }
   },
   mounted() {
+    console.log('left: '+String(this.offsetX)+'px'+';top: '+String(this.offsetY)+'px'+';')
     if (this.trigger==="click"){
       // 绑定点击事件
       this.$refs.toggle.addEventListener("click",this.click)
