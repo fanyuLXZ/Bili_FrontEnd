@@ -15,7 +15,7 @@
             <span data-v-657577a0="" class="name-field">
               <a data-v-657577a0="" href="#" target="_blank" title="">{{item.user.nickname}}</a><!----></span>
               <span data-v-657577a0="" class="desc-field">
-        回复了我的评论
+        回复了我的{{item.item.type=='reply'?'评论':''}}{{item.item.type=='dynamic'?'动态':''}}{{item.item.type=='video'?'视频':''}}
       </span></div>
       <div data-v-657577a0="" class="line-2">
         <div data-v-8142435e="" data-v-657577a0="" class="real-reply">
@@ -45,7 +45,7 @@
                  <!--跳转item.item.uri去此评论或视频的地方-->
                 <div data-v-657577a0="" class="right-box"  >
   <div data-v-bdf166be="" data-v-657577a0="" class="right-section">
-<div data-v-bdf166be="" data-v-657577a0="" title="" class="text-box" v-if="item.item.type=='reply'">{{item.item.title}}</div>
+<div data-v-bdf166be="" data-v-657577a0="" title="" class="text-box" v-if="item.item.type=='reply'||item.item.type=='dynamic'">{{item.item.title}}</div>
 <div v-if="item.item.type=='video'" data-v-bdf166be="" data-v-657577a0="" :title="item.item.desc" class="image-box" :style="{'background-image': 'url('+item.item.image+')',}">
 <img data-v-bdf166be="" data-v-657577a0="" :src="item.item.image" alt="hidden"></div>
 </div>
@@ -127,7 +127,9 @@ components:{
 }
 </script>
 
-<style>
+<style scoped>
+
+
 
 .css-9slmkq .fill {
      fill: none; 
@@ -145,5 +147,20 @@ components:{
   height: 600px;
 
 }
-
+.text-box[data-v-bdf166be] {
+  margin-top: 10px;
+  padding-top: 10px;
+    width: 60px;
+    height: 60px;
+    color: #999;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    font-size: 14px;
+    line-height: 15px;
+    max-height: 4.285714285714286em;
+}
 </style>

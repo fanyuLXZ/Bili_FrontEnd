@@ -26,7 +26,16 @@ export default {
     return {
     session_list:[
       {
-        talker_id:1213,//对话id 值只能是最后发送数据的发送者id
+        talker_id:1,//对话id 值只能是最后发送数据的发送者id
+        ack_seqno:1,//此对话id的长度
+        last_msg:{
+          sender_uid:1213,//最后一条数据的发送者id
+          receiver_id:1235,//最后一条数据的接受这者
+          content:'asadssssssssssssssssssssssas' // 传最后一条数据
+        }
+      },
+      {
+        talker_id:2,//对话id 值只能是最后发送数据的发送者id
         ack_seqno:1,//此对话id的长度
         last_msg:{
           sender_uid:1213,//最后一条数据的发送者id
@@ -37,17 +46,22 @@ export default {
     ],
     datauser:[    
        {
-       mid:1213,
+       mid:1,
+       uname:'他十大达2',
+       face:'http://i2.hdslb.com/bfs/face/6de37a72ea5aeab569c8892be527c70df570a5bf.jpg',
+       },
+        {
+       mid:2,
        uname:'他十大达2',
        face:'http://i2.hdslb.com/bfs/face/6de37a72ea5aeab569c8892be527c70df570a5bf.jpg',
        }
     ],
     messages:[
        {
-        sender_uid: 123,
-        receiver_id: 123,
-        content:'1212',
-        timestamp:'2020-21-23'
+        sender_uid: 0,
+        receiver_id: 0,
+        content:'',
+        timestamp:'-21-23'
       }
     ],
    sindext:0,
@@ -62,20 +76,35 @@ methods: {
    },
    userid(a){
 this.usermuber=a
-axios.get("api/message/fetch_session_msgs").then((res)=>{
-  console.log(res)
-})
+  axios({
+            method:'get',
+            url:"api/message/fetch_session_msgs",
+            params:{fid:this.usermuber}
+          }).then((res)=>{
+          this.messages=res.data.data.messages
+          })
    }
 },
  created(){
-   axios.get("api/member/user/infos").then((res)=>{
-   console.log(res)
-     })
-     axios.get("api/message/get_sessions",{params: {mid: [this.session_list.talker_id]},
+     
+     axios.get("api/message/get_sessions").then((res)=>{
+    //  console.log(res.data.data)
+this.session_list=res.data.data.session_list
+ let uids = []
+      this.session_list.forEach(v => {
+        uids.push(v.talker_id)
+      });
+      axios.get("api/member/user/infos",{
+        params: {uids},
         paramsSerializer: params => {return qs.stringify(params, { indices: false })}
-      }).then((res)=>{
-      console.log(res)
-     })
+      }).then((refs)=>{
+      
+      this.datauser=refs.data
+     // console.log(refs.data)
+         })
+})
+     
+   
  },
 components:{
   
