@@ -80,9 +80,7 @@ export default ({
         },
         counts:224,//此评论的总人数
         like_time:'2021-04-24T02:47:49.000+00:00'
-      },
-   
-      
+      }, 
      ]
     },
     Reply:[
@@ -101,26 +99,7 @@ export default ({
           reply_time:'2020-12-13 12:23:45',//评论的时间
           uri:'https://www.bilibili.com/video/BV1Hp4y1t7kz',
           image:'https://i0.hdslb.com/bfs/game/ee43a0c2c3e52b8279dd8925ac32d83f7ffe02ac.png@60w_60h_1c.webp',//视频封面图
-          native_uri:'个人中心地址'//可写可不写
-        }
-      },
-      {
-           id:22098361311,
-        user:{
-          mid:402923390,//评论人id
-          nickname:'冰12丿繁羽 ',//名字
-          avatar:'http://i2.hdslb.com/bfs/face/55ed7639eca1155dcfaf319c9611726ae80454df.jpg',//头像
-          follow:true, //是否点赞
-      
-        },
-        item:{
-          source_content:'其实这不是问“我妈妈为什么会被吃掉”，而是问“为什么非得这样才能拯救莱德岛',//评论了我的评论
-          type:'video',//video代表视频，dynamic代表动态 reply代表文字
-          title:'被回复的评论或视频',//传文字
-          reply_time:'2020-12-13 12:23:45',//评论的时间
-          uri:'https://www.bilibili.com/video/BV1Hp4y1t7kz',
-          image:'https://i0.hdslb.com/bfs/game/ee43a0c2c3e52b8279dd8925ac32d83f7ffe02ac.png@60w_60h_1c.webp',//视频封面图
-          native_uri:'个人中心地址'//可写可不写
+          native_uri:''//可写可不写
         }
       }
     ],
@@ -168,11 +147,12 @@ this.gives.replysid=b;
   created(){
      axios.get("api/message/like").then((res)=>{
    this.total=res.data.data.total
-   console.log(res.data.data.total.items)
+  //console.log(res.data.data.total.items)
      })
-  //   axios.get("api/message/reply").then((res)=>{
-  //  console.log(res)
-  //    })
+    axios.get("api/message/reply").then((res)=>{
+      this.Reply=res.data.data.reply
+     // console.log(res.data.data.reply)
+     })
     
 }
 })

@@ -14,19 +14,19 @@
                           <div data-v-657577a0="" data-v-bdf166be="" class="basic-list-item">
                             <!--第一个或者第二个头像-->
                                   <div data-v-657577a0="" class="left-box count-2" v-if="item.users.length>=2">
-                                    <a data-v-657577a0=""  :href="item.users[0].native_uri" target="_blank" :title="item.users[0].nickname" class="avatar" :style="{'background-image': 'url('+item.users[0].avatar+')',}"></a>
-                                    <a data-v-657577a0="" :href="item.users[1].native_uri" target="_blank" :title="item.users[1].nickname" class="avatar" :style="{'background-image': 'url('+item.users[1].avatar+')',}"></a>
+                                    <a data-v-657577a0=""  :href="item.users[0].native_uri==''?item.users[0].native_uri:'#'" target="_blank" :title="item.users[0].nickname" class="avatar" :style="{'background-image': 'url('+item.users[0].avatar+')',}"></a>
+                                    <a data-v-657577a0="" :href="item.users[1].native_uri==''?item.users[1].native_uri:'#'" target="_blank" :title="item.users[1].nickname" class="avatar" :style="{'background-image': 'url('+item.users[1].avatar+')',}"></a>
                                   </div>
                                   <div data-v-657577a0="" class="left-box count-1" v-if="item.users.length==1">
-                                    <a data-v-657577a0="" :href="item.users[0].native_uri" target="_blank" :title="item.users[0].nickname" class="avatar" :style="{'background-image': 'url('+item.users[0].avatar+')',}"></a></div>
+                                    <a data-v-657577a0="" :href="item.users[0].native_uri==''?item.users[0].native_uri:'#'" target="_blank" :title="item.users[0].nickname" class="avatar" :style="{'background-image': 'url('+item.users[0].avatar+')',}"></a></div>
                              <!--第一个或者第二个姓名-->
                                 <div data-v-657577a0="" class="center-box">
                                         <div data-v-657577a0="" class="line-1" >
                                               <span data-v-657577a0="" class="name-field" >
-                                                  <a data-v-657577a0="" :href="item.users[0].native_uri" target="_blank" title="">{{item.users[0].nickname}}</a>
+                                                  <a data-v-657577a0="" :href="item.users[0].native_uri==''?item.users[0].native_uri:'#'" target="_blank" title="">{{item.users[0].nickname}}</a>
                                                
                                                   <span data-v-657577a0=""  v-if="item.users.length>=2">、</span>
-                                                  <a data-v-657577a0=""  :href="item.users[1].native_uri" target="_blank" title="" v-if="item.users.length>=2">{{item.users[1].nickname}}</a><!---->
+                                                  <a data-v-657577a0=""  :href="item.users[1].native_uri==''?item.users[1].native_uri:'#'" target="_blank" title="" v-if="item.users.length>=2">{{item.users[1].nickname}}</a><!---->
                                                
                                               </span>
                                               <span data-v-657577a0="" class="desc-field like-item"  @click="userclick()"> 等总计{{item.counts}}人赞了我的{{item.item.type=='video'?'视频':''}}{{item.item.type=='dynamic'?'动态':''}}{{item.item.type=='reply'?'评论':''}}</span>
@@ -39,7 +39,7 @@
 
 <div data-v-657577a0="" class="right-box" :href="item.item.uri">
   <div data-v-bdf166be="" data-v-657577a0="" class="right-section">
-<div data-v-bdf166be="" data-v-657577a0="" title="" class="text-box" v-if="item.item.type=='reply'">{{item.item.title}}</div>
+<div data-v-bdf166be="" data-v-657577a0="" title="" class="text-box" v-if="item.item.type=='reply'||item.item.type=='dynamic'">{{item.item.title}}</div>
 <div v-if="item.item.type=='video'" data-v-bdf166be="" data-v-657577a0="" :title="item.item.desc" class="image-box" :style="{'background-image': 'url('+item.item.image+')',}">
 <img data-v-bdf166be="" data-v-657577a0="" :src="item.item.image" alt="hidden"></div>
 </div>
@@ -98,7 +98,7 @@ components:{
   display: none;
 }
 .scroll-area {
-  
+  margin: 10px;
   position: relative;
   margin: auto;
   width: 100%;
