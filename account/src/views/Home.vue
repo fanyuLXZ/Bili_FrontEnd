@@ -34,8 +34,8 @@
 
 import reward from "../components/home/homeDialiyExp"  //每日奖励
 import security from "../components/home/hContentSafe"  //账号安全
-import img_head from "../components/home/homeHead"
-import axios from "axios";  //用户头像
+import img_head from "../components/home/homeHead"    //用户头像
+import axios from "axios";
 export default {
   name: 'Home',
 

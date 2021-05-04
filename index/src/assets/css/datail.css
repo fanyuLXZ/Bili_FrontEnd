@@ -2757,8 +2757,6 @@ textarea-ms-input-placeholder {
     -webkit-box-orient: vertical;
     font-size: 14px;
     line-height: 19px;
-    max-height: 2.714285714285714em;
-    margin-top: 10px;
     color: #222;
 }
 .description{
@@ -3638,10 +3636,7 @@ textarea-ms-input-placeholder {
 .vc-ctnr{
     width: 520px;
 }
-.up-info{
-    width: 100%;
-    position: relative;
-}
+
 .up-info .up-info-avatar{
     display: inline-block;
     width: 24px;
@@ -3723,7 +3718,6 @@ textarea-ms-input-placeholder {
     cursor: pointer;
 }
 .title{
-    padding: 15px;
     font-size: 14px;
     color: #222;
     text-align: left;
@@ -3813,7 +3807,7 @@ textarea-ms-input-placeholder {
     width: 100%;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
-    background-color: #f4f4f4;
+    background-color: #FFFFFF;
     overflow: hidden;
 }
 .page-controller{

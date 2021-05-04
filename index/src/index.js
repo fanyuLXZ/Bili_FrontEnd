@@ -1,4 +1,3 @@
-import './assets/style/base.less'
 
 import Vue from 'vue'
 import Meta from 'vue-meta'
