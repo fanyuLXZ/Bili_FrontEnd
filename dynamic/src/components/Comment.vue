@@ -3,12 +3,12 @@
     <div class="bb-comment ">
       <div class="reply-notice"></div>
       <!--  排序  -->
-      <sort></sort>
+      <sort v-on:sortBtn="sortBtn"></sort>
       <!--  发布评论  -->
-      <post-comment></post-comment>
+      <post-comment :mid="0"></post-comment>
       <!--  评论  -->
       <div class="comment-list has-limit" v-if="comment!==0">
-        <original-poster></original-poster>
+        <original-poster :sortWay="sortWay" :dynamic_id="dynamic_id"></original-poster>
       </div>
       <!--  评论  -->
       <div class="comment-list has-limit" v-else>
@@ -38,12 +38,20 @@ export default {
 
   data(){
     return{
+      sortWay:1,   //排序方式
       comment:12,
+    }
+  },
+
+  props:{
+    dynamic_id:Number
+  },
+
+  methods:{
+    sortBtn(data){
+      this.sortWay = data
+      console.log(this.data)
     }
   }
 }
 </script>
-
-<style scoped>
-
-</style>

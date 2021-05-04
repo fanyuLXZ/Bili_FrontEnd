@@ -18,7 +18,8 @@ const router = new VueRouter({
           component:Index
         },
         {
-          path:"/article",
+          name:'Article',
+          path:"/article/:dynamic_id",
           component:Article
         },
         {

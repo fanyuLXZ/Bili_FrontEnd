@@ -6,7 +6,7 @@
     </div>
     <div class="textarea-container">
       <i class="ipt-arrow"></i>
-      <textarea cols="80" name="msg" rows="5" placeholder="发一条友善的评论" class="ipt-txt"></textarea>
+      <textarea cols="80" name="msg" rows="5" :placeholder="mid===0?'发一条友善的评论':'回复 '+name+':'" class="ipt-txt"></textarea>
       <button type="submit" class="comment-submit">发表评论</button>
     </div>
   </div>
@@ -15,6 +15,11 @@
 <script>
 export default {
   name: "PostComment",
+
+  props:{
+    mid:Number,
+    name:String
+  }
 }
 </script>
 

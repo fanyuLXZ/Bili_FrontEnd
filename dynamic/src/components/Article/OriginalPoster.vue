@@ -1,7 +1,7 @@
 <!--  作者：欧阳苏蓉 文章详情 评论楼主-->
 <template>
   <div>
-    <div data-index="1" class="list-item reply-wrap " v-for="(item,index) in commentList"
+    <div data-index="1" class="list-item reply-wrap " v-for="(item,index) in replies"
          :key="index">
       <div class="user-face">
         <a href="//space.bilibili.com/397398868" target="_blank">
@@ -16,23 +16,23 @@
       <div class="con ">
         <div class="user">
           <a data-usercard-mid="397398868" href="//space.bilibili.com/397398868" target="_blank" class="name"
-             style="color: rgb(34, 34, 34);">{{ item.uname }}</a>
+             style="color: rgb(34, 34, 34);">{{ item.member.uname }}</a>
           <a href="//www.bilibili.com/blackboard/help.html#%E4%BC%9A%E5%91%98%E7%AD%89%E7%BA%A7%E7%9B%B8%E5%85%B3"
              target="_blank" class="level-link">
-            <i class="level" :class="'l'+item.current_level"></i>
+            <i class="level" :class="'l'+item.member.level_info.current_level"></i>
           </a>
         </div>
-        <p class="text">{{ item.text }}</p>
+        <p class="text">{{ item.content.message }}</p>
         <div class="info">
-          <span class="time">2021-04-20 22:53</span>
-          <span class="like "><i></i><span v-if="item.like!==0">{{ item.like }}</span></span>
-          <span class="hate"><i></i><span v-if="item.dislike!==0">{{ item.dislike }}</span></span>
+          <span class="time">{{ item.ctime }}</span>
+          <span class="like " :class="item.action===1?'liked':' '"><i></i><span v-if="item.like!==0">{{ item.like }}</span></span>
+          <span class="hate" :class="item.action===2?'hated':' '"><i></i><span></span></span>
           <span class="reply btn-hover" @click="click(index)">回复</span>
         </div>
         <!--  子评论组件  -->
-        <subComments :item="item" :index="index"></subComments>
+        <subComments :item="item" :index="index" :rpid="item.rpid"></subComments>
         <div class="paging-box"></div>
-        <post-comment v-if="reply===index"></post-comment>
+        <post-comment v-if="reply===index" :mid="item.member.mid" :name="item.member.uname"></post-comment>
       </div>
     </div>
   </div>
@@ -41,6 +41,8 @@
 <script>
 import subComments from "../Article/SubComments"
 import PostComment from "@/components/Article/PostComment";
+import axios from "axios";
+import {formatDate} from "@/assets/js/time";
 
 export default {
   name: "OriginalPoster",
@@ -50,189 +52,65 @@ export default {
     subComments
   },
 
+  props:{
+    dynamic_id:Number,
+    sort:Number
+  },
+
   data() {
     return {
       reply:-1,
-      commentList: [
+      page:{
+        count:0,    // 总评论数(父评论+子评论
+        // )
+        num:1,    //当前页码
+        size:0,    // 每页评论数(固定值)
+      },
+      replies: [
         {
-          mid:1,    //uid
-          uname: "我有林静恒你没有",   //用户名称
-          face: "//i0.hdslb.com/bfs/face/aa9a2adb15baae90b95304cb9515482fb80c5804.jpg@52w_52h.webp",   //用户头像
-          text: "？怎么了",    //评论内容
-          date: "2021-04-20 21:50",    //评论时间
-          current_level: 8,    //用户等级
-          like: 10,   //赞同
-          dislike: 0,    //不赞同
-          page: {
-            count:267,    //总评论数
-            current: 8,    //页码
-            size: 10,    //每页数据
+          action:0,   //状态 0为无状态 1为赞了他 2为踩了他
+          rpid:0,   //评论id
+          content:{
+            message:" "    //评论内容
           },
-          SubCommentsList: [
-            {
-              mid:2,    //uid
-              uname: "我有林静恒你没123有",   //用户名称
-              face: "//i0.hdslb.com/bfs/face/aa9a2adb15baae90b95304cb9515482fb80c5804.jpg@52w_52h.webp",   //用户头像
-              text: "？怎么了",    //评论内容
-              date: "2021-04-20 21:50",    //评论时间
-              current_level: 4,    //用户等级
-              like: 8,   //赞同
-              dislike: 4,    //不赞同
+          count:0,    //子评论数量
+          ctime: " ",    //评论时间
+          like: 0,   //点赞数
+          member:{
+            mid:0,    //uid
+            sex:" ",    //性别
+            uname: " ",   //用户名称
+            avatar: " ",   //用户头像
+            level_info:{    //等级对象
+              current_level:0
             },
-            {
-              mid:3,    //uid
-              uname: "我有林456静恒你没有",   //用户名称
-              face: "//i0.hdslb.com/bfs/face/aa9a2adb15baae90b95304cb9515482fb80c5804.jpg@52w_52h.webp",   //用户头像
-              text: "？怎么了",    //评论内容
-              date: "2021-04-20 21:50",    //评论时间
-              current_level: 5,    //用户等级
-              like: 0,   //赞同
-              dislike: 4,    //不赞同
+            vip:{   //用户会员
+              status:true,    //是否是会员
             },
-            {
-              mid:4,    //uid
-              uname: "我有林静恒你123没有",   //用户名称
-              face: "//i0.hdslb.com/bfs/face/aa9a2adb15baae90b95304cb9515482fb80c5804.jpg@52w_52h.webp",   //用户头像
-              text: "？怎么了",    //评论内容
-              date: "2021-04-20 21:50",    //评论时间
-              current_level: 5,    //用户等级
-              like: 1,   //赞同
-              dislike: 4,    //不赞同
-            },
-          ]
-        },
-        {
-          mid:5,    //uid
-          uname: "我有852林静恒你没有",   //用户名称
-          face: "//i0.hdslb.com/bfs/face/aa9a2adb15baae90b95304cb9515482fb80c5804.jpg@52w_52h.webp",   //用户头像
-          text: "？怎么了",    //评论内容
-          date: "2021-04-20 21:50",    //评论时间
-          current_level: 8,    //用户等级
-          like: 10,   //赞同
-          dislike: 1,    //不赞同
-          page: {
-            count:58,    //总评论数
-            current: 6,    //页码
-            size: 10,    //每页数据
           },
-          SubCommentsList: [
+          replies:[   //子评论
             {
-              mid:6,    //uid
-              uname: "我有林963静恒你没有",   //用户名称
-              face: "//i0.hdslb.com/bfs/face/aa9a2adb15baae90b95304cb9515482fb80c5804.jpg@52w_52h.webp",   //用户头像
-              text: "？怎么了",    //评论内容
-              date: "2021-04-20 21:50",    //评论时间
-              current_level: 5,    //用户等级
-              like: 1,   //赞
+              content: {
+                message:" "    //回复内容
+              },
+              ctime:" ",   //回复评论时间
+              like: 8,   //点赞数量
+              member:{
+                mid:1,    //uid
+                sex:" ",    //性别
+                uname: " ",   //用户名称
+                avatar: " ",   //用户头像
+                level_info:{    //等级对象
+                  current_level:5
+                },
+                vip:{   //用户会员
+                  status:true,    //是否是会员
+                },
+              }
             }
-          ]
-        },
-        {
-          mid:5,    //uid
-          uname: "我有852林静恒你没有",   //用户名称
-          face: "//i0.hdslb.com/bfs/face/aa9a2adb15baae90b95304cb9515482fb80c5804.jpg@52w_52h.webp",   //用户头像
-          text: "？怎么了",    //评论内容
-          date: "2021-04-20 21:50",    //评论时间
-          current_level: 8,    //用户等级
-          like: 10,   //赞同
-          dislike: 1,    //不赞同
-          page: {
-            count:58,    //总评论数
-            current: 6,    //页码
-            size: 10,    //每页数据
-          },
-          SubCommentsList: [
-            {
-              mid:6,    //uid
-              uname: "我有林963静恒你没有",   //用户名称
-              face: "//i0.hdslb.com/bfs/face/aa9a2adb15baae90b95304cb9515482fb80c5804.jpg@52w_52h.webp",   //用户头像
-              text: "？怎么了",    //评论内容
-              date: "2021-04-20 21:50",    //评论时间
-              current_level: 5,    //用户等级
-              like: 1,   //赞
-            }
-          ]
-        },
-        {
-          mid:5,    //uid
-          uname: "我有852林静恒你没有",   //用户名称
-          face: "//i0.hdslb.com/bfs/face/aa9a2adb15baae90b95304cb9515482fb80c5804.jpg@52w_52h.webp",   //用户头像
-          text: "？怎么了",    //评论内容
-          date: "2021-04-20 21:50",    //评论时间
-          current_level: 8,    //用户等级
-          like: 10,   //赞同
-          dislike: 1,    //不赞同
-          page: {
-            count:58,    //总评论数
-            current: 6,    //页码
-            size: 10,    //每页数据
-          },
-          SubCommentsList: [
-            {
-              mid:6,    //uid
-              uname: "我有林963静恒你没有",   //用户名称
-              face: "//i0.hdslb.com/bfs/face/aa9a2adb15baae90b95304cb9515482fb80c5804.jpg@52w_52h.webp",   //用户头像
-              text: "？怎么了",    //评论内容
-              date: "2021-04-20 21:50",    //评论时间
-              current_level: 5,    //用户等级
-              like: 1,   //赞
-            }
-          ]
-        },
-        {
-          mid:5,    //uid
-          uname: "我有852林静恒你没有",   //用户名称
-          face: "//i0.hdslb.com/bfs/face/aa9a2adb15baae90b95304cb9515482fb80c5804.jpg@52w_52h.webp",   //用户头像
-          text: "？怎么了",    //评论内容
-          date: "2021-04-20 21:50",    //评论时间
-          current_level: 8,    //用户等级
-          like: 10,   //赞同
-          dislike: 1,    //不赞同
-          page: {
-            count:58,    //总评论数
-            current: 6,    //页码
-            size: 10,    //每页数据
-          },
-          SubCommentsList: [
-            {
-              mid:6,    //uid
-              uname: "我有林963静恒你没有",   //用户名称
-              face: "//i0.hdslb.com/bfs/face/aa9a2adb15baae90b95304cb9515482fb80c5804.jpg@52w_52h.webp",   //用户头像
-              text: "？怎么了",    //评论内容
-              date: "2021-04-20 21:50",    //评论时间
-              current_level: 5,    //用户等级
-              like: 1,   //赞
-            }
-          ]
-        },
-        {
-          mid:5,    //uid
-          uname: "我有852林静恒你没有",   //用户名称
-          face: "//i0.hdslb.com/bfs/face/aa9a2adb15baae90b95304cb9515482fb80c5804.jpg@52w_52h.webp",   //用户头像
-          text: "？怎么了",    //评论内容
-          date: "2021-04-20 21:50",    //评论时间
-          current_level: 8,    //用户等级
-          like: 10,   //赞同
-          dislike: 1,    //不赞同
-          page: {
-            count:58,    //总评论数
-            current: 6,    //页码
-            size: 10,    //每页数据
-          },
-          SubCommentsList: [
-            {
-              mid:6,    //uid
-              uname: "我有林963静恒你没有",   //用户名称
-              face: "//i0.hdslb.com/bfs/face/aa9a2adb15baae90b95304cb9515482fb80c5804.jpg@52w_52h.webp",   //用户头像
-              text: "？怎么了",    //评论内容
-              date: "2021-04-20 21:50",    //评论时间
-              current_level: 5,    //用户等级
-              like: 1,   //赞
-            }
-          ]
+          ],
         },
       ],
-
     }
   },
 
@@ -244,6 +122,21 @@ export default {
         this.reply=index
       }
     },
+
+  },
+
+  mounted() {
+    axios.get("/api/dynamic/reply",{params:{dynamic_id:this.dynamic_id,sort:this.sort}}).then((res)=>{
+      //获取返回的json对象
+      console.log(res)
+      res.data.data.replies.forEach((a)=>{
+        a.ctime = formatDate(Date.parse(a.ctime))
+        a.replies.forEach((v)=> {
+          v.ctime = formatDate(Date.parse(v.ctime))
+        })
+      })
+      this.replies = res.data.data.replies
+    })
   }
 }
 </script>

@@ -8709,7 +8709,6 @@ input[type=number]{
     height: 188px;
     background: #fff;
     border-radius: 4px;
-    overflow: hidden;
 }
 .user-panel .loading-content{
     width: 100%;

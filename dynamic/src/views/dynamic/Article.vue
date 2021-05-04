@@ -2,18 +2,20 @@
   <div class="detail-content">
     <div class="detail-card">
       <div class="">
-        <div data-did="515932997981607511" class="card" style="margin-top: 8px; border: 1px solid rgb(238, 238, 238);">
-          <article-content></article-content>
+        <div class="card" style="margin-top: 8px; border: 1px solid rgb(238, 238, 238);">
+          <!--    内容    -->
+          <article-content :dynamic_id="dynamic_id"></article-content>
+
           <div class="panel-area" style="position: relative;">
             <div class="bb-comment ">
               <div class="reply-notice"></div>
               <!--  排序  -->
-              <sort></sort>
+              <sort v-on:sortBtn="sortWay($event)"></sort>
               <!--  发布评论  -->
-              <post-comment></post-comment>
+              <post-comment :mid="0"></post-comment>
               <!--  评论  -->
               <div class="comment-list has-limit" v-if="comment!==0">
-                <original-poster></original-poster>
+                <original-poster :dynamic_id="dynamic_id" :sort="sort"></original-poster>
               </div>
               <!--  评论  -->
               <div class="comment-list has-limit" v-else>
@@ -48,10 +50,20 @@ export default {
     sort
   },
 
+
   data(){
     return{
-      comment:14,   //评论数
+      sort:1,   //排序方式
+      comment:2,   //评论数
+      dynamic_id:this.$route.params.dynamic_id,    //动态id
     }
+  },
+
+  methods:{
+    sortWay(data){
+      this.sort = data
+    },
+
   },
 
 }

@@ -3,30 +3,29 @@
   <div class="left-panel">
     <div class="user-wrapper">
       <div class="user-panel f-left">
-        <div class="loading-content" style="display: none;">
-          <div class="loading-text tc-slate">
-            <img src="//s1.hdslb.com/bfs/seed/bplus-common/dynamic-assets/loading.png" class="loading-img">
-            <span>loading...</span>
-          </div>
-        </div>
-        <div class="content" style="" >
-          <div class="user-pic" style="background-image: url('//i1.hdslb.com/bfs/space/768cc4fd97618cf589d23c2711a1d1a729f42235.png@.webp');"></div>
-          <a class="user-name tc-black c-pointer" data-userinfo-popup-inited="true">{{ myself.uname }}</a>
-          <div class="bottom">
-            <a class="number-part c-pointer f-left">
-              <p class="numbers fs-14">{{ myself.attention }}</p>
-              <p class="text tc-slate fs-12 ls-0">关注</p>
-            </a>
-            <a class="number-part c-pointer f-left">
-              <p class="numbers fs-14">{{ myself.fans }}</p>
-              <p class="text tc-slate fs-12 ls-0">粉丝</p>
-            </a>
-            <a class="number-part c-pointer f-left">
-              <p class="numbers fs-14">{{ myself.dynamic }}</p>
-              <p class="text tc-slate fs-12 ls-0">动态</p>
-            </a>
-          </div>
-          <img :src="myself.face" class="user-head c-pointer" data-userinfo-popup-inited="true">
+        <div class="content" style="">
+          <z-toggle trigger="hover">
+            <template v-slot:btn>
+              <div class="user-pic" style="background-image: url('//i1.hdslb.com/bfs/space/768cc4fd97618cf589d23c2711a1d1a729f42235.png@.webp');"></div>
+              <a class="user-name tc-black c-pointer" data-userinfo-popup-inited="true">{{ name }}</a>
+              <div class="bottom">
+                <a class="number-part c-pointer f-left">
+                  <p class="numbers fs-14">{{ friend }}</p>
+                  <p class="text tc-slate fs-12 ls-0">关注</p>
+                </a>
+                <a class="number-part c-pointer f-left">
+                  <p class="numbers fs-14">{{ fans }}</p>
+                  <p class="text tc-slate fs-12 ls-0">粉丝</p>
+                </a>
+                <a class="number-part c-pointer f-left">
+                  <p class="numbers fs-14">{{ num }}</p>
+                  <p class="text tc-slate fs-12 ls-0">动态</p>
+                </a>
+              </div>
+              <img :src="face" class="user-head c-pointer" data-userinfo-popup-inited="true">
+            </template>
+            <me-info :subMid="mid"/>
+          </z-toggle>
         </div>
       </div>
     </div>
@@ -40,21 +39,24 @@
 </template>
 
 <script>
-  export default {
-    name: "me",
+import zToggle from "g-public/components/z-toggle"
+import MeInfo from "@/components/MeInfo";
+export default {
+  name: "me",
 
-    data(){
-      return{
-        myself:{
-          userid: "bili_34305173340",    //用户名
-          uname: "江浙沪子笑",    //昵称
-          face:"//i1.hdslb.com/bfs/face/31f967d648f65c5754981fe6b4b6a21def194dc2.jpg@.webp",    //头像
-          attention:0,    //关注数
-          fans:0,   //粉丝
-          dynamic:0,    //动态
-        }
-      }
-    }
+  components:{
+    MeInfo,
+    zToggle
+  },
+
+  props:{
+    mid:Number,
+    name:String,
+    face:String,
+    friend:Number,
+    fans:Number,
+    num:Number
+  },
 }
 </script>
 

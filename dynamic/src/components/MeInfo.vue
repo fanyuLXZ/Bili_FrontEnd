@@ -1,9 +1,8 @@
 <!--  作者：欧阳苏蓉 动态--我自己  -->
 <template>
-  <div :class="mid===433899970?'userinfo-wrapper':'user-card'" style="top: 110px; left: 44px;" v-show="false">
-    <div class="userinfo-content">
-      <div class="bg"
-           style="background-image: url('//i1.hdslb.com/bfs/space/768cc4fd97618cf589d23c2711a1d1a729f42235.png@120h.webp');"></div>
+  <div :class="mid===subMid?'userinfo-wrapper':'user-card'" style="top: 110px; left: 44px;">
+    <div class="userinfo-content" v-if="mid===subMid">
+      <div class="bg" style="background-image: url('//i1.hdslb.com/bfs/space/768cc4fd97618cf589d23c2711a1d1a729f42235.png@120h.webp');"></div>
       <a href="//space.bilibili.com/433899970/dynamic" target="_blank" class="face">
         <img :src="face">
         <div class="verify-box type--1 type-big"
@@ -11,8 +10,8 @@
       </a>
       <div class="info">
         <p class="user">
-          <a target="_blank" href="//space.bilibili.com/433899970/dynamic" class="name vip">{{ uname }}</a>
-          <i class="sex women"></i>
+          <a target="_blank" href="//space.bilibili.com/433899970/dynamic" class="name" :style="vip.status?'color:#FB7299':''">{{ name }}</a>
+          <i class="sex" :class="sex===1?'men':'women'"></i>
           <a target="_blank" href="//www.bilibili.com/html/help.html#k_5">
             <i class="level" :class="'l'+level_info.current_level"></i>
           </a>
@@ -27,9 +26,9 @@
         </p><!---->
       </div>
       <div class="btn-box">
-        <a class="like liked" v-if="following&&mid!==433899970">
+        <a class="like liked" v-if="following&&mid!==subMid">
           <span class="default-text">已关注</span>
-          <span class="hover-text" >取消关注</span>
+          <span class="hover-text">取消关注</span>
         </a>
         <a class="like" v-else>
           <span>+关注</span>
@@ -37,33 +36,90 @@
         <a href="//message.bilibili.com/#whisper/mid433899970" target="_blank" class="message">发消息</a>
       </div>
     </div>
+    <div v-else>
+      <div class="bg" style="background-image:url(//i0.hdslb.com/bfs/space/768cc4fd97618cf589d23c2711a1d1a729f42235.png@750w_240h.webp)"></div>
+      <a target="_blank" href="//space.bilibili.com/86390849" class="face">
+        <img src="//i2.hdslb.com/bfs/face/53c467e452ad35f346c74a2b02dd0851c345f744.jpg@50w_50h.webp">
+      </a>
+      <div class="info">
+        <p class="user">
+          <a target="_blank" href="//space.bilibili.com/86390849" class="name" :style="vip.status?'color:#FB7299':''">{{ name }}</a>
+          <i class="sex" :class="sex===1?'men':'women'"></i>
+          <a href="//www.bilibili.com/html/help.html#k_5" target="_blank"><i class="level l5"></i></a>
+        </p>
+        <p class="social">
+          <a href="//space.bilibili.com/86390849/fans/follow" target="_blank">关注:
+            <span class="like">{{ friend }}</span>
+          </a>
+          <a href="//space.bilibili.com/86390849/fans/fans" target="_blank">粉丝:
+            <span class="fans">{{ fans }}</span>
+          </a>
+        </p>
+      </div>
+      <div class="btn-box">
+        <a class="like " v-if="following">
+          <span class="default-text">+关注</span>
+        </a>
+        <a class="like liked" v-else>
+          <span class="default-text">已关注</span>
+          <span class="hover-text">取消关注</span>
+        </a>
+        <a href="//message.bilibili.com/#whisper/mid86390849" target="_blank" class="message">发消息</a>
+      </div>
+    </div>
   </div>
+
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   name: "MeInfo",
+
+  props: {
+    subMid: Number
+  },
+
   data() {
     return {
-      mid: 433899970,    //uid
-      uname: "江浙沪",    //名称
-      face: "//i1.hdslb.com/bfs/face/31f967d648f65c5754981fe6b4b6a21def194dc2.jpg@50w_50h_1c.webp",    //头像
-      sex: "保密",    //性别
+      mid: 0,    //uid
+      name: " ",    //名称
+      face: "",    //头像
+      sex: " ",    //性别
       fans: 0,    //粉丝数
-      friend: 1,    //关注
+      friend: 0,    //关注
       level_info: {
-        current_level: 2,    //等级
+        current_level: 0,    //等级
       },
       vip: {
-        type: 1,    //会员类型 1大会员  0小会员
-        status: 1,    //是否是会员
+        type: 0,    //会员类型 1大会员  0小会员
+        status:false,    //是否是会员
       },
       following: false,    //是否关注他
     }
+  },
+
+
+
+  mounted() {
+      axios.get("/api/member/basic-info-by-uid", {params: {mid: this.subMid}}).then((res) => {
+        this.mid = res.data.data.mid
+        this.name = res.data.data.name
+        this.face = res.data.data.face
+        this.sex = res.data.data.sex
+        this.fans = res.data.data.fans
+        this.friend = res.data.data.friend
+        this.level_info.current_level = res.data.data.level_info.current_level
+        this.vip.type = res.data.data.vip.type
+        this.vip.status = res.data.data.vip.status
+        this.following = res.data.data.following
+      })
   }
 }
 </script>
-<style>.user-card {
+<style>
+.user-card {
   font-size: 12px;
   position: absolute;
   z-index: 10002;

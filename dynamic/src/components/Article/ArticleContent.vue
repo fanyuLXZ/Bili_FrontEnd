@@ -1,25 +1,24 @@
-<!--  作者：欧阳苏蓉 动态--内容  -->
+<!--  作者：欧阳苏蓉 动态详情--内容  -->
 <template>
 
   <div class="content">
-    <div class="content" @scroll="onScroll">
-
-      <div class="" v-for="(item,index) in dynamicList" :key="index">
-        <div data-did="513359857300617358" class="card" style="margin-top: 8px;">
+    <div class="content" >
+      <div class="" >
+        <div class="card" style="margin-top: 8px;">
           <a target="_blank" id="dynamicId_513359857300617358" class="user-head c-pointer avatar-comp" href="//space.bilibili.com/433899970/dynamic">
             <div class="bili-avatar">
               <img class="bili-avatar-img bili-avatar-face bili-avatar-img-radius"
                    data-src="https://i1.hdslb.com/bfs/face/31f967d648f65c5754981fe6b4b6a21def194dc2.jpg@96w_96h_1c.webp"
-                   :src="item.face">
-              <span v-if="item.vip===1" class="bili-avatar-icon" style="background-image: url('https://i0.hdslb.com/bfs/vip/icon_Certification_big_member_22_3x.png@32w_32h_1c.webp')"></span>
+                   :src="card.desc.user_profile.info.face">
+              <span v-if="card.desc.user_profile.vip.status" class="bili-avatar-icon" style="background-image: url('https://i0.hdslb.com/bfs/vip/icon_Certification_big_member_22_3x.png@32w_32h_1c.webp')"></span>
             </div>
           </a>
           <div class="main-content" style="padding-bottom: 0px;">
             <div class="user-name fs-16 ls-0 d-i-block">
-              <a href="//space.bilibili.com/433899970/dynamic" target="_blank" class="c-pointer">{{ item.name }}</a>
+              <a href="//space.bilibili.com/433899970/dynamic" target="_blank" class="c-pointer">{{ card.desc.user_profile.info.uname }}</a>
             </div>
             <div class="time fs-12 ls-0 tc-slate">
-              <a href="//t.bilibili.com/513359857300617358?tab=2" target="_blank" class="detail-link tc-slate">{{ item.date }}</a>
+              <a href="//t.bilibili.com/513359857300617358?tab=2" target="_blank" class="detail-link tc-slate">{{ card.desc.timestamp }}</a>
               <span></span>
             </div>
             <div class="card-content">
@@ -27,7 +26,7 @@
                 <div class="original-card-content">
                   <div class="text p-rel description">
                     <div class="content">
-                      <a href="/article" class=""> <div class="content-full">{{ item.text }}</div> </a>
+                      <a class=""> <div class="content-full">{{ card.card }}</div> </a>
                     </div>
                   </div>
                 </div>
@@ -35,11 +34,11 @@
               <div></div>
             </div>
             <div class="button-bar tc-slate">
-              <single-button :icon_style="['bp-svg-icon','single-icon','comment','comment-hover']" :num="item.comment" :disable_click="true" :selected="true"/>
-              <single-button :icon_style="['custom-like-icon','zan']" :num="item.like" :click_style="'zan-hover'" :hover_style="'zan-a-hover'"/>
+              <single-button :icon_style="['bp-svg-icon','single-icon','comment','comment-hover']" :num="card.desc.comment" :disable_click="true" :selected="true"/>
+              <single-button :icon_style="['custom-like-icon','zan']" :num="card.desc.like" :click_style="'zan-hover'" :hover_style="'zan-a-hover'"/>
             </div>
             <!--  操作  -->
-            <operating></operating>
+            <operating :dynamic_id="dynamic_id" :mid="1"></operating>
           </div>
         </div>
       </div>
@@ -48,16 +47,18 @@
 </template>
 
 <script>
-import {formatDate} from "@/assets/js/time";
 import operating from "@/components/Article/Operating";
 import singleButton from "@/components/single-button"
+import axios from "axios";
 
 export default {
   name: "Content",
+
   components:{
     operating,
     singleButton
   },
+
   data() {
     return {
       activeIndex:-1,   //是否显示删除按钮
@@ -65,68 +66,59 @@ export default {
       deliverParams: {page:1},
       status:1,
       success:false,
-      dynamicList: [
-        {
+      page:{
+        acount:0,   //总评论（父评论+子评论）
+        count:0,    // 评论数
+        num:0,    //当前页码
+        size:20,    // 每页评论数(固定值)
+      },
+      card: {
+        desc:{
           uid: 1,    //用户id
-          face: "https://i1.hdslb.com/bfs/face/31f967d648f65c5754981fe6b4b6a21def194dc2.jpg@96w_96h_1c.webp",   //头像
-          dynamic_id:1111111,    //动态编号
-          vip:1,   //是否是大会员
-          name: "堀与宫村",    //用户名字
-          text: "第13话 至少，将这天空。",    //内容
-          date:formatDate(Date.parse("2021-04-16T10:00:00.100")),
-          repost: 2401,   //转发数
-          comment: 9658,   //评论数
-          like: 216000,   //点赞数
+          type:2,   //动态类型 int 1为直播 2为文本 3为番剧 暂时返回2
+          comment: 0,   //评论数
+          like: 0,   //点赞数
+          is_liked:0,   //是否点赞 int 0否 1是
+          timestamp:" ",    //发表时间
+          dynamic_id:0,    //动态编号
+          user_profile:{
+            info:{
+              uid: 1,    //用户id
+              uname:" ",   //用户名字
+              face: " ",   //头像
+            },
+            vip:{   //用户会员
+              status:true,    //是否是会员
+              type:1,   //会员类型
+              due_date:" "   //会员有效时间
+            },
+            level_info:{    //等级对象
+              current_level:0
+            }
+          },
+          card:" ",    //内容
         },
-      ]
+      }
     }
   },
   methods:{
 
-    // 获取滚动条当前的位置
-    getScrollTop () {
-      let scrollTop = 0;
-      if (document.documentElement && document.documentElement.scrollTop) {
-        scrollTop = document.documentElement.scrollTop
-      } else if (document.body) {
-        scrollTop = document.body.scrollTop
-      }
-      return scrollTop
-    },
-
-    // 获取当前可视范围的高度
-    getClientHeight () {
-      let clientHeight = 0;
-      if (document.body.clientHeight && document.documentElement.clientHeight) {
-        clientHeight = Math.min(document.body.clientHeight, document.documentElement.clientHeight)
-      } else {
-        clientHeight = Math.max(document.body.clientHeight, document.documentElement.clientHeight)
-      }
-      return clientHeight
-    },
-
-    // 获取文档完整的高度
-    getScrollHeight () {
-      return Math.max(document.body.scrollHeight, document.documentElement.scrollHeight)
-    },
-
-    // 滚动事件触发下拉加载
-    onScroll () {
-      if (this.getScrollHeight() - this.getClientHeight() - this.getScrollTop() <= 0) {
-        if (this.status === 1) {
-          this.status = 0
-          // 页码，分页用，默认第一页
-          this.deliverParams.page += 1
-          // 调用请求函数
-          console.log('触发！！！')
-        }
-      }
-    },
   },
+
+  props:{
+    dynamic_id:String,
+    mid:Number
+  },
+
   mounted () {
     //监听滚动事件
     this.$nextTick(function () {
       window.addEventListener('scroll', this.onScroll)
+    })
+    axios.get("/api/dynamic/dynamic_detail",{params:{dynamic_id:this.dynamic_id}}).then((res)=>{
+      //获取返回的json对象
+      console.log(res)
+      this.card = res.data.data.card
     })
   },
 }

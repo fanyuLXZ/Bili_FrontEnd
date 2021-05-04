@@ -4,14 +4,14 @@
       <div class="more-button bp-icon-font icon-more-1" ></div>
     </div>
 
-    <div class="more-panel fs-14 ls-0" v-if="showBox">
+    <div class="more-panel fs-14 ls-0" v-if="dynamic_id===mid">
       <p class="child-button c-pointer" @click="DeleteBtn()">删除</p>
     </div>
 
-<!--    <div class="more-panel fs-14 ls-0" v-if="showBox">-->
-<!--      <p class="child-button c-pointer">取消关注</p>-->
-<!--      <p class="child-button c-pointer">举报</p>-->
-<!--    </div>-->
+    <div class="more-panel fs-14 ls-0" v-else>
+      <p class="child-button c-pointer">取消关注</p>
+      <p class="child-button c-pointer">举报</p>
+    </div>
 
     <div class="panel-area" style="display: none;"></div>
     <!--  确认删除弹框  -->
@@ -30,6 +30,11 @@ export default {
   components:{
     deleteBtn,
     deleteSu
+  },
+
+  props:{
+    mid:Number,
+    dynamic_id:String
   },
 
   data() {
