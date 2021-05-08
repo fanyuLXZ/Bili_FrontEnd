@@ -15,7 +15,7 @@ const debug = require('debug')('jsonp')
 export default jsonp
 
 /**
- * Callback index.
+ * Callback home.
  */
 
 let count = 0

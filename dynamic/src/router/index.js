@@ -24,7 +24,7 @@ const router = new VueRouter({
         },
         {
           path:"",
-          redirect:"/index"
+          redirect:"/home"
         }
       ]
     },

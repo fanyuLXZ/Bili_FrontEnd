@@ -11,7 +11,7 @@
         </a><!---->
         </div>
         </li>
-        <!--v-for="(items,index) in classify.sortable " :key="index+classify.mainpartition.length"-->
+        <!--v-for="(items,home) in classify.sortable " :key="home+classify.mainpartition.length"-->
        <li class="tag" >
          <div>
            <a href="、items.from" target="_blank" class="tag-link">

@@ -1847,7 +1847,7 @@
                             // advance to the next closing parenthesis
                             (excess = unquoted.indexOf(")", unquoted.length - excess) - unquoted.length)) {
 
-                            // excess is a negative index
+                            // excess is a negative home
                             match[0] = match[0].slice(0, excess);
                             match[2] = unquoted.slice(0, excess);
                         }
@@ -1960,7 +1960,7 @@
                                     // non-xml :nth-child(...) stores cache data on `parent`
                                     if (forward && useCache) {
 
-                                        // Seek `elem` from a previously-cached index
+                                        // Seek `elem` from a previously-cached home
 
                                         // ...in a gzip-friendly way
                                         node = parent;
@@ -1990,7 +1990,7 @@
 
                                     } else {
 
-                                        // Use previously-cached element index if available
+                                        // Use previously-cached element home if available
                                         if (useCache) {
 
                                             // ...in a gzip-friendly way
@@ -2020,7 +2020,7 @@
                                                     node.nodeType === 1) &&
                                                     ++diff) {
 
-                                                    // Cache the index of each encountered element
+                                                    // Cache the home of each encountered element
                                                     if (useCache) {
                                                         outerCache = node[expando] ||
                                                             (node[expando] = {});
@@ -2766,7 +2766,7 @@
                                     }
                                 }
 
-                                // Discard index placeholder values to get only actual matches
+                                // Discard home placeholder values to get only actual matches
                                 setMatched = condense(setMatched);
                             }
 
@@ -3296,7 +3296,7 @@
         // Determine the position of an element within the set
         index: function (elem) {
 
-            // No argument, return index in parent
+            // No argument, return home in parent
             if (!elem) {
                 return (this[0] && this[0].parentNode) ? this.first().prevAll().length : -1;
             }
@@ -3694,7 +3694,7 @@
             var tuples = [
 
                     // action, add listener, callbacks,
-                    // ... .then handlers, argument index, [final state]
+                    // ... .then handlers, argument home, [final state]
                     ["notify", "progress", jQuery.Callbacks("memory"),
                         jQuery.Callbacks("memory"), 2],
                     ["resolve", "done", jQuery.Callbacks("once memory"),
@@ -7511,7 +7511,7 @@
                 delete props[name];
 
                 // Not quite $.extend, this won't overwrite existing keys.
-                // Reusing 'index' because we have the correct "name"
+                // Reusing 'home' because we have the correct "name"
                 for (index in value) {
                     if (!(index in props)) {
                         props[index] = value[index];
@@ -8881,7 +8881,7 @@
 
                 } else {
 
-                    // Item is non-scalar (array or object), encode its numeric index.
+                    // Item is non-scalar (array or object), encode its numeric home.
                     buildParams(
                         prefix + "[" + (typeof v === "object" && v != null ? i : "") + "]",
                         v,

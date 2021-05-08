@@ -49,7 +49,7 @@ import PageVideo from "./components/index/left/Pagevideo"//投稿
 import SidenVe from "./components/index/right/sidenve"//收藏
 // import CommonFixedNav from './components/common/fixNav'
 import toTop from './components/common/toTop'
-// import Auth from "./components/index/rightcol/auth";
+// import Auth from "./components/home/rightcol/auth";
 // import favShare from './components/common/favShare'
 // import { mapGetters, mapActions } from 'vuex'
 import {click_bus} from "@/bus";

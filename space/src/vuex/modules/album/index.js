@@ -55,7 +55,7 @@ const ABtest = {
 const actions = {
     fetchAlbum: ({commit}, params) => {  // eslint-disable-line
         return Vue.http
-            .jsonp('//api.bilibili.com/x/space/album/index', {params})
+            .jsonp('//api.bilibili.com/x/space/album/home', {params})
             .then(rs => {
                 const {code, message, data} = rs
                 if (code === 0) {

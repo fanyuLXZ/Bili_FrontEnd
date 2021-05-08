@@ -1,15 +1,16 @@
 <template>
-  <div data-v-e3dadb46="" class="left-block">
-    <i data-v-e3dadb46="" class="logo bcc-iconfont bcc-icon-logo"></i> 
-    <a data-v-e3dadb46="" href="//www.bilibili.com" target="_blank" class="main-site">
-    <i data-v-e3dadb46="" class="bcc-iconfont bcc-icon-icon_dingdao_zhuzhan"></i>
+  <div class="left-block">
+    <i class="logo bcc-iconfont bcc-icon-logo"></i>
+    <a href="//www.bilibili.com" target="_blank" class="main-site">
+      <i class="bcc-iconfont bcc-icon-icon_dingdao_zhuzhan"></i>
       主站
     </a>
-    </div>
+  </div>
 </template>
 
 <script>
 export default {
+  name:"left-block",
 
 }
 </script>
@@ -19,7 +20,7 @@ export default {
     content: "\e661";
 }
 
-.header .left-block .logo[data-v-e3dadb46] {
+.header .left-block .logo{
     font-size: 26px;
     color: #00a1d6;
     cursor: pointer;
@@ -34,7 +35,7 @@ text-decoration:none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.header .left-block .logo[data-v-e3dadb46] {
+.header .left-block .logo {
     font-size: 26px;
     color: #00a1d6;
     cursor: pointer;

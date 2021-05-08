@@ -3486,7 +3486,7 @@ export const getElevatorSort = () => {
         }
     }
     // axios({
-    //   url: '//api.bilibili.com/x/web-interface/index/sort',
+    //   url: '//api.bilibili.com/x/web-interface/home/sort',
     //   withCredentials: true
     // })
 }

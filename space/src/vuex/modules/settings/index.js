@@ -50,7 +50,7 @@ const actions = {
      */
     setIndexOrder: ({commit}, index_order) => {  // eslint-disable-line
         Vue.http
-            .post('//api.bilibili.com/x/space/index/order/modify', {index_order})
+            .post('//api.bilibili.com/x/space/home/order/modify', {index_order})
             .then(rs => {
                 const {code, message} = rs.data
                 if (+code === 0) {

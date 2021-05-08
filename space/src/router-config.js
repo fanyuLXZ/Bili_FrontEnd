@@ -8,9 +8,9 @@ const router = new Router({
     mode: 'history',
     routes: [{
         path: '/:v(v)?/:mid(\\d+)',
-        alias: '/index',
+        alias: '/home',
         name: 'index',
-        component: resolve => require(['./components/index/index.vue'], resolve),
+        component: resolve => require(['./components/index/home.vue'], resolve),
     }, {
         path: '/:v(v)?/:mid(\\d+)/bangumi',
         name: 'bangumi',

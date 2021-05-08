@@ -2192,10 +2192,10 @@ BUILT_AT: 2021年4月8日 09:58
                     r = Object(o.d)(x, {width: b, height: w, verticalAlign: v, emojiType: A}, j);
                     break;
                 case m.TYPE_LOTTERY:
-                    y = "抽奖详情", s = "".concat(n.a.T, "/lottery/h5/index/#/result?business_id=").concat(e.dynamicId, "&business_type=1"), r = g(c, y, s, l, x, c ? '<i class="bp-svg-icon lottery-btn" click-href="'.concat(u(p), '" click-title="').concat(u(y), '" style="position:relative;top:-2px;margin-left:2px;margin-right:2px;"></i>') : '<i class="bp-svg-icon lottery-btn" style="position:relative;top:-2px;margin-left:2px;margin-right:2px;"></i>');
+                    y = "抽奖详情", s = "".concat(n.a.T, "/lottery/h5/home/#/result?business_id=").concat(e.dynamicId, "&business_type=1"), r = g(c, y, s, l, x, c ? '<i class="bp-svg-icon lottery-btn" click-href="'.concat(u(p), '" click-title="').concat(u(y), '" style="position:relative;top:-2px;margin-left:2px;margin-right:2px;"></i>') : '<i class="bp-svg-icon lottery-btn" style="position:relative;top:-2px;margin-left:2px;margin-right:2px;"></i>');
                     break;
                 case m.TYPE_VOTE:
-                    y = "投票", s = "".concat(n.a.T, "/vote/h5/index/#/result?vote_id=").concat(e.id, "&dynamic_id=").concat(e.dynamicId), r = g(c, y, s, l, x, c ? '<i class="bp-svg-icon vote-btn" click-href="'.concat(u(p), '" click-title="').concat(u(y), '" style="position:relative;top:-1px;margin-left:2px;margin-right:2px;"></i>') : '<i class="bp-svg-icon vote-btn" style="position:relative;top:-1px;margin-left:2px;margin-right:2px;"></i>');
+                    y = "投票", s = "".concat(n.a.T, "/vote/h5/home/#/result?vote_id=").concat(e.id, "&dynamic_id=").concat(e.dynamicId), r = g(c, y, s, l, x, c ? '<i class="bp-svg-icon vote-btn" click-href="'.concat(u(p), '" click-title="').concat(u(y), '" style="position:relative;top:-1px;margin-left:2px;margin-right:2px;"></i>') : '<i class="bp-svg-icon vote-btn" style="position:relative;top:-1px;margin-left:2px;margin-right:2px;"></i>');
                     break;
                 case m.TYPE_AT:
                     c ? (p = "".concat(n.a.SPACE, "/").concat(e.id, "/dynamic"), r = '<a href="'.concat(u(p), '" target="_blank" class="dynamic-link-hover-bg" style="cursor:pointer;color:').concat(l, ';">').concat(x, "</a>")) : (p = "".concat(n.a.M, "/space/").concat(e.id), r = '<span click-href="'.concat(u(p), '" spm-type="at" card-type="').concat(I, '" card-id="').concat(O, '" class="dynamic-link-hover-bg" style="color:').concat(l, ';">').concat(x, "</span>"));
@@ -3548,7 +3548,7 @@ BUILT_AT: 2021年4月8日 09:58
         _ && _.vote_cfg && (l.voteInfo = {
             title: _.vote_cfg.desc,
             desc: void 0 !== _.vote_cfg.join_num ? "".concat(_.vote_cfg.join_num, "人参与") : "",
-            url: "".concat(c.a.T, "/vote/h5/index/#/result?vote_id=").concat(_.vote_cfg.vote_id, "&dynamic_id=").concat(t.desc.dynamic_id, "&isWeb=1")
+            url: "".concat(c.a.T, "/vote/h5/home/#/result?vote_id=").concat(_.vote_cfg.vote_id, "&dynamic_id=").concat(t.desc.dynamic_id, "&isWeb=1")
         });
         var C = "", x = "", k = {}, I = {}, S = !1, O = "", T = "", E = t.display || {};
         if (u) {
@@ -5142,7 +5142,7 @@ BUILT_AT: 2021年4月8日 09:58
                             showHinter: !1
                         }
                     },
-                    template: '<div class="photo-imager-container" v-show="showComponent" :class="{\'preview-mode\': useZoomingFunc && !inActualSize, \'actual-size\': useZoomingFunc && inActualSize}">\n      <div class="image-container" v-show="!imageInLoading" track-name="big_see">\n        <img class="image-viewer" @contextmenu="rightMouseFunc($event)" :src="showingImage.url" alt="Image" ref="imageViewer" :title="showingImage.title" :style="{ \'z-index\': inActualSize ? 12 : 0 }">\n      </div>\n\n      <div class="loading-image-container" v-show="imageInLoading" style="text-align: center">\n        <img class="image-viewer" @contextmenu="rightMouseFunc($event)" :src="loadingImageUrl">\n      </div>\n\n      <div class="control-buttons" v-show="!inActualSize">\n        <button class="control-button prev" ref="pre" @click="goPrev" v-if="totalImages > 1 && currentImage > 0"></button>\n        <button class="control-button next" ref="next" @click="goNext" v-if="totalImages > 1 && currentImage < totalImages - 1"></button>\n        <button class="close-button" @click="close">\n          <i class="bp-icon-font icon-close"></i>\n        </button>\n      </div>\n\n      <div class="image-hinter-ctnr" @mouseenter="openHinter($event)" @mouseleave="closeHinter($event)" v-show="!inActualSize">\n        <div class="image-count-hinter" :class="{\'show\': showHinter}">\n          <div class="count-hinter">\n            <span class="current-index">{{currentImage + 1}}</span>\n            <span>/ {{totalImages}}</span>\n          </div>\n          <div v-if="isAuthorized" class="view-actual-pictrue">\n            <a :href="showingImage.url" target="_blank">查看原图</a>\n          </div>\n        </div>\n      </div>\n\n      <button class="support-button" v-if="config.showSupportWidget" v-show="isSupported !== \'undefined\' && !inActualSize" @click="onSupport" :class="{actived: isSupported}" track-name="big_sup">\n        <div>\n          <i class="icon bp-svg-icon" :class="isSupported ? \'good-4\' : \'good-1\'"></i>\n        </div>\n        <div>\n          <span class="label" v-text="isSupported ? \'已点赞\' : \'点赞\'"></span>\n        </div>\n      </button>\n\n      <button class="favourite-button" v-if="config.showFavouriteWidget" v-show="isFavourite !== undefined && !inActualSize" @click="onFavourite" :class="{actived: isFavourite}" track-name="big_col">\n        <div>\n          <i class="icon bp-svg-icon" :class="isFavourite ? \'collection-4\' : \'collection-icons\'"></i>\n        </div>\n        <div>\n          <span class="label" v-text="isFavourite ? \'已收藏\' : \'收藏\'"></span>\n        </div>\n      </button>\n\n      <div class="loading-progress" role="progress" v-show="imageInLoading">\n        <i class="loading-icon"></i>\n      </div>\n    </div>\n    ',
+                    template: '<div class="photo-imager-container" v-show="showComponent" :class="{\'preview-mode\': useZoomingFunc && !inActualSize, \'actual-size\': useZoomingFunc && inActualSize}">\n      <div class="image-container" v-show="!imageInLoading" track-name="big_see">\n        <img class="image-viewer" @contextmenu="rightMouseFunc($event)" :src="showingImage.url" alt="Image" ref="imageViewer" :title="showingImage.title" :style="{ \'z-home\': inActualSize ? 12 : 0 }">\n      </div>\n\n      <div class="loading-image-container" v-show="imageInLoading" style="text-align: center">\n        <img class="image-viewer" @contextmenu="rightMouseFunc($event)" :src="loadingImageUrl">\n      </div>\n\n      <div class="control-buttons" v-show="!inActualSize">\n        <button class="control-button prev" ref="pre" @click="goPrev" v-if="totalImages > 1 && currentImage > 0"></button>\n        <button class="control-button next" ref="next" @click="goNext" v-if="totalImages > 1 && currentImage < totalImages - 1"></button>\n        <button class="close-button" @click="close">\n          <i class="bp-icon-font icon-close"></i>\n        </button>\n      </div>\n\n      <div class="image-hinter-ctnr" @mouseenter="openHinter($event)" @mouseleave="closeHinter($event)" v-show="!inActualSize">\n        <div class="image-count-hinter" :class="{\'show\': showHinter}">\n          <div class="count-hinter">\n            <span class="current-home">{{currentImage + 1}}</span>\n            <span>/ {{totalImages}}</span>\n          </div>\n          <div v-if="isAuthorized" class="view-actual-pictrue">\n            <a :href="showingImage.url" target="_blank">查看原图</a>\n          </div>\n        </div>\n      </div>\n\n      <button class="support-button" v-if="config.showSupportWidget" v-show="isSupported !== \'undefined\' && !inActualSize" @click="onSupport" :class="{actived: isSupported}" track-name="big_sup">\n        <div>\n          <i class="icon bp-svg-icon" :class="isSupported ? \'good-4\' : \'good-1\'"></i>\n        </div>\n        <div>\n          <span class="label" v-text="isSupported ? \'已点赞\' : \'点赞\'"></span>\n        </div>\n      </button>\n\n      <button class="favourite-button" v-if="config.showFavouriteWidget" v-show="isFavourite !== undefined && !inActualSize" @click="onFavourite" :class="{actived: isFavourite}" track-name="big_col">\n        <div>\n          <i class="icon bp-svg-icon" :class="isFavourite ? \'collection-4\' : \'collection-icons\'"></i>\n        </div>\n        <div>\n          <span class="label" v-text="isFavourite ? \'已收藏\' : \'收藏\'"></span>\n        </div>\n      </button>\n\n      <div class="loading-progress" role="progress" v-show="imageInLoading">\n        <i class="loading-icon"></i>\n      </div>\n    </div>\n    ',
                     computed: {
                         showingImage: function () {
                             return this.images[this.currentImage]
@@ -10916,7 +10916,7 @@ BUILT_AT: 2021年4月8日 09:58
             "use strict";
 
             function n(t, e) {
-                return RangeError("index out of range: " + t.pos + " + " + (e || 1) + " > " + t.len)
+                return RangeError("home out of range: " + t.pos + " + " + (e || 1) + " > " + t.len)
             }
 
             function o(t) {
@@ -15713,7 +15713,7 @@ BUILT_AT: 2021年4月8日 09:58
             }
         }, xt = (i(403), Object(M.a)(Ct, (function () {
             var t = this, e = t.$createElement, i = t._self._c || e;
-            return i("div", {staticClass: "upload-status"}, ["loading" === t.status ? i("div", {staticClass: "loading-wrapper"}, [i("span", {staticClass: "loading"})]) : t._e(), "error" === t.status ? i("div", {staticClass: "error-wrapper b-box"}, [i("span", {staticClass: "bp-svg-icon error"}), i("span", {
+            return i("div", {staticClass: "article-status"}, ["loading" === t.status ? i("div", {staticClass: "loading-wrapper"}, [i("span", {staticClass: "loading"})]) : t._e(), "error" === t.status ? i("div", {staticClass: "error-wrapper b-box"}, [i("span", {staticClass: "bp-svg-icon error"}), i("span", {
                 staticClass: "reason",
                 domProps: {textContent: t._s(t.errorText)}
             })]) : t._e(), t.imgUrl ? i("div", {
@@ -15881,7 +15881,7 @@ BUILT_AT: 2021年4月8日 09:58
         }, components: {UploadStatus: xt}, methods: {
             initBus: function () {
                 var t = this;
-                this.bus.$on("emit-image-upload-click", this.emitClick), this.bus.$on("image-list-clear", (function () {
+                this.bus.$on("emit-image-article-click", this.emitClick), this.bus.$on("image-list-clear", (function () {
                     t.localUploadList = []
                 }))
             }, emitClick: function () {
@@ -15922,7 +15922,7 @@ BUILT_AT: 2021年4月8日 09:58
             }, uploadImage: function (t, e) {
                 var i = this, n = new FormData;
                 n.append("file_up", t), n.append("biz", "draw"), n.append("category", "daily"), this.bpapi({
-                    url: "".concat(_.a.API_VC, "/api/v1/drawImage/upload"),
+                    url: "".concat(_.a.API_VC, "/api/v1/drawImage/article"),
                     method: "post",
                     data: n,
                     headers: {"Content-Type": "multipart/form-data"}
@@ -15960,16 +15960,16 @@ BUILT_AT: 2021年4月8日 09:58
         }
     }, Lt = (i(404), Object(M.a)(Pt, (function () {
         var t = this, e = t.$createElement, i = t._self._c || e;
-        return i("div", {staticClass: "upload-image-wrapper"}, [i("div", {
+        return i("div", {staticClass: "article-image-wrapper"}, [i("div", {
             ref: "dropZone",
-            staticClass: "upload-image",
+            staticClass: "article-image",
             class: {center: !t.localUploadList.length},
             on: {dragover: t.dragover, drop: t.dropSelect}
         }, [i("div", {
             ref: "uploadList",
-            staticClass: "f-clear upload-list"
+            staticClass: "f-clear article-list"
         }, [t._l(t.localUploadList, (function (e, n) {
-            return i("upload-status", {
+            return i("article-status", {
                 key: e.id || e.img_src,
                 staticClass: "draggable f-left",
                 attrs: {status: e.status, "error-text": e.errorText, "img-url": e.img_src}
@@ -15986,10 +15986,10 @@ BUILT_AT: 2021年4月8日 09:58
                 rawName: "v-show",
                 value: t.localUploadList.length < parseInt(t.maxAmount),
                 expression: "localUploadList.length < parseInt(maxAmount)"
-            }], ref: "uploadBtn", staticClass: "f-left upload-btn b-box"
+            }], ref: "uploadBtn", staticClass: "f-left article-btn b-box"
         }, [i("input", {
             ref: "uploadInput",
-            staticClass: "upload pointer",
+            staticClass: "article pointer",
             attrs: {type: "file", accept: "image/png, image/jpeg, image/jpg, image/gif", multiple: ""},
             on: {change: t.clickSelect}
         }), i("i", {staticClass: "bp-icon-font icon-add pointer"})])], 2)])])
@@ -16012,7 +16012,7 @@ BUILT_AT: 2021年4月8日 09:58
     }, At = (i(405), Object(M.a)(jt, (function () {
         var t = this, e = t.$createElement, i = t._self._c || e;
         return i("static-box", {
-            staticClass: "upload-image-box",
+            staticClass: "article-image-box",
             attrs: {width: 290, arrow: !0},
             on: {close: t.close}
         }, [i("span", {
@@ -16139,7 +16139,7 @@ BUILT_AT: 2021年4月8日 09:58
             }
         }, {
             key: "triggerImageBoxShow", value: function () {
-                this.imageBoxShown = !this.imageBoxShown, this.imageBoxShown && (this.bus.$emit("emit-image-upload-click"), this.isPopupPanel ? Object(Mt.d)(Dt.d.PUBLICH_PIC_2, "") : Object(Mt.d)(Dt.d.PUBLICH_PIC_1, ""))
+                this.imageBoxShown = !this.imageBoxShown, this.imageBoxShown && (this.bus.$emit("emit-image-article-click"), this.isPopupPanel ? Object(Mt.d)(Dt.d.PUBLICH_PIC_2, "") : Object(Mt.d)(Dt.d.PUBLICH_PIC_1, ""))
             }
         }, {
             key: "updateImageList", value: function (t) {
@@ -16170,7 +16170,7 @@ BUILT_AT: 2021年4月8日 09:58
                 class: {active: t.imageBoxShown},
                 attrs: {title: "上传图片"},
                 on: {click: t.triggerImageBoxShow}
-            }), i("div", {staticClass: "image-popup"}, [i("upload-image-box", {
+            }), i("div", {staticClass: "image-popup"}, [i("article-image-box", {
                 directives: [{
                     name: "show",
                     rawName: "v-show",
@@ -17464,7 +17464,7 @@ BUILT_AT: 2021年4月8日 09:58
         Ei = (i(416), Object(M.a)(Ti, (function () {
             var t = this, e = t.$createElement, i = t._self._c || e;
             return i("div", {
-                staticClass: "bp-upload", on: {
+                staticClass: "bp-article", on: {
                     click: function (e) {
                         return t.callFileDialog(t.index)
                     }
@@ -17882,7 +17882,7 @@ BUILT_AT: 2021年4月8日 09:58
             }
         }, {
             key: "zIndexStyle", get: function () {
-                return "z-index: ".concat(this.zIndex || 2, ";")
+                return "z-home: ".concat(this.zIndex || 2, ";")
             }
         }]) && Wi(e.prototype, i), n && Wi(e, n), s
     }(l.c);
@@ -17943,9 +17943,9 @@ BUILT_AT: 2021年4月8日 09:58
                 model: {
                     value: t.optionsList[e - 1], callback: function (i) {
                         t.$set(t.optionsList, e - 1, i)
-                    }, expression: "optionsList[index - 1]"
+                    }, expression: "optionsList[home - 1]"
                 }
-            }, ["image" === t.type ? i("bp-upload", {
+            }, ["image" === t.type ? i("bp-article", {
                 attrs: {slot: "prefix", index: e, url: t.optionsImageList[e - 1]},
                 on: {loading: t.onImgLoading, success: t.onImgSuccess, fail: t.onImgFail},
                 slot: "prefix"
@@ -18935,7 +18935,7 @@ BUILT_AT: 2021年4月8日 09:58
         yo = (i(426), Object(M.a)(go, (function () {
             var t = this, e = t.$createElement, i = t._self._c || e;
             return i("div", {
-                staticClass: "bp-upload", on: {
+                staticClass: "bp-article", on: {
                     click: function (e) {
                         return t.callFileDialog(t.index)
                     }
@@ -19476,7 +19476,7 @@ BUILT_AT: 2021年4月8日 09:58
             }
         }, {
             key: "zIndexStyle", get: function () {
-                return "z-index: ".concat(this.zIndex || 2, ";")
+                return "z-home: ".concat(this.zIndex || 2, ";")
             }
         }]) && Do(n.prototype, o), r && Do(n, r), l
     }(l.c);
@@ -19554,7 +19554,7 @@ BUILT_AT: 2021年4月8日 09:58
                     t.$set(t.firstPrizeInfo, "desc", e)
                 }, expression: "firstPrizeInfo.desc"
             }
-        })], 1), i("bp-title", [i("div", [i("span", [t._v("奖品图片")]), i("div", {staticClass: "tip"}, [t._v("可选")])]), i("template", {slot: "right"}, [i("bp-upload", {
+        })], 1), i("bp-title", [i("div", [i("span", [t._v("奖品图片")]), i("div", {staticClass: "tip"}, [t._v("可选")])]), i("template", {slot: "right"}, [i("bp-article", {
             attrs: {url: t.firstPrizeInfo.imgUrl},
             on: {
                 loading: function (e) {
@@ -19617,7 +19617,7 @@ BUILT_AT: 2021年4月8日 09:58
                     t.$set(t.secondPrizeInfo, "desc", e)
                 }, expression: "secondPrizeInfo.desc"
             }
-        })], 1), i("bp-title", [i("div", [i("span", [t._v("奖品图片")]), i("div", {staticClass: "tip"}, [t._v("可选")])]), i("template", {slot: "right"}, [i("bp-upload", {
+        })], 1), i("bp-title", [i("div", [i("span", [t._v("奖品图片")]), i("div", {staticClass: "tip"}, [t._v("可选")])]), i("template", {slot: "right"}, [i("bp-article", {
             attrs: {
                 slot: "right",
                 url: t.secondPrizeInfo.imgUrl
@@ -19682,7 +19682,7 @@ BUILT_AT: 2021年4月8日 09:58
                     t.$set(t.thirdPrizeInfo, "desc", e)
                 }, expression: "thirdPrizeInfo.desc"
             }
-        })], 1), i("bp-title", [i("div", [i("span", [t._v("奖品图片")]), i("div", {staticClass: "tip"}, [t._v("可选")])]), i("template", {slot: "right"}, [i("bp-upload", {
+        })], 1), i("bp-title", [i("div", [i("span", [t._v("奖品图片")]), i("div", {staticClass: "tip"}, [t._v("可选")])]), i("template", {slot: "right"}, [i("bp-article", {
             attrs: {
                 slot: "right",
                 url: t.thirdPrizeInfo.imgUrl
@@ -22317,7 +22317,7 @@ BUILT_AT: 2021年4月8日 09:58
             }
         }, ms = (i(451), Object(M.a)(ps, (function () {
             var t = this, e = t.$createElement, i = t._self._c || e;
-            return i("div", {staticClass: "upload-status"}, ["loading" === t.status ? i("div", {staticClass: "loading-wrapper"}, [i("span", {staticClass: "loading"})]) : t._e(), "error" === t.status ? i("div", {staticClass: "error-wrapper b-box"}, [i("span", {staticClass: "bp-svg-icon error"}), i("span", {
+            return i("div", {staticClass: "article-status"}, ["loading" === t.status ? i("div", {staticClass: "loading-wrapper"}, [i("span", {staticClass: "loading"})]) : t._e(), "error" === t.status ? i("div", {staticClass: "error-wrapper b-box"}, [i("span", {staticClass: "bp-svg-icon error"}), i("span", {
                 staticClass: "reason",
                 domProps: {textContent: t._s(t.errorText)}
             })]) : t._e(), t.imgUrl ? i("div", {
@@ -22515,7 +22515,7 @@ BUILT_AT: 2021年4月8日 09:58
             }, uploadImage: function (t, e) {
                 var i = this, n = new FormData;
                 n.append("file_up", t), n.append("biz", "draw"), n.append("category", "daily"), this.bpapi({
-                    url: "".concat(_.a.API_VC, "/api/v1/drawImage/upload"),
+                    url: "".concat(_.a.API_VC, "/api/v1/drawImage/article"),
                     method: "post",
                     data: n,
                     headers: {"Content-Type": "multipart/form-data"}
@@ -22553,16 +22553,16 @@ BUILT_AT: 2021年4月8日 09:58
         }
     }, ws = (i(452), Object(M.a)(_s, (function () {
         var t = this, e = t.$createElement, i = t._self._c || e;
-        return i("div", {staticClass: "upload-image-wrapper"}, [i("div", {
+        return i("div", {staticClass: "article-image-wrapper"}, [i("div", {
             ref: "dropZone",
-            staticClass: "upload-image",
+            staticClass: "article-image",
             class: {center: !t.localUploadList.length},
             on: {dragover: t.dragover, drop: t.dropSelect}
         }, [i("div", {
             ref: "uploadList",
-            staticClass: "f-clear upload-list"
+            staticClass: "f-clear article-list"
         }, [t._l(t.localUploadList, (function (e, n) {
-            return i("upload-status", {
+            return i("article-status", {
                 key: e.id || e.img_src,
                 staticClass: "draggable f-left",
                 attrs: {status: e.status, "error-text": e.errorText, "img-url": e.img_src}
@@ -22579,10 +22579,10 @@ BUILT_AT: 2021年4月8日 09:58
                 rawName: "v-show",
                 value: t.localUploadList.length < parseInt(t.maxAmount),
                 expression: "localUploadList.length < parseInt(maxAmount)"
-            }], ref: "uploadBtn", staticClass: "f-left upload-btn b-box"
+            }], ref: "uploadBtn", staticClass: "f-left article-btn b-box"
         }, [i("input", {
             ref: "uploadInput",
-            staticClass: "upload pointer",
+            staticClass: "article pointer",
             attrs: {type: "file", accept: "image/png, image/jpeg, image/jpg, image/gif", multiple: ""},
             on: {change: t.clickSelect}
         }), i("i", {staticClass: "bp-icon-font icon-add pointer"})])], 2)])])
@@ -22605,7 +22605,7 @@ BUILT_AT: 2021年4月8日 09:58
     }, xs = (i(453), Object(M.a)(Cs, (function () {
         var t = this, e = t.$createElement, i = t._self._c || e;
         return i("static-box", {
-            staticClass: "upload-image-box",
+            staticClass: "article-image-box",
             attrs: {width: 290, arrow: !0},
             on: {close: t.close}
         }, [i("span", {
@@ -25235,11 +25235,11 @@ BUILT_AT: 2021年4月8日 09:58
             }, updateSlidesClasses: function () {
                 var t, e = this.slides, i = this.params, n = this.$wrapperEl, o = this.activeIndex, r = this.realIndex,
                     a = this.virtual && i.virtual.enabled;
-                e.removeClass(i.slideActiveClass + " " + i.slideNextClass + " " + i.slidePrevClass + " " + i.slideDuplicateActiveClass + " " + i.slideDuplicateNextClass + " " + i.slideDuplicatePrevClass), (t = a ? this.$wrapperEl.find("." + i.slideClass + '[data-swiper-slide-index="' + o + '"]') : e.eq(o)).addClass(i.slideActiveClass), i.loop && (t.hasClass(i.slideDuplicateClass) ? n.children("." + i.slideClass + ":not(." + i.slideDuplicateClass + ')[data-swiper-slide-index="' + r + '"]').addClass(i.slideDuplicateActiveClass) : n.children("." + i.slideClass + "." + i.slideDuplicateClass + '[data-swiper-slide-index="' + r + '"]').addClass(i.slideDuplicateActiveClass));
+                e.removeClass(i.slideActiveClass + " " + i.slideNextClass + " " + i.slidePrevClass + " " + i.slideDuplicateActiveClass + " " + i.slideDuplicateNextClass + " " + i.slideDuplicatePrevClass), (t = a ? this.$wrapperEl.find("." + i.slideClass + '[data-swiper-slide-home="' + o + '"]') : e.eq(o)).addClass(i.slideActiveClass), i.loop && (t.hasClass(i.slideDuplicateClass) ? n.children("." + i.slideClass + ":not(." + i.slideDuplicateClass + ')[data-swiper-slide-home="' + r + '"]').addClass(i.slideDuplicateActiveClass) : n.children("." + i.slideClass + "." + i.slideDuplicateClass + '[data-swiper-slide-home="' + r + '"]').addClass(i.slideDuplicateActiveClass));
                 var s = t.nextAll("." + i.slideClass).eq(0).addClass(i.slideNextClass);
                 i.loop && 0 === s.length && (s = e.eq(0)).addClass(i.slideNextClass);
                 var c = t.prevAll("." + i.slideClass).eq(0).addClass(i.slidePrevClass);
-                i.loop && 0 === c.length && (c = e.eq(-1)).addClass(i.slidePrevClass), i.loop && (s.hasClass(i.slideDuplicateClass) ? n.children("." + i.slideClass + ":not(." + i.slideDuplicateClass + ')[data-swiper-slide-index="' + s.attr("data-swiper-slide-index") + '"]').addClass(i.slideDuplicateNextClass) : n.children("." + i.slideClass + "." + i.slideDuplicateClass + '[data-swiper-slide-index="' + s.attr("data-swiper-slide-index") + '"]').addClass(i.slideDuplicateNextClass), c.hasClass(i.slideDuplicateClass) ? n.children("." + i.slideClass + ":not(." + i.slideDuplicateClass + ')[data-swiper-slide-index="' + c.attr("data-swiper-slide-index") + '"]').addClass(i.slideDuplicatePrevClass) : n.children("." + i.slideClass + "." + i.slideDuplicateClass + '[data-swiper-slide-index="' + c.attr("data-swiper-slide-index") + '"]').addClass(i.slideDuplicatePrevClass))
+                i.loop && 0 === c.length && (c = e.eq(-1)).addClass(i.slidePrevClass), i.loop && (s.hasClass(i.slideDuplicateClass) ? n.children("." + i.slideClass + ":not(." + i.slideDuplicateClass + ')[data-swiper-slide-home="' + s.attr("data-swiper-slide-home") + '"]').addClass(i.slideDuplicateNextClass) : n.children("." + i.slideClass + "." + i.slideDuplicateClass + '[data-swiper-slide-home="' + s.attr("data-swiper-slide-home") + '"]').addClass(i.slideDuplicateNextClass), c.hasClass(i.slideDuplicateClass) ? n.children("." + i.slideClass + ":not(." + i.slideDuplicateClass + ')[data-swiper-slide-home="' + c.attr("data-swiper-slide-home") + '"]').addClass(i.slideDuplicatePrevClass) : n.children("." + i.slideClass + "." + i.slideDuplicateClass + '[data-swiper-slide-home="' + c.attr("data-swiper-slide-home") + '"]').addClass(i.slideDuplicatePrevClass))
             }, updateActiveIndex: function (t) {
                 var e, i = this.rtlTranslate ? this.translate : -this.translate, n = this.slidesGrid, o = this.snapGrid,
                     r = this.params, a = this.activeIndex, s = this.realIndex, c = this.snapIndex, u = t;
@@ -25248,7 +25248,7 @@ BUILT_AT: 2021年4月8日 09:58
                     r.normalizeSlideIndex && (u < 0 || void 0 === u) && (u = 0)
                 }
                 if ((e = o.indexOf(i) >= 0 ? o.indexOf(i) : Math.floor(u / r.slidesPerGroup)) >= o.length && (e = o.length - 1), u !== a) {
-                    var h = parseInt(this.slides.eq(u).attr("data-swiper-slide-index") || u, 10);
+                    var h = parseInt(this.slides.eq(u).attr("data-swiper-slide-home") || u, 10);
                     l.extend(this, {
                         snapIndex: e,
                         realIndex: h,
@@ -25260,7 +25260,7 @@ BUILT_AT: 2021年4月8日 09:58
                 var e = this.params, i = n(t.target).closest("." + e.slideClass)[0], o = !1;
                 if (i) for (var r = 0; r < this.slides.length; r += 1) this.slides[r] === i && (o = !0);
                 if (!i || !o) return this.clickedSlide = void 0, void (this.clickedIndex = void 0);
-                this.clickedSlide = i, this.virtual && this.params.virtual.enabled ? this.clickedIndex = parseInt(n(i).attr("data-swiper-slide-index"), 10) : this.clickedIndex = n(i).index(), e.slideToClickedSlide && void 0 !== this.clickedIndex && this.clickedIndex !== this.activeIndex && this.slideToClickedSlide()
+                this.clickedSlide = i, this.virtual && this.params.virtual.enabled ? this.clickedIndex = parseInt(n(i).attr("data-swiper-slide-home"), 10) : this.clickedIndex = n(i).index(), e.slideToClickedSlide && void 0 !== this.clickedIndex && this.clickedIndex !== this.activeIndex && this.slideToClickedSlide()
             }
         }, m = {
             getTranslate: function (t) {
@@ -25361,9 +25361,9 @@ BUILT_AT: 2021年4月8日 09:58
                     r = "auto" === i.slidesPerView ? e.slidesPerViewDynamic() : i.slidesPerView, a = e.clickedIndex;
                 if (i.loop) {
                     if (e.animating) return;
-                    t = parseInt(n(e.clickedSlide).attr("data-swiper-slide-index"), 10), i.centeredSlides ? a < e.loopedSlides - r / 2 || a > e.slides.length - e.loopedSlides + r / 2 ? (e.loopFix(), a = o.children("." + i.slideClass + '[data-swiper-slide-index="' + t + '"]:not(.' + i.slideDuplicateClass + ")").eq(0).index(), l.nextTick((function () {
+                    t = parseInt(n(e.clickedSlide).attr("data-swiper-slide-home"), 10), i.centeredSlides ? a < e.loopedSlides - r / 2 || a > e.slides.length - e.loopedSlides + r / 2 ? (e.loopFix(), a = o.children("." + i.slideClass + '[data-swiper-slide-home="' + t + '"]:not(.' + i.slideDuplicateClass + ")").eq(0).index(), l.nextTick((function () {
                         e.slideTo(a)
-                    }))) : e.slideTo(a) : a > e.slides.length - r ? (e.loopFix(), a = o.children("." + i.slideClass + '[data-swiper-slide-index="' + t + '"]:not(.' + i.slideDuplicateClass + ")").eq(0).index(), l.nextTick((function () {
+                    }))) : e.slideTo(a) : a > e.slides.length - r ? (e.loopFix(), a = o.children("." + i.slideClass + '[data-swiper-slide-home="' + t + '"]:not(.' + i.slideDuplicateClass + ")").eq(0).index(), l.nextTick((function () {
                         e.slideTo(a)
                     }))) : e.slideTo(a)
                 } else e.slideTo(a)
@@ -25387,7 +25387,7 @@ BUILT_AT: 2021年4月8日 09:58
                 var l = [], u = [];
                 r.each((function (t, i) {
                     var o = n(i);
-                    t < e.loopedSlides && u.push(i), t < r.length && t >= r.length - e.loopedSlides && l.push(i), o.attr("data-swiper-slide-index", t)
+                    t < e.loopedSlides && u.push(i), t < r.length && t >= r.length - e.loopedSlides && l.push(i), o.attr("data-swiper-slide-home", t)
                 }));
                 for (var d = 0; d < u.length; d += 1) o.append(n(u[d].cloneNode(!0)).addClass(i.slideDuplicateClass));
                 for (var h = l.length - 1; h >= 0; h -= 1) o.prepend(n(l[h].cloneNode(!0)).addClass(i.slideDuplicateClass))
@@ -25399,7 +25399,7 @@ BUILT_AT: 2021年4月8日 09:58
                 i < o ? (t = n.length - 3 * o + i, t += o, this.slideTo(t, 0, !1, !0) && 0 !== l && this.setTranslate((c ? -this.translate : this.translate) - l)) : ("auto" === e.slidesPerView && i >= 2 * o || i >= n.length - o) && (t = -n.length + i + o, t += o, this.slideTo(t, 0, !1, !0) && 0 !== l && this.setTranslate((c ? -this.translate : this.translate) - l)), this.allowSlidePrev = r, this.allowSlideNext = a
             }, loopDestroy: function () {
                 var t = this.$wrapperEl, e = this.params, i = this.slides;
-                t.children("." + e.slideClass + "." + e.slideDuplicateClass + ",." + e.slideClass + "." + e.slideBlankClass).remove(), i.removeAttr("data-swiper-slide-index")
+                t.children("." + e.slideClass + "." + e.slideDuplicateClass + ",." + e.slideClass + "." + e.slideBlankClass).remove(), i.removeAttr("data-swiper-slide-home")
             }
         }, b = {
             setGrabCursor: function (t) {
@@ -25944,7 +25944,7 @@ BUILT_AT: 2021年4月8日 09:58
                 }, e.prototype.destroy = function (t, e) {
                     void 0 === t && (t = !0), void 0 === e && (e = !0);
                     var i = this, n = i.params, o = i.$el, r = i.$wrapperEl, a = i.slides;
-                    return void 0 === i.params || i.destroyed || (i.emit("beforeDestroy"), i.initialized = !1, i.detachEvents(), n.loop && i.loopDestroy(), e && (i.removeClasses(), o.removeAttr("style"), r.removeAttr("style"), a && a.length && a.removeClass([n.slideVisibleClass, n.slideActiveClass, n.slideNextClass, n.slidePrevClass].join(" ")).removeAttr("style").removeAttr("data-swiper-slide-index").removeAttr("data-swiper-column").removeAttr("data-swiper-row")), i.emit("destroy"), Object.keys(i.eventsListeners).forEach((function (t) {
+                    return void 0 === i.params || i.destroyed || (i.emit("beforeDestroy"), i.initialized = !1, i.detachEvents(), n.loop && i.loopDestroy(), e && (i.removeClasses(), o.removeAttr("style"), r.removeAttr("style"), a && a.length && a.removeClass([n.slideVisibleClass, n.slideActiveClass, n.slideNextClass, n.slidePrevClass].join(" ")).removeAttr("style").removeAttr("data-swiper-slide-home").removeAttr("data-swiper-column").removeAttr("data-swiper-row")), i.emit("destroy"), Object.keys(i.eventsListeners).forEach((function (t) {
                         i.off(t)
                     })), !1 !== t && (i.$el[0].swiper = null, i.$el.data("swiper", null), l.deleteProps(i)), i.destroyed = !0), null
                 }, e.extendDefaults = function (t) {
@@ -26056,7 +26056,7 @@ BUILT_AT: 2021年4月8日 09:58
                         }()
                     }), void k();
                     var I = [], S = [];
-                    if (t) e.$wrapperEl.find("." + e.params.slideClass).remove(); else for (var O = d; O <= h; O += 1) (O < w || O > C) && e.$wrapperEl.find("." + e.params.slideClass + '[data-swiper-slide-index="' + O + '"]').remove();
+                    if (t) e.$wrapperEl.find("." + e.params.slideClass).remove(); else for (var O = d; O <= h; O += 1) (O < w || O > C) && e.$wrapperEl.find("." + e.params.slideClass + '[data-swiper-slide-home="' + O + '"]').remove();
                     for (var T = 0; T < f.length; T += 1) T >= w && T <= C && (void 0 === h || t ? S.push(T) : (T > h && S.push(T), T < d && I.push(T)));
                     S.forEach((function (t) {
                         e.$wrapperEl.append(m(f[t], t))
@@ -26068,8 +26068,8 @@ BUILT_AT: 2021年4月8日 09:58
                 }, renderSlide: function (t, e) {
                     var i = this.params.virtual;
                     if (i.cache && this.virtual.cache[e]) return this.virtual.cache[e];
-                    var o = i.renderSlide ? n(i.renderSlide.call(this, t, e)) : n('<div class="' + this.params.slideClass + '" data-swiper-slide-index="' + e + '">' + t + "</div>");
-                    return o.attr("data-swiper-slide-index") || o.attr("data-swiper-slide-index", e), i.cache && (this.virtual.cache[e] = o), o
+                    var o = i.renderSlide ? n(i.renderSlide.call(this, t, e)) : n('<div class="' + this.params.slideClass + '" data-swiper-slide-home="' + e + '">' + t + "</div>");
+                    return o.attr("data-swiper-slide-home") || o.attr("data-swiper-slide-home", e), i.cache && (this.virtual.cache[e] = o), o
                 }, appendSlide: function (t) {
                     if ("object" == typeof t && "length" in t) for (var e = 0; e < t.length; e += 1) t[e] && this.virtual.slides.push(t[e]); else this.virtual.slides.push(t);
                     this.virtual.update(!0)
@@ -26521,7 +26521,7 @@ BUILT_AT: 2021年4月8日 09:58
                     void 0 === e && (e = !0);
                     var i = this, o = i.params.lazy;
                     if (void 0 !== t && 0 !== i.slides.length) {
-                        var r = i.virtual && i.params.virtual.enabled ? i.$wrapperEl.children("." + i.params.slideClass + '[data-swiper-slide-index="' + t + '"]') : i.slides.eq(t),
+                        var r = i.virtual && i.params.virtual.enabled ? i.$wrapperEl.children("." + i.params.slideClass + '[data-swiper-slide-home="' + t + '"]') : i.slides.eq(t),
                             a = r.find("." + o.elementClass + ":not(." + o.loadedClass + "):not(." + o.loadingClass + ")");
                         !r.hasClass(o.elementClass) || r.hasClass(o.loadedClass) || r.hasClass(o.loadingClass) || (a = a.add(r[0])), 0 !== a.length && a.each((function (t, a) {
                             var s = n(a);
@@ -26531,12 +26531,12 @@ BUILT_AT: 2021年4月8日 09:58
                             i.loadImage(s[0], l || c, u, d, !1, (function () {
                                 if (null != i && i && (!i || i.params) && !i.destroyed) {
                                     if (c ? (s.css("background-image", 'url("' + c + '")'), s.removeAttr("data-background")) : (u && (s.attr("srcset", u), s.removeAttr("data-srcset")), d && (s.attr("sizes", d), s.removeAttr("data-sizes")), l && (s.attr("src", l), s.removeAttr("data-src"))), s.addClass(o.loadedClass).removeClass(o.loadingClass), r.find("." + o.preloaderClass).remove(), i.params.loop && e) {
-                                        var t = r.attr("data-swiper-slide-index");
+                                        var t = r.attr("data-swiper-slide-home");
                                         if (r.hasClass(i.params.slideDuplicateClass)) {
-                                            var n = i.$wrapperEl.children('[data-swiper-slide-index="' + t + '"]:not(.' + i.params.slideDuplicateClass + ")");
+                                            var n = i.$wrapperEl.children('[data-swiper-slide-home="' + t + '"]:not(.' + i.params.slideDuplicateClass + ")");
                                             i.lazy.loadInSlide(n.index(), !1)
                                         } else {
-                                            var a = i.$wrapperEl.children("." + i.params.slideDuplicateClass + '[data-swiper-slide-index="' + t + '"]');
+                                            var a = i.$wrapperEl.children("." + i.params.slideDuplicateClass + '[data-swiper-slide-home="' + t + '"]');
                                             i.lazy.loadInSlide(a.index(), !1)
                                         }
                                     }
@@ -26551,17 +26551,17 @@ BUILT_AT: 2021年4月8日 09:58
 
                     function l(t) {
                         if (a) {
-                            if (e.children("." + i.slideClass + '[data-swiper-slide-index="' + t + '"]').length) return !0
+                            if (e.children("." + i.slideClass + '[data-swiper-slide-home="' + t + '"]').length) return !0
                         } else if (o[t]) return !0;
                         return !1
                     }
 
                     function u(t) {
-                        return a ? n(t).attr("data-swiper-slide-index") : n(t).index()
+                        return a ? n(t).attr("data-swiper-slide-home") : n(t).index()
                     }
 
                     if ("auto" === c && (c = 0), t.lazy.initialImageLoaded || (t.lazy.initialImageLoaded = !0), t.params.watchSlidesVisibility) e.children("." + i.slideVisibleClass).each((function (e, i) {
-                        var o = a ? n(i).attr("data-swiper-slide-index") : n(i).index();
+                        var o = a ? n(i).attr("data-swiper-slide-home") : n(i).index();
                         t.lazy.loadInSlide(o)
                     })); else if (c > 1) for (var d = r; d < r + c; d += 1) l(d) && t.lazy.loadInSlide(d); else t.lazy.loadInSlide(r);
                     if (s.loadPrevNext) if (c > 1 || s.loadPrevNextAmount && s.loadPrevNextAmount > 1) {
@@ -26778,7 +26778,7 @@ BUILT_AT: 2021年4月8日 09:58
                     l.shadow && (u ? (0 === (t = i.find(".swiper-cube-shadow")).length && (t = n('<div class="swiper-cube-shadow"></div>'), i.append(t)), t.css({height: r + "px"})) : 0 === (t = e.find(".swiper-cube-shadow")).length && (t = n('<div class="swiper-cube-shadow"></div>'), e.append(t)));
                     for (var p = 0; p < o.length; p += 1) {
                         var m = o.eq(p), v = p;
-                        h && (v = parseInt(m.attr("data-swiper-slide-index"), 10));
+                        h && (v = parseInt(m.attr("data-swiper-slide-home"), 10));
                         var g = 90 * v, y = Math.floor(g / 360);
                         s && (g = -g, y = Math.floor(-g / 360));
                         var b = Math.max(Math.min(m[0].progress, 1), -1), _ = 0, w = 0, C = 0;
@@ -26870,11 +26870,11 @@ BUILT_AT: 2021年4月8日 09:58
                         var e = t.clickedIndex, i = t.clickedSlide;
                         if (!(i && n(i).hasClass(this.params.thumbs.slideThumbActiveClass) || null == e)) {
                             var o;
-                            if (o = t.params.loop ? parseInt(n(t.clickedSlide).attr("data-swiper-slide-index"), 10) : e, this.params.loop) {
+                            if (o = t.params.loop ? parseInt(n(t.clickedSlide).attr("data-swiper-slide-home"), 10) : e, this.params.loop) {
                                 var r = this.activeIndex;
                                 this.slides.eq(r).hasClass(this.params.slideDuplicateClass) && (this.loopFix(), this._clientLeft = this.$wrapperEl[0].clientLeft, r = this.activeIndex);
-                                var a = this.slides.eq(r).prevAll('[data-swiper-slide-index="' + o + '"]').eq(0).index(),
-                                    s = this.slides.eq(r).nextAll('[data-swiper-slide-index="' + o + '"]').eq(0).index();
+                                var a = this.slides.eq(r).prevAll('[data-swiper-slide-home="' + o + '"]').eq(0).index(),
+                                    s = this.slides.eq(r).nextAll('[data-swiper-slide-home="' + o + '"]').eq(0).index();
                                 o = void 0 === a ? s : void 0 === s ? a : s - r < r - a ? s : a
                             }
                             this.slideTo(o)
@@ -26888,14 +26888,14 @@ BUILT_AT: 2021年4月8日 09:58
                             var n, o = e.activeIndex;
                             if (e.params.loop) {
                                 e.slides.eq(o).hasClass(e.params.slideDuplicateClass) && (e.loopFix(), e._clientLeft = e.$wrapperEl[0].clientLeft, o = e.activeIndex);
-                                var r = e.slides.eq(o).prevAll('[data-swiper-slide-index="' + this.realIndex + '"]').eq(0).index(),
-                                    a = e.slides.eq(o).nextAll('[data-swiper-slide-index="' + this.realIndex + '"]').eq(0).index();
+                                var r = e.slides.eq(o).prevAll('[data-swiper-slide-home="' + this.realIndex + '"]').eq(0).index(),
+                                    a = e.slides.eq(o).nextAll('[data-swiper-slide-home="' + this.realIndex + '"]').eq(0).index();
                                 n = void 0 === r ? a : void 0 === a ? r : a - o == o - r ? o : a - o < o - r ? a : r
                             } else n = this.realIndex;
                             e.visibleSlidesIndexes && e.visibleSlidesIndexes.indexOf(n) < 0 && (e.params.centeredSlides ? n = n > o ? n - Math.floor(i / 2) + 1 : n + Math.floor(i / 2) - 1 : n > o && (n = n - i + 1), e.slideTo(n, t ? 0 : void 0))
                         }
                         var s = 1, c = this.params.thumbs.slideThumbActiveClass;
-                        if (this.params.slidesPerView > 1 && !this.params.centeredSlides && (s = this.params.slidesPerView), e.slides.removeClass(c), e.params.loop || e.params.virtual) for (var l = 0; l < s; l += 1) e.$wrapperEl.children('[data-swiper-slide-index="' + (this.realIndex + l) + '"]').addClass(c); else for (var u = 0; u < s; u += 1) e.slides.eq(this.realIndex + u).addClass(c)
+                        if (this.params.slidesPerView > 1 && !this.params.centeredSlides && (s = this.params.slidesPerView), e.slides.removeClass(c), e.params.loop || e.params.virtual) for (var l = 0; l < s; l += 1) e.$wrapperEl.children('[data-swiper-slide-home="' + (this.realIndex + l) + '"]').addClass(c); else for (var u = 0; u < s; u += 1) e.slides.eq(this.realIndex + u).addClass(c)
                     }
                 }
             }, rt = [L, j, A, M, B, R, H, {
@@ -27226,7 +27226,7 @@ BUILT_AT: 2021年4月8日 09:58
                         nextSlideMessage: "Next slide",
                         firstSlideMessage: "This is the first slide",
                         lastSlideMessage: "This is the last slide",
-                        paginationBulletMessage: "Go to slide {{index}}"
+                        paginationBulletMessage: "Go to slide {{home}}"
                     }
                 },
                 create: function () {
@@ -28302,7 +28302,7 @@ BUILT_AT: 2021年4月8日 09:58
             domProps: {textContent: t._s(t.liveCount ? "（" + t.liveCount + "）" : "")}
         })]), n("div", {staticClass: "more-button c-pointer"}, [n("a", {
             staticClass: "more tc-slate",
-            attrs: {href: t.HOST.LINK + "/p/center/index#/user-center/follow/1", target: "_blank"},
+            attrs: {href: t.HOST.LINK + "/p/center/home#/user-center/follow/1", target: "_blank"},
             on: {click: t.onShowMoreClick}
         }, [t._v("更多")])]), t.isLoading ? n("div", {staticClass: "loading-content"}, [t._m(0)]) : t.isEmpty ? n("div", {staticClass: "empty-content"}, [n("img", {
             staticClass: "empty-img",
@@ -29099,4 +29099,4 @@ BUILT_AT: 2021年4月8日 09:58
         }
     })
 }]);
-//# sourceMappingURL=index.d9d3f225.js.map
+//# sourceMappingURL=home.d9d3f225.js.map

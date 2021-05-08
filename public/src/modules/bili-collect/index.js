@@ -702,4 +702,4 @@ window.ad_rp = window.bilicm.base = window.BiliCm.Base = (function (window, docu
 
 
 // WEBPACK FOOTER //
-// ./src/module/bili-collect/index.js
+// ./src/module/bili-collect/home.js

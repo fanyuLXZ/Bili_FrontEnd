@@ -211,4 +211,4 @@ export default {
 
 
 // WEBPACK FOOTER //
-// ./src/utils/index.js
+// ./src/utils/home.js
