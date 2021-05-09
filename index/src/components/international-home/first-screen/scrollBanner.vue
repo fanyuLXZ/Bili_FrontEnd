@@ -12,7 +12,7 @@
       </van-image> -->
 
       <!-- 因为要上报第一张图片的加载时间，故if else -->
-      <!--            <img :src="`${trimHttp(item.pic)}@880w_388h_1c_95q`" :alt="item.name" onload="reportfs()" v-if="index === 0">-->
+      <!--            <img :src="`${trimHttp(item.pic)}@880w_388h_1c_95q`" :alt="item.name" onload="reportfs()" v-if="home === 0">-->
       <!--            <img :src="`${trimHttp(item.pic)}@880w_388h_1c_95q`" :alt="item.name" v-else>-->
       <img :alt="item.name" :src="`${trimHttp(item.pic)}@880w_388h_1c_95q`">
       <p class="title">

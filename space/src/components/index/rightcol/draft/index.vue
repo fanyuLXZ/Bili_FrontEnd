@@ -1,28 +1,28 @@
 <template>
   <!-- 创作中心插件 -->
-  <div class="section i-m"
-    v-show="_bili_space_state === 'owner'">
+  <div v-show="_bili_space_state === 'owner'"
+       class="section i-m">
     <div class="i-m-r1">
-      <a href="https://member.bilibili.com/platform/home"
-        class="i-m-title"
-        target="_blank"
-        v-rep="'space_creatorButton_click'">
-          <span class="icon-i-title"></span>
-          <span class="icon-m-ra"></span>
+      <a v-rep="'space_creatorButton_click'"
+         class="i-m-title"
+         href="https://member.bilibili.com/platform/home"
+         target="_blank">
+        <span class="icon-i-title"></span>
+        <span class="icon-m-ra"></span>
       </a>
     </div>
     <div class="i-m-r2 clearfix">
-      <a href="https://member.bilibili.com/platform/upload/video/frame"
-        class="i-m-btn i-m-upload"
-        target="_blank"
-        v-rep="'space_viedoUploadButton_click'">
+      <a v-rep="'space_viedoUploadButton_click'"
+         class="i-m-btn i-m-upload"
+         href="https://member.bilibili.com/platform/upload/video/frame"
+         target="_blank">
         <span class="i-m-u-icon icon"></span>
         <span class="i-m-text">视频投稿</span>
       </a>
-      <a href="https://member.bilibili.com/platform/upload-manager/article"
-        class="i-m-btn i-m-v"
-        target="_blank"
-        v-rep="'space_videoManageButton_click'">
+      <a v-rep="'space_videoManageButton_click'"
+         class="i-m-btn i-m-v"
+         href="https://member.bilibili.com/platform/upload-manager/article"
+         target="_blank">
         <span class="i-m-v-icon icon"></span>
         <span class="i-m-text">内容管理</span>
       </a>
@@ -39,5 +39,4 @@ export default {
   },
 }
 </script>
-<style lang="less"
-  src="./draft.less"></style>
+<style lang="less"></style>

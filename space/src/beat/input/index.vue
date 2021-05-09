@@ -5,25 +5,26 @@
     'is-diabled': disabled,
     'be-input--append': $slots.append || maxlength
     }">
-    <input class="be-input_inner"
-      v-if="type === 'input'"
-      v-bind="$props"
-      :value="currentValue"
-      @input="handleInput"
-      @focus="handleFocus"
-      @blur="handleBlur" />
-    <textarea class="be-textarea_inner"
-      v-if="type === 'textarea'"
-      v-bind="$props"
-      :value="currentValue"
-      :rows="rows"
-      @input="handleInput"
-      @focus="handleFocus"
-      @blur="handleBlur"></textarea>
-    <div class="be-input-word-counter"
-      v-if="maxlength">{{currentValue.length}}/{{maxlength}}</div>
+    <input v-if="type === 'input'"
+           v-bind="$props"
+           :value="currentValue"
+           class="be-input_inner"
+           @blur="handleBlur"
+           @focus="handleFocus"
+           @input="handleInput"/>
+    <textarea v-if="type === 'textarea'"
+              v-bind="$props"
+              :rows="rows"
+              :value="currentValue"
+              class="be-textarea_inner"
+              @blur="handleBlur"
+              @focus="handleFocus"
+              @input="handleInput"></textarea>
+    <div v-if="maxlength"
+         class="be-input-word-counter">{{ currentValue.length }}/{{ maxlength }}
+    </div>
     <slot v-if="$slots.append"
-      name="append"></slot>
+          name="append"></slot>
   </div>
 </template>
 <script>
@@ -37,7 +38,7 @@ export default {
   props: {
     // 初始值
     value: {
-      type: [ String, Number ],
+      type: [String, Number],
       default: '',
     },
     // input textarea
@@ -92,11 +93,13 @@ export default {
   color: #222;
   font-size: 14px;
   border-radius: 4px;
+
   &--append {
     .be-input_inner {
       padding: 0 60px 0 5px;
     }
   }
+
   &_inner {
     display: block;
     width: 100%;
@@ -108,10 +111,12 @@ export default {
     outline: none;
     box-sizing: border-box;
     transition: all .3s ease;
+
     &:focus {
       border-color: #00a1d6;
     }
   }
+
   &.is-diabled {
     .be-input_inner {
       background-color: darken(#fff, 10%);
@@ -155,10 +160,12 @@ export default {
     box-sizing: border-box;
     resize: none;
     transition: all .3s ease;
+
     &:hover,
     &:focus {
       border-color: #00a1d6;
-      &~.be-input-word-counter {
+
+      & ~ .be-input-word-counter {
         opacity: 1;
       }
     }

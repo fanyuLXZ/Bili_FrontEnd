@@ -11,13 +11,15 @@
 import InternationalHeader from "./components/international-header";
 import InternationalFooter from "g-public/components/international-footer";
 import {mapMutations, mapState} from "vuex";
-
 export default {
   name: 'App',
   components: {InternationalHeader,InternationalFooter},
   metaInfo: {
     meta: [
-      {name: 'referrer', content: 'no-referrer'}
+      {name: 'referrer', content: 'no-referrer'},
+      {name: 'viewport', content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"7'},
+      {name: 'spm_prefix', content: '333.880'},
+      {name: 'renderer', content: 'webkit'}
     ]
   },data() {
     return {

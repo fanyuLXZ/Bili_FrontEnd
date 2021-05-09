@@ -1,111 +1,75 @@
 <!--  作者：欧阳苏蓉 动态--内容  -->
 <template>
 
-  <div class="content">
-    <div class="content" @scroll="onScroll">
-
-      <div class="" v-for="(item,index) in dynamicList" :key="index">
-        <div data-did="513359857300617358" class="card" style="margin-top: 8px;">
-          <a target="_blank" id="dynamicId_513359857300617358" class="user-head c-pointer avatar-comp" href="//space.bilibili.com/433899970/dynamic">
-            <div class="bili-avatar">
-              <img class="bili-avatar-img bili-avatar-face bili-avatar-img-radius"
-                   data-src="https://i1.hdslb.com/bfs/face/31f967d648f65c5754981fe6b4b6a21def194dc2.jpg@96w_96h_1c.webp"
-                   :src="item.face">
-              <span v-if="item.vip===1" class="bili-avatar-icon" style="background-image: url('https://i0.hdslb.com/bfs/vip/icon_Certification_big_member_22_3x.png@32w_32h_1c.webp')"></span>
-            </div>
-          </a>
-          <div class="main-content" style="padding-bottom: 0px;">
-            <div class="user-name fs-16 ls-0 d-i-block">
-              <a href="//space.bilibili.com/433899970/dynamic" target="_blank" class="c-pointer">{{ item.name }}</a>
-            </div>
-            <div class="time fs-12 ls-0 tc-slate">
-              <a href="//t.bilibili.com/513359857300617358?tab=2" target="_blank" class="detail-link tc-slate">{{ item.date }}</a>
-              <span></span>
-            </div>
-            <div class="card-content">
-              <div data-ori-did="0" class="post-content">
-                <div class="original-card-content">
-                  <div class="text p-rel description">
-                    <div class="content"><!---->
-                      <div class="content-full">{{ item.text }}</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div></div>
-            </div>
-            <div class="button-bar tc-slate">
-              <div class="single-button c-pointer">
-                <span class="text-bar">
-                  <i class="bp-svg-icon single-icon transmit"></i>
-                  <span class="text-offset"> {{ item.repost }} </span>
-                </span>
-              </div>
-              <div class="single-button c-pointer">
-                <span class="text-bar">
-                  <i class="bp-svg-icon single-icon comment"></i>
-                  <span class="text-offset"> {{ item.comment }} </span>
-                </span>
-              </div>
-              <div class="single-button c-pointer p-rel">
-                <span class="text-bar">
-                  <i class="custom-like-icon zan"></i>
-                  <span class="text-offset">{{ item.like }}</span>
-                </span>
-              </div>
-            </div>
-            <!--  操作  -->
-            <operating></operating>
-          </div>
-        </div>
+  <div @scroll="onScroll">
+    <div class="loading-content" v-if="cards.length<=0" style="background-color: white">
+      <div class="loading-text tc-slate">
+        <img src="//s1.hdslb.com/bfs/seed/bplus-common/dynamic-assets/loading.png" class="loading-img">
+        <span>loading...</span>
       </div>
     </div>
-    <div class="div-load-more tc-slate">
-      <div class="load-more"><span>{{status===1?'加载更多':'加载中。。。'}}</span></div>
+    <div  class="content "  v-else>
+      <div class=" card" style="margin-top: 8px;" v-for="(item,index) in cards" :key="index">
+        <dynamicCard :item="item" :isComment="isComment" :index="index" :mid="mid"></dynamicCard>
+      </div>
     </div>
 
+    <div class="div-load-more tc-slate" v-if="cards.length>0">
+      <div class="load-more"><span>{{status===1?'加载更多':'加载中。。。'}}</span></div>
+    </div>
   </div>
 </template>
 
 <script>
 import {formatDate} from "@/assets/js/time";
-import operating from "@/components/Operating"
+import dynamicCard from "@/components/DynamicCard"
+import axios from "axios";
 export default {
   name: "Content",
   components:{
-    operating,
+    dynamicCard
   },
+
+  props:{
+    mid:Number    //当前登录的id
+  },
+
   data() {
     return {
       activeIndex:-1,   //是否显示删除按钮
       confirmDeletion:true,    //是否显示确认删除
-      deliverParams: {page:1},
+      isComment:false,    //展开评论
+      offset_dynamic_id:0,
       status:1,
       success:false,
-      dynamicList: [
+      cards: [
         {
-          uid: 1,    //用户id
-          face: "https://i1.hdslb.com/bfs/face/31f967d648f65c5754981fe6b4b6a21def194dc2.jpg@96w_96h_1c.webp",   //头像
-          dynamic_id:1111111,    //动态编号
-          vip:1,   //是否是大会员
-          name: "堀与宫村",    //用户名字
-          text: "第13话 至少，将这天空。",    //内容
-          date:formatDate(Date.parse("2021-04-16T10:00:00.100")),
-          repost: 2401,   //转发数
-          comment: 9658,   //评论数
-          like: 216000,   //点赞数
-        },{
-          uid: 2,    //用户id
-          face: "https://i1.hdslb.com/bfs/face/31f967d648f65c5754981fe6b4b6a21def194dc2.jpg@96w_96h_1c.webp",   //头像
-          dynamic_id:1111111,    //动态编号
-          vip:1,   //是否是大会员
-          name: "堀与宫村",    //用户名字
-          text: "第13话 至少，将这天空。",    //内容
-          date:formatDate(Date.parse("2021-04-16T10:00:00.100")),
-          repost: 2401,   //转发数
-          comment: 9658,   //评论数
-          like: 216000,   //点赞数
-        },
+          desc:{
+            uid:0,    //发布人id
+            type:0,   //动态类型
+            comment: 0,   //评论数
+            like: 0,   //点赞数
+            is_liked:0,    //是否点赞
+            timestamp:" ",    //发布时间
+            dynamic_id:0,    //动态编号
+            user_profile:{    //用户信息
+              info:{
+                uid: 1,    //用户id
+                uname:"",    //用户姓名
+                face: " ",   //头像
+              },
+              vip:{   //用户会员
+                status:true,    //是否是会员
+                type:1,   //会员类型
+                due_date:" "   //会员有效时间
+              },
+              level_info:{    //等级对象
+                current_level:0
+              }
+            },
+          },
+          card:" ",    //内容
+        }
       ]
     }
   },
@@ -140,26 +104,39 @@ export default {
 
     // 滚动事件触发下拉加载
     onScroll () {
-      if (this.getScrollHeight() - this.getClientHeight() - this.getScrollTop() <= 0) {
+      if (this.getScrollTop()===this.getScrollHeight()-this.getClientHeight()) {
         if (this.status === 1) {
           this.status = 0
-          // 页码，分页用，默认第一页
-          this.deliverParams.page += 1
           // 调用请求函数
-          console.log('触发！！！')
+          axios.get("/api/dynamic/dynamic_history",{params:{"offset_dynamic_id":this.offset_dynamic_id}}).then((res)=>{
+            //获取返回的json对象
+            res.data.data.cards.forEach((v)=>{
+              v.desc.timestamp=formatDate(Date.parse(v.desc.timestamp))
+              this.cards.push(v)
+            })
+            this.status=1
+            this.offset_dynamic_id = this.cards[this.cards.length-1].desc.dynamic_id
+          })
         }
       }
     },
   },
   mounted () {
+    this.cards=[]
     //监听滚动事件
     this.$nextTick(function () {
       window.addEventListener('scroll', this.onScroll)
     })
+
+    axios.get("/api/dynamic/dynamic_new",).then((res)=>{
+
+      //获取返回的json对象
+      res.data.data.cards.forEach((v)=>{
+        v.desc.timestamp=formatDate(Date.parse(v.desc.timestamp))
+        this.cards.push(v)
+      })
+      this.offset_dynamic_id = this.cards[this.cards.length-1].desc.dynamic_id
+    })
   },
 }
 </script>
-
-<style>
-
-</style>

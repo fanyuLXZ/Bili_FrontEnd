@@ -1,58 +1,58 @@
 <template>
-  <ul :class="wrapClasses"
-    v-show="total > 1">
-    <li title="上一页"
-      :class="prevClasses"
-      @click="prev">
+  <ul v-show="total > 1"
+      :class="wrapClasses">
+    <li :class="prevClasses"
+        title="上一页"
+        @click="prev">
       <a>上一页</a>
     </li>
-    <li title="第一页"
-      :class="firstPageClasses"
-      @click="changePage(1)">
+    <li :class="firstPageClasses"
+        title="第一页"
+        @click="changePage(1)">
       <a>1</a>
     </li>
     <li v-if="current - 3 > 1"
-      :class="[prefixCls + '-item-jump-prev']"></li>
-    <li :title="current - 2"
-      v-if="current - 2 > 1"
-      :class="[prefixCls + '-item']"
-      @click="changePage(current - 2)">
+        :class="[prefixCls + '-item-jump-prev']"></li>
+    <li v-if="current - 2 > 1"
+        :class="[prefixCls + '-item']"
+        :title="current - 2"
+        @click="changePage(current - 2)">
       <a>{{ current - 2 }}</a>
     </li>
-    <li :title="current - 1"
-      v-if="current - 1 > 1"
-      :class="[prefixCls + '-item']"
-      @click="changePage(current - 1)">
+    <li v-if="current - 1 > 1"
+        :class="[prefixCls + '-item']"
+        :title="current - 1"
+        @click="changePage(current - 1)">
       <a>{{ current - 1 }}</a>
     </li>
-    <li :title="current"
-      v-if="current !== 1 && current !== allPages"
-      :class="[prefixCls + '-item',prefixCls + '-item-active']">
+    <li v-if="current !== 1 && current !== allPages"
+        :class="[prefixCls + '-item',prefixCls + '-item-active']"
+        :title="current">
       <a>{{ current }}</a>
     </li>
-    <li :title="current + 1"
-      v-if="current + 1 < allPages"
-      :class="[prefixCls + '-item']"
-      @click="changePage(current + 1)">
+    <li v-if="current + 1 < allPages"
+        :class="[prefixCls + '-item']"
+        :title="current + 1"
+        @click="changePage(current + 1)">
       <a>{{ current + 1 }}</a>
     </li>
-    <li :title="current + 2"
-      v-if="current + 2 < allPages"
-      :class="[prefixCls + '-item']"
-      @click="changePage(current + 2)">
+    <li v-if="current + 2 < allPages"
+        :class="[prefixCls + '-item']"
+        :title="current + 2"
+        @click="changePage(current + 2)">
       <a>{{ current + 2 }}</a>
     </li>
     <li v-if="current + 3 < allPages"
-      :class="[prefixCls + '-item-jump-next']"></li>
-    <li :title="'最后一页:' + allPages"
-      v-if="allPages > 1"
-      :class="lastPageClasses"
-      @click="changePage(allPages)">
+        :class="[prefixCls + '-item-jump-next']"></li>
+    <li v-if="allPages > 1"
+        :class="lastPageClasses"
+        :title="'最后一页:' + allPages"
+        @click="changePage(allPages)">
       <a>{{ allPages }}</a>
     </li>
-    <li title="下一页"
-      :class="nextClasses"
-      @click="next">
+    <li :class="nextClasses"
+        title="下一页"
+        @click="next">
       <a>下一页</a>
     </li>
     <span :class="[prefixCls + '-total']">
@@ -60,8 +60,8 @@
     </span>
     <span :class="ElevatorClasses">
       跳至
-      <input type="text" class="space_input"
-        @keyup.enter="changePageInput"> 页
+      <input class="space_input" type="text"
+             @keyup.enter="changePageInput"> 页
     </span>
   </ul>
 </template>
@@ -71,6 +71,7 @@ const prefixCls = 'be-pager'
 function isValueNumber(value) {
   return (/^[1-9][0-9]*$/).test(value + '')
 }
+
 export default {
   name: 'be-pagination',
   props: {
@@ -209,4 +210,4 @@ export default {
 }
 </script>
 <style lang="less"
-  src="./pagination.less"></style>
+       src=""></style>

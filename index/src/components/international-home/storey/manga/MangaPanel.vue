@@ -138,14 +138,14 @@ export default {
       customReport('home_manga_tab_reload')
       // tab-人气推荐
       if(this.selectedTab === 0) {
-        customReport('bilibili-manga.mainsite-recommend.index.0.click')
+        customReport('bilibili-manga.mainsite-recommend.home.0.click')
         // 刷新时获取 A 池内容,传值 1
         this.getMangeListData(2)
         return
       }
 
       // tab-免费漫画推荐
-      customReport('bilibili-manga.mainsite-free.index.0.click')
+      customReport('bilibili-manga.mainsite-free.home.0.click')
       this.handleFreeExchange(LEFT_MAX_COUNT)
     },
     async getMangeListData(type) {

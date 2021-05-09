@@ -11,7 +11,7 @@
       <div class="coin-inner">
         <div class="coin-index">
           <!--  硬币余额  -->
-          <coinIndexLeft></coinIndexLeft>
+          <coinIndexLeft :money="money"></coinIndexLeft>
           <!--  硬币帮助  -->
           <coinIndexRight></coinIndexRight>
         </div>
@@ -23,11 +23,29 @@
 <script>
 import coinIndexRight from "@/components/coin/coinIndexRight";
 import coinIndexLeft from "@/components/coin/coinIndexLeft";
+import axios from "axios";
 export default {
   name: "coin",
+
+  data(){
+    return{
+      money:0,
+    }
+  },
+
   components:{
     coinIndexRight,
     coinIndexLeft
+  },
+
+  mounted() {
+    console.log(1)
+    axios.get("/api/member/all-info").then(
+        (res)=>{
+          //获取返回的json对象
+          console.log(res)
+          this.money = res.data.data.money
+        })
   }
 }
 </script>

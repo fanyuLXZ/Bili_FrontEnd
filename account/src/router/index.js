@@ -37,7 +37,7 @@ const router = new Router({
           component:Mall
         },
         {
-          path:"/face/upload",
+          path:"/face/article",
           component:Upload
         },
         {

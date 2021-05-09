@@ -1,0 +1,217 @@
+.del-modal .modal{
+    width: 420px;
+    height: 173px;
+    padding: 24px;
+    background-color: #fff
+}
+
+.del-modal .modal .check-box{
+    display: inline-block;
+    position: relative;
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+    border: 1px solid #ccd0d7;
+    border-radius: 2px;
+    line-height: normal;
+    vertical-align: middle
+}
+
+.del-modal .modal .check-box.checked{
+    background: #00a1d6;
+    border-color: #00a1d6
+}
+
+.del-modal .modal .check-box.checked:after {
+    content: "\2713";
+    color: #fff;
+    position: absolute;
+    top: -3.5px;
+    left: 2px
+}
+
+.del-modal .modal .modal-head{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between
+}
+
+.del-modal .modal .modal-head .title{
+    font-size: 16px;
+    color: #212121;
+    line-height: 20px;
+    font-weight: bolder
+}
+
+.del-modal .modal .modal-head .iconclose{
+    font-size: 14px;
+    color: #999;
+    cursor: pointer
+}
+
+.del-modal .modal .modal-content{
+    padding-top: 24px;
+    font-size: 14px;
+    color: #212121;
+    line-height: 18px
+}
+
+.del-modal .modal .modal-content .bcc-checkbox{
+    margin-top: 16px
+}
+
+.del-modal .modal .modal-footer{
+    text-align: right;
+    margin-top: 32px;
+    margin-right: 8px
+}
+
+.del-modal .modal .modal-footer .bcc-button{
+    line-height: 18px
+}
+
+.del-modal .modal .modal-footer .bcc-button + .bcc-button{
+    margin-left: 16px
+}
+
+.new-link-top-wrap {
+    position: relative
+}
+
+.new-link-top-wrap.home-wrap {
+    width: inherit;
+    padding: 16px 0 0 0;
+    margin-left: 72px;
+    margin-right: 72px
+}
+
+.new-link-top-wrap.home-wrap.pos-center {
+    width: 1283px;
+    margin: 0 auto
+}
+
+.new-link-top-wrap .link-top-item {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    padding-top: 26px;
+    height: 100%;
+    margin-left: 40px;
+    font-size: 16px;
+    color: #505050;
+    border-bottom: 3px solid transparent;
+    letter-spacing: .5px;
+    line-height: 20px
+}
+
+.new-link-top-wrap .link-top-item.active {
+    color: #00a1d6;
+    border-bottom: 3px solid #00a1d6;
+    font-weight: bolder
+}
+
+.new-link-top-wrap .new-link-top-container {
+    background: #fff;
+    height: 64px;
+    display: -webkit-box !important;
+    display: -webkit-flex !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    border-bottom: 1px solid #e7e7e7;
+    position: relative
+}
+
+.new-link-top-wrap .new-link-top-container .right-tips {
+    font-size: 14px;
+    color: #999;
+    position: absolute;
+    right: 40px;
+    top: 0;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    padding-top: 26px;
+    height: 100%
+}
+
+.new-link-top-wrap .new-link-top-container .right-tips i {
+    margin-left: 4px;
+    font-size: 14px
+}
+
+.new-link-top-wrap .bcc-icon-ic_help {
+    cursor: pointer;
+    margin-left: 5px
+}
+
+.new-link-top-wrap .bcc-icon-ic_help:hover .arrow-tip, .new-link-top-wrap .bcc-icon-ic_help:hover .content-wrap {
+    display: block
+}
+
+.new-link-top-wrap .arrow-tip {
+    border-width: 0 6px 6px 6px;
+    border-color: transparent transparent rgba(223, 148, 148, .05) transparent;
+    top: 42px;
+    right: 0;
+    display: none;
+    width: 0;
+    height: 0;
+    position: absolute;
+    border-style: solid
+}
+
+.new-link-top-wrap .arrow-tip:after {
+    display: block;
+    width: 0;
+    height: 0;
+    content: " ";
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid #fff;
+    position: absolute;
+    left: -6px;
+    top: .5px;
+    z-index: 101
+}
+
+.new-link-top-wrap .content-wrap {
+    display: none;
+    width: 411px;
+    position: absolute;
+    background: #fff;
+    font-size: 14px;
+    top: 47px;
+    right: -20px;
+    padding: 30px 24px 24px 24px;
+    -webkit-box-shadow: 0 1px 20px 0 rgba(0, 0, 0, .1);
+    box-shadow: 0 1px 20px 0 rgba(0, 0, 0, .1);
+    z-index: 100
+}
+
+.new-link-top-wrap .content-wrap .tag {
+    color: #212121;
+    word-break: keep-all;
+    float: left
+}
+
+.new-link-top-wrap .content-wrap p span {
+    line-height: 18px;
+    display: block
+}
+
+.new-link-top-wrap .content-wrap p span.content {
+    color: #757575;
+    word-break: break-all
+}
+
+.new-link-top-wrap .content-wrap p + p {
+    margin-top: 16px;
+    line-height: 18px
+}

@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import { getOnline } from '../../../api'
+import { getOnline } from 'g-public/api'
 
 export default {
   props: {

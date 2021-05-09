@@ -11,7 +11,8 @@ import actListBody from '../components/blackboard/actListBody.vue'
 import protocolMenuBody from "../components/blackboard/ProtocolMenuBody";
 import player from "../components/video/Player";
 import douga from "../components/Zoning/normalZone";
-
+import videohome from "../components/video/videohome";
+import history from "../views/history";
 Vue.use(Router)
 
 const createRouter = () => (new Router({
@@ -21,6 +22,11 @@ const createRouter = () => (new Router({
       path: '/',
       name: "home",
       component: home
+    },
+    {
+      path: '/videohome',
+      name: "videohome",
+      component: videohome
     },
     {
       path: '/blackboard/about',
@@ -71,6 +77,11 @@ const createRouter = () => (new Router({
       path: '/zone/douga',
       name: "douga",
       component: douga
+    },
+    {
+      path: '/account/history',
+      name: "history",
+      component: history
     },
   ],
 }))

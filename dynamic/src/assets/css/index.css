@@ -8323,14 +8323,14 @@ input[type=number]{
     visibility: hidden;
 }
 
-.placeholder-shown::before {
-    content: attr(placeholder);
-    color: #555;
-    position: absolute;
-    top: 6px;
-    left: 14px;
-    pointer-events: none;
-}
+/*.placeholder-shown::before {*/
+/*    content: attr(placeholder);*/
+/*    color: #555;*/
+/*    position: absolute;*/
+/*    top: 6px;*/
+/*    left: 14px;*/
+/*    pointer-events: none;*/
+/*}*/
 .editor:focus,
 .editor:hover,
 .editor.active{
@@ -8709,7 +8709,6 @@ input[type=number]{
     height: 188px;
     background: #fff;
     border-radius: 4px;
-    overflow: hidden;
 }
 .user-panel .loading-content{
     width: 100%;
@@ -10360,4 +10359,4 @@ textarea-ms-input-placeholder {
 }
 
 
-/*# sourceMappingURL=index.d9d3f225.css.map*/
+/*# sourceMappingURL=home.d9d3f225.css.map*/

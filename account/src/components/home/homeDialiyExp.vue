@@ -80,17 +80,16 @@
 <script>
 export default {
   name: "home-dialy-exp-item",
-  data() {
-    return {
-      isLogin: true,
-      watch:true,
-      coins:5,
-      share:false
-    }
-  }
+
+  props:{
+    isLogin: Boolean,
+    watch:Boolean,
+    coins:Number,
+    share:Boolean,
+  },
 }
 </script>
 
-<style scoped>
+<style>
 
 </style>

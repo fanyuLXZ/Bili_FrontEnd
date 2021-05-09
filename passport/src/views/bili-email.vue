@@ -32,7 +32,7 @@
                                          <div data-v-21ab2178="" class="photo-code float-left el-input"><!---->
                                          <input type="text" autocomplete="off" placeholder="请输入内容" class="el-input__inner">
                                          <!----><!----><!----></div>
-                                          <img data-v-21ab2178="" src="//passport.bilibili.com/web/captcha/img?key=0.35188569170507034" alt="" class="float-left verify-photo"> 
+                                          <img data-v-21ab2178="" src="#" alt="" class="float-left verify-photo"> 
                                           <button data-v-21ab2178="" type="button" class="el-button verify-btn float-left el-button--primary"><!----><!----><span>验证</span>
                                           </button></div> 
                                           <div data-v-21ab2178="" class="form-message"></div>

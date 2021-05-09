@@ -2,18 +2,18 @@
   <div :class="{
       'is-checked': value
     }"
-    class="be-switch-container">
-    <input class="be-switch-input"
-      ref="checkbox"
-      type="checkbox"
-      :value="value"
-      :disabled="disabled"
-      @change="handleChange" />
+       class="be-switch-container">
+    <input ref="checkbox"
+           :disabled="disabled"
+           :value="value"
+           class="be-switch-input"
+           type="checkbox"
+           @change="handleChange"/>
     <div class="be-switch">
       <i class="be-switch-cursor"></i>
     </div>
     <div v-if="onLabel && offLabel"
-      class="be-switch-label">
+         class="be-switch-label">
       <span>{{ value ? onLabel : offLabel }}</span>
     </div>
   </div>
@@ -52,10 +52,12 @@ export default {
   height: 20px;
   cursor: pointer;
   white-space: nowrap;
+
   &.is-checked {
     .be-switch {
       background-color: #00a1d6;
     }
+
     .be-switch-cursor {
       left: 17px;
     }
@@ -72,6 +74,7 @@ export default {
   vertical-align: middle;
   cursor: pointer;
   transition: background-color .2s ease;
+
   &-cursor {
     position: absolute;
     top: 2px;
@@ -82,6 +85,7 @@ export default {
     background: #fff;
     transition: left .2s ease;
   }
+
   &-label {
     display: inline-block;
     line-height: 20px;
@@ -89,6 +93,7 @@ export default {
     margin-left: 3px;
     vertical-align: middle;
   }
+
   &-input {
     position: absolute;
     left: 0;

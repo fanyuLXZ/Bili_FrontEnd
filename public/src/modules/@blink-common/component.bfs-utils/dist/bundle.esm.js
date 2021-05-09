@@ -627,7 +627,7 @@ function setDPRCompatibleOpts(opts) {
     return opts;
 }
 
-/// <reference path="../index.d.ts" />
+/// <reference path="../home.d.ts" />
 /**
  * BFS Class.
  *

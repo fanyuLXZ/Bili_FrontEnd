@@ -1,4 +1,3 @@
-import './assets/style/base.less'
 
 import Vue from 'vue'
 import Meta from 'vue-meta'
@@ -18,7 +17,6 @@ import 'g-public/modules/bili-collect'
 import 'g-public/modules/@bilibili/van/dist/style/style.css'
 
 import LiveLazyload from 'g-public/js/plugin/lazyload'
-
 
 Vue.use(Image)
 Vue.use(Danmu)

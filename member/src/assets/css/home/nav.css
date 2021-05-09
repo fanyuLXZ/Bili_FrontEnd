@@ -1,0 +1,60 @@
+#bili-data-center {
+    background: #fff;
+    margin-top: 16px
+}
+
+#bili-data-center.home-wrap {
+    padding: 0
+}
+
+#bili-data-center .dc-page {
+    padding-left: 0;
+    padding-right: 0
+}
+
+.test-nav .router-link-active {
+    color: #00a1d6
+}
+
+.pie-empty.none {
+    height: 190px;
+    width: 100%;
+    font-size: 14px;
+    color: #999;
+    letter-spacing: 0;
+    line-height: 18px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    background: #fff
+}
+
+.pie-empty-wrapper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 190px;
+    height: 190px;
+    line-height: 190px;
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 50%;
+    background-color: #ccc
+}
+
+.normal-empty {
+    line-height: 200px;
+    font-size: 14px;
+    text-align: center;
+    color: #999
+}
