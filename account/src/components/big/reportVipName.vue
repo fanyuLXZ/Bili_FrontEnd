@@ -41,7 +41,7 @@
       <div class="continuity-box">
         <div class="continuity-content">
           <div class="continuity-header">自动续费管理</div>
-          <span class="continuity-close" @click="showCont"></span>
+          <span class="continuity-close" @click="show=!show"></span>
           <div class="continuity-bottom">
             <ul data-v-ebb4a8fc="" class="tabs-wrapper">
               <li data-v-ebb4a8fc="" class="tab-normal-item active">
@@ -137,7 +137,6 @@ export default {
         .then(
             (res)=>{
               //获取返回的json对象
-              console.log(res)
               this.status = res.data.data.vip_status
               this.type = res.data.data.vip_type
               this.valid_period = res.data.data.due_date

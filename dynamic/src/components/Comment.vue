@@ -50,7 +50,6 @@ export default {
   methods:{
     sortBtn(data){
       this.sortWay = data
-      console.log(this.data)
     }
   }
 }

@@ -17,6 +17,7 @@ import FavList from './devsidenve/favlist'
 import HeaderInfo from './devsidenve/headerinfo'
 import FaViodeList from './devsidenve/faviodelist'
 export default {
+  name:"siden-ve",
 components:{
   ContAiner,
   FavList,

@@ -39,11 +39,9 @@ export default {
   },
 
   mounted() {
-    console.log(1)
     axios.get("/api/member/all-info").then(
         (res)=>{
           //获取返回的json对象
-          console.log(res)
           this.money = res.data.data.money
         })
   }

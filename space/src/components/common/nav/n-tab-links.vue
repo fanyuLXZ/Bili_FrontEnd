@@ -1,6 +1,6 @@
 <template>
   <div class="n-tab-links">
-    <n-btn v-for="item in items" :key="item.name" :name="item.name" :icon_class="item.icon_class" :is_active="item.is_active" :href="item.href" :num="item.num">
+    <n-btn v-for="item in items" :key="item.name" :name="item.name" :icon_class="item.icon_class" :is_active="item.is_active" :to="item.to" :num="item.num">
       {{ item.text }}
     </n-btn>
   </div>
@@ -15,6 +15,6 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 
 </style>

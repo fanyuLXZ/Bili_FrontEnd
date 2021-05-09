@@ -160,7 +160,7 @@ export const fetchMyInfo = ({commit}, {mid, cookie}) => {
         }).then(rs => rs.data)
     } else {
         // 客户端得走jsonp，因为必须得带上cookie
-        request = Vue.http.jsonp('//api.bilibili.com/x/space/myinfo')
+        // request = Vue.http.jsonp('//api.bilibili.com/x/space/myinfo')
     }
     return request.then(rs => {
         const {code, data} = rs

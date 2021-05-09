@@ -1,7 +1,6 @@
 <!--  作者：欧阳苏蓉 动态文章详情 二级评论  -->
 <template>
   <div class="reply-item reply-wrap" >
-
     <div v-for="(item,index) in SubCommentsList" :key="index">
       <a href="//space.bilibili.com/442257063" target="_blank" class="reply-face" style="top: 0px;">
         <img src="//i0.hdslb.com/bfs/face/aa9a2adb15baae90b95304cb9515482fb80c5804.jpg@52w_52h.webp" alt="">
@@ -21,7 +20,6 @@
         <span class="hate "><i></i><span></span></span>
       </div>
     </div>
-
   </div>
 </template>
 
@@ -33,6 +31,6 @@ export default {
   props:{
     SubCommentsList:Array,
     isPage:Boolean
-  },
+  }
 }
 </script>

@@ -16,10 +16,10 @@
                   <img id="clip_src_img">
                   <div class="shadow-box"></div>
                   <div class="crop-wrap">
-                    <div class="shadow-box" style="width: 0px; height: 0px; left: 0px; top: 0px;">
-                      <img class="shadow-img" style="width: 0px; height: 0px; top: 0px; left: 0px;">
+                    <div class="shadow-box" :style="'width: '+upload_image_info.width+'px; height: '+upload_image_info.width+'px; left: 0px; top: 0px;'">
+                      <img class="shadow-img" :src="image" style="'width: '+upload_image_info.width+'px; height: '+upload_image_info.width+'px; top: 0px; left: 0px;'">
                     </div>
-                    <div class="crop-box" style="width: 0px; height: 0px; left: 0px; top: 0px;">
+                    <div class="crop-box" style="'width: '+crop_box_size+'px; height: '+crop_box_size+'px; left: 0px; top: 0px;'">
                       <span class="drag-point point-lt"></span>
                       <span class="drag-point point-lb"></span>
                       <span class="drag-point point-rt"></span>
@@ -28,26 +28,26 @@
                   </div>
                 </div>
               </div>
-              <label for="file_input" class="first-change-lb">
+              <label for="file_input" class="first-change-lb" v-show="!is_upload">
                 <i></i>
                 <span>选择图片</span>
               </label>
-              <div class="reset-img" style="display: none;">
+              <div class="reset-img" v-show="is_upload">
                 <label for="file_input">
                   <i></i>&nbsp;重新选择
                 </label>
               </div>
-              <input type="file" id="file_input" accept="image/png,image/jpg,image/jpeg">
+              <input type="file" ref="file_input" @change="change_image" id="file_input" accept="image/png,image/jpg,image/jpeg">
             </div>
             <div class="border-line"></div>
             <div class="img-preview-wrap">
-              <div class="pre-container" :style="{backgroundImage:'url(${store.state.face})'}">
-                <img id="clip_res_img" style="display: none;"></div>
+              <div class="pre-container" :style="{'background-image':'url(\''+image+'\')'}">
+                <img id="clip_res_img" v-show="is_upload" :src="image"></div>
               <div class="pre-info">当前头像</div>
             </div>
           </div>
           <p class="descript">请选择图片上传：大小180 * 180像素支持JPG、PNG等格式，图片需小于2M</p>
-          <div class="modal-footer"><input type="button" value="更新" class="modal-btn btn-confirm disabled"></div>
+          <div class="modal-footer"><input type="button" value="更新" class="modal-btn btn-confirm " :class="[is_upload?'':'disabled']" @click="upload"></div>
         </div> <!---->
       </div>
     </div>
@@ -56,9 +56,49 @@
 
 
 <script>
-
+// import axios from "axios";
 export default {
   name: "upload",
+  data(){
+    return {
+      image:"",
+      is_upload:false,
+      upload_image_info:{
+        width:0,
+        height:0
+      },
+    }
+  },
+  methods:{
+    change_image(event){
+      let image_file = event.target.files[0];
+      let reader = new FileReader();
+      reader.addEventListener('load',()=> {
+        let image_tag = new Image();
+        let base64_image = reader.result
+        image_tag.src = typeof(base64_image) === "string"?String(base64_image):""
+        image_tag.onload= ()=> {
+          this.upload_image_info.width = image_tag.width>180?180:image_tag.width
+          this.upload_image_info.height = image_tag.height>180?180:image_tag.height
+        }
+        this.image = reader.result
+        this.is_upload = true
+      })
+      if (image_file) {
+        //在load中返回一个base64编码
+        reader.readAsDataURL(image_file);
+      }
+    },
+    upload(){
+      if (this.is_upload&&this.image!==''){
+        let form  = new FormData()
+        form.set('image',this.$refs.file_input.files[0])
+        // axios.post('/api/image-resource/upload-file',form,{headers:{'Content-Type':'multipart/form-data'}}).then((data)=>{
+        //   console.log(data.data)
+        // })
+      }
+    }
+  }
 }
 </script>
 

@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <international-header v-if="$store.state.isHeadShow" :nav-type="1"/>
+    <international-header v-if="$store.state.isHeadShow" :nav-type="navType" :disableSticky="!userInfo.isLogin"/>
     <router-view/>
     <international-footer v-if="$store.state.isFootShow"/>
   </div>
@@ -17,7 +17,6 @@ export default {
   metaInfo: {
     meta: [
       {name: 'referrer', content: 'no-referrer'},
-      {name: 'viewport', content: 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"7'},
       {name: 'spm_prefix', content: '333.880'},
       {name: 'renderer', content: 'webkit'}
     ]
@@ -30,16 +29,17 @@ export default {
     }
   },
   computed: {
-    ...mapState(['userInfo', 'locsData', 'LNG']),
+    ...mapState(['userInfo', 'locsData', 'LNG','navType']),
     // 顶导服务端渲染需要的数据
     bannerData() {
       return this.locsData && this.locsData[142]
     }
   },
   methods: {
-    ...mapMutations(['SET_USER_INFO']),
+    ...mapMutations(['SET_USER_INFO','SET_NAV_TYPE']),
   },
   mounted() {
+    this.SET_NAV_TYPE(1)
     // 登录后回调
     window.onLoginInfoLoaded(info => {
       this.SET_USER_INFO(info)

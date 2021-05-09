@@ -7,5 +7,11 @@ export default {
   },
   SET_RECOMMEND_DATA: (state, value) => {
     state.recommendData = value || []
+  },
+  SET_NAV_TYPE: (state, value) => {
+    state.navType = value || 0
+  },
+  SET_IS_FOOT_SHOW: (state, value) => {
+    state.isFootShow = value
   }
 }

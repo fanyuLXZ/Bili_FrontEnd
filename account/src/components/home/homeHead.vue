@@ -24,7 +24,7 @@
           <span class="home-top-level-head home-top-level-head-active">LV{{level_info.current_level}}</span>
           <span class="home-top-level-up">
             进度条
-            <span class="home-top-level-upgo" :style="'width:'+level_info.next_exp/level_info.current_exp*100+'%;'"></span>
+            <span class="home-top-level-upgo" :style="'width:'+level_info.current_exp/level_info.next_exp*100+'%;'"></span>
           </span>
           <mask_warp></mask_warp>
         </div>
@@ -78,6 +78,9 @@ export default {
     axios.get("/api/member/all-info").then(
         (res)=>{
           //获取返回的json对象
+          this.$store.state.isLogin = res.data.data.isLogin
+          this.$store.state.uname = res.data.data.uname
+          this.$store.state.face = res.data.data.face
           this.level_info.current_level = res.data.data.level_info.current_level
           this.level_info.current_min = res.data.data.level_info.current_min
           this.level_info.current_exp = res.data.data.level_info.current_exp

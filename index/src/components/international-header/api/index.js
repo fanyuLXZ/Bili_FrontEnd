@@ -12,12 +12,9 @@ export const getUserInfo = () => {
 
 // 获取导航更新数字
 export const getOnline = () => {
-  return {
-    data:{"code":0,"message":"0","ttl":1,"data":{"region_count":{"1":1853,"11":0,"119":45,"129":588,"13":116,"138":2533,"155":1851,"160":23213,"165":0,"167":212,"17":4418,"177":94,"181":6403,"188":924,"202":285,"211":1127,"217":1622,"23":0,"3":3563,"36":5943,"4":19237,"5":4054,"75":446,"76":474}}}
-  }
-  // axios({
-  //   url: '//api.bilibili.com/x/web-interface/online',
-  // })
+  return axios({
+    url: '/api/zoning/online/all',
+  })
 }
 
 // 获取运营位数据
@@ -71,9 +68,6 @@ export const getNavFavList = () => {
     url: '/api/fav/folder',
     withCredentials: true,
   })
-  // {
-  //   data:{"code":0,"message":"0","ttl":1,"data":[{"id":1,"name":"我创建的收藏夹","mediaListResponse":{"count":1,"list":[{"id":84144890,"fid":841448,"mid":26119890,"attr":1,"title":"默认收藏夹","cover":"http://i0.hdslb.com/bfs/archive/3dcb4539ad14b7a433b82c3e08c84977acb99e7c.jpg","upper":{"mid":26119890,"name":"","face":""},"cover_type":2,"intro":"","ctime":1458354728,"mtime":1591072611,"state":0,"fav_state":0,"media_count":1,"view_count":0,"type":0,"link":""}],"has_more":false}},{"id":2,"name":"稍后再看","mediaListResponse":{"count":1,"list":null,"has_more":false}}]}
-  // }
 }
 
 // 获取收藏夹详情

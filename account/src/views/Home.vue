@@ -57,13 +57,12 @@ export default {
   },
 
   mounted() {
-    console.log(1)
     axios.get("/api/member/exp/reward").then(
         (res)=>{
           //获取返回的json对象
           this.isLogin = res.data.data.login
           this.watch = res.data.data.watch
-          this.coins = res.data.data.coins
+          this.coins = res.data.data.coins*10
           this.share = res.data.data.share
           this.email = res.data.data.email
           this.tel = res.data.data.tel
@@ -75,5 +74,4 @@ export default {
 <style type="text/css">
 @import "../assets/personalcenter/index.css";
 @import "https://s1.hdslb.com/bfs/static/account-fe/static/css/app.d70533e21fd1ad58c30455ac07bba416.css";
-@import "../assets/personalcenter/global.css";
 </style>

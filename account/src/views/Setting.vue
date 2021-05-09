@@ -83,11 +83,9 @@ export default {
   },
 
   mounted() {
-    console.log(1)
     axios.get("/api/member/account/info").then(
         (res)=>{
           //获取返回的json对象
-          console.log(res)
           this.uname = res.data.data.uname
           this.userid = res.data.data.userid
           this.birthday = res.data.data.birthday

@@ -67,6 +67,7 @@ export default {
           v.is_flex_top = true
           v.is_flex_bottom = false
           v.isActive = true
+          console.log(v)
         }else if (distance_top + v.flex_bottom + 20 +20 - document.body.clientHeight > 0){
           v.is_flex_top = false
           v.is_flex_bottom = true

@@ -50,7 +50,6 @@ export default {
     axios.get("/api/member/Vip").then(
         (res)=>{
           //获取返回的json对象
-          console.log(res)
           this.vPoint = res.data.vPoint
         })
   }

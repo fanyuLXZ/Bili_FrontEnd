@@ -1,18 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import home from '../components/international-home'
-import aboutBody from '../components/blackboard/aboutBody.vue'
-import contactBody from '../components/blackboard/contactBody.vue'
-import friendsBody from '../components/blackboard/friendsBody.vue'
-import joinBody from '../components/blackboard/joinBody.vue'
-import privacyBody from '../components/blackboard/privacyBody.vue'
-import blackRoomFileBody from '../components/blackboard/blackRoomFileBody.vue'
-import actListBody from '../components/blackboard/actListBody.vue'
-import protocolMenuBody from "../components/blackboard/ProtocolMenuBody";
-import player from "../components/video/Player";
-import douga from "../components/Zoning/normalZone";
-import videohome from "../components/video/videohome";
-import history from "../views/history";
 Vue.use(Router)
 
 const createRouter = () => (new Router({
@@ -21,67 +8,62 @@ const createRouter = () => (new Router({
     {
       path: '/',
       name: "home",
-      component: home
-    },
-    {
-      path: '/videohome',
-      name: "videohome",
-      component: videohome
+      component: resolve => require(['../components/international-home'], resolve),
     },
     {
       path: '/blackboard/about',
       name: "aboutBody",
-      component: aboutBody
+      component: resolve => require(['../components/blackboard/aboutBody.vue'], resolve)
     },
     {
       path: '/blackboard/contact',
       name: "contactBody",
-      component: contactBody
+      component: resolve => require(['../components/blackboard/contactBody.vue'], resolve)
     },
     {
       path: '/blackboard/friends',
       name: "friendsBody",
-      component: friendsBody
+      component: resolve => require(['../components/blackboard/friendsBody.vue'], resolve)
     },
     {
       path: '/blackboard/joinUs',
       name: "joinBody",
-      component: joinBody
+      component: resolve => require(['../components/blackboard/joinBody.vue'], resolve)
     },
     {
       path: '/blackboard/privacy',
       name: "privacyBody",
-      component: privacyBody
+      component: resolve => require(['../components/blackboard/privacyBody.vue'], resolve)
     },
     {
       path: '/blackboard/blackroom',
       name: "blackRoomFileBody",
-      component: blackRoomFileBody
+      component: resolve => require(['../components/blackboard/blackRoomFileBody.vue'], resolve)
     },
     {
       path: '/blackboard/act_list/:num',
       name: "actListBody",
-      component: actListBody
+      component: resolve => require(['../components/blackboard/actListBody.vue'], resolve)
     },
     {
       path: '/blackboard/protocolMenu',
       name: "ProtocolMenuBody",
-      component: protocolMenuBody
+      component: resolve => require(['../components/blackboard/ProtocolMenuBody'], resolve)
     },
     {
-      path: '/video',
-      name: "Player",
-      component: player
+      path: '/video/:bvid',
+      name: "video",
+      component: resolve => require(['../components/video/videohome'], resolve)
     },
     {
       path: '/zone/douga',
       name: "douga",
-      component: douga
+      component: resolve => require(['../components/Zoning/normalZone'], resolve)
     },
     {
       path: '/account/history',
       name: "history",
-      component: history
+      component: resolve => require(['../views/history'], resolve)
     },
   ],
 }))

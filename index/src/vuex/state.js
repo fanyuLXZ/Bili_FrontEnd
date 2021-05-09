@@ -11,6 +11,7 @@ const state = () => ({
     LNG: "",
     isHeadShow: true,
     isFootShow: true,
+    navType:1
 })
 
 export default state

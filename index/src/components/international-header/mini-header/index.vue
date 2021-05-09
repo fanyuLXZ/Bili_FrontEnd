@@ -19,11 +19,9 @@
 
 <script>
 import NavLink from './NavLink'
-import NavUserCenter from './NavUserCenter'
-import NavSearch from '../search/NavSearch'
 
-// const NavUserCenter = ()=>import(/* webpackMode: "lazy" */ './NavUserCenter.vue')
-// const NavSearch = ()=>import(/* webpackMode: "lazy" */ '../search/NavSearch.vue')
+const NavUserCenter = ()=>import(/* webpackMode: "lazy" */ './NavUserCenter.vue')
+const NavSearch = ()=>import(/* webpackMode: "lazy" */ '../search/NavSearch.vue')
 
 export default {
   components: {
@@ -49,14 +47,14 @@ export default {
   },
   data() {
     return {
-      loginStatus: 'LOGIN',
+      loginStatus: 'PENDING',
     }
   },
-  beforeMount() {
-    // window.onLoginInfoLoaded(({ isLogin }) => {
-    //   this.loginStatus = isLogin ? 'LOGIN' : 'LOGOUT'
-    // }, true)
-  },
+  // beforeMount() {
+  //   window.onLoginInfoLoaded(({ isLogin }) => {
+  //     this.loginStatus = isLogin ? 'LOGIN' : 'LOGOUT'
+  //   }, true)
+  // },
   watch: {
     'userInfo.isLogin' (val) {
       this.loginStatus = val ? 'LOGIN' : 'LOGOUT'
