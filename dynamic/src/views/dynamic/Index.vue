@@ -47,6 +47,7 @@ import contentList from "@/components/Content";
 import axios from "axios";
 import qs from 'qs'
 export default {
+
   name: "Index",
 
   components: {
@@ -84,10 +85,8 @@ export default {
           return qs.stringify(params, { indices: false })
         }
       }).then((res)=>{
-        console.log(res)
         //获取返回的json对象
         this.num = res.data.data.items[0].num
-
       })
     })
   }

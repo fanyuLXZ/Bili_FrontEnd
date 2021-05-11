@@ -17,14 +17,10 @@
             :lang="lang"
         />
     <Banner
-        v-if="navType === 1"
+        v-if="navType === 1 || navType === 3"
         :bid="bid"
         :bannerData="bannerData"
-        :userInfo="{
-        isLogin: null,
-        fallback: false,
-        face: 'http://static.hdslb.com/images/member/noface.gif',
-      }"/>
+        :userInfo="userInfo"/>
     <PrimaryMenu
         v-if="navType === 1"
         ref="primaryMenu"
@@ -36,7 +32,8 @@
 <script>
 import Vue from 'vue'
 import {bannerIdMap} from './config/bid'
-import {cookie, getScript} from 'g-public/js/utils'
+// import {cookie, getScript} from 'g-public/js/utils'
+import {cookie} from 'g-public/js/utils'
 import Banner from "./Banner";
 import MiniHeader from './mini-header/index'
 import PrimaryMenu from './primary-menu/index'
@@ -66,18 +63,18 @@ Vue.prototype.isTouchDevice = false
   require('g-public/style/bili-iconfont/iconfont.js')
 
 const us = new UserState()
-  us.getUserState()
-  Vue.prototype.$userStatus = us
-  window.UserStatus = us
-  // // 注册一个全局函数 提供登录后回调
-  window.onLoginInfoLoaded = function (fn, watch) {
-    if (us.userInfo) {
-      fn(us.userInfo)
-      if (watch) us.onLoginUpdate(fn)
-    } else {
-      watch ? us.onLoginUpdate(fn) : us.onLoginOnce(fn)
-    }
+us.getUserState()
+Vue.prototype.$userStatus = us
+window.UserStatus = us
+// // 注册一个全局函数 提供登录后回调
+window.onLoginInfoLoaded = function (fn, watch) {
+  if (us.userInfo) {
+    fn(us.userInfo)
+    if (watch) us.onLoginUpdate(fn)
+  } else {
+    watch ? us.onLoginUpdate(fn) : us.onLoginOnce(fn)
   }
+}
 
   // // 接收播放器登录成功
   // window.loadLoginStatus = function () {
@@ -94,6 +91,7 @@ export default {
     // 0 -> 迷你导航
     // 1 -> 带banner导航
     // 2 -> 半透明迷你导航
+    // 3 -> 带banner不带菜单导航
     navType: {
       type: Number,
       default: 0,
@@ -118,8 +116,8 @@ export default {
     return {
       tid: '',
       userInfo: {
-        isLogin: null,
-        fallback: false,
+        isLogin: false,
+        fallback: true,
         face: '//static.hdslb.com/images/member/noface.gif',
         level_info:{
           current_level:"1",
@@ -237,9 +235,9 @@ export default {
     }
 
     //合并log-reporter.js
-    if (!window.reportObserver) {
-      getScript('//s1.hdslb.com/bfs/seed/log/report/log-reporter.js')
-    }
+    // if (!window.reportObserver) {
+    //   getScript('//s1.hdslb.com/bfs/seed/log/report/log-reporter.js')
+    // }
   },
 }
 </script>

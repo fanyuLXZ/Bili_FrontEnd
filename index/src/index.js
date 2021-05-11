@@ -44,6 +44,16 @@ Vue.prototype.$bfs = new Bfs()
 export function createApp (ssrContext){
     const store = createStore()
     const router = createRouter()
+    // 配置路由守卫
+    router.beforeEach(function (to, from, next) {
+        // 判断是否要去主页
+        if (to.name==="home"){
+            store.commit("SET_NAV_TYPE",1)
+        }else {
+            store.commit("SET_NAV_TYPE",0)
+        }
+        next();
+    })
     const app = new Vue({
         store,
         router,

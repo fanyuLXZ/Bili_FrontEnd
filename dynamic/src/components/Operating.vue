@@ -1,14 +1,14 @@
 <template>
-  <div id="delete" >
+  <div id="delete">
     <div class="button-area c-pointer" @click="show">
       <div class="more-button bp-icon-font icon-more-1" ></div>
     </div>
 
-    <div class="more-panel fs-14 ls-0" v-if="dynamic_id===mid">
+    <div class="more-panel fs-14 ls-0" v-if="dynamic_id===mid" v-show="showBox">
       <p class="child-button c-pointer" @click="DeleteBtn()">删除</p>
     </div>
 
-    <div class="more-panel fs-14 ls-0" v-else>
+    <div class="more-panel fs-14 ls-0" v-else v-show="showBox">
       <p class="child-button c-pointer">取消关注</p>
       <p class="child-button c-pointer">举报</p>
     </div>

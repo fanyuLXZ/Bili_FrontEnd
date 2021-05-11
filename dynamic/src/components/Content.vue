@@ -1,6 +1,5 @@
 <!--  作者：欧阳苏蓉 动态--内容  -->
 <template>
-
   <div @scroll="onScroll">
     <div class="loading-content" v-if="cards.length<=0" style="background-color: white">
       <div class="loading-text tc-slate">
@@ -8,8 +7,8 @@
         <span>loading...</span>
       </div>
     </div>
-    <div  class="content "  v-else>
-      <div class=" card" style="margin-top: 8px;" v-for="(item,index) in cards" :key="index">
+    <div  class="content"  v-else>
+      <div class="card" style="margin-top: 8px;" v-for="(item,index) in cards" :key="index">
         <dynamicCard :item="item" :isComment="isComment" :index="index" :mid="mid"></dynamicCard>
       </div>
     </div>
@@ -24,6 +23,8 @@
 import {formatDate} from "@/assets/js/time";
 import dynamicCard from "@/components/DynamicCard"
 import axios from "axios";
+import {getScrollTop,getClientHeight,getScrollHeight} from "g-public/js/utils";
+
 export default {
   name: "Content",
   components:{
@@ -74,37 +75,9 @@ export default {
     }
   },
   methods:{
-
-    // 获取滚动条当前的位置
-    getScrollTop () {
-      let scrollTop = 0;
-      if (document.documentElement && document.documentElement.scrollTop) {
-        scrollTop = document.documentElement.scrollTop
-      } else if (document.body) {
-        scrollTop = document.body.scrollTop
-      }
-      return scrollTop
-    },
-
-    // 获取当前可视范围的高度
-    getClientHeight () {
-      let clientHeight = 0;
-      if (document.body.clientHeight && document.documentElement.clientHeight) {
-        clientHeight = Math.min(document.body.clientHeight, document.documentElement.clientHeight)
-      } else {
-        clientHeight = Math.max(document.body.clientHeight, document.documentElement.clientHeight)
-      }
-      return clientHeight
-    },
-
-    // 获取文档完整的高度
-    getScrollHeight () {
-      return Math.max(document.body.scrollHeight, document.documentElement.scrollHeight)
-    },
-
     // 滚动事件触发下拉加载
     onScroll () {
-      if (this.getScrollTop()===this.getScrollHeight()-this.getClientHeight()) {
+      if (getScrollTop()>=getScrollHeight()-getClientHeight()-20) {
         if (this.status === 1) {
           this.status = 0
           // 调用请求函数
@@ -115,7 +88,7 @@ export default {
               this.cards.push(v)
             })
             this.status=1
-            this.offset_dynamic_id = this.cards[this.cards.length-1].desc.dynamic_id
+            this.offset_dynamic_id = this.cards[this.cards.length-1]?.desc.dynamic_id
           })
         }
       }

@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" @scroll="scroll">
     <div class="history-wrap">
       <div class="newlist_info">
         <div class="b-head clearfix">
@@ -20,7 +20,8 @@
           <a href="#" class="btn">继续记录历史</a>
         </div>
       </div>
-      <div class="list-contain" style="position:relative">
+      <div class="login" v-if="!userInfo.isLogin"> <div class="warn"> <p class="txt">登录后的历史记录可以同步到其他设备哦 (´・ω・`)</p> <a href="https://passport.bilibili.com/login" class="btn">登录</a> </div> </div>
+      <div class="list-contain" v-else-if="userInfo.isLogin" style="position:relative">
         <!--    时间范围轴   -->
         <label-contain :history_list="list"></label-contain>
         <ul class="history-list" id="history_list">
@@ -59,6 +60,10 @@ import RTxt from "../components/history/r-txt";
 import LInfo from "../components/history/l-info";
 import GoTop from "../components/history/go-top";
 import LabelContain from "../components/history/label-contain";
+import {mapState,mapMutations} from "vuex";
+import "axios"
+import {getHistoryCursor} from "../api/history";
+import {getClientHeight, getScrollHeight, getScrollTop} from "g-public/js/utils";
 
 export default {
   name: 'history',
@@ -75,145 +80,35 @@ export default {
 
   data(){
     return{
-      list:[
-        {
-          kid:34053,    //视频id
-          author_mid:304710451,   //用户id
-          authorName:"法老是保安呀",   //视频发布人姓名
-          cover:"http://i1.hdslb.com/bfs/archive/c7a5ef971a680a7ae2fafec116a4202af11df20a.jpg",   //视频预览图
-          title:"相声厂牌活死人雷迪被绑架八贼法老在线解救！！#我粪了",    //视频标题
-          tagName:"搞笑",    //视频分类
-          viewAt:"2021-04-28",   //观看时间
-          progress:"13",    //观看时长 -1为看完
-        },
-        {
-          kid:34052,    //视频id
-          author_mid:304710451,   //用户id
-          authorName:"法老是保安呀",   //视频发布人姓名
-          cover:"http://i1.hdslb.com/bfs/archive/c7a5ef971a680a7ae2fafec116a4202af11df20a.jpg",   //视频预览图
-          title:"相声厂牌活死人雷迪被绑架八贼法老在线解救！！#我粪了",    //视频标题
-          tagName:"搞笑",    //视频分类
-          viewAt:"2021-04-27",   //观看时间
-          progress:"13",    //观看时长 -1为看完
-        },{
-          kid:34052,    //视频id
-          author_mid:304710451,   //用户id
-          authorName:"法老是保安呀",   //视频发布人姓名
-          cover:"http://i1.hdslb.com/bfs/archive/c7a5ef971a680a7ae2fafec116a4202af11df20a.jpg",   //视频预览图
-          title:"相声厂牌活死人雷迪被绑架八贼法老在线解救！！#我粪了",    //视频标题
-          tagName:"搞笑",    //视频分类
-          viewAt:"2021-04-25",   //观看时间
-          progress:"13",    //观看时长 -1为看完
-        },{
-          kid:34052,    //视频id
-          author_mid:304710451,   //用户id
-          authorName:"法老是保安呀",   //视频发布人姓名
-          cover:"http://i1.hdslb.com/bfs/archive/c7a5ef971a680a7ae2fafec116a4202af11df20a.jpg",   //视频预览图
-          title:"相声厂牌活死人雷迪被绑架八贼法老在线解救！！#我粪了",    //视频标题
-          tagName:"搞笑",    //视频分类
-          viewAt:"2021-04-18",   //观看时间
-          progress:"13",    //观看时长 -1为看完
-        },{
-          kid:34052,    //视频id
-          author_mid:304710451,   //用户id
-          authorName:"法老是保安呀",   //视频发布人姓名
-          cover:"http://i1.hdslb.com/bfs/archive/c7a5ef971a680a7ae2fafec116a4202af11df20a.jpg",   //视频预览图
-          title:"相声厂牌活死人雷迪被绑架八贼法老在线解救！！#我粪了",    //视频标题
-          tagName:"搞笑",    //视频分类
-          viewAt:"2021-04-17",   //观看时间
-          progress:"13",    //观看时长 -1为看完
-        },{
-          kid:34052,    //视频id
-          author_mid:304710451,   //用户id
-          authorName:"法老是保安呀",   //视频发布人姓名
-          cover:"http://i1.hdslb.com/bfs/archive/c7a5ef971a680a7ae2fafec116a4202af11df20a.jpg",   //视频预览图
-          title:"相声厂牌活死人雷迪被绑架八贼法老在线解救！！#我粪了",    //视频标题
-          tagName:"搞笑",    //视频分类
-          viewAt:"2021-04-16",   //观看时间
-          progress:"13",    //观看时长 -1为看完
-        },{
-          kid:34052,    //视频id
-          author_mid:304710451,   //用户id
-          authorName:"法老是保安呀",   //视频发布人姓名
-          cover:"http://i1.hdslb.com/bfs/archive/c7a5ef971a680a7ae2fafec116a4202af11df20a.jpg",   //视频预览图
-          title:"相声厂牌活死人雷迪被绑架八贼法老在线解救！！#我粪了",    //视频标题
-          tagName:"搞笑",    //视频分类
-          viewAt:"2021-04-15",   //观看时间
-          progress:"13",    //观看时长 -1为看完
-        },{
-          kid:34052,    //视频id
-          author_mid:304710451,   //用户id
-          authorName:"法老是保安呀",   //视频发布人姓名
-          cover:"http://i1.hdslb.com/bfs/archive/c7a5ef971a680a7ae2fafec116a4202af11df20a.jpg",   //视频预览图
-          title:"相声厂牌活死人雷迪被绑架八贼法老在线解救！！#我粪了",    //视频标题
-          tagName:"搞笑",    //视频分类
-          viewAt:"2021-04-14",   //观看时间
-          progress:"13",    //观看时长 -1为看完
-        },{
-          kid:34052,    //视频id
-          author_mid:304710451,   //用户id
-          authorName:"法老是保安呀",   //视频发布人姓名
-          cover:"http://i1.hdslb.com/bfs/archive/c7a5ef971a680a7ae2fafec116a4202af11df20a.jpg",   //视频预览图
-          title:"相声厂牌活死人雷迪被绑架八贼法老在线解救！！#我粪了",    //视频标题
-          tagName:"搞笑",    //视频分类
-          viewAt:"2021-04-13",   //观看时间
-          progress:"13",    //观看时长 -1为看完
-        },{
-          kid:34052,    //视频id
-          author_mid:304710451,   //用户id
-          authorName:"法老是保安呀",   //视频发布人姓名
-          cover:"http://i1.hdslb.com/bfs/archive/c7a5ef971a680a7ae2fafec116a4202af11df20a.jpg",   //视频预览图
-          title:"相声厂牌活死人雷迪被绑架八贼法老在线解救！！#我粪了",    //视频标题
-          tagName:"搞笑",    //视频分类
-          viewAt:"2021-04-12",   //观看时间
-          progress:"13",    //观看时长 -1为看完
-        },{
-          kid:34052,    //视频id
-          author_mid:304710451,   //用户id
-          authorName:"法老是保安呀",   //视频发布人姓名
-          cover:"http://i1.hdslb.com/bfs/archive/c7a5ef971a680a7ae2fafec116a4202af11df20a.jpg",   //视频预览图
-          title:"相声厂牌活死人雷迪被绑架八贼法老在线解救！！#我粪了",    //视频标题
-          tagName:"搞笑",    //视频分类
-          viewAt:"2021-04-11",   //观看时间
-          progress:"13",    //观看时长 -1为看完
-        },{
-          kid:34052,    //视频id
-          author_mid:304710451,   //用户id
-          authorName:"法老是保安呀",   //视频发布人姓名
-          cover:"http://i1.hdslb.com/bfs/archive/c7a5ef971a680a7ae2fafec116a4202af11df20a.jpg",   //视频预览图
-          title:"相声厂牌活死人雷迪被绑架八贼法老在线解救！！#我粪了",    //视频标题
-          tagName:"搞笑",    //视频分类
-          viewAt:"2021-04-10",   //观看时间
-          progress:"13",    //观看时长 -1为看完
-        },{
-          kid:34052,    //视频id
-          author_mid:304710451,   //用户id
-          authorName:"法老是保安呀",   //视频发布人姓名
-          cover:"http://i1.hdslb.com/bfs/archive/c7a5ef971a680a7ae2fafec116a4202af11df20a.jpg",   //视频预览图
-          title:"相声厂牌活死人雷迪被绑架八贼法老在线解救！！#我粪了",    //视频标题
-          tagName:"搞笑",    //视频分类
-          viewAt:"2021-04-9",   //观看时间
-          progress:"13",    //观看时长 -1为看完
-        },{
-          kid:34052,    //视频id
-          author_mid:304710451,   //用户id
-          authorName:"法老是保安呀",   //视频发布人姓名
-          cover:"http://i1.hdslb.com/bfs/archive/c7a5ef971a680a7ae2fafec116a4202af11df20a.jpg",   //视频预览图
-          title:"相声厂牌活死人雷迪被绑架八贼法老在线解救！！#我粪了",    //视频标题
-          tagName:"搞笑",    //视频分类
-          viewAt:"2021-04-8",   //观看时间
-          progress:"13",    //观看时长 -1为看完
-        },{
-          kid:34052,    //视频id
-          author_mid:304710451,   //用户id
-          authorName:"法老是保安呀",   //视频发布人姓名
-          cover:"http://i1.hdslb.com/bfs/archive/c7a5ef971a680a7ae2fafec116a4202af11df20a.jpg",   //视频预览图
-          title:"相声厂牌活死人雷迪被绑架八贼法老在线解救！！#我粪了",    //视频标题
-          tagName:"搞笑",    //视频分类
-          viewAt:"2021-02-7",   //观看时间
-          progress:"13",    //观看时长 -1为看完
-        },
-      ]
+      list:[],
+      isRequest:false,
+      view_at:0,
+      max:0
+    }
+  },
+  computed:{
+    ...mapState(['userInfo']),
+  },
+  methods:{
+    ...mapMutations(["SET_NAV_TYPE"]),
+    scroll(){
+      if (getScrollTop()===getScrollHeight()-getClientHeight()&&!this.isRequest){
+        const {data} = getHistoryCursor(this.max,this.view_at,"archive")
+        if (data?.code===0){
+          this.list=data.data.list
+          this.view_at=data.data.cursor.view_at
+          this.max=data.data.cursor.max
+        }
+      }
+    }
+  },
+  mounted() {
+    this.SET_NAV_TYPE(3)
+    const {data} = getHistoryCursor(this.max,this.view_at,"archive")
+    if (data?.code===0){
+      this.list.push(...data.data.list)
+      this.view_at=data.data.cursor.view_at
+      this.max=data.data.cursor.max
     }
   }
 }

@@ -15,7 +15,6 @@
 </template>
 
 <script>
-import '@/assets/home.css'
 
 import whisperleft from './messagewhisperleft'
 import whisperright from './messagewhisperight'

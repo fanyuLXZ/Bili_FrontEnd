@@ -96,6 +96,6 @@ name: "Publish",
 }
 </script>
 
-<style scoped>
+<style>
 
 </style>

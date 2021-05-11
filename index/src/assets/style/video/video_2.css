@@ -1,16 +1,31 @@
-.v-wrap {
-    width: 1163px;
-    padding: 0 68px;
-}
 
-.l-con {
-    width: 813px;
+@media screen and (min-width: 1300px) {
+    .v-wrap {
+        width: 1163px;
+        padding: 0 68px;
+    }
+    .l-con {
+        width: 813px;
+    }
+    #bilibili-player {
+        width: 813px;
+        height: 591px;
+        position: static;
+    }
 }
-
-#bilibili-player {
-    width: 813px;
-    height: 591px;
-    position: static;
+@media screen and (max-width: 1300px) {
+    .v-wrap {
+        width: 988px;
+        padding: 0 68px;
+    }
+    .l-con {
+        width: 638px;
+    }
+    #bilibili-player {
+        width: 638px;
+        height: 493px;
+        position: static;
+    }
 }
 
 #danmukuBox {

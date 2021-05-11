@@ -1,22 +1,22 @@
 <template>
-<div class="v-wrap">
-  <div class="l-con">
-  <viewbox :video="videoData.video" :view="videoData.stat.view"> </viewbox>
-  <player></player>
-   <viewtoolbar :stat="videoData.stat"></viewtoolbar>
-    <viewtag :mainpartition="videoData.mainpartition"  :deputydivision="videoData.deputydivision"></viewtag>
-  <viewdesc :desc="videoData.video.desc"></viewdesc>
+  <div class="v-wrap">
+    <div class="l-con">
+      <viewbox :video="videoData.video" :view="videoData.stat.view"></viewbox>
+      <player :video="videoData.video"></player>
+      <viewtoolbar :stat="videoData.stat"></viewtoolbar>
+      <viewtag :mainpartition="videoData.mainpartition" :deputydivision="videoData.deputydivision"></viewtag>
+      <viewdesc :desc="videoData.video.desc"></viewdesc>
 
- <viewArticle></viewArticle> 
-  </div>
+      <viewArticle></viewArticle>
+    </div>
 
-  <div class="r-con">
-     <rupinfo :owner=" videoData.owner"></rupinfo>
-    
-    <reolist :related="videoData.related"></reolist> 
+    <div class="r-con">
+      <rupinfo :owner=" videoData.owner"></rupinfo>
+
+      <reolist :related="videoData.related"></reolist>
+    </div>
+
   </div>
-   
-</div>
 </template>
 
 <script>
@@ -29,11 +29,13 @@ import viewtag from './Videocomponent/viewtwg'
 import reolist from './Videocomponent/reolist'
 import rupinfo from './Videocomponent/rupinfo'
 import viewArticle from './Videocomponent/viewArticle'
+import {getVideoInfo} from "../../api/video"
+import {mapMutations} from "vuex";
 
 export default {
-    name:'videohome',
-    components:{
-     
+  name: 'videohome',
+  components: {
+
     viewtag,
     viewbox,
     player,
@@ -42,143 +44,129 @@ export default {
     rupinfo,
     reolist,
     viewArticle
-    },
-    data() {
-      return {
-       videoData:{
+  },
+  data() {
+    return {
+      videoData: {
+        aid: 587836792,
+        video: {
+          id: 1,//视频id
+          title: "这是个标题",//标题
+          desc: '什么都没有哦~',//副标题
+          ctime: '---',//发布时间
+          rank: 0//排名
+        },
+        owner: {
+          attention: true, //是否关注
+          mid: 490265189,//up主id
+          upname: "这是个名字",//up主名字
+          fans: 0,//关注数
+          sign: "这个人很懒什么都没有说~",//个人简历
+          face: "//i0.hdslb.com/bfs/face/member/noface.jpg"//头像
+        },
+        stat: {
+          view: 0,//播放量
+          favorite: 0,//收藏数
+          coin: 0,//投币数
+          like: 0,//点赞数
+        },
+        //列表
+        related: [
 
-         aid: 587836792,
-          video:{
-             id:1,//视频id
-             title: "“深房理”事件——国家才是人民幸福生活的保障",//标题
-             desc:'深房理不止炒房？ 地产证券化，亏你也敢！',//副标题
-             ctime:'2021-04-21 17:47:07',//发布时间
-            
-            rank:20//排名
-          },
-          owner: {
-            attention: true, //是否关注
-            mid: 490265189,//up主id
-            upname: "荷包兔时间",//up主名字
-           fans: 425594,//关注数
-           sign: "直播间请不要刷需要花钱的礼物哈~大家赚钱不易，都先留着。以后的，以后再给：）",//个人简历
-            face: "http:\u002F\u002Fi2.hdslb.com\u002Fbfs\u002Fface\u002Fe2518023fc82d92ad53b2ee3305b4bf6fb1fbbf2.jpg"//头像
-            },          
-          stat:{
-              view: 130674,//播放量
-              favorite: 3292,//收藏数
-              coin: 7474,//投币数
-                like: 13207,//点赞数
-              },
-              //列表
-         related:[
-           {
-                    aid: 887552099,//视频id
-                    pic: "http:\u002F\u002Fi2.hdslb.com\u002Fbfs\u002Farchive\u002Fce26b419c9e737b4f8faad2143b655f9a3d1f676.jpg",//图片
-                    title: "那个惊动七大部门的男人，撕开了深圳楼市大内幕",//标题
-                    owner: {
-                        name: "大猫财经",//up名字
-                        mid: 519978853//upid
-                    },
-                    stat: {
-                        view: 183630//播放量
-                    },
-                
-                },
-                {
-                    aid: 887552099,//视频id
-                    pic: "http:\u002F\u002Fi2.hdslb.com\u002Fbfs\u002Farchive\u002Fce26b419c9e737b4f8faad2143b655f9a3d1f676.jpg",//图片
-                    title: "那个惊动七大部门的男人，撕开了深圳楼市大内幕",//标题
-                    owner: {
-                        name: "大猫财经",//up名字
-                        mid: 519978853//upid
-                    },
-                    stat: {
-                        view: 183630//播放量
-                    },
-                
-                },  {
-                    aid: 887552099,//视频id
-                    pic: "http:\u002F\u002Fi2.hdslb.com\u002Fbfs\u002Farchive\u002Fce26b419c9e737b4f8faad2143b655f9a3d1f676.jpg",//图片
-                    title: "那个惊动七大部门的男人，撕开了深圳楼市大内幕",//标题
-                    owner: {
-                        name: "大猫财经",//up名字
-                        mid: 519978853//upid
-                    },
-                    stat: {
-                        view: 183630//播放量
-                    },
-                
-                },   
-         ],
-         mainpartition:["111","13"],//主分区
-         deputydivision:["!2313","!231"],//副分区
-        
-       }
+        ],
+        mainpartition: ["111", "13"],//主分区
+        deputydivision: ["!2313", "!231"],//副分区
+
       }
-    },
-    beforeMount(){
-      //在这里做播放量的加一
-         //this.video.video.play++;
-         
     }
+  },
+  computed:{
+  },
+  mounted() {
+    this.SET_NAV_TYPE(0)
+    this.SET_IS_FOOT_SHOW(false)
+    // 获取视频数据
+    // 获取bv号
+    const bvNo = this.$route.params.bvid
+    if (bvNo){
+      // 获取 bvid
+      let bvid = bvNo.toLocaleLowerCase().replaceAll("bv","")
+      this.loadVideoInfo(bvid)
+    }
+
+    //在这里做播放量的加一
+    //this.video.video.play++;
+  },
+  methods:{
+    ...mapMutations(["SET_NAV_TYPE","SET_IS_FOOT_SHOW"]),
+    async loadVideoInfo(bvNo){
+      const { data } = await getVideoInfo(bvNo)
+      if (data?.code===0){
+        this.videoData=data.data.videoData
+      }
+    }
+  }
 }
 </script>
-<style scoped src="@/assets/style/video/stardust-video.css"></style>
+<style src="@/assets/style/video/stardust-video.css"></style>
 <!--下面与主页无关-->
 
 <style>
 
 /* 主页样式 */
 body {
-    margin: 0;
-    font-family: -apple-system,BlinkMacSystemFont,Helvetica Neue,Helvetica,Arial,PingFang SC,Hiragino Sans GB,Microsoft YaHei,sans-serif;
-    font-size: 12px;
-    line-height: 1.5;
-    color: #222;
-    background-color: #fff;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #222;
+  background-color: #fff;
 }
+
 html {
-    font-family: sans-serif;
-    line-height: 1.15;
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
-    -ms-overflow-style: scrollbar;
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
+  font-family: sans-serif;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -ms-overflow-style: scrollbar;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 ::selection {
-    background: #1890ff;
-    color: #fff;
+  background: #1890ff;
+  color: #fff;
 }
 
 .v-wrap {
-    max-width: 1984px;
-    min-width: 988px;
-    margin: 0 auto;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: center;
-    justify-content: center;
+  max-width: 1984px;
+  min-width: 988px;
+  margin: 0 auto;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
+
 .v-wrap {
-    width: 988px;
-    padding: 0 68px;
+  width: 988px;
+  padding: 0 68px;
 }
+
 a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
 }
+
 a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    vertical-align: baseline;
-    font-style: normal;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  font-style: normal;
 }
 
 </style>

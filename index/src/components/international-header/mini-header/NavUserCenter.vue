@@ -5,7 +5,6 @@
         <i class="bilifont bili-icon_dingdao_sousuo"></i>
       </a>
     </div>
-
     <!-- nav接口异常状态显示 -->
     <div class="user-con" v-if="userInfo.fallback">
       <div class="item fall-mini-avatar" v-van-report:fallbackMininav-click.click="`头像`"><a href="//space.bilibili.com/" target="_blank"><img :src="userInfo.face"></a></div>
@@ -16,7 +15,6 @@
       <div class="item" v-van-report:fallbackMininav-click.click="`历史`"><a href="//www.bilibili.com/account/history/" target="_blank"><span class="name">历史</span></a></div>
       <div class="item" v-van-report:fallbackMininav-click.click="`创作中心`"><a href="//member.bilibili.com/platform/home" target="_blank"><span class="name">创作中心</span></a></div>
     </div>
-    
     <!-- pending 状态不展示，避免展示抖动 -->
     <div class="user-con signin" v-else-if="loginStatus === 'LOGIN'">
 

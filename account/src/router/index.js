@@ -1,14 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Router from "vue-router";
-import Home from '../views/Home.vue'
-import Big from  "../views/Big"
-import Coin from "../views/Coin"
-import Face from "../views/Face"
-import Points from "../views/Points"
-import Setting from "../views/Setting"
-import Upload from "../views/face/Upload"
-import Mall from "../views/face/Mall"
 
 Vue.use(VueRouter)
 
@@ -18,27 +10,27 @@ const router = new Router({
   routes:[
     {
       path:"/home",
-      component:Home
+      component:resolve => require(['../views/Home.vue'], resolve)
     },
     {
       path:"/big",
-      component:Big
+      component:resolve => require(['../views/Big'], resolve)
     },
     {
       path:"/coin",
-      component:Coin
+      component:resolve => require(['../views/Coin'], resolve)
     },
     {
       path:"/face",
-      component:Face,
+      component:resolve => require(['../views/Face'], resolve),
       children:[
         {
           path:"/face/mall",
-          component:Mall
+          component:resolve => require(['../views/face/Mall'], resolve)
         },
         {
           path:"/face/article",
-          component:Upload
+          component:resolve => require(['../views/face/Upload'], resolve)
         },
         {
           path:"",
@@ -49,11 +41,11 @@ const router = new Router({
     },
     {
       path:"/points",
-      component:Points
+      component:resolve => require(['../views/Points.vue'], resolve)
     },
     {
       path:"/setting",
-      component:Setting
+      component:resolve => require(['../views/Setting.vue'], resolve)
     },
     {
       path:"*",

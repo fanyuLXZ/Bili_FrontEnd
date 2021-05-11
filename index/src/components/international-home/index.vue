@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <FirstScreen/>
+<!--    <FirstScreen/>-->
     <Storey :config="storeyConfig"/>
     <!-- 电视人 -->
     <!-- <Mascot /> -->
@@ -21,7 +21,7 @@
 <script>
 import Vue from 'vue'
 
-import FirstScreen from "./first-screen"
+// import FirstScreen from "./first-screen"
 import Storey from "./storey"
 
 import * as storeyConfig from '../../config/storeyConfig'
@@ -34,7 +34,7 @@ import {mapMutations, mapState} from 'vuex'
 
 export default {
   name: 'index',
-  components: { FirstScreen, Storey},
+  components: {  Storey},
   metaInfo: {
     title: "哔哩哔哩 (゜-゜)つロ 干杯~"
   },

@@ -35,27 +35,7 @@ export default {
         size:0,    // 每页评论数(固定值)
       },
       replies:[
-        {
-          rpid:123,   //评论id
-          member:{
-            mid:0,    //uid
-            uname:" ",    //姓名
-            sex:"男",    //性别
-            face:" ",   //头像
-            level_info:{
-              current_level:0,    //当前等级
-            },
-            vip:{
-              status:false    //是否是会员
-            }
-          },
-          like:0,   //评论点赞数
-          dislike:0,    //评论点踩数
-          ctime:"",     //评论时间
-          content:{
-            message:" "   //评论内容
-          }
-        }
+
       ]
     }
   },
@@ -76,7 +56,6 @@ export default {
 
   mounted() {
     axios.get("/api/comment/reply",{params:{rpid:this.rpid,pn:1,ps:10}}).then((res)=>{
-      console.log(res)
       //获取返回的json对象
       res.data.data.replies.forEach((v)=>{
         v.ctime=formatDate(Date.parse(v.ctime))

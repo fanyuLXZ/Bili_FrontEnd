@@ -30,6 +30,7 @@
           <span class="reply btn-hover" @click="click(index)">回复</span>
         </div>
         <!--  子评论组件  -->
+        {{item}}
         <subComments :item="item" :index="index" :rpid="item.rpid"></subComments>
         <div class="paging-box"></div>
         <post-comment v-if="reply===index" :mid="item.member.mid" :name="item.member.uname"></post-comment>
@@ -61,55 +62,54 @@ export default {
     return {
       reply:-1,
       page:{
-        count:0,    // 总评论数(父评论+子评论
-        // )
+        count:0,    // 总评论数(父评论+子评论)
         num:1,    //当前页码
         size:0,    // 每页评论数(固定值)
       },
       replies: [
-        {
-          action:0,   //状态 0为无状态 1为赞了他 2为踩了他
-          rpid:0,   //评论id
-          content:{
-            message:" "    //评论内容
-          },
-          count:0,    //子评论数量
-          ctime: " ",    //评论时间
-          like: 0,   //点赞数
-          member:{
-            mid:0,    //uid
-            sex:" ",    //性别
-            uname: " ",   //用户名称
-            avatar: " ",   //用户头像
-            level_info:{    //等级对象
-              current_level:0
-            },
-            vip:{   //用户会员
-              status:true,    //是否是会员
-            },
-          },
-          replies:[   //子评论
-            {
-              content: {
-                message:" "    //回复内容
-              },
-              ctime:" ",   //回复评论时间
-              like: 8,   //点赞数量
-              member:{
-                mid:1,    //uid
-                sex:" ",    //性别
-                uname: " ",   //用户名称
-                avatar: " ",   //用户头像
-                level_info:{    //等级对象
-                  current_level:5
-                },
-                vip:{   //用户会员
-                  status:true,    //是否是会员
-                },
-              }
-            }
-          ],
-        },
+        // {
+        //   action:0,   //状态 0为无状态 1为赞了他 2为踩了他
+        //   rpid:0,   //评论id
+        //   content:{
+        //     message:" "    //评论内容
+        //   },
+        //   count:0,    //子评论数量
+        //   ctime: " ",    //评论时间
+        //   like: 0,   //点赞数
+        //   member:{
+        //     mid:0,    //uid
+        //     sex:" ",    //性别
+        //     uname: " ",   //用户名称
+        //     avatar: " ",   //用户头像
+        //     level_info:{    //等级对象
+        //       current_level:0
+        //     },
+        //     vip:{   //用户会员
+        //       status:true,    //是否是会员
+        //     },
+        //   },
+        //   replies:[   //子评论
+        //     {
+        //       content: {
+        //         message:" "    //回复内容
+        //       },
+        //       ctime:" ",   //回复评论时间
+        //       like: 8,   //点赞数量
+        //       member:{
+        //         mid:1,    //uid
+        //         sex:" ",    //性别
+        //         uname: " ",   //用户名称
+        //         avatar: " ",   //用户头像
+        //         level_info:{    //等级对象
+        //           current_level:5
+        //         },
+        //         vip:{   //用户会员
+        //           status:true,    //是否是会员
+        //         },
+        //       }
+        //     }
+        //   ],
+        // },
       ],
     }
   },
@@ -128,7 +128,6 @@ export default {
   mounted() {
     axios.get("/api/dynamic/reply",{params:{dynamic_id:this.dynamic_id,sort:this.sort}}).then((res)=>{
       //获取返回的json对象
-      console.log(res)
       res.data.data.replies.forEach((a)=>{
         a.ctime = formatDate(Date.parse(a.ctime))
         a.replies.forEach((v)=> {

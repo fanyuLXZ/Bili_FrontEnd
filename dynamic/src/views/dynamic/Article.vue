@@ -64,8 +64,7 @@ export default {
       this.sort = data
     },
 
-  },
-
+  }
 }
 </script>
 

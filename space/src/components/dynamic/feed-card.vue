@@ -10,6 +10,7 @@
 
 import contes from './feed/Content'
 export default {
+  name:"feed-card",
   components:{
     contes
   }
@@ -17,8 +18,8 @@ export default {
 </script>
 
 <style>
-@import "../../../assets/css/bp-svg-icon.css";
-@import "../../../assets/css/bp-icon-font.css";
-@import "../../../assets/css/index.css";
+@import "../../assets/css/bp-svg-icon.css";
+@import "../../assets/css/bp-icon-font.css";
+@import "../../assets/css/index.css";
 
 </style>

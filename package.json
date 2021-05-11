@@ -1,8 +1,0 @@
-{
-  "dependencies": {
-    "eslint": "^7.23.0"
-  },
-  "devDependencies": {
-    "jquery": "^3.6.0"
-  }
-}

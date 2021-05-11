@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div class="history-btn"  @click="isDlg=!isDlg">
-      <a href="#" class="btn cleanhsbtn">清空历史</a>
+    <div class="history-btn">
+      <a href="#" class="btn cleanhsbtn"  @click="isDlg=!isDlg">清空历史</a>
     </div>
     <!--  历史记录弹框  -->
     <dlg-contain :isDlg="isDlg" @cancel="isDlg=!isDlg"></dlg-contain>

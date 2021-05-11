@@ -64,7 +64,7 @@ export default {
 </script>
 <style scoped>
 
-@import "../../../assets/css/datail.css";
+/*@import "../../../assets/css/datail.css";*/
 .user-card {
   font-size: 12px;
   position: absolute;

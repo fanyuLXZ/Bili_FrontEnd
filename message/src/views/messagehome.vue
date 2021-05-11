@@ -47,7 +47,6 @@
                                                           </div></div></div>
 </template>
 <script>
-import '@/assets/home.css'
 import love from '../views/messagelove.vue'
 import loveid from '../views/messageloveid.vue'
 import whisper from '../views/messagewhisper.vue'

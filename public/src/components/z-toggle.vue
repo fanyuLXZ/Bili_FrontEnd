@@ -73,7 +73,6 @@ export default {
     }
   },
   mounted() {
-    console.log('left: '+String(this.offsetX)+'px'+';top: '+String(this.offsetY)+'px'+';')
     if (this.trigger==="click"){
       // 绑定点击事件
       this.$refs.toggle.addEventListener("click",this.click)

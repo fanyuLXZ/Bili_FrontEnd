@@ -9,10 +9,11 @@
 import titles from "./section/titles"
 import videos from "./section/videos"
 export default {
-components:{
-  titles,
-  videos
-}
+  name:"section-title",
+  components:{
+    titles,
+    videos
+  }
 }
 </script>
 
