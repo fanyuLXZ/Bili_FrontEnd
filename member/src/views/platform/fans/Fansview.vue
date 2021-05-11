@@ -16,20 +16,24 @@
               <div class="dc-section-item1_title clearfix"><!---->
                 <div class="dc-section-item1_title_custom">
                   <div class="sectionTitle">关注趋势</div>
-                  <div class="dc-radio-group behavior-title-radio"><label
-                      class="dc-radio-button is-active"><span
-                      class="dc-radio-button_inner">新增关注</span></label><label class="dc-radio-button"
-                                                                             ><span
-                      class="dc-radio-button_inner">取消关注</span></label></div>
-                </div> <!----></div>
+                  <div class="dc-radio-group behavior-title-radio">
+
+                    <label class="dc-radio-button" :class="isActive===index?'is-active':''" @click="click(index)"  v-for="(item,index) in fans" :key="index">
+                      <span class="dc-radio-button_inner">{{ item }}</span>
+                    </label>
+
+                  </div>
+                </div>
+              </div>
               <div class="dc-section-item_body">
                 <div class="follow-event-line">
                   <div class="follow-tool-box clearfix">
                     <div class="follow-line-legend"></div>
                     <div class="follow-line-select day bcc-select" style="width: 120px; display: none;">
-                      <div class="bcc-select-input-wrap"><input type="text" readonly="readonly" placeholder="请选择内容"
-                                                                class="bcc-select-input-inner"><i
-                          class="bcc-iconfont bcc-icon-ic_drop-down"></i></div>
+                      <div class="bcc-select-input-wrap">
+                        <input type="text" readonly="readonly" placeholder="请选择内容" class="bcc-select-input-inner">
+                        <i class="bcc-iconfont bcc-icon-ic_drop-down"></i>
+                      </div>
                       <div class="bcc-select-list-wrap" style="display: none;">
                         <ul class="bcc-select-option-list"></ul>
                       </div>
@@ -100,6 +104,17 @@
 
 <script>
 export default {
-  name: "Fansview"
+  name: "Fansview",
+  data(){
+    return{
+      isActive:0,
+      fans:["新增关注","取消关注"]
+    }
+  },
+  methods:{
+    click(index){
+      this.isActive = index
+    }
+  }
 }
 </script>

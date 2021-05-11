@@ -13,12 +13,20 @@
       </div>
       <div class="section video clearfix" data-reporter-id="32">
         <div class="section-row bcc-row first" style="margin-left: -8px; margin-right: -8px;">
-          <bcc-col :title="'粉丝数'" :type="'eight'" :number="total_fans" />
-          <bcc-col :title="'视频播放'" :number="total_click" />
-          <bcc-col :title="'评论数'" :number="total_reply" />
+          <a href="/platform/fans/fansview">
+            <bcc-col :title="'粉丝数'" :type="'eight'" :number="total_fans"  />
+          </a>
+          <a href="/platform/data-up/index">
+            <bcc-col :title="'视频播放'" :number="total_click" />
+          </a>
+          <a href="">
+            <bcc-col :title="'评论数'" :number="total_reply" />
+          </a>
         </div>
         <div class="section-row bcc-row" style="margin-left: -8px; margin-right: -8px;">
-          <bcc-col :title="'点赞数'" :number="total_like" />
+          <a href="">
+            <bcc-col :title="'点赞数'" :number="total_like" />
+          </a>
         </div>
       </div>
     </div>

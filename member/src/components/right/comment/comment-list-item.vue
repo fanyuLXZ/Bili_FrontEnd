@@ -1,14 +1,15 @@
 <template>
   <div class="comment-list-item">
     <div class="check-box">
-      <i class="bcc-iconfont bcc-icon-ic_MenuButton-tick"></i>
+      <i class="bcc-iconfont bcc-icon-ic_MenuButton-tick"  @click="childHandle(index)"></i>
+      <input type="checkbox" :id="item.rpid" :value="item.rpid">
     </div>
-    <a  target="_blank" class="user-avatar" data-reporter-id="139">
-      <img src="//i2.hdslb.com/bfs/face/264a633e83c1a3388e101f6244331060e32819cf.jpg@96w_96h">
+    <a  target="_blank" class="user-avatar">
+      <img src="1.jpg">
     </a>
     <div class="article-wrap">
       <a  target="_blank" class="pic" >
-        <img src="//i1.hdslb.com/bfs/archive/a39ec5ef0b13b0c932c1987994e2313c6ed51de6.jpg@200w_120h">
+        <img src="1.jpg">
       </a>
       <a class="title ellipsis">
         <span class="name">{{ item.title }}</span>
@@ -64,6 +65,20 @@
 <script>
 export default {
   name: "comment-list-item",
-  props:{item:Object}
+  props:{
+    item:Object,
+    index:Number,
+    allState:Array,
+    childState:Array
+  },
+  methods:{
+    childHandle(i,pi){//单选
+
+      let child=this.childState;
+      if(child[pi][i]) this.allState[pi]=false;
+      this.$set(child[pi],i,!child[pi][i]);
+      if(this.childState[pi][i]) this.checkList(this.childState[pi],pi);
+    },
+  }
 }
 </script>

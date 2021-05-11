@@ -19,14 +19,6 @@
 <!--    </ul>-->
 <!--  </div>-->
 
-  <div class="bcc-select-list-wrap" >
-    <ul class="bcc-select-option-list">
-      <li class="bcc-option" :class="index===0?'selected':''" v-for="(item,index) in (check?disable:active)" :key="index">
-        <div class=""><span >{{ item }}</span></div>
-        <i class="bcc-iconfont bcc-icon-ic_MenuButton-tick"></i>
-      </li>
-    </ul>
-  </div>
 
 <!--  <div class="bcc-select-list-wrap" style="display: none;">-->
 <!--    <ul class="bcc-select-option-list">-->
@@ -116,21 +108,35 @@
 <!--      </li>-->
 <!--    </ul>-->
 <!--  </div>-->
+
+  <div class="bcc-select-list-wrap" v-show="isShow">
+    <ul class="bcc-select-option-list">
+      <li class="bcc-option" :class="showContent==='one'||showContent==='two'?' ':''" v-for="(item,index) in (showContent==='one'?disable:active)" :key="index">
+        <div class=""><span >{{ item }}</span></div>
+        <i class="bcc-iconfont bcc-icon-ic_MenuButton-tick"></i>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script>
 export default {
   name: "bcc-select-list-wrap",
 
-  props:{
-    check:Boolean
-  },
-
   data(){
     return{
+      showContent:'',
+      isShow:false,
       disable: ["游戏", "生活", "娱乐", "影视", "音乐", "知识", "数码","动画","时尚","舞蹈","番剧","纪录片","鬼畜","国创","电视剧","电影","资讯","美食","动物圈","汽车"],
       active:["投稿时间排序","播放数排序","评论数排序","收藏数排序","弹幕数排序"]
     }
+  },
+  methods:{
+    sendItem(showContent,isShow){
+      this.showContent = showContent
+      this.isShow = isShow
+    }
   }
+
 }
 </script>

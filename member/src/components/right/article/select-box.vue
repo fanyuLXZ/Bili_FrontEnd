@@ -1,5 +1,5 @@
 <template>
-  <div class="select-box" style="left: 580px; top: 98px;">
+  <div class="select-box" style="left: 580px; top: 98px;display: none ">
     <div class="row clearfix">
       <a class="left select-item first">
         <img src="//s1.hdslb.com/bfs/static/jinkela/studio/creativecenter-platform/assets/icon_edit.d23c1e4.png" style="width: 20px; height: 20px;">
@@ -40,7 +40,3 @@ export default {
   name: "select-box"
 }
 </script>
-
-<style scoped>
-
-</style>

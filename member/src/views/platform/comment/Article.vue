@@ -71,7 +71,7 @@
                             <div class="simplebar-content-wrapper" style="height: auto; overflow: hidden;">
                               <div class="simplebar-content" style="padding: 0px;">
                                 <li class="bcc-option selected">
-                                  <div class="ellipsis select-article_wrap" data-reporter-id="137">
+                                  <div class="ellipsis select-article_wrap">
                                     <div class="ac-link ellipsis no-active active-item">全部视频</div>
                                   </div>
                                   <i class="bcc-iconfont bcc-icon-ic_MenuButton-tick"></i></li>
@@ -104,53 +104,52 @@
       </header>
       <div class="operate_wrap">
         <div class="operate_left">
+          <!--    全选    -->
           <label class="bcc-checkbox">
-            <span class="bcc-checkbox-checkbox">
-              <i class="bcc-iconfont bcc-icon-ic_MenuButton-tick"></i>
-              <input type="checkbox" name="默认" aria-hidden="true" value="false">
+            <span class="">
+              <input type="checkbox" id="checkbox">
             </span>
-            <span class="bcc-checkbox-label">全选</span>
+            <span class="bcc-checkbox-label" >全选</span>
           </label>
+
           <button class="bcc-button bcc-button--default is-disabled large" data-reporter-id="135" disabled="disabled">
             <span>举报</span>
           </button>
           <button class="bcc-button del bcc-button--default is-disabled large" data-reporter-id="136" disabled="disabled"><!----><span>删除</span></button>
         </div>
-        <div class="operate_right">
-          <div class="operate-txt active">最近发布</div>
-          <div class="operate-txt">点赞最多</div>
-          <div class="operate-txt">回复最多</div>
-        </div>
+        <operate-txt />
       </div>
       <section class="section-list_wrap">
-        <comment-list-item v-for="(item,index) in comments" :key="index" :item="item" />
+        <!--    评论    -->
+        <comment-list-item :childState="childState" :allState="allState"  v-for="(item,index) in comments" :key="index" :index="index" :item="item" />
       </section>
       <div class="tips">
         仅展示最近的50000条评论
       </div>
-      <div class="bcc-pagination-container bcc-pagination">
-        <ul class="bcc-pagination"><!---->
-          <li class="bcc-pagination-item selected"><a>1</a></li>
-          <li class="bcc-pagination-item"><a>2</a></li>
-          <li class="bcc-pagination-item bcc-pagination-next">下一页</li>
-          <li class="bcc-pagination-extra">
-            <div class="bcc-pagination-total"> 共2页 / 20个</div><!----></li>
-        </ul>
-      </div>
+      <Pagination :page="page" />
     </div>
   </div>
 </template>
-
 <script>
+
 import CommentListItem from "@/components/right/comment/comment-list-item";
+import OperateTxt from "@/components/right/article/operate-txt";
+import Pagination from "@/components/right/article/Pagination";
 export default {
   name: "Article",
-  components: {CommentListItem},
+  components: {Pagination, OperateTxt, CommentListItem},
 
   data(){
     return{
+      page:{
+        count:80,    // 总评论数
+        num:7,    //当前页码
+        size:10,    // 每页评论数(固定值)
+      },
+      operate:["最近发布","点赞最多","回复最多"],
       comments:[
         {
+          rpid:1,   //评论id
           bvid:"BV1s7411f7j8",    //视频id
           cover:"1.jpg",    //视频预览图
           ctime:"2020-03-21 10:24:08",    //评论时间
@@ -184,6 +183,7 @@ export default {
           uface:"1.ipg",    //头像
         },
         {
+          rpid:2,   //评论id
           bvid:"BV1s7411f7j8",    //视频id
           cover:"1.jpg",    //视频预览图
           ctime:"2020-03-17 21:28:59",    //评论时间
@@ -217,6 +217,7 @@ export default {
           uface:"1.ipg",    //头像
         },
         {
+          rpid:3,   //评论id
           bvid:"BV1s7411f7j8",    //视频id
           cover:"1.jpg",    //视频预览图
           ctime:"2020-03-21 08:43:57",    //评论时间
@@ -250,6 +251,7 @@ export default {
           uface:"1.ipg",    //头像
         },
         {
+          rpid:4,   //评论id
           bvid:"BV1s7411f7j8",    //视频id
           cover:"1.jpg",    //视频预览图
           ctime:"2020-03-21 08:43:57",    //评论时间
@@ -282,8 +284,44 @@ export default {
           title:"【重明鸟攻略】全人物+全拼图+超详细文字说明+剧情加速跳过!（已完结）",    //视频标题
           uface:"1.ipg",    //头像
         },
-      ]
+      ],
+      childState:[],//选中状态
+      allState:[],//全选状态
+      listLen:0,
     }
   },
+  methods:{
+    childHandle(i,pi){//单选
+
+      let child=this.childState;
+      if(child[pi][i]) this.allState[pi]=false;
+      this.$set(child[pi],i,!child[pi][i]);
+      if(this.childState[pi][i]) this.checkList(this.childState[pi],pi);
+    },
+    handleTitAll(item,pi){//全选
+      this.listLen=item.child.length;
+      let child=this.childState[pi],
+          allState=this.allState;
+      for(let i=0;i<this.listLen;i++){
+        this.$set(child,i,!allState[pi]);
+      }
+      this.$set(allState,pi,!allState[pi]);
+    },
+    checkList(child,pi){
+      let allState=this.allState,
+          len=this.entities[pi].child.length;
+      for(let i=0;i<len;i++){
+        if(!child[i]) return;
+      }
+      this.$set(allState,pi,true);
+    }
+  },
+  created(){
+    let len=this.entities.length;
+    this.listLen=len;
+    for(let i=0;i<len;i++){
+      this.$set(this.childState,i,[])
+    }
+  }
 }
 </script>

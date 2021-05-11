@@ -13,17 +13,17 @@
         <div><span class="pubdate is-success">20-03-17 21:13:08</span></div>
       </div>
       <div class="meta-view">
-        <a class="bili-btn">
+        <a class="bili-btn" href="/platform/upload/video/frame">
           <i class="bcc-iconfont bcc-icon-Mediumx" style="font-size: 16px; color: rgb(80, 80, 80);"></i>
           编辑
         </a>
-        <a href="/platform/upload-manager/article/data/BV1s7411f7j8" class="bili-btn">
-          <i class="bcc-iconfont bcc-icon-icon_list_ranking_x1" style="font-size: 16px; color: rgb(80, 80, 80);"></i>
-          数据
-        </a>
-        <a class="more-btn">
-          <i class="bcc-iconfont bcc-icon-icon_list_more_x" style="font-size: 16px; color: rgb(80, 80, 80);"></i>
-        </a>
+<!--        <a href="/platform/upload-manager/article/data/BV1s7411f7j8" class="bili-btn">-->
+<!--          <i class="bcc-iconfont bcc-icon-icon_list_ranking_x1" style="font-size: 16px; color: rgb(80, 80, 80);"></i>-->
+<!--          数据-->
+<!--        </a>-->
+<!--        <a class="more-btn">-->
+<!--          <i class="bcc-iconfont bcc-icon-icon_list_more_x" style="font-size: 16px; color: rgb(80, 80, 80);"></i>-->
+<!--        </a>-->
       </div>
       <div class="meta-footer clearfix">
         <div title="播放" class="click view-stat">

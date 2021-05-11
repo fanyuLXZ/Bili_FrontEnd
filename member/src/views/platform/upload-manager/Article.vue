@@ -13,9 +13,7 @@
         <div >
           <div class="article-header">
             <div class="text-split_wrap"></div>
-            <div class="header-operate">
-              <bcc-select v-for="(item,index) in btn" :key="index" :item="item" :index="index" />
-            </div>
+            <bcc-select />
           </div>
           <div class="article-list_wrap">
             <div >
@@ -24,16 +22,8 @@
               </div>
             </div>
           </div>
-          <div class="bcc-pagination-container">
-            <ul class="bcc-pagination"><!---->
-              <li class="bcc-pagination-item selected"><a>1</a></li><!---->
-              <li class="bcc-pagination-extra">
-                <div class="bcc-pagination-total"> 共1页 / 1个，</div>
-                <div class="bcc-pagination-elevator"> 跳转至 <input type="text" autocomplete="off" spellcheck="false"> 页
-                </div>
-              </li>
-            </ul>
-          </div>
+
+          <Pagination :page="page" />
         </div>
       </div>
     </div>
@@ -41,13 +31,21 @@
 </template>
 
 <script>
-import BccSelect from "@/components/right/article/bcc-select";
 import ArticleCard from "@/components/right/article/article-card";
+import BccSelect from "@/components/right/article/bcc-select";
+import Pagination from "@/components/right/article/Pagination";
 export default {
   name: "article",
-  components: {ArticleCard, BccSelect},
+  components: {Pagination, BccSelect, ArticleCard},
   data(){
     return{
+      btnNum:-1,
+      btnShow:false,
+      page:{
+        count:80,    // 总评论数
+        num:7,    //当前页码
+        size:10,    // 每页评论数(固定值)
+      },
       btn:[
         {
           placeholder:"全部分区",
@@ -58,6 +56,13 @@ export default {
           width:154
         }
       ]
+    }
+  },
+  methods:{
+    click(index){
+      this.btnNum = index
+      this.btnShow = !this.btnShow
+      console.log(this.btnShow)
     }
   }
 }
