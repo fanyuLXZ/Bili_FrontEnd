@@ -23,7 +23,7 @@
 <script>
 import coinIndexRight from "@/components/coin/coinIndexRight";
 import coinIndexLeft from "@/components/coin/coinIndexLeft";
-import axios from "axios";
+import { all_info} from "../api/home";
 export default {
   name: "coin",
 
@@ -39,7 +39,7 @@ export default {
   },
 
   mounted() {
-    axios.get("/api/member/all-info").then(
+    all_info().then(
         (res)=>{
           //获取返回的json对象
           this.money = res.data.data.money

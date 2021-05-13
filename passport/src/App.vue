@@ -1,11 +1,18 @@
 <template>
   <div id="app">
-    <div id="nav">
-     
-    </div>
+    <international-header :nav-type="0"/>
+    <top-banner/>
     <router-view/>
   </div>
 </template>
+
+<script>
+  import InternationalHeader from './components/international-header'
+  import TopBanner from "./components/top-banner";
+  export default {
+    components: {TopBanner,InternationalHeader},
+  }
+</script>
 
 <style lang="less">
 #app {

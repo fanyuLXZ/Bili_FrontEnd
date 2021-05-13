@@ -1,0 +1,496 @@
+ol, ul {
+  list-style: none
+}
+
+a {
+  color: #212121;
+  transition: color .3s
+}
+
+a:hover {
+  color: #00a1d6
+}
+
+a, a:hover {
+  text-decoration: none
+}
+
+:focus, a:focus {
+  outline: none
+}
+
+img:not([src]), img[src=""] {
+  opacity: 0
+}
+
+* {
+  margin: 0;
+  padding: 0
+}
+
+* ::selection {
+  background: #73c9e5;
+  color: inherit
+}
+
+* ::-moz-selection {
+  background: #73c9e5;
+  color: inherit
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: #505050;
+  font: 12px -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif;
+  -webkit-font-smoothing: antialiased
+}
+
+*, .van-popover {
+  box-sizing: border-box
+}
+
+.van-popover {
+  border-radius: 2px
+}
+
+.b-footer-wrap, .b-wrap {
+  margin: 0 auto;
+  width: 1630px
+}
+
+.zone-list-box {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: justify;
+  align-content: space-between;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  width: 1286px;
+  height: 404px
+}
+
+#bili_report_cheese .zone-list-box.cheese {
+  height: 364px
+}
+
+@media screen and (max-width: 1870px) {
+  .b-footer-wrap, .b-wrap {
+    width: 1414px
+  }
+
+  .b-footer-wrap .rcmd-box-wrap > .rcmd-box, .b-wrap .rcmd-box-wrap > .rcmd-box {
+    width: 854px;
+    height: 242px
+  }
+
+  .b-footer-wrap .rcmd-box-wrap > .rcmd-box .video-card-reco:nth-child(n+9), .b-wrap .rcmd-box-wrap > .rcmd-box .video-card-reco:nth-child(n+9) {
+    display: none
+  }
+
+  .b-footer-wrap .extension, .b-wrap .extension {
+    width: 1070px
+  }
+
+  .b-footer-wrap .extension .video-card-common:nth-child(n+6), .b-wrap .extension .video-card-common:nth-child(n+6) {
+    display: none
+  }
+
+  .b-footer-wrap .elevator, .b-wrap .elevator {
+    margin-left: 716px
+  }
+
+  .b-footer-wrap .time-line-card, .b-wrap .time-line-card {
+    margin: 0 30px 24px 0 !important;
+    width: 227px
+  }
+
+  .b-footer-wrap .space-between .zone-list-box, .b-wrap .space-between .zone-list-box {
+    width: 1070px
+  }
+
+  .b-footer-wrap .space-between .zone-list-box .live-card:nth-child(n+11), .b-footer-wrap .space-between .zone-list-box .video-card-common:nth-child(n+11), .b-wrap .space-between .zone-list-box .live-card:nth-child(n+11), .b-wrap .space-between .zone-list-box .video-card-common:nth-child(n+11) {
+    display: none
+  }
+
+  .b-footer-wrap .article-card, .b-wrap .article-card {
+    width: 520px
+  }
+
+  .b-footer-wrap .manga-panel .manga-list-box, .b-wrap .manga-panel .manga-list-box {
+    width: 1070px
+  }
+
+  .b-footer-wrap .manga-panel .manga-list-box .manga-card:nth-child(n+11), .b-wrap .manga-panel .manga-list-box .manga-card:nth-child(n+11) {
+    display: none
+  }
+}
+
+@media screen and (max-width: 1654px) {
+  .b-footer-wrap, .b-wrap {
+    width: 1198px
+  }
+
+  .b-footer-wrap .rcmd-box-wrap > .rcmd-box, .b-wrap .rcmd-box-wrap > .rcmd-box {
+    width: 638px
+  }
+
+  .b-footer-wrap .rcmd-box-wrap > .rcmd-box .video-card-reco:nth-child(n+7), .b-wrap .rcmd-box-wrap > .rcmd-box .video-card-reco:nth-child(n+7) {
+    display: none
+  }
+
+  .b-footer-wrap .extension, .b-wrap .extension {
+    width: 854px
+  }
+
+  .b-footer-wrap .extension .video-card-common:nth-child(n+5), .b-wrap .extension .video-card-common:nth-child(n+5) {
+    display: none
+  }
+
+  .b-footer-wrap .zone-list-box, .b-wrap .zone-list-box {
+    width: 854px !important
+  }
+
+  .b-footer-wrap .zone-list-box .live-card:nth-child(n+9), .b-footer-wrap .zone-list-box .video-card-common:nth-child(n+9), .b-wrap .zone-list-box .live-card:nth-child(n+9), .b-wrap .zone-list-box .video-card-common:nth-child(n+9) {
+    display: none
+  }
+
+  .b-footer-wrap .zone-list-box .article-card, .b-wrap .zone-list-box .article-card {
+    width: 400px
+  }
+
+  .b-footer-wrap .manga-list-box, .b-wrap .manga-list-box {
+    width: 854px !important;
+    height: 581px !important
+  }
+
+  .b-footer-wrap .manga-list-box .manga-card, .b-wrap .manga-list-box .manga-card {
+    width: 162px !important;
+    margin-bottom: 20px !important
+  }
+
+  .b-footer-wrap .manga-list-box .manga-card > img, .b-wrap .manga-list-box .manga-card > img {
+    width: 162px !important;
+    height: 216px !important
+  }
+
+  .b-footer-wrap .manga-list-box .manga-card .manga-title, .b-wrap .manga-list-box .manga-card .manga-title {
+    max-width: 162px !important
+  }
+
+  .b-footer-wrap .manga-rank .manga-rank-list .manga-rank-item .other-link .title, .b-footer-wrap .manga-rank .manga-rank-list .manga-rank-item .preview-desc .title, .b-wrap .manga-rank .manga-rank-list .manga-rank-item .other-link .title, .b-wrap .manga-rank .manga-rank-list .manga-rank-item .preview-desc .title {
+    max-width: 200px !important
+  }
+
+  .b-footer-wrap .manga-rank .manga-rank-list .manga-rank-item:nth-child(n+13), .b-wrap .manga-rank .manga-rank-list .manga-rank-item:nth-child(n+13) {
+    display: none
+  }
+
+  .b-footer-wrap .elevator, .b-wrap .elevator {
+    margin-left: 615px
+  }
+}
+
+@media screen and (max-width: 1438px) {
+  .b-footer-wrap, .b-wrap {
+    width: 999px
+  }
+
+  .b-footer-wrap .focus-carousel, .b-wrap .focus-carousel {
+    width: 459px;
+    height: 202px
+  }
+
+  .b-footer-wrap .rcmd-box-wrap > .rcmd-box, .b-wrap .rcmd-box-wrap > .rcmd-box {
+    width: 530px;
+    height: 202px
+  }
+
+  .b-footer-wrap .rcmd-box-wrap > .rcmd-box .video-card-reco, .b-wrap .rcmd-box-wrap > .rcmd-box .video-card-reco {
+    width: 170px;
+    height: 96px
+  }
+
+  .b-footer-wrap .rcmd-box-wrap > .rcmd-box .video-card-reco .info-box .info, .b-wrap .rcmd-box-wrap > .rcmd-box .video-card-reco .info-box .info {
+    padding: 8px 10px 10px
+  }
+
+  .b-footer-wrap .extension, .b-wrap .extension {
+    width: 710px
+  }
+
+  .b-footer-wrap .video-card-common, .b-wrap .video-card-common {
+    width: 170px
+  }
+
+  .b-footer-wrap .video-card-common .card-pic, .b-footer-wrap .video-card-common .match-card-pic, .b-wrap .video-card-common .card-pic, .b-wrap .video-card-common .match-card-pic {
+    width: 100%;
+    height: 96px
+  }
+
+  .b-footer-wrap .video-card-common .card-pic .right, .b-footer-wrap .video-card-common .match-card-pic .right, .b-wrap .video-card-common .card-pic .right, .b-wrap .video-card-common .match-card-pic .right {
+    display: none
+  }
+
+  .b-footer-wrap .video-card-common:hover .card-pic .right, .b-wrap .video-card-common:hover .card-pic .right {
+    display: block
+  }
+
+  .b-footer-wrap .video-card-common:hover .card-pic .left, .b-wrap .video-card-common:hover .card-pic .left {
+    display: none
+  }
+
+  .b-footer-wrap .video-card-common.ex-card-common .card-pic a:before, .b-wrap .video-card-common.ex-card-common .card-pic a:before {
+    background: none
+  }
+
+  .b-footer-wrap .bypb-window, .b-wrap .bypb-window {
+    width: 265px
+  }
+
+  .b-footer-wrap .zone-list-box, .b-wrap .zone-list-box {
+    width: 710px !important;
+    height: 360px
+  }
+
+  .b-footer-wrap .zone-list-box .article-card, .b-wrap .zone-list-box .article-card {
+    width: 345px
+  }
+
+  .b-footer-wrap .zone-list-box .time-line-card, .b-wrap .zone-list-box .time-line-card {
+    margin: 0 20px 24px 0 !important;
+    width: 210px
+  }
+
+  .b-footer-wrap .zone-list-box .time-line-card .txt, .b-wrap .zone-list-box .time-line-card .txt {
+    width: 130px
+  }
+
+  .b-footer-wrap .zone-list-box .live-card, .b-wrap .zone-list-box .live-card {
+    width: 170px
+  }
+
+  .b-footer-wrap .zone-list-box .live-card .pic, .b-wrap .zone-list-box .live-card .pic {
+    width: 100%;
+    height: 96px
+  }
+
+  .b-footer-wrap .zone-list-box .live-card .live-card .up .txt, .b-wrap .zone-list-box .live-card .live-card .up .txt {
+    width: 124px
+  }
+
+  .b-footer-wrap .article-list .zone-list-box, .b-wrap .article-list .zone-list-box {
+    height: 404px
+  }
+
+  .b-footer-wrap .live-card .up .txt, .b-wrap .live-card .up .txt {
+    width: 128px
+  }
+
+  .b-footer-wrap .live-tabs, .b-wrap .live-tabs {
+    width: 265px
+  }
+
+  .b-footer-wrap .live-tabs .live-rank .live-rank-item, .b-wrap .live-tabs .live-rank .live-rank-item {
+    margin-bottom: 16px
+  }
+
+  .b-footer-wrap .live-tabs .live-rank .live-rank-item .txt, .b-wrap .live-tabs .live-rank .live-rank-item .txt {
+    width: 102px
+  }
+
+  .b-footer-wrap #bili_report_cheese .zone-list-box.cheese, .b-wrap #bili_report_cheese .zone-list-box.cheese {
+    height: 322px
+  }
+
+  .b-footer-wrap .anime .zone-list-box, .b-wrap .anime .zone-list-box {
+    height: 332px
+  }
+
+  .b-footer-wrap .anime .special-recommend, .b-wrap .anime .special-recommend {
+    width: 265px !important;
+    height: 274px !important
+  }
+
+  .b-footer-wrap .guochuang .special-recommend, .b-wrap .guochuang .special-recommend {
+    width: 265px !important;
+    height: 91px !important
+  }
+
+  .b-footer-wrap .guochuang .r-con, .b-footer-wrap .pgc-rank, .b-wrap .guochuang .r-con, .b-wrap .pgc-rank {
+    width: 265px
+  }
+
+  .b-footer-wrap .pgc-rank .pgc-rank-wrap .txt, .b-wrap .pgc-rank .pgc-rank-wrap .txt {
+    width: 235px
+  }
+
+  .b-footer-wrap .manga-list-box, .b-wrap .manga-list-box {
+    width: 710px !important;
+    height: 602px
+  }
+
+  .b-footer-wrap .manga-list-box .manga-card, .b-wrap .manga-list-box .manga-card {
+    width: 170px !important;
+    margin-bottom: 20px !important
+  }
+
+  .b-footer-wrap .manga-list-box .manga-card .manga-title, .b-wrap .manga-list-box .manga-card .manga-title {
+    max-width: 170px !important
+  }
+
+  .b-footer-wrap .manga-list-box .manga-card > img, .b-wrap .manga-list-box .manga-card > img {
+    width: 170px !important;
+    height: 227px !important
+  }
+
+  .b-footer-wrap .manga-list-box .manga-card:nth-child(n+9), .b-wrap .manga-list-box .manga-card:nth-child(n+9) {
+    display: none
+  }
+
+  .b-footer-wrap .manga-rank, .b-footer-wrap .manga-rank .manga-rank-list, .b-wrap .manga-rank, .b-wrap .manga-rank .manga-rank-list {
+    width: 265px !important
+  }
+
+  .b-footer-wrap .manga-rank .manga-rank-list .manga-rank-item .other-link .title, .b-footer-wrap .manga-rank .manga-rank-list .manga-rank-item .preview-desc .title, .b-wrap .manga-rank .manga-rank-list .manga-rank-item .other-link .title, .b-wrap .manga-rank .manga-rank-list .manga-rank-item .preview-desc .title {
+    max-width: 148px !important
+  }
+
+  .b-footer-wrap .manga-rank .manga-rank-list .manga-rank-item:nth-child(n+13), .b-wrap .manga-rank .manga-rank-list .manga-rank-item:nth-child(n+13) {
+    display: none
+  }
+
+  .b-footer-wrap .manga-rank .link, .b-footer-wrap .manga-rank .preview, .b-wrap .manga-rank .link, .b-wrap .manga-rank .preview {
+    width: 235px !important
+  }
+
+  .b-footer-wrap .recommend-activity, .b-wrap .recommend-activity {
+    width: 265px !important;
+    height: 273px !important
+  }
+
+  .b-footer-wrap .s-rec, .b-wrap .s-rec {
+    height: 220px
+  }
+
+  .b-footer-wrap .s-rec .operate-card, .b-wrap .s-rec .operate-card {
+    width: 265px
+  }
+
+  .b-footer-wrap .elevator, .b-wrap .elevator {
+    margin-left: 515px
+  }
+
+  .b-footer-wrap .anchor img, .b-wrap .anchor img {
+    width: 126px !important
+  }
+
+  .rank-list {
+    width: 265px !important
+  }
+
+  .rank-list .rank-wrap .preview, .rank-list .rank-wrap .title {
+    width: 235px
+  }
+
+  .rank-list .rank-wrap:nth-child(n+10) {
+    display: none
+  }
+
+  .ifmt img {
+    width: 265px
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .b-wrap .elevator {
+    margin-left: 510px
+  }
+}
+
+@media screen and (max-width: 1122px) {
+  .b-wrap .elevator {
+    margin-left: 500px
+  }
+}
+
+.svg-icon {
+  overflow: hidden;
+  width: 36px;
+  height: 36px;
+  vertical-align: middle;
+  fill: currentColor
+}
+
+.home-slide .van-slide {
+  z-index: 0
+}
+
+.home-slide img {
+  border-radius: 2px
+}
+
+.home-slide .item:before {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 48px;
+  border-radius: 2px;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAwCAYAAAGnNCAXAAAABGdBTUEAALGPC/xhBQAAAENJREFUCB1jYGBgYGICEpIgQgqNBRRi4MMmARYDyXKAWLwgggfOAnMJiIH0soJ0sMEJdlQWWBYshpAAK0ZwwSzS1AEAes8Ckyqvlc0AAAAASUVORK5CYII=);
+  content: ""
+}
+
+.home-slide .item .title {
+  position: absolute;
+  bottom: 10px;
+  left: 12px;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 70%;
+  color: #fff;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 14px
+}
+
+.home-slide .trigger {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  z-index: 10
+}
+
+.home-slide .trigger span {
+  display: inline-block;
+  margin-left: 10px;
+  width: 10px;
+  height: 10px;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  background-color: #fff;
+  vertical-align: middle;
+  cursor: pointer;
+  transition: all .2s
+}
+
+.home-slide .trigger span:hover {
+  border: 2px solid #fff;
+  background-color: #00a1d6;
+  transform: scale(1.3)
+}
+
+.home-slide .trigger span.on {
+  border-width: 0;
+  border-color: transparent;
+  background-color: transparent;
+  background-image: url(//s1.hdslb.com/bfs/static/jinkela/international-home/assets/icon_slide_selected.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  transform: scale(1.8)
+}

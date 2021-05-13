@@ -8,10 +8,10 @@
          <div data-v-06834de7="" class="el-input el-input-group el-input-group--prepend"  >
            <div class="el-input-group__prepend">确认密码</div>
            <input type="password" autocomplete="off" placeholder="请输入内容" class="el-input__inner" v-model="newpassd">
-           <!----><!----><!----></div> 
+           <!----><!----><!----></div>
            <div data-v-21ab2178="" class="form-message">{{tisi}}</div>
-                                      
- 
+
+
            </div>
             <div data-v-06834de7="" class="form-group"><button data-v-06834de7="" type="button" class="el-button el-button--primary" style="width: 100%; height: 40px;" @click="clicks();phcoid()" ><!----><!----><span>下一步</span></button></div></div>
 </template>

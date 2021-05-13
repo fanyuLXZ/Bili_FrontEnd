@@ -7,11 +7,11 @@
     <div class="security-right-bottom">
       <div class="face-tool">
         <div class="tool-container">
-          <a href="/face/upload" class="">
+          <router-link to="upload" class="">
             <div class="tool-change-face">
               <span>更换头像</span>
             </div>
-          </a>
+          </router-link>
           <div class="tool-face-box" style="">
             <div class="tool-face-box" style="">
               <img alt="" class="tool-user-face" :src="$store.state.face">
@@ -27,8 +27,22 @@
 </template>
 
 <script>
+import {all_info} from "../../api/home";
+
 export default {
-name: "face"
+  name: "face",
+  mounted() {
+    if (this.$store.state.face === "") {
+      all_info().then(
+          (res) => {
+            //获取返回的json对象
+            this.$store.state.isLogin = res.data.data.isLogin
+            this.$store.state.uname = res.data.data.uname
+            this.$store.state.face = res.data.data.face
+          }
+      )
+    }
+  }
 }
 </script>
 

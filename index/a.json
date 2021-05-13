@@ -1,41 +1,134 @@
+
 {
   "code": 0,
   "message": "0",
   "ttl": 1,
-  "data": [
-    {
-      "aid": "929797963",
-      "bvid": "BV1JK4y1S7zM",
-      "typename": "综合",
-      "title": "B 界 等 级 修 仙 传",
-      "subtitle": "",
-      "play": 1129532,
-      "review": 16011,
-      "video_review": 9995,
-      "favorites": 49394,
-      "mid": 321422126,
-      "author": "进击的金厂长",
-      "description": "大型沙雕古装仙侠剧《B界修仙传》今日开播！！",
-      "create": "2021-03-29 19:46",
-      "pic": "http://i1.hdslb.com/bfs/archive/dc1cbb3170db68d6c467d475a9bf8098bbbbbb3c.jpg",
-      "coins": 234519,
-      "duration": "5:01",
-      "badgepay": false,
-      "pts": 3039549,
-      "rights": {
-        "bp": 0,
-        "elec": 0,
-        "download": 0,
-        "movie": 0,
-        "pay": 0,
-        "hd5": 1,
-        "no_reprint": 1,
-        "autoplay": 1,
-        "ugc_pay": 0,
-        "is_cooperation": 0,
-        "ugc_pay_preview": 0,
-        "no_background": 0
-      }
+  "data": {
+    "latest": {
+      "items": [
+      ],
+      "last_view_at": 1619088344
+    },
+    "total": {
+      "cursor": {
+        "is_end": true,
+        "id": 14713555,
+        "time": 1525868383
+      },
+      "items": [
+        {
+          "id": 13207476486,
+          "users": [
+            {
+              "mid": 71116828,
+              "fans": 0,
+              "nickname": "武磊WULEI_7",
+              "avatar": "http://i1.hdslb.com/bfs/face/250a01c25c63630a4a86ba8c50646e1f22af0035.jpg",
+              "mid_link": "",
+              "follow": false
+            },
+            {
+              "mid": 20182239,
+              "fans": 0,
+              "nickname": "时崎凜喵",
+              "avatar": "http://i0.hdslb.com/bfs/face/95803bcd60b4c1f9ae05a670a021890f433a64c3.jpg",
+              "mid_link": "",
+              "follow": false
+            },
+            {
+              "mid": 42312476,
+              "fans": 0,
+              "nickname": "我是尼达吔",
+              "avatar": "http://i2.hdslb.com/bfs/face/b7d0bc7b1ada3dccc8f1a9a41741fed6669fc445.jpg",
+              "mid_link": "",
+              "follow": false
+            },
+            {
+              "mid": 98900082,
+              "fans": 0,
+              "nickname": "Angle花意",
+              "avatar": "http://i0.hdslb.com/bfs/face/1a6a8b53e403cad5627677f9174e84655798f206.jpg",
+              "mid_link": "",
+              "follow": false
+            },
+            {
+              "mid": 13234189,
+              "fans": 0,
+              "nickname": "silver_wind_",
+              "avatar": "http://i1.hdslb.com/bfs/face/167fdd802426cc478e06cc77c46d5e976423ad34.jpg",
+              "mid_link": "",
+              "follow": false
+            }
+          ],
+          "item": {
+            "item_id": 96585166,
+            "pid": 0,
+            "type": "video",
+            "business": "视频",
+            "business_id": 1,
+            "reply_business_id": 0,
+            "like_business_id": 0,
+            "title": "视频标题",
+            "desc": "视频描述",
+            "image": "视频封面图",
+            "uri": "视频链接",
+            "detail_name": "查看视频详情",
+            "native_uri": "视频链接",
+            "ctime": 1584450788
+          },
+          "counts": 23,
+          "like_time": 1614597320,
+          "notice_state": 0
+        },
+        {
+          "id": 72294872,
+          "users": [
+            {
+              "mid": 14882631,
+              "fans": 0,
+              "nickname": "青禾果果果果果",
+              "avatar": "http://i0.hdslb.com/bfs/face/59394785789fa118a041b20a7bb1151bf178c38a.jpg",
+              "mid_link": "",
+              "follow": false
+            },
+            {
+              "mid": 43697459,
+              "fans": 0,
+              "nickname": "忧之灵",
+              "avatar": "http://i2.hdslb.com/bfs/face/f9c864064905fcd64ba65e5a4d73e2e7b05ff332.jpg",
+              "mid_link": "",
+              "follow": false
+            },
+            {
+              "mid": 8202238,
+              "fans": 0,
+              "nickname": "Colourful丶Max",
+              "avatar": "http://i1.hdslb.com/bfs/face/efa40c416339e1510335aa167e6942e99e52b519.jpg",
+              "mid_link": "",
+              "follow": false
+            }
+          ],
+          "item": {
+            "item_id": 4351265,
+            "pid": 0,
+            "type": "album",
+            "business": "动态",
+            "business_id": 0,
+            "reply_business_id": 0,
+            "like_business_id": 0,
+            "title": "",
+            "desc": "动态信息",
+            "image": "动态图片",
+            "uri": "动态链接",
+            "detail_name": "查看动态详情",
+            "native_uri": "动态链接",
+            "ctime": 0
+          },
+          "counts": 6,
+          "like_time": 1610883833,
+          "notice_state": 0
+        }
+      ]
     }
-  ]
+  }
 }

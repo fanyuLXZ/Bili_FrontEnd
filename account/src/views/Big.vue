@@ -6,19 +6,19 @@
       <span class="security-right-title-text">大会员</span> <!---->
     </div>
     <report-vip-name></report-vip-name>
-    <click-privilege-report></click-privilege-report>
+<!--    <click-privilege-report></click-privilege-report>-->
   </div>
 
 </template>
 
 <script>
 import reportVipName from "@/components/big/reportVipName";
-import clickPrivilegeReport from "@/components/big/clickPrivilegeReport";
+// import clickPrivilegeReport from "@/components/big/clickPrivilegeReport";
 export default {
   name: "big",
   components:{
     reportVipName,
-    clickPrivilegeReport
+    // clickPrivilegeReport
   }
 }
 </script>
@@ -26,7 +26,8 @@ export default {
 <style>
 @import "../assets/personalcenter/big.css";
 </style>
-<style type="text/css">.big-name-warp {
+<style type="text/css">
+.big-name-warp {
   margin: 0 20px;
   padding: 30px 0 20px;
   border-bottom: 1px solid #e5e9ef

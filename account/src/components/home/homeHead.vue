@@ -52,7 +52,7 @@
 
 <script>
 import mask_warp from "./homeTopLevelMaskWarp"
-import axios from "axios";
+import {all_info} from "../../api/home";
 export default {
   name: "home-head",
   components:{
@@ -75,7 +75,7 @@ export default {
     }
   },
   mounted() {
-    axios.get("/api/member/all-info").then(
+    all_info().then(
         (res)=>{
           //获取返回的json对象
           this.$store.state.isLogin = res.data.data.isLogin

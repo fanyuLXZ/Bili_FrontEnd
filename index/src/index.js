@@ -1,4 +1,3 @@
-
 import Vue from 'vue'
 import Meta from 'vue-meta'
 import 'g-public/modules/@bilibili/van/dist/Popover/style.css'

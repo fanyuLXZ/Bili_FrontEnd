@@ -14,7 +14,7 @@
               </div>
                <div data-v-a7c9d180="" class="input-component el-input">
                  <!----><input type="text" autocomplete="off" placeholder="请输入内容" class="el-input__inner" v-model="placeholder">
-                 <!----><!----><!----></div></div> 
+                 <!----><!----><!----></div></div>
                  <div data-v-a7c9d180="" class="form-message">
                    </div></div>
                     <div data-v-a7c9d180="" class="form-group">
@@ -25,10 +25,10 @@
                            <button data-v-a7c9d180="" type="button" class="el-button verify-btn float-left el-button--default" @click="yzmclick">
                              <!----><!----><span>获取验证码</span>
                              </button>
-                             </div> 
+                             </div>
                                 <div data-v-21ab2178="" class="form-message">{{tisi}}</div>
                              </div>
-                             
+
                                          <div data-v-a7c9d180="" class="form-group">
                                             <button data-v-a7c9d180="" type="button" class="el-button btn-full el-button--primary" @click="clicks();phoneid()" ><!-- -->
                                              <!----><!----><span>下一步</span></button></div></div>

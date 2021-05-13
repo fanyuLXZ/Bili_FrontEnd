@@ -30,7 +30,7 @@
 import points_header_warp from "../components/points/pointsHeaderWarp"
 import pointsExchangeWarp from "@/components/points/pointsExchangeWarp";
 import pointHow from "@/components/points/pointHow";
-import axios from "axios";
+import { vip_point} from "../api/home";
 export default {
   name: "points",
 
@@ -47,11 +47,11 @@ export default {
   },
 
   mounted() {
-    axios.get("/api/member/Vip").then(
-        (res)=>{
-          //获取返回的json对象
-          this.vPoint = res.data.vPoint
-        })
+    vip_point().then(
+      (res)=>{
+        //获取返回的json对象
+        this.vPoint = res.data.data.pointBalance
+      })
   }
 }
 </script>

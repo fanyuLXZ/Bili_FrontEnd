@@ -3,7 +3,7 @@
   <div class="security-left">
     <span class="security-title">个人中心</span>
     <ul id="ser-ul" class="security-ul">
-      <router-link  v-for="item in ser_ul" :key="item.ico" class="security-list" :to="'/'+item.english" tag="li" active-class="router-link-exact-active on">
+      <router-link  v-for="item in ser_ul" :key="item.ico" class="security-list" :to="item.english" tag="li" :class="is_current(item)?'router-link-exact-active on':''">
         <i class="security-icon " :class="'icon-'+item.ico"></i>
         <span class="security-nav-name">
           {{item.title}}
@@ -35,6 +35,21 @@ export default {
         {ico:8,title:"我的硬币",english:"coin"},
       ],
       securityOutLink:["个人空间","我的钱包","创作中心"]
+    }
+  },
+  methods:{
+    is_current(item){
+      let current = this.$route.name===item.english
+      if (!current){
+        this.$router.getRoutes().forEach((v)=>{
+          if (v.name===this.$route.name){
+            if (v.parent?.name===item.english){
+              current=true
+            }
+          }
+        })
+      }
+      return current
     }
   }
 }

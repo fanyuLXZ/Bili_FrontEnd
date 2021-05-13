@@ -8,48 +8,56 @@ Vue.use(VueRouter)
 const router = new Router({
   mode: 'history',
   routes:[
+      {
+        path:"/account/home",
+        name:"home",
+        component:resolve => require(['../views/Home'], resolve)
+      },
+      {
+        path:"/account/big",
+        name:"big",
+        component:resolve => require(['../views/Big'], resolve)
+      },
+      {
+        path:"/account/coin",
+        name:"coin",
+        component:resolve => require(['../views/Coin'], resolve)
+      },
+      {
+        path:"/account/face",
+        name:"face",
+        component:resolve => require(['../views/Face'], resolve),
+        children:[
+          {
+            path:"/account/face/mall",
+            name:"mall",
+            component:resolve => require(['../views/face/Mall'], resolve)
+          },
+          {
+            path:"/account/face/upload",
+            name:"upload",
+            component:resolve => require(['../views/face/Upload'], resolve)
+          },
+          {
+            path:"/",
+            name:"mall",
+            component:resolve => require(['../views/face/Mall'], resolve)
+          }
+        ]
+      },
+      {
+        path:"/account/points",
+        name:"points",
+        component:resolve => require(['../views/Points.vue'], resolve)
+      },
+      {
+        path:"/account/setting",
+        name:"setting",
+        component:resolve => require(['../views/Setting.vue'], resolve)
+      },
     {
-      path:"/home",
-      component:resolve => require(['../views/Home.vue'], resolve)
-    },
-    {
-      path:"/big",
-      component:resolve => require(['../views/Big'], resolve)
-    },
-    {
-      path:"/coin",
-      component:resolve => require(['../views/Coin'], resolve)
-    },
-    {
-      path:"/face",
-      component:resolve => require(['../views/Face'], resolve),
-      children:[
-        {
-          path:"/face/mall",
-          component:resolve => require(['../views/face/Mall'], resolve)
-        },
-        {
-          path:"/face/article",
-          component:resolve => require(['../views/face/Upload'], resolve)
-        },
-        {
-          path:"",
-          redirect:"/face/mall"
-        }
-      ]
-
-    },
-    {
-      path:"/points",
-      component:resolve => require(['../views/Points.vue'], resolve)
-    },
-    {
-      path:"/setting",
-      component:resolve => require(['../views/Setting.vue'], resolve)
-    },
-    {
-      path:"*",
-      redirect:"/home"
+      path: '*',
+      redirect:"/account/home"
     }
   ]
 })

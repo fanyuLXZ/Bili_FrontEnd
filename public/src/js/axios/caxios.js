@@ -50,6 +50,5 @@ function getaxios(config) {
     config.headers['Content-Type'] = config.contentType
   }
   config.url = config.query ? config.url + '?' + querystring.stringify(config.query) : config.url
-
   return axios(config)
 }

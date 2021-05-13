@@ -61,7 +61,7 @@ import userNickRelName from "@/components/setting/userNickRelName";
 // import userMySign from "@/components/setting/userMySign";
 import userMySex from "@/components/setting/userMySex";
 import userMyDate from "@/components/setting/userMyDate";
-import axios from "axios";
+import {account_info} from "../api/home";
 export default {
   name: "setting",
 
@@ -83,7 +83,7 @@ export default {
   },
 
   mounted() {
-    axios.get("/api/member/account/info").then(
+    account_info().then(
         (res)=>{
           //获取返回的json对象
           this.uname = res.data.data.uname

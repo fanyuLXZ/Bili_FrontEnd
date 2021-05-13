@@ -12,7 +12,7 @@
       </div>
       <div class="big-nane-bottom">
         <p>
-          大会员有效期至{{ valid_period }}
+          {{ new Date(valid_period)>new Date()?"大会员有效期至"+valid_period:"大会员已离开你"+Math.ceil(((new Date().valueOf())-(new Date(this.valid_period).valueOf()))/(1000*60*60*24))+"天"}}
         </p>
       </div>
       <div class="big-member-btn"><i style="display: none;"></i>
@@ -113,7 +113,7 @@
 
 <script>
 
-import axios from "axios";
+import {vip_info} from "../../api/home";
 
 export default {
   name: "reportVipName",
@@ -133,15 +133,14 @@ export default {
     },
   },
   mounted() {
-    axios.get("/api/member/vip/info")
-        .then(
-            (res)=>{
-              //获取返回的json对象
-              this.status = res.data.data.vip_status
-              this.type = res.data.data.vip_type
-              this.valid_period = res.data.data.due_date
-            }
-        )
+    vip_info().then(
+      (res) => {
+        //获取返回的json对象
+        this.status = res.data.data.vip_status
+        this.type = res.data.data.vip_type
+        this.valid_period = res.data.data.due_date
+      }
+    )
   }
 }
 </script>
