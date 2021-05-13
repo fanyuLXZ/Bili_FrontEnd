@@ -13,7 +13,8 @@ export const getUserInfo = () => {
 // 获取导航更新数字
 export const getOnline = () => {
   return axios({
-    url: '/api/zoning/online/all',
+    url: '//api.bilbili.org/region/online/all',
+    withCredentials: true,
   })
 }
 
