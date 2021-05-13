@@ -1,32 +1,36 @@
 <template>
-  <span>
-    <div role="tooltip" id="el-popover-9836" aria-hidden="true" class="el-popover el-popper header-popover header-popover-download" tabindex="0" style="width: 171px; display: none;"><!---->
-      <a target="_blank" href="https://dl-hdslb-com.oss-cn-shanghai.aliyuncs.com/bili/ugc/win/bilibiliuploader-2.3.0.1066.exe" class="link">
-        <img src="//i0.hdslb.com/bfs/archive/f634aab0377985b24beb3e0e33259d3150c699c5.png">
-        <div>
-          <p >投稿工具</p>
-          <p >2.3.0.1066</p>
-        </div>
+  <div role="tooltip" id="el-popover-5762" aria-hidden="false" class="el-popover el-popper header-popover header-popover-avatar" tabindex="0" style="width: 144px; transform-origin: center top; z-index: 2037; position: fixed; top: 45px; left: 860px;" x-placement="bottom">
+    <div class="content">
+      <a href="//account.bilibili.com/account/home" target="_blank" class="link">
+        <i class="bcc-iconfont bcc-icon-ic_Personalcenter"></i>
+        <span class="title">个人中心</span>
       </a>
-      <a target="_blank" href="//live.bilibili.com/liveHime" class="link">
-        <img src="//i0.hdslb.com/bfs/archive/f6c0741e654fefaef1e950fd170cab4fc6db17ba.png">
-        <div>
-          <p >直播姬</p>
-          <p >2.0.0.1149</p>
-        </div>
+      <a href="//member.bilibili.com/platform/upload-manager/article" target="_blank" class="link">
+        <i class="bcc-iconfont bcc-icon-ic_management"></i>
+        <span class="title">投稿管理</span>
       </a>
-      <a target="_blank" href="//bcut.drawyoo.com/" class="link">
-        <img src="//i0.hdslb.com/bfs/archive/026e3f413b061380c0c534e90759ecb39f1db426.png">
-        <div>
-          <p >必剪</p>
-          <p >V1.6</p>
-        </div>
+      <a href="//pay.bilibili.com/paywallet-fe/bb_balance.html" target="_blank" class="link">
+        <i class="bcc-iconfont bcc-icon-ic_moneypocket"></i>
+        <span class="title">B币钱包</span>
+      </a>
+      <a href="//show.bilibili.com/orderlist" target="_blank" class="link">
+        <i class="bcc-iconfont bcc-icon-ic_ordercenter"></i>
+        <span class="title">订单中心</span>
+      </a>
+      <a href="//link.bilibili.com/p/center/index#/user-center/my-info/operation" target="_blank" class="link">
+        <i class="bcc-iconfont bcc-icon-ic_Livecenter"></i>
+        <span class="title">直播中心</span>
       </a>
     </div>
-    <span class="el-popover__reference" aria-describedby="el-popover-9836" tabindex="0">
-      <i slot="reference" class="bcc-iconfont bcc-icon-ic_download_ download "></i>
-    </span>
-  </span>
+    <div class="logout">
+      <div class="line"></div>
+      <a class="link">
+        <i class="bcc-iconfont bcc-icon-ic_exit"></i>
+        <span class="title">退出登录</span>
+      </a>
+    </div>
+    <div class="popper__arrow" style="left: 64.5px;"></div>
+  </div>
 </template>
 
 <script>

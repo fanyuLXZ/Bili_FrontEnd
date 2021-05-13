@@ -29,68 +29,10 @@
                 <div class="follow-event-line">
                   <div class="follow-tool-box clearfix">
                     <div class="follow-line-legend"></div>
-                    <div class="follow-line-select day bcc-select" style="width: 120px; display: none;">
-                      <div class="bcc-select-input-wrap">
-                        <input type="text" readonly="readonly" placeholder="请选择内容" class="bcc-select-input-inner">
-                        <i class="bcc-iconfont bcc-icon-ic_drop-down"></i>
-                      </div>
-                      <div class="bcc-select-list-wrap" style="display: none;">
-                        <ul class="bcc-select-option-list"></ul>
-                      </div>
-                    </div>
-                    <div class="follow-line-select bcc-select" style="width: 120px;">
-                      <div class="bcc-select-input-wrap">
-                        <input type="text" readonly="readonly" placeholder="请选择内容" class="bcc-select-input-inner">
-                        <i class="bcc-iconfont bcc-icon-ic_drop-down"></i>
-                      </div>
-                      <div class="bcc-select-list-wrap" style="display: none;">
-                        <ul class="bcc-select-option-list">
-                          <li class="bcc-option">
-                            <span>2017</span>
-                            <i class="bcc-iconfont bcc-icon-ic_MenuButton-tick"></i>
-                          </li>
-                          <li class="bcc-option">
-                            <span>2018</span>
-                            <i class="bcc-iconfont bcc-icon-ic_MenuButton-tick"></i>
-                          </li>
-                          <li class="bcc-option">
-                            <span>2019</span>
-                            <i class="bcc-iconfont bcc-icon-ic_MenuButton-tick"></i>
-                          </li>
-                          <li class="bcc-option">
-                            <span>2020</span>
-                            <i class="bcc-iconfont bcc-icon-ic_MenuButton-tick"></i>
-                          </li>
-                          <li class="bcc-option">
-                            <span>2021</span>
-                            <i class="bcc-iconfont bcc-icon-ic_MenuButton-tick"></i>
-                          </li>
-                          <li class="bcc-option selected">
-                            <span>最近30天</span>
-                            <i class="bcc-iconfont bcc-icon-ic_MenuButton-tick"></i>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
+                    <follow-line-select-day />
+                    <follow-line-select />
                   </div>
-                  <div class="echarts" _echarts_instance_="ec_1620373512912"
-                       style="-webkit-tap-highlight-color: transparent; user-select: none; position: relative;">
-                    <div
-                        style="position: relative; overflow: hidden; width: 923px; height: 208px; padding: 0px; margin: 0px; border-width: 0px; cursor: default;">
-                      <canvas data-zr-dom-id="zr_0" width="923" height="208"
-                              style="position: absolute; left: 0px; top: 0px; width: 923px; height: 208px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas>
-                    </div>
-                    <div
-                        style="position: absolute; display: none; border-style: solid; white-space: nowrap; z-index: 9999999; transition: left 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0s, top 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0s; background-color: rgb(80, 80, 80); border-width: 0px; border-color: rgb(51, 51, 51); color: rgb(255, 255, 255); font: 14px / 21px -apple-system, BlinkMacSystemFont, &quot;Helvetica Neue&quot;, Helvetica, Arial, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, sans-serif; padding: 12px; left: 212px; top: 46px; box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px; border-radius: 2px;">
-                      <div style="max-width:400px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;">
-                        21-04-12
-                      </div>
-                      <div style="margin-top:8px;"><span
-                          style="display:inline-block;margin-right:5px;border-radius:10px;width:10px;height:10px;background-color:#23ADE5;"></span>
-                        新增关注: 0
-                      </div>
-                    </div>
-                  </div>
+                  <dc-section1 />
                 </div>
               </div>
             </div>
@@ -103,18 +45,22 @@
 </template>
 
 <script>
+import DcSection1 from "@/components/right/data/dc-section1";
+import FollowLineSelect from "@/components/right/fans/follow-line-select";
+import FollowLineSelectDay from "@/components/right/fans/follow-line-select-day";
 export default {
   name: "Fansview",
+  components: {FollowLineSelect, DcSection1, FollowLineSelectDay},
   data(){
     return{
-      isActive:0,
-      fans:["新增关注","取消关注"]
+      isActive:0,   //新增与取消
+      fans:["新增关注","取消关注"],
     }
   },
   methods:{
     click(index){
       this.isActive = index
-    }
+    },
   }
 }
 </script>
