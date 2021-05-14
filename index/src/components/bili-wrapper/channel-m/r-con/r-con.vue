@@ -5,7 +5,7 @@
       <!--    头部    -->
       <rank-head />
       <!--    排行    -->
-      <rank-list />
+      <rank-list :tid="itemTitle.tid"/>
       <a href="/v/douga/mad/#/all/click/0/1/?open=hot" target="_blank" class="more-link">查看更多
         <i class="icon icon-arrow-r"></i>
       </a>
@@ -18,6 +18,12 @@ import RankHead from "./rank-head";
 import RankList from "./rank-list";
 export default {
 name: "r-con",
-  components: {RankList, RankHead}
+  components: {RankList, RankHead},
+  props:["itemTitle"],
 }
 </script>
+<style>
+.sec-rank {
+  overflow: hidden;
+}
+</style>

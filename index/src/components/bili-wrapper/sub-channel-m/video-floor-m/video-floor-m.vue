@@ -3,7 +3,7 @@
     <!--    title   -->
     <dynamic-title />
     <!--    最新动态视频    -->
-    <storey-box />
+    <storey-box :tid="tid"/>
   </div>
 </template>
 
@@ -12,6 +12,7 @@ import DynamicTitle from "./dynamic-title";
 import StoreyBox from "../../sub-channel-m/video-floor-m/storey-box";
 export default {
   name: "video-floor-m",
-  components: {StoreyBox, DynamicTitle}
+  components: {StoreyBox, DynamicTitle},
+  props:["tid"]
 }
 </script>

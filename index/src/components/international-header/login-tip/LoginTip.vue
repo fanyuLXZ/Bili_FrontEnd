@@ -13,7 +13,7 @@
         <LoginTipContent />
         <a
           class="login-btn"
-          :href="handleHref('https://passport.bilibili.com/login')"
+          :href="handleHref('http://passport.bilibili.com/login')"
           target="_blank"
           @click="handleReport"
         >

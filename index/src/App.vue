@@ -59,3 +59,10 @@ export default {
 }
 
 </script>
+<style>
+.international-header *,
+#international-home *,
+.van-popover * {
+  box-sizing: border-box;
+}
+</style>

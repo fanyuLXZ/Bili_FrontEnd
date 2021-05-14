@@ -26,7 +26,7 @@
         </div>
       </div>
       <div class="r">
-        <a href="//www.bilibili.com/video/BV1zy4y1s75E" target="_blank" title="鼬先生，你在临死前是否也看清了自己呢？" class="title">{{ item.title }}</a>
+        <a href="//www.bilibili.com/video/BV1zy4y1s75E" target="_blank" :title="item.title" class="title">{{ item.title }}</a>
         <div class="v-desc" v-if="mod!==3">{{ item.desc }}</div>
         <div class="v-info">
           <span class="v-info-i">
@@ -39,7 +39,7 @@
           </span>
         </div>
         <div class="up-info">
-          <a href="//space.bilibili.com/22680908" target="_blank" title="伊达政宗Pn" class="v-author">
+          <a href="//space.bilibili.com/22680908" target="_blank" :title="item.owner.name" class="v-author">
             {{ item.owner.name }}
           </a>
           <span v-if="mod===1" title="日期" class="v-date">{{ item.ctime }}</span>

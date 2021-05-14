@@ -21,13 +21,13 @@
           <!-- 注册 -->
           <a
             class="btn reg-btn"
-            href="//passport.bilibili.com/register/phone.html"
+            href="//passport.bilibili.org/register/phone.html"
             @click="customReport('top_window_click', { module: '注册'})"
           >
             {{$HeadLang[18]}}
           </a>
           <!-- 登录 -->
-          <a href="//passport.bilibili.com/login" class="btn" @click="customReport('top_window_click', { module: '登录' })">
+          <a href="//passport.bilibili.org/login" class="btn" @click="customReport('top_window_click', { module: '登录' })">
             {{$HeadLang[19]}}
           </a>
         </div>
@@ -102,7 +102,7 @@ export default {
     goLogin() {
       if(this.isTouchDevice) return
       customReport('top_bar_click', { module: '登录' })
-      window.open('//passport.bilibili.com/login', '_blank')
+      window.open('//passport.bilibili.org/login', '_blank')
     },
   },
 }

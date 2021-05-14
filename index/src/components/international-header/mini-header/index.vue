@@ -6,7 +6,7 @@
       }"
     >
       <NavLink :locsData="locsData" :menuConfig="menuConfig" :navType="navType" />
-      <NavSearch v-if="loginStatus !== 'PENDING'" />
+<!--      <NavSearch v-if="loginStatus !== 'PENDING'" />-->
       <NavUserCenter
         :locsData="locsData"
         :lang="lang"
@@ -21,12 +21,12 @@
 import NavLink from './NavLink'
 
 const NavUserCenter = ()=>import(/* webpackMode: "lazy" */ './NavUserCenter.vue')
-const NavSearch = ()=>import(/* webpackMode: "lazy" */ '../search/NavSearch.vue')
+// const NavSearch = ()=>import(/* webpackMode: "lazy" */ '../search/NavSearch.vue')
 
 export default {
   components: {
     NavLink,
-    NavSearch,
+    // NavSearch,
     NavUserCenter,
   },
   props: {
@@ -50,11 +50,11 @@ export default {
       loginStatus: 'PENDING',
     }
   },
-  // beforeMount() {
-  //   window.onLoginInfoLoaded(({ isLogin }) => {
-  //     this.loginStatus = isLogin ? 'LOGIN' : 'LOGOUT'
-  //   }, true)
-  // },
+  beforeMount() {
+    window.onLoginInfoLoaded(({ isLogin }) => {
+      this.loginStatus = isLogin ? 'LOGIN' : 'LOGOUT'
+    }, true)
+  },
   watch: {
     'userInfo.isLogin' (val) {
       this.loginStatus = val ? 'LOGIN' : 'LOGOUT'

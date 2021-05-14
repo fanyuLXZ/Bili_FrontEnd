@@ -199,95 +199,9 @@
                 key: "_getNav", value: function () {
                     var e = this;
                     this.cache ? this._notice(this.cache) : this.locked || (this.locked = !0,
-                    //     {
-                    //     "code": 0,
-                    //     "message": "0",
-                    //     "ttl": 1,
-                    //     "data": {
-                    //         "isLogin": true,
-                    //         "email_verified": 1,
-                    //         "face": "http://i2.hdslb.com/bfs/face/ca2beb0816787f7faea7740bc10a283fef354bb5.jpg",
-                    //         "level_info": {
-                    //             "current_level": 5,
-                    //             "current_min": 10800,
-                    //             "current_exp": 21903,
-                    //             "next_exp": 28800
-                    //         },
-                    //         "mid": 26119890,
-                    //         "mobile_verified": 1,
-                    //         "money": 880.2,
-                    //         "moral": 70,
-                    //         "official": {
-                    //             "role": 0,
-                    //             "title": "",
-                    //             "desc": "",
-                    //             "type": -1
-                    //         },
-                    //         "officialVerify": {
-                    //             "type": -1,
-                    //             "desc": ""
-                    //         },
-                    //         "pendant": {
-                    //             "pid": 0,
-                    //             "name": "",
-                    //             "image": "",
-                    //             "expire": 0,
-                    //             "image_enhance": "",
-                    //             "image_enhance_frame": ""
-                    //         },
-                    //         "scores": 0,
-                    //         "uname": "冰丿繁羽",
-                    //         "vipDueDate": 1618588800000,
-                    //         "vipStatus": 1,
-                    //         "vipType": 1,
-                    //         "vip_pay_type": 1,
-                    //         "vip_theme_type": 0,
-                    //         "vip_label": {
-                    //             "path": "",
-                    //             "text": "大会员",
-                    //             "label_theme": "vip",
-                    //             "text_color": "#FFFFFF",
-                    //             "bg_style": 1,
-                    //             "bg_color": "#FB7299",
-                    //             "border_color": ""
-                    //         },
-                    //         "vip_avatar_subscript": 1,
-                    //         "vip_nickname_color": "",
-                    //         "vip": {
-                    //             "type": 1,
-                    //             "status": 1,
-                    //             "due_date": 1618588800000,
-                    //             "vip_pay_type": 1,
-                    //             "theme_type": 0,
-                    //             "label": {
-                    //                 "path": "",
-                    //                 "text": "大会员",
-                    //                 "label_theme": "vip",
-                    //                 "text_color": "#FFFFFF",
-                    //                 "bg_style": 1,
-                    //                 "bg_color": "#FB7299",
-                    //                 "border_color": ""
-                    //             },
-                    //             "avatar_subscript": 1,
-                    //             "nickname_color": "",
-                    //             "role": 1,
-                    //             "avatar_subscript_url": "http://i0.hdslb.com/bfs/vip/icon_Certification_big_member_22_3x.png"
-                    //         },
-                    //         "wallet": {
-                    //             "mid": 26119890,
-                    //             "bcoin_balance": 0,
-                    //             "coupon_balance": 0,
-                    //             "coupon_due_time": 0
-                    //         },
-                    //         "has_shop": false,
-                    //         "shop_url": "",
-                    //         "allowance_count": 0,
-                    //         "answer_status": 0
-                    //     }
-                    // })
                         f({
                         method: "GET",
-                        url: "/api/member/all-info"
+                        url: "//api.bilibili.org/member/all-info"
                     }).then((function (t) {
                         e.cache = t, e.isLogin = t.data && t.data.isLogin, e._notice(t, !0)
                     })))

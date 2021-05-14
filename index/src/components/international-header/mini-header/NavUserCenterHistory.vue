@@ -31,7 +31,7 @@
           </div>
           <a v-if="cacheDataMap[currentTab] && fullData[currentTab]"
              class="view-all"
-             href="//www.bilibili.com/account/history" 
+             href="//www.bilibili.org/account/history" 
              target="_blank">{{$HeadLang[51]}}</a>
 
           <div v-if="emptyData[currentTab]" class="empty-panel">
@@ -73,14 +73,14 @@ export default {
           title: this.$HeadLang['13'],
           type: 'archive',
         },
-        {
-          title: this.$HeadLang['39'],
-          type: 'live',
-        },
-        {
-          title: this.$HeadLang['15'],
-          type: 'article',
-        }
+        // {
+        //   title: this.$HeadLang['39'],
+        //   type: 'live',
+        // },
+        // {
+        //   title: this.$HeadLang['15'],
+        //   type: 'article',
+        // }
       ],
       currentTab: 'archive',
       cacheDataMap: {
@@ -168,7 +168,7 @@ export default {
       }
     },
     goHistory() {
-      window.open('//www.bilibili.com/account/history', '_blank')
+      window.open('//www.bilibili.org/account/history', '_blank')
     },
   },
   watch: {

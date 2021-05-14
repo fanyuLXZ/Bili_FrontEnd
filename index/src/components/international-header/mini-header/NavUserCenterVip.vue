@@ -178,7 +178,7 @@ export default {
           type:'click'
         })
       }
-      window.open('//account.bilibili.com/account/big', '_blank')
+      window.open('//account.bilibili.org/account/big', '_blank')
     },
     handleShow() {
       if (!this.userInfo.isLogin) {

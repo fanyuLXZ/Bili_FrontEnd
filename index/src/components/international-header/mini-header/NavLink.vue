@@ -2,7 +2,7 @@
   <div class="nav-link">
     <ul class="nav-link-ul" :class="{'mini': navType === 0}">
       <li class="nav-link-item" v-van-report:mininav-click.click="`首页`" @mouseover="popoverChannelShow = true">
-        <a class="link" href="//www.bilibili.com" v-if="navType !== 0">
+        <a class="link" href="//www.bilibili.org" v-if="navType !== 0">
           <i class="bilifont bili-icon_dingdao_zhuzhan"></i>
           {{$HeadLang['38']}}
         </a>
@@ -15,7 +15,7 @@
             :visible-arrow="false"
             v-else>
           <ChannelMenu :menuConfig="menuConfig" v-if="popoverChannelShow" />
-          <a slot="reference" class="link" href="//www.bilibili.com">
+          <a slot="reference" class="link" href="//www.bilibili.org">
             <svg class="navbar_logo"
                  aria-hidden="true"
                  :viewBox="inlineSvgs.logo.viewBox"
@@ -32,61 +32,61 @@
           </a>
         </van-popover>
       </li>
-      <li class="nav-link-item" v-van-report:mininav-click.click="`番剧`">
-        <a class="link" href="//www.bilibili.com/anime/" target="_blank">{{$HeadLang['1']}}</a>
-      </li>
-      <li class="nav-link-item" v-van-report:mininav-hover.mouseenter="`游戏中心`" @mouseover="popoverGameShow = true">
-        <van-popover
-            popper-class="popover-game"
-            placement="bottom-start"
-            :open-delay=300
-            :offset=-50
-            transition="slide-fade"
-            trigger="hover">
-          <iframe v-if="popoverGameShow" src="https://www.bilibili.com/page-proxy/game-nav.html" frameborder="0" width="100%" height="100%"></iframe>
-          <a slot="reference" class="link" href="https://game.bilibili.com/platform/" target="_blank" v-van-report:mininav-click.click="`游戏中心`">{{$HeadLang['3']}}</a>
-        </van-popover>
-      </li>
-      <li class="nav-link-item" v-van-report:mininav-hover.mouseenter="`直播`" @mouseover="popoverLiveShow = true">
-        <van-popover
-            popper-class="popover-live"
-            placement="bottom-start"
-            :open-delay=300
-            :offset=-50
-            transition="slide-fade"
-            trigger="hover">
-          <iframe v-if="popoverLiveShow" src="https://live.bilibili.com/blackboard/dropdown-menu.html" frameborder="0" width="100%" height="100%"></iframe>
-          <a slot="reference" class="link" href="//live.bilibili.com" target="_blank" v-van-report:mininav-click.click="`直播`">{{$HeadLang['39']}}</a>
-        </van-popover>
-      </li>
-      <li class="nav-link-item" v-van-report:mininav-click.click="`会员购`">
-        <a class="link" href="//show.bilibili.com/platform/home.html?msource=pc_web" target="_blank">{{$HeadLang['4']}}</a>
-      </li>
-      <li class="nav-link-item" v-van-report:mininav-hover.mouseenter="`漫画`" @mouseover="popoverMangaShow = true">
-        <van-popover
-            popper-class="popover-manga"
-            placement="bottom-start"
-            :open-delay=300
-            :offset=-50
-            transition="slide-fade"
-            trigger="hover">
-          <iframe v-if="popoverMangaShow" src="https://manga.bilibili.com/eden/bilibili-nav-panel.html" frameborder="0" width="100%" height="100%"></iframe>
-          <a slot="reference" class="link" href="//manga.bilibili.com?from=bill_top_mnav" target="_blank" v-van-report:mininav-click.click="`漫画`">{{$HeadLang['5']}}</a>
-        </van-popover>
-      </li>
-      <li class="nav-link-item" v-van-report:mininav-click.click="`赛事`">
-        <a class="link" href="//www.bilibili.com/v/game/match/" target="_blank">{{$HeadLang['69']}}</a>
-      </li>
-      <LocMenu class="nav-link-item"
-               :locsData=locsData
-               :locId=2953
-               :locId2=2955>
-      </LocMenu>
-      <LocMenu class="nav-link-item"
-               :locsData=locsData
-               :locId=2954
-               :locId2=2956>
-      </LocMenu>
+<!--      <li class="nav-link-item" v-van-report:mininav-click.click="`番剧`">-->
+<!--        <a class="link" href="//www.bilibili.org/anime/" target="_blank">{{$HeadLang['1']}}</a>-->
+<!--      </li>-->
+<!--      <li class="nav-link-item" v-van-report:mininav-hover.mouseenter="`游戏中心`" @mouseover="popoverGameShow = true">-->
+<!--        <van-popover-->
+<!--            popper-class="popover-game"-->
+<!--            placement="bottom-start"-->
+<!--            :open-delay=300-->
+<!--            :offset=-50-->
+<!--            transition="slide-fade"-->
+<!--            trigger="hover">-->
+<!--          <iframe v-if="popoverGameShow" src="https://www.bilibili.org/page-proxy/game-nav.html" frameborder="0" width="100%" height="100%"></iframe>-->
+<!--          <a slot="reference" class="link" href="https://game.bilibili.org/platform/" target="_blank" v-van-report:mininav-click.click="`游戏中心`">{{$HeadLang['3']}}</a>-->
+<!--        </van-popover>-->
+<!--      </li>-->
+<!--      <li class="nav-link-item" v-van-report:mininav-hover.mouseenter="`直播`" @mouseover="popoverLiveShow = true">-->
+<!--        <van-popover-->
+<!--            popper-class="popover-live"-->
+<!--            placement="bottom-start"-->
+<!--            :open-delay=300-->
+<!--            :offset=-50-->
+<!--            transition="slide-fade"-->
+<!--            trigger="hover">-->
+<!--          <iframe v-if="popoverLiveShow" src="https://live.bilibili.org/blackboard/dropdown-menu.html" frameborder="0" width="100%" height="100%"></iframe>-->
+<!--          <a slot="reference" class="link" href="//live.bilibili.org" target="_blank" v-van-report:mininav-click.click="`直播`">{{$HeadLang['39']}}</a>-->
+<!--        </van-popover>-->
+<!--      </li>-->
+<!--      <li class="nav-link-item" v-van-report:mininav-click.click="`会员购`">-->
+<!--        <a class="link" href="//show.bilibili.org/platform/home.html?msource=pc_web" target="_blank">{{$HeadLang['4']}}</a>-->
+<!--      </li>-->
+<!--      <li class="nav-link-item" v-van-report:mininav-hover.mouseenter="`漫画`" @mouseover="popoverMangaShow = true">-->
+<!--        <van-popover-->
+<!--            popper-class="popover-manga"-->
+<!--            placement="bottom-start"-->
+<!--            :open-delay=300-->
+<!--            :offset=-50-->
+<!--            transition="slide-fade"-->
+<!--            trigger="hover">-->
+<!--          <iframe v-if="popoverMangaShow" src="https://manga.bilibili.org/eden/bilibili-nav-panel.html" frameborder="0" width="100%" height="100%"></iframe>-->
+<!--          <a slot="reference" class="link" href="//manga.bilibili.org?from=bill_top_mnav" target="_blank" v-van-report:mininav-click.click="`漫画`">{{$HeadLang['5']}}</a>-->
+<!--        </van-popover>-->
+<!--      </li>-->
+<!--      <li class="nav-link-item" v-van-report:mininav-click.click="`赛事`">-->
+<!--        <a class="link" href="//www.bilibili.org/v/game/match/" target="_blank">{{$HeadLang['69']}}</a>-->
+<!--      </li>-->
+<!--      <LocMenu class="nav-link-item"-->
+<!--               :locsData=locsData-->
+<!--               :locId=2953-->
+<!--               :locId2=2955>-->
+<!--      </LocMenu>-->
+<!--      <LocMenu class="nav-link-item"-->
+<!--               :locsData=locsData-->
+<!--               :locId=2954-->
+<!--               :locId2=2956>-->
+<!--      </LocMenu>-->
       <li class="nav-link-item" v-van-report:mininav-hover.mouseenter="`下载app`" @mouseover="popoverAppShow = true">
         <van-popover
             popper-class="popover-app-download"
@@ -96,7 +96,7 @@
             transition="slide-fade"
             trigger="hover">
           <p v-if="popoverAppShow" class="txt">{{$HeadLang['7']}}</p>
-          <a slot="reference" class="link" href="//app.bilibili.com" target="_blank" v-van-report:mininav-click.click="`下载app`"><i class="bilifont bili-icon_dingdao_xiazaiapp"></i>{{$HeadLang['6']}}</a>
+          <a slot="reference" class="link" href="//app.bilibili.org" target="_blank" v-van-report:mininav-click.click="`下载app`"><i class="bilifont bili-icon_dingdao_xiazaiapp"></i>{{$HeadLang['6']}}</a>
         </van-popover>
       </li>
     </ul>
@@ -104,12 +104,12 @@
 </template>
 
 <script>
-import LocMenu from './LocMenu'
+// import LocMenu from './LocMenu'
 import ChannelMenu from './ChannelMenu'
 
 export default {
   components: {
-    LocMenu,
+    // LocMenu,
     ChannelMenu,
   },
   props: {

@@ -24,6 +24,7 @@
 import VdListLi from "./vd-list-li";
 import Pagination from "../../Pagination";
 import modBtn from "./modBtn";
+import {getHotRankingRegionVideo,getTimeRankingRegionVideo} from "../../../../api/region";
 export default {
   name: "vd-list-cnt",
 
@@ -45,19 +46,19 @@ export default {
       },
       archives:[
         {
-          aid:460089905,   //视频id
-          bvid:"BV135411c7d4",    //视频id
-          ctime:1618025514,   //视频发布时间
+          aid:1,   //视频id
+          bvid:"",    //视频id
+          ctime:1,   //视频发布时间
           desc:"-",   //视频文章
-          duration:84,   //视频时长
+          duration:1,   //视频时长
           owner:{
             face:"",    //作者头像
-            mid:1335100303,    //作者id
-            name:"娱乐中相遇",    //作者名称
+            mid:1,    //作者id
+            name:"1",    //作者名称
           },
-          pic:"//i0.hdslb.com/bfs/archive/cbf5f9709b070cde982d41a227da8d07184b94a7.jpg@160w_100h.webp",    //预览图
+          pic:"",    //预览图
           stat:{
-            aid:802866045,    //视频id
+            aid:1,    //视频id
             coin:0,    //投币数
             dislike:0,    //点踩数
             favorite:0,    //收藏数
@@ -67,8 +68,8 @@ export default {
             share:0,    //转发数
             view:0,    //观看数
           },
-          title:"鼬先生，你在临死前是否也看清了自己呢？",   //标题
-          tname:"MAD·AMV",    //视频分区
+          title:"",   //标题
+          tname:"",    //视频分区
         },
       ]
     }
@@ -77,6 +78,23 @@ export default {
   methods:{
     tab(index){
       this.$emit("tab-page",index)
+    },
+    updateData(){
+      if (this.mod===0){
+        getTimeRankingRegionVideo(this.tid,1,20).then((res)=>{
+          if (res?.data?.code===0){
+            this.archives=res.data.data.archives
+            this.page=res.data.data.page
+          }
+        })
+      }else {
+        getHotRankingRegionVideo(this.tid,1,20).then((res)=>{
+          if (res?.data?.code===0){
+            this.archives=res.data.data.archives
+            this.page=res.data.data.page
+          }
+        })
+      }
     }
   },
 
@@ -84,9 +102,17 @@ export default {
    * 同级组件传值
    */
   mounted() {
+    this.updateData()
     modBtn.$on("type", (type) => {
       this.mod = type;
+      this.updateData()
     })
+  },
+  props:["tid"],
+  watch:{
+      tid(){
+        this.updateData()
+      }
   }
 }
 </script>

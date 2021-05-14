@@ -43,7 +43,7 @@ export default {
       let cinema = {
         name: '放映厅',
         tid: 23,
-        url: '//www.bilibili.com/cinema/',
+        url: '//www.bilibili.org/cinema/',
         route: 'cinema',
         count: '',
         sub: [],
@@ -78,7 +78,7 @@ export default {
         //番剧 国创 影视
         return nav.url
       }else {
-        return '//www.bilibili.com/v/' + nav.route + '/'
+        return '//www.bilibili.org/v/' + nav.route + '/'
       }
     },
     async updateCount() {

@@ -1,57 +1,56 @@
 <template>
   <div id="subnav" class="sub-nav-m report-wrap-module">
     <ul class="clearfix">
-      <li v-for="item in navigations" :key="item.title"><a :href="'/v/music/'+item.path">{{ item.title }}</a></li>
+
+      <li :class="$route.name===item.routeName?'on':''" v-for="item in navigations" :key="item.tid"><a :href="item.route">{{ item.name }}</a></li>
     </ul>
-    <div class="tips" style=" top: 30px; left: 362px;"><i class="t-arrow" style="left: 100px;"></i>
-      <p>传统或非传统乐器及器材的演奏作品</p></div>
+<!--    <div class="tips" style=" top: 30px; left: 362px;"><i class="t-arrow" style="left: 100px;"></i>-->
+<!--      <p>传统或非传统乐器及器材的演奏作品</p></div>-->
   </div>
 </template>
 
 <script>
+import {MenuConfig} from "g-public/js/config/menuConfig";
+
 export default {
   name: "subnav",
-
   data(){
     return{
       navigations:[
-        {
-          title:"全部",   //导航
-          path:"",    //路径
-        },
-        {
-          title:"原创音乐",   //导航
-          path:"original",    //路径
-        },
-        {
-          title:"翻唱",   //导航
-          path:"cover",    //路径
-        },
-        {
-          title:"VOCALOID·UTAU",   //导航
-          path:"vocaloid",    //路径
-        },
-        {
-          title:"电音",   //导航
-          path:"electronic",    //路径
-        },
-        {
-          title:"演奏",   //导航
-          path:"perform",    //路径
-        },
-        {
-          title:"MV",   //导航
-          path:"mv",    //路径
-        },
-        {
-          title:"音乐现场",   //导航
-          path:"live",    //路径
-        },
-        {
-          title:"音乐综合",   //导航
-          path:"other",    //路径
-        },
+
       ]
+    }
+  },
+  mounted() {
+    this.navigations=this.getNavigation(this.$route.path.split('/')[2])
+  },
+  methods:{
+    getNavigation(route){
+      let navigations = [{
+        tid:0,
+        route:"/v/"+(this.$route.path.split('/')[3]?this.$route.path.split('/')[2]:""),
+        routeName:this.$route.path.split('/')[2],
+        name:"首页"
+      }]
+      MenuConfig.forEach((v)=>{
+        if (v.route===route){
+          navigations[0].tid=v.tid
+          navigations.push(...v.sub.map((val)=>{
+            if (val?.route){
+              return {
+                tid:val.tid,
+                route:"/v/"+this.$route.path.split('/')[2]+"/"+val.route,
+                routeName:this.$route.path.split('/')[2]+"-"+val.route,
+                name:val.name
+              }
+            }
+          }))
+        }
+      })
+      navigations=navigations.filter((v)=>{
+        return v!==undefined
+      })
+      return navigations
     }
   }
 }

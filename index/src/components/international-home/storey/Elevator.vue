@@ -144,7 +144,8 @@ export default {
     scrollHandle() {
       const elevatorDom = document.querySelector('#elevator')
       const scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop
-      const minTop = document.querySelector('.first-screen').offsetTop + (this.needOffset ? 106 : 0)
+      // const minTop = document.querySelector('.first-screen').offsetTop + (this.needOffset ? 106 : 0)
+      const minTop = 0 + (this.needOffset ? 106 : 0)
       const centerTop = (document.documentElement.clientHeight - (elevatorDom.offsetHeight + 70)) / 2
       //定位
       const t = scrollTop < minTop ? minTop - scrollTop : (centerTop < 0 ? 10 : centerTop)

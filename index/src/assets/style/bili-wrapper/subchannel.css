@@ -2338,6 +2338,9 @@ a, a:hover, ins {
     color: #00a1d6
 }
 
+sec-rank {
+    overflow: hidden;
+}
 
 .sec-rank .rank-head {
     height: 24px;

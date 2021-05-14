@@ -117,7 +117,7 @@ export default {
       /* eslint-disable */
       switch (type) {
         case 'live':
-          return `//live.bilibili.com/${id}`
+          return `//live.bilibili.org/${id}`
         case 'pgc':
           return `${pgcUri}${progress > 0 ? `?t=${progress}` : ''}`
         case 'cheese':
@@ -128,13 +128,13 @@ export default {
             p: page > 1 ? page : '',
           }
           const queryString = this.objToQuerystring(query)
-          return `//www.bilibili.com/video/${bvid}${this.from === 'FAVORITE' ? '' : queryString}`
+          return `//www.bilibili.org/video/${bvid}${this.from === 'FAVORITE' ? '' : queryString}`
         case 'article':
-          return `//www.bilibili.com/read/cv${id}`
+          return `//www.bilibili.org/read/cv${id}`
         case 'article-list':
-          return `//www.bilibili.com/read/cv${cid}`
+          return `//www.bilibili.org/read/cv${cid}`
         case 'audio':
-          return `//www.bilibili.com/audio/au${id}`
+          return `//www.bilibili.org/audio/au${id}`
         default:
           break;
       }

@@ -3,7 +3,7 @@
     <!--    标题    -->
     <vl-hd />
     <!--    视频    -->
-    <vd-list-cnt />
+    <vd-list-cnt :tid="tid" />
   </div>
 </template>
 
@@ -12,6 +12,7 @@ import VlHd from "./vl-hd";
 import VdListCnt from "./vd-list-cnt";
 export default {
 name: "videolist-box",
-  components: {VdListCnt, VlHd}
+  components: {VdListCnt, VlHd},
+  props:["tid"],
 }
 </script>

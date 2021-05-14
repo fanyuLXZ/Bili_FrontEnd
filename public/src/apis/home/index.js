@@ -1508,7 +1508,7 @@ export const getOnline = () => {
 // 获取分区楼层视频卡片数据
 export const getRegion = (query) => {
     return axios({
-      url: '/api/zoning/region/dynamic',
+      url: '//api.bilibili.org/region/dynamic',
       query: query
     })
 }
@@ -1524,7 +1524,7 @@ export const getRegionLatest = (query) => {
 // 获取分区楼层排行榜数据
 export const getRank = (query) => {
     return axios({
-      url: '/api/zoning/region/ranking',
+      url: '//api.bilibili.org/region/ranking',
       query: query
     })
 }

@@ -116,9 +116,9 @@ export default {
     return {
       tid: '',
       userInfo: {
-        isLogin: false,
-        fallback: true,
-        face: '//static.hdslb.com/images/member/noface.gif',
+        isLogin: null,
+        fallback: false,
+        face: '//i0.hdslb.org/bfs/face/member/noface.jpg',
         level_info:{
           current_level:"1",
           current_exp:"1",

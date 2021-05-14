@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="international-home">
 <!--    <FirstScreen/>-->
     <Storey :config="storeyConfig"/>
     <!-- 电视人 -->

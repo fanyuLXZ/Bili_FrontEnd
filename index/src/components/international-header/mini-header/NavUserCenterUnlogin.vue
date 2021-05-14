@@ -15,7 +15,7 @@
         <LoginTipContent class="ltc-content"/>
         <a
           class="login-btn"
-          :href="handleHref('https://passport.bilibili.com/login','login_window')"
+          :href="handleHref('http://passport.bilibili.org/login','login_window')"
           target="_blank"
           @click="topBarReport('login_window')"
         >
@@ -24,15 +24,15 @@
         <div class="register-tip">
           首次使用？
           <a
-            :href="handleHref('https://passport.bilibili.com/register/phone.html','login_window')"
+            :href="handleHref('http://passport.bilibili.org/register/phone.html','login_window')"
             target="_blank"
             @click="topBarReport('login_window','注册')"
           >点我注册</a>
         </div>
       </div>
-      <template v-slot:reference>
+      <template slot="reference">
         <div class="item fall-mini-avatar unlogin">
-          <span @click="handleClickTab('https://passport.bilibili.com/login', 'login')">
+          <span @click="handleClickTab('http://passport.bilibili.org/login', 'login')">
             <div class="unlogin-avatar">登录</div>
           </span>
         </div>
@@ -59,16 +59,16 @@
         <div class="content-msg">登录即可查看消息记录</div>
         <a
           class="login-btn"
-          :href="handleHref('https://passport.bilibili.com/login','message_window')"
+          :href="handleHref('http://passport.bilibili.org/login','message_window')"
           target="_blank"
           @click="topBarReport('message_window')"
         >
           立即登录
         </a>
       </div>
-      <template v-slot:reference>
+      <template slot="reference">
         <div class="item">
-          <span class="name" @click="handleClickTab('//message.bilibili.com/', 'message')">
+          <span class="name" @click="handleClickTab('//message.bilibili.org/', 'message')">
             消息
           </span>
         </div>
@@ -88,16 +88,16 @@
         <div class="content-msg">登录即可查看关注动态</div>
         <a
           class="login-btn"
-          :href="handleHref('https://passport.bilibili.com/login','dynamic_window')"
+          :href="handleHref('http://passport.bilibili.org/login','dynamic_window')"
           target="_blank"
           @click="topBarReport('dynamic_window')"
         >
           立即登录
         </a>
       </div>
-      <template v-slot:reference>
+      <template slot="reference">
         <div class="item">
-          <span class="name" @click="handleClickTab('//t.bilibili.com/', 'dynamic')">
+          <span class="name" @click="handleClickTab('//t.bilibili.org/', 'dynamic')">
             动态
           </span>
         </div>
@@ -117,16 +117,16 @@
         <div class="content-msg">登录即可查看我的收藏</div>
         <a
           class="login-btn"
-          :href="handleHref('https://passport.bilibili.com/login','favorite_window')"
+          :href="handleHref('http://passport.bilibili.org/login','favorite_window')"
           target="_blank"
           @click="topBarReport('favorite_window')"
         >
           立即登录
         </a>
       </div>
-      <template v-slot:reference>
+      <template slot="reference">
         <div class="item">
-          <span class="name" @click="handleClickTab('//space.bilibili.com/', 'favorite')">
+          <span class="name" @click="handleClickTab('//space.bilibili.org/', 'favorite')">
             收藏
           </span>
         </div>
@@ -147,18 +147,18 @@
         <div class="content-msg">登录即可查看历史记录</div>
         <a
           class="login-btn"
-          :href="handleHref('https://passport.bilibili.com/login','history_window')"
+          :href="handleHref('http://passport.bilibili.org/login','history_window')"
           target="_blank"
           @click="topBarReport('history_window')"
         >
           立即登录
         </a>
       </div>
-      <template v-slot:reference>
+      <template slot="reference">
         <div class="item unlogin-history" @mouseenter="handleHoverHistory">
           <span class="name"
             @click="handleClickTab(
-              'https://passport.bilibili.com/login?goUrl=https%3A%2F%2Fwww.bilibili.com%2Faccount%2Fhistory',
+              'http://passport.bilibili.org/login?goUrl=http%3A%2F%2Fwww.bilibili.org%2Faccount%2Fhistory',
               'history'
             )"
           >历史记录</span>
@@ -168,7 +168,7 @@
     </van-popover>
 
     <div class="item">
-      <a  :href="handleHref('//member.bilibili.com/platform/home','creation')" target="_blank" @click="topBarReport('creation')">
+      <a  :href="handleHref('//member.bilibili.org/platform/home','creation')" target="_blank" @click="topBarReport('creation')">
         <span class="name">创作中心</span>
       </a>
     </div>
@@ -178,7 +178,7 @@
 <script>
 import NavUserCenterVip from './NavUserCenterVip'
 import LoginTipContent from '../login-tip/LoginTipContent'
-import loginTip from '../login-tip/LoginTip'
+import loginTip from '../lib/loginTip'
 import {  allCustomReport } from 'g-public/js/utils'
 
 export default {

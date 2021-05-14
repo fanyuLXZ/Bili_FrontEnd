@@ -4,7 +4,7 @@
       <!--    分区内容    -->
       <video-floor-m :itemTitle="item"/>
       <!--    排行榜   -->
-      <r-con />
+      <r-con :itemTitle="item"/>
     </div>
   </div>
 </template>
@@ -18,7 +18,7 @@ export default {
   components: {RCon, VideoFloorM},
 
   props:{
-    item:String
+    item:Object
   }
 }
 </script>

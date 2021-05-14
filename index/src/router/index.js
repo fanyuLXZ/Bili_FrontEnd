@@ -56,16 +56,43 @@ const createRouter = () => (new Router({
       component: resolve => require(['../components/video/videohome'], resolve)
     },
     {
-      path: '/zone/douga',
-      name: "douga",
-      component: resolve => require(['../components/Zoning/normalZone'], resolve)
-    },
-    {
       path: '/account/history',
       name: "history",
       component: resolve => require(['../views/history'], resolve)
     },
+      // 分区路由
+      ...getRegionRouter()
   ],
 }))
 
+import {MenuConfig} from "g-public/js/config/menuConfig";
+
+let getRegionRouter=()=>{
+  let routerConfig = []
+  MenuConfig.forEach((v)=>{
+    if (v.tid===""){
+      return
+    }
+    // 解析是否有子分区
+    let smallRegionRouterConfigs = v.sub?v.sub:undefined
+    routerConfig.push({
+      path:"/v/"+v.route,
+      name:v.route,
+      component:resolve => require(['../views/channel-m'], resolve),
+    })
+    routerConfig.push(...smallRegionRouterConfigs?.map((val)=>{
+      if (val?.route){
+        return {
+          path:"/v/"+v.route+"/"+val.route,
+          name:v.route+"-"+val.route,
+          component:resolve => require(['../views/sub-channel-m'], resolve),
+        }
+      }
+    }))
+  })
+  routerConfig=routerConfig.filter((v)=>{
+    return v!==undefined
+  })
+  return routerConfig
+}
 export default createRouter

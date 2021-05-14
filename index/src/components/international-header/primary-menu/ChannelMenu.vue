@@ -84,7 +84,7 @@ export default {
       const cinema = {
         name: '放映厅',
         tid: 23,
-        url: '//www.bilibili.com/cinema/',
+        url: '//www.bilibili.org/cinema/',
         count: '',
         subMenuSize: 68,
         combination: true,
@@ -115,11 +115,11 @@ export default {
         //组合的item 直接返回url
         return nav.url
       }else {
-        return '//www.bilibili.com/v/' + nav.route + '/'
+        return '//www.bilibili.org/v/' + nav.route + '/'
       }
     },
     subChannelLink(nav,sub){
-      return sub.combination || !sub.tid ? sub.url : `//www.bilibili.com/v/${nav.route}/${sub.route}/`
+      return sub.combination || !sub.tid ? sub.url : `//www.bilibili.org/v/${nav.route}/${sub.route}/`
     },
     async updateCount() {
       const { data } = await getOnline()
@@ -131,7 +131,7 @@ export default {
       return (num > 999 ? '999+' : num) || '--'
     },
     onSize() {
-      this.isWide = (document.body.clientWidth || window.screen.width || window.innerWidth) > 1438
+      this.isWide = (document.body.clientWidth || window.screen.width || window.innerWidth) > 1580
     },
     swapArrayItemByTid(fromTid, toTid) {
       const newArr = [...this.menuList]

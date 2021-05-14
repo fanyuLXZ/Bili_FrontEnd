@@ -3,7 +3,7 @@
     <a href="//www.bilibili.com/video/BV1Lx411973m" target="_blank">
     <div class="pic">
       <div class="lazy-img">
-        <img alt="【DARLING in the FRANXX/AMV/高甜】你就是我的darling吗？" :src="item.pic">
+        <img :alt="item.title" :src="item.pic">
       </div>
 
       <i class="icon medal" :class="crown"></i>
@@ -16,7 +16,7 @@
       <span class="dur">{{ item.duration }}</span>
       <div class="watch-later-trigger w-later"></div>
     </div>
-    <p title="【DARLING in the FRANXX/AMV/高甜】你就是我的darling吗？" class="t">{{ item.title }}</p>
+    <p :title="item.title" class="t">{{ item.title }}</p>
     <p class="num">
       <span class="play">
         <i class="icon"></i>{{ thousand(item.stat.view) }}

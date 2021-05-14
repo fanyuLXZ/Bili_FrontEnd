@@ -4273,7 +4273,3 @@ body {
     height: 16px;
     background-position: -18px -3px;
 }
-
-*, .van-popover {
-    box-sizing: unset;
-}

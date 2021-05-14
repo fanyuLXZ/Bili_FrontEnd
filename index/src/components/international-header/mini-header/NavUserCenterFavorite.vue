@@ -20,7 +20,7 @@
             <span class="title" :title="tab.title">{{ tab.title }}</span>
             <span class="num">{{ tab.count }}</span>
           </div>
-          <a class="tab-item__all" v-if="favListCount > 20" :href="`//space.bilibili.com/${mid}/favlist`" target="_blank">
+          <a class="tab-item__all" v-if="favListCount > 20" :href="`//space.bilibili.org/${mid}/favlist`" target="_blank">
             {{ $HeadLang[51] }}
           </a>
         </div>
@@ -64,17 +64,17 @@
             <!-- 稍後再看 -->
             <a v-if="currentTab.count !== 0 && currentTab.key === 'LATER_VIEW'"
                 class="play-all view"
-                href="//www.bilibili.com/watchlater/#/list"
+                href="//www.bilibili.org/watchlater/#/list"
                 target="_blank">{{ $HeadLang[51] }}</a>
             <!-- 单个收藏夹 -->
             <a v-if="currentTab.key !== 'LATER_VIEW' && favDataMap[currentTab.id] && currentTab.count > 20"
                 class="play-all view"
-                :href="`//space.bilibili.com/${mid}/favlist?fid=${currentTab.id}&ftype=create`"
+                :href="`//space.bilibili.org/${mid}/favlist?fid=${currentTab.id}&ftype=create`"
                 target="_blank">{{ $HeadLang[51] }}</a>
             <!-- 播单页 -->
             <a v-if="currentTab.count !== 0 && currentTab.key !== 'LATER_VIEW'"
               class="play-all"
-              :href="`//www.bilibili.com/medialist/play/ml${currentTab.id}`"
+              :href="`//www.bilibili.org/medialist/play/ml${currentTab.id}`"
               target="_blank">
               <i class="bilifont bili-icon_dingdao_bofang"></i>
               {{ $HeadLang[52] }}
@@ -82,7 +82,7 @@
             <!-- 稍后再看播放页 -->
             <a v-if="currentTab.count !== 0 && currentTab.key === 'LATER_VIEW'"
               class="play-all"
-              href="//www.bilibili.com/medialist/play/watchlater"
+              href="//www.bilibili.org/medialist/play/watchlater"
               target="_blank">
               <i class="bilifont bili-icon_dingdao_bofang"></i>
               {{ $HeadLang[52] }}
@@ -247,7 +247,7 @@ export default {
       this.$set(this.favDataMap, id, [])
     },
     goFav() {
-      window.open(`//space.bilibili.com/${this.mid}/favlist`, '_blank')
+      window.open(`//space.bilibili.org/${this.mid}/favlist`, '_blank')
     },
   },
 }

@@ -161,7 +161,7 @@ export default {
   }
   .pvc {
     top: -138px;
-    z-index: 200;
+    z-index: 1000;
   }
 }
 

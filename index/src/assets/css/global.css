@@ -3833,6 +3833,7 @@ a{
 }
 
 .international-header *,
+.storey-box *,
 .van-popover * {
     box-sizing: border-box;
 }
