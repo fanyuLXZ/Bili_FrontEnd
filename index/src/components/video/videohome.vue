@@ -3,11 +3,11 @@
     <div class="l-con">
       <viewbox :video="videoData.video" :view="videoData.stat.view"></viewbox>
       <player :video="videoData.video"></player>
-      <viewtoolbar :stat="videoData.stat"></viewtoolbar>
+<!--      <viewtoolbar :stat="videoData.stat"></viewtoolbar>-->
       <viewtag :mainpartition="videoData.mainpartition" :deputydivision="videoData.deputydivision"></viewtag>
       <viewdesc :desc="videoData.video.desc"></viewdesc>
 
-      <viewArticle></viewArticle>
+      <viewArticle :userInfo="userInfo" :aid="this.$route.params.bvid.substr(2)"></viewArticle>
     </div>
 
     <div class="r-con">
@@ -23,23 +23,22 @@
 
 import viewbox from './Videocomponent/viewboxreport'
 import player from './Player'
-import viewtoolbar from './Videocomponent/viewtoolbar'
+// import viewtoolbar from './Videocomponent/viewtoolbar'
 import viewdesc from './Videocomponent/viewdesc'
 import viewtag from './Videocomponent/viewtwg'
 import reolist from './Videocomponent/reolist'
 import rupinfo from './Videocomponent/rupinfo'
 import viewArticle from './Videocomponent/viewArticle'
 import {getVideoInfo} from "../../api/video"
-import {mapMutations} from "vuex";
+import {mapState} from "vuex";
 
 export default {
   name: 'videohome',
   components: {
-
     viewtag,
     viewbox,
     player,
-    viewtoolbar,
+    // viewtoolbar,
     viewdesc,
     rupinfo,
     reolist,
@@ -81,10 +80,9 @@ export default {
     }
   },
   computed:{
+    ...mapState(['userInfo']),
   },
-  mounted() {
-    this.SET_NAV_TYPE(0)
-    this.SET_IS_FOOT_SHOW(false)
+  beforeMount() {
     // 获取视频数据
     // 获取bv号
     const bvNo = this.$route.params.bvid
@@ -98,7 +96,6 @@ export default {
     //this.video.video.play++;
   },
   methods:{
-    ...mapMutations(["SET_NAV_TYPE","SET_IS_FOOT_SHOW"]),
     async loadVideoInfo(bvNo){
       const { data } = await getVideoInfo(bvNo)
       if (data?.code===0){

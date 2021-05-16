@@ -3,7 +3,7 @@
     <span class="number" :class="{'on': index < 3}">{{index+1}}</span>
     <div class="preview" v-if="index === 0">
       <div class="pic">
-        <a class="link" :href="`//www.bilibili.com/video/${info.bvid}`" target="_blank">
+        <a class="link" :href="`//www.bilibili.org/video/${info.bvid}`" target="_blank">
           <van-image
             :src="info.pic"
             :alt="info.title"
@@ -15,7 +15,7 @@
         <van-watch-later class="watch-later-video" skin="black" :aid="Number(info.aid)"></van-watch-later>
       </div>
       <div class="txt">
-        <a class="link" :href="`//www.bilibili.com/video/${info.bvid}`" target="_blank">
+        <a class="link" :href="`//www.bilibili.org/video/${info.bvid}`" target="_blank">
           <p :title="info.title">{{info.title}}</p>
         </a>
         <span>{{$HomeLang['6']}}：{{formatNum(info.pts)}}</span>

@@ -26,7 +26,7 @@
         <a
           ref="big-avatar"
           class="avatar"
-          href="//space.bilibili.com"
+          href="//space.bilibili.org"
           v-van-report:mininav-click.click="`头像`"
           v-van-report:top_bar_click.click="{ module:'头像'}"
           :class="{ 'has-decorate': userInfo.pendant && userInfo.pendant.image }"
@@ -46,7 +46,7 @@
            class="vip"
             :class="`vip--${labelColor}`"
            v-text="userInfo.vip_label.text"
-           href="//account.bilibili.com/account/big"
+           href="//account.bilibili.org/account/big"
            target="_blank"></a>
 
         <!-- 等级 -->
@@ -56,10 +56,10 @@
             <span v-if="userInfo.level_info.current_level" class="progress">
               {{userInfo.level_info.current_exp}} / {{userInfo.level_info.next_exp}}
             </span>
-            <a v-else href="https://www.bilibili.com/v/newbie/entry?re_src=17" target="_blank" class="hint">{{$HeadLang['23']}}Lv 1</a>
+            <a v-else href="http://www.bilibili.org/v/newbie/entry?re_src=17" target="_blank" class="hint">{{$HeadLang['23']}}Lv 1</a>
           </div>
 
-          <a class="level-link" href="https://account.bilibili.com/account/record?type=exp" target="_blank">
+          <a class="level-link" href="http://account.bilibili.org/account/record?type=exp" target="_blank">
             <div class="level-bar">
               <div class="level-progress" :style=" {'width': progressWidth} "></div>
             </div>
@@ -73,7 +73,7 @@
               </p>
             <div class="level-intro__content" v-html="levelTxtArray"></div>
             <a class="level-intro__link"
-               href="//www.bilibili.com/blackboard/help.html#%E4%BC%9A%E5%91%98%E7%AD%89%E7%BA%A7%E7%9B%B8%E5%85%B3?id=7251c4ab69d44a8ebbbd276dea46d790"
+               href="//www.bilibili.org/blackboard/help.html#%E4%BC%9A%E5%91%98%E7%AD%89%E7%BA%A7%E7%9B%B8%E5%85%B3?id=7251c4ab69d44a8ebbbd276dea46d790"
                target="_blank">{{$HeadLang['25']}}
               <svg class="svg-icon" aria-hidden="true">
                 <use :xlink:href="'#bili-icon_caozuo_xiangyou'"></use>
@@ -90,14 +90,14 @@
               <svg class="add-one-icon" :class="{ 'add-one-icon--show': isFirstLoginAni && popoverVisible }" aria-hidden="true">
                 <use :xlink:href="`#bili-yingbi`"></use>
               </svg>
-              <a href="https://account.bilibili.com/site/coin" target="_blank" class="jump" :title="$HeadLang['75']">
+              <a href="http://account.bilibili.org/site/coin" target="_blank" class="jump" :title="$HeadLang['75']">
                 <svg class="coins-icon" aria-hidden="true">
                   <use :xlink:href="'#bili-icon_dingdao_yingbi'"></use>
                 </svg>
                 <span class="money">{{ (userInfo.money).toFixed(1) }}</span>
               </a>
               <span class="login-award" :class="{ 'login-award--show': isFirstLoginAni && popoverVisible }">{{$HeadLang['26']}}</span>
-              <a href="https://pay.bilibili.com/paywallet-fe/bb_balance.html" target="_blank" :title="$HeadLang['76']">
+              <a href="http://pay.bilibili.org/paywallet-fe/bb_balance.html" target="_blank" :title="$HeadLang['76']">
                 <svg class="coins-icon" aria-hidden="true">
                   <use :xlink:href="'#bili-icon_dingdao_Bbi'"></use>
                 </svg>
@@ -105,13 +105,13 @@
               </a>
             </div>
             <div class="contact">
-              <a class="email" href="https://passport.bilibili.com/account/security#/bindmail" target="_blank">
+              <a class="email" href="http://passport.bilibili.org/account/security#/bindmail" target="_blank">
                 <i class="bilifont email-icon" :class="{ 'email-icon--bind': userInfo.email_verified }">&#xe735;</i>
                 <span v-if="!userInfo.email_verified" class="email-mark"></span>
                 <span class="contact-tips email-tips" v-text="userInfo.email_verified ? $HeadLang['77'] : $HeadLang['78']"></span>
               </a>
 
-              <a class="phone" href="https://passport.bilibili.com/account/security#/bindphone" target="_blank">
+              <a class="phone" href="http://passport.bilibili.org/account/security#/bindphone" target="_blank">
                 <i class="bilifont phone-icon" :class="{ 'phone-icon--bind': userInfo.mobile_verified }">&#xe733;</i>
                 <span v-if="!userInfo.mobile_verified" class="phone-mark"></span>
                 <span class="contact-tips phone-tips" v-text="userInfo.mobile_verified ? $HeadLang['77'] : $HeadLang['79']"></span>
@@ -119,27 +119,27 @@
             </div>
           </div>
           <div v-if="userInfo.mobile_verified === 0" class="hint">
-            <a href="https://passport.bilibili.com/account/security#/bindphone" target="_blank">{{$HeadLang['27']}}</a>
+            <a href="http://passport.bilibili.org/account/security#/bindphone" target="_blank">{{$HeadLang['27']}}</a>
           </div>
         </div>
 
         <!-- 关注 / 粉丝 / 动态 / 投稿 -->
         <div class="counts">
-          <a class="count-item" :href="`//space.bilibili.com/${userInfo.mid}/fans/follow`" target="_blank">
+          <a class="count-item" :href="`//space.bilibili.org/${userInfo.mid}/fans/follow`" target="_blank">
             <div class="item-key">{{$HeadLang['28']}}</div>
             <div class="item-value">
               <span class="item-num">{{ formatNumForAvatar(countConfig.following).num }}</span>
               <span class="item-unit">{{ formatNumForAvatar(countConfig.following).unit }}</span>
             </div>
           </a>
-          <a class="count-item" :href="`//space.bilibili.com/${userInfo.mid}/fans/fans`" target="_blank">
+          <a class="count-item" :href="`//space.bilibili.org/${userInfo.mid}/fans/fans`" target="_blank">
             <div class="item-key">{{$HeadLang['29']}}</div>
             <div class="item-value">
               <span class="item-num">{{ formatNumForAvatar(countConfig.follower).num }}</span>
               <span class="item-unit">{{ formatNumForAvatar(countConfig.follower).unit }}</span>
             </div>
           </a>
-          <a class="count-item" :href="`//space.bilibili.com/${userInfo.mid}/dynamic`" target="_blank">
+          <a class="count-item" :href="`//space.bilibili.org/${userInfo.mid}/dynamic`" target="_blank">
             <div class="item-key">{{$HeadLang['30']}}</div>
             <div class="item-value">
               <span class="item-num">{{ formatNumForAvatar(countConfig.dynamic_count).num }}</span>
@@ -226,36 +226,41 @@ export default {
         follower: null,
         dynamic_count: null,
       },
-      linkConfig: [{
+      linkConfig: [
+          {
         title: this.$HeadLang['33'],
         icon: 'gerenzhongxin',
-        link: 'https://account.bilibili.com/account/home',
-      }, {
+        link: 'http://account.bilibili.org/account/home',
+      },
+        {
         title: this.$HeadLang['41'],
         icon: 'tougaoguanli',
-        link: 'https://member.bilibili.com/v2#/upload-manager/article',
-      }, {
+        link: 'http://member.bilibili.org/v2#/upload-manager/article',
+      },
+        {
         title: this.$HeadLang['34'],
         icon: 'qianbao',
-        link: 'https://pay.bilibili.com/',
-      }, {
-        title: this.$HeadLang['35'],
-        icon: 'dingdanzhongxin',
-        link: 'https://show.bilibili.com/orderlist',
-      },{
-        title: this.$HeadLang['36'],
-        icon: 'dianpu',
-        link: trimHttp(this.userInfo.shop_url) ,
-      },{
-        title: this.$HeadLang['42'],
-        icon: 'zhibozhongxin',
-        link: 'https://link.bilibili.com/p/center/index',
-      }, {
-        title: this.$HeadLang['72'],
-        icon: 'cheese',
-        link: 'https://www.bilibili.com/cheese/mine/list',
-        report: 'mine_pugvcenter_click',
-      }],
+        link: 'http://account.bilibili.org/account/home/',
+      },
+        // {
+      //   title: this.$HeadLang['35'],
+      //   icon: 'dingdanzhongxin',
+      //   link: 'http://show.bilibili.org/orderlist',
+      // },{
+      //   title: this.$HeadLang['36'],
+      //   icon: 'dianpu',
+      //   link: trimHttp(this.userInfo.shop_url) ,
+      // },{
+      //   title: this.$HeadLang['42'],
+      //   icon: 'zhibozhongxin',
+      //   link: 'http://link.bilibili.org/p/center/index',
+      // }, {
+      //   title: this.$HeadLang['72'],
+      //   icon: 'cheese',
+      //   link: 'http://www.bilibili.org/cheese/mine/list',
+      //   report: 'mine_pugvcenter_click',
+      // }
+      ],
       levelArray: [],
       isShowLang: false,
       avatarObj: null
@@ -311,7 +316,7 @@ export default {
 
   beforeMount() {
     // 只有在首页才显示语言切换模块
-    if(location.hostname === 'www.bilibili.com' && location.pathname === '/') {
+    if(location.hostname === 'www.bilibili.org' && location.pathname === '/') {
       this.isShowLang = true
     }
   },
@@ -386,6 +391,7 @@ export default {
       if (timeTrackerValue[uid] !== TODAY) {
         timeTrackerValue[uid] = TODAY;
         localStorage.setItem('time_tracker', JSON.stringify(timeTrackerValue))
+        console.log(localStorage.getItem('time_tracker'))
         this.isFirstLoginAni = true
         return
       }
@@ -399,7 +405,7 @@ export default {
     },
     goSpace() {
       if(this.isTouchDevice) return
-      window.open('//space.bilibili.com', '_blank')
+      window.open('//space.bilibili.org', '_blank')
     },
     formatNumForAvatar(initNum) {
       if(!initNum) return {

@@ -5,7 +5,7 @@
       <span class="tab-line-itnl"></span>
       <ChannelMenu :menuConfig="menuConfig" :tid="tid" class="report-wrap-module" id="primaryChannelMenu"/>
       <span class="tab-line-itnl none"></span>
-      <FriendshipLink :menuConfig="menuConfig" class="report-wrap-module" id="primaryFriendshipLink"/>
+<!--      <FriendshipLink :menuConfig="menuConfig" class="report-wrap-module" id="primaryFriendshipLink"/>-->
     </div>
   </div>
 </template>
@@ -13,13 +13,13 @@
 <script>
 import PageTab from './PageTab'
 import ChannelMenu from './ChannelMenu'
-import FriendshipLink from './FriendshipLink'
+// import FriendshipLink from './FriendshipLink'
 
 export default {
   components: {
     PageTab,
     ChannelMenu,
-    FriendshipLink,
+    // FriendshipLink,
   },
   props: {
     menuConfig: {},

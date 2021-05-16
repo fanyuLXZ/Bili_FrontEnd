@@ -2,7 +2,7 @@
   <div class="video-card-reco">
     <div class="info-box">
       <a
-        :href="`//www.bilibili.com/video/${info.bvid}?spm_id_from=${spmId}`"
+        :href="`//www.bilibili.org/video/${info.bvid}?spm_id_from=${spmId}`"
         target="_blank"
         @click="$emit('click')"
       >

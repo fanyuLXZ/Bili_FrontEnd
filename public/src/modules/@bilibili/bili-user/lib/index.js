@@ -272,11 +272,12 @@
                     var n = this, i = "function" == typeof e && e, o = {biliCSRF: d("bili_jct")};
                     t && (o.gourl = t), f({
                         method: "POST",
-                        url: "//passport.bilibili.com/login/exit/v2",
+                        url: "//api.bilibili.org/safety/logout",
                         headers: {"Content-type": "application/x-www-form-urlencoded"},
+                        withCredentials: true,
                         data: o
                     }).then((function (e) {
-                        e.status && (n.refresh(), n._setBiliLoginState(), i && i({
+                        e.code===0 && (n.refresh(), n._setBiliLoginState(), i && i({
                             code: 0,
                             message: "log out success",
                             data: e.data
@@ -289,8 +290,8 @@
         }(), y = {};
         "undefined" != typeof window && (y = window.__BiliUser__ || function () {
             var e = null;
-            if (/\.?bilibili\.com$/.test(document.domain)) {
-                document.domain = "bilibili.com";
+            if (/\.?bilibili\.org$/.test(document.domain)) {
+                document.domain = "bilibili.org";
                 try {
                     e = window.parent.__BiliUser__
                 } catch (e) {

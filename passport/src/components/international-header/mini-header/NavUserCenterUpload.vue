@@ -30,32 +30,38 @@ export default {
   name: 'NavUserCenterUpload',
   data() {
     return {
-      uploadConfig: [{
-        title: this.$HeadLang['11'],
-        icon: 'wenzhangtougao',
-        link: '//member.bilibili.com/platform/article/text/apply',
-      }, {
-        title: this.$HeadLang['10'],
-        icon: 'yinpintougao',
-        link: '//member.bilibili.com/platform/article/audio/frame',
-      }, {
-        title: this.$HeadLang['82'],
-        icon: 'tiezhitougao',
-        link: '//member.bilibili.com/platform/article/sticker',
-      }, {
+      uploadConfig: [
+      //     {
+      //   title: this.$HeadLang['11'],
+      //   icon: 'wenzhangtougao',
+      //   link: '//member.bilibili.org/platform/article/text/apply',
+      // },
+      //   {
+      //   title: this.$HeadLang['10'],
+      //   icon: 'yinpintougao',
+      //   link: '//member.bilibili.org/platform/article/audio/frame',
+      // },
+        // {
+      //   title: this.$HeadLang['82'],
+      //   icon: 'tiezhitougao',
+      //   link: '//member.bilibili.org/platform/article/sticker',
+      // },
+        {
         title: this.$HeadLang['9'],
         icon: 'shipintougao',
-        link: '//member.bilibili.com/platform/article/video/frame',
-      }, {
+        link: '//member.bilibili.org/platform/article/video/frame',
+      },
+        {
         title: this.$HeadLang['41'],
         icon: 'tougaoguanli1',
-        link: '//member.bilibili.com/platform/article-manager/article',
-      }],
+        link: '//member.bilibili.org/platform/article-manager/article',
+      }
+      ],
     }
   },
   methods: {
     goUpload() {
-      window.open('//member.bilibili.com/platform/article/video/frame', '_blank')
+      window.open('//member.bilibili.org/platform/article/video/frame', '_blank')
     },
     uploadShow() {
       customReport('mininavupload')

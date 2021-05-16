@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 Vue.use(Router)
 
+
 const createRouter = () => (new Router({
   mode: 'history',
   routes: [
@@ -60,8 +61,12 @@ const createRouter = () => (new Router({
       name: "history",
       component: resolve => require(['../views/history'], resolve)
     },
-      // 分区路由
-      ...getRegionRouter()
+    // 分区路由
+    ...getRegionRouter(),
+    {
+      path: '*',
+      redirect:"/"
+    },
   ],
 }))
 

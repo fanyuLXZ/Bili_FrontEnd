@@ -4,10 +4,10 @@
       <li class="rank-item" :class="index>2?'loser':'show-detail first highlight'" v-for="(item,index) in ranks"
           :key="index">
         <i class="ri-num">{{ index + 1 }}</i>
-        <a href="//www.bilibili.com/video/BV1Dv41177Ee" target="_blank" :title="item.title+' 播放时间：'+item.create"
+        <a :href="'//www.bilibili.org/video/BV'+item.aid" target="_blank" :title="item.title+' 播放时间：'+item.create"
            class="ri-info-wrap clearfix">
           <div class="lazy-img ri-preview" v-if="index<=2">
-            <img alt="守 护 与 告 白 之 拳 ！火影微电影《告白》" :src="item.pic">
+            <img :alt="item.title" :src="item.pic">
           </div>
           <div class="ri-detail">
             <p class="ri-title">{{ item.title }}</p>

@@ -2,7 +2,7 @@
   <div id="playerWrap" class="player-wrap" style="height: auto;">
     <div id="bilibili-player" class="" style="" @mouseleave="video_control_show=false"
          @mouseenter="video_control_show=true">
-      <div class="player" style="width:100%;height:100%;" @click="video_state!==3?video_state===1?video_state=0:video_state=1:''">
+      <div class="player" style="width:100%;height:100%;" >
         <div id="bilibiliPlayer" class="bilibili-player relative" data-login="true">
           <div aria-label="哔哩哔哩播放器"
                class="bilibili-player-area video-state-blackside" :class="[
@@ -14,12 +14,12 @@
                 <div class="bilibili-player-video-top-mask"></div>
                 <div class="bilibili-player-video-top-title">{{video.title}}</div>
 
-                <div class="bilibili-player-video-top-follow bilibili-player-show"><img
-                    class="bilibili-player-video-top-follow-img" src="//i0.hdslb.com/bfs/face/member/noface.jpg"><span
-                    class="bilibili-player-video-top-follow-plus bilibili-player-video-top-follow-icon"><span
-                    class="bp-svgicon"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path
-                    d="M8 6.939l3.182-3.182a.75.75 0 111.061 1.061L9.061 8l3.182 3.182a.75.75 0 11-1.061 1.061L8 9.061l-3.182 3.182a.75.75 0 11-1.061-1.061L6.939 8 3.757 4.818a.75.75 0 111.061-1.061L8 6.939z"></path></svg></span></span><span
-                    class="bilibili-player-video-top-follow-text">关注</span></div>
+<!--                <div class="bilibili-player-video-top-follow bilibili-player-show"><img-->
+<!--                    class="bilibili-player-video-top-follow-img" src="//i0.hdslb.com/bfs/face/member/noface.jpg"><span-->
+<!--                    class="bilibili-player-video-top-follow-plus bilibili-player-video-top-follow-icon"><span-->
+<!--                    class="bp-svgicon"><svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path-->
+<!--                    d="M8 6.939l3.182-3.182a.75.75 0 111.061 1.061L9.061 8l3.182 3.182a.75.75 0 11-1.061 1.061L8 9.061l-3.182 3.182a.75.75 0 11-1.061-1.061L6.939 8 3.757 4.818a.75.75 0 111.061-1.061L8 6.939z"></path></svg></span></span><span-->
+<!--                    class="bilibili-player-video-top-follow-text">关注</span></div>-->
 <!--                <div aria-label="反馈" class="bilibili-player-video-top-issue player-tooltips-trigger"-->
 <!--                     data-position="bottom-center"-->
 <!--                     data-text="反馈" data-tooltip="3">-->
@@ -99,8 +99,8 @@
               <div class="bilibili-player-video-bas-danmaku"></div>
               <div class="bilibili-player-video-adv-danmaku"></div>
               <div aria-live="polite" class="bilibili-player-video-danmaku"></div>
-              <div class="bilibili-player-video">
-                <video ref="video" crossorigin="anonymous" preload="auto" :src="'blob:'+video.path"></video>
+              <div class="bilibili-player-video" @click="video_state!==3?video_state===1?video_state=0:video_state=1:''">
+                <video ref="video" crossorigin="anonymous" preload="auto" :src="video.path"></video>
 <!--                <video ref="video" crossorigin="anonymous" preload="auto" src="../assets/p14.mp4"></video>-->
               </div>
               <div class="bilibili-player-video-inner">
@@ -119,7 +119,7 @@
                           <div class="bui-bar-wrap">
 <!--                            <div class="bui-bar bui-bar-buffer" style="transform: scaleX(0.0408163);"></div>-->
                             <div class="bui-bar bui-bar-normal" role="progressbar"
-                                 style="transform: scaleX(0.001);"></div>
+                                 :style="'transform: scaleX('+currentTime/video_duration+');transition: 1s;'"></div>
                           </div>
                           <div class="bui-thumb" style="transform: translateX(0px);">
                             <div class="bui-thumb-dot-special" style="width: 18px;height: 18px;">
@@ -220,23 +220,23 @@
                           </div>
                         </div>
                       </div>
-                      <div class="bilibili-player-video-progress-detail" style="left: 656.3px;">
-                        <div class="bilibili-player-video-progress-detail-container"
-                             style="margin-left: -80px; width: 160px;">
-                          <div class="bilibili-player-video-progress-detail-img"
-                               style="width: 160px; height: 90px; line-height: 90px;">
-                            <img class="bilibili-player-video-progress-detail-cut-img"
-                                 src="data:image/jpeg;base64,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">
-                            <div class="bilibili-player-video-progress-detail-time">06:47</div>
-                          </div>
-                          <div class="bilibili-player-video-progress-detail-content"></div>
-                          <div class="bilibili-player-video-progress-detail-skip-tips"></div>
-                        </div>
-                        <div class="bilibili-player-video-progress-detail-sign">
-                          <div class="bilibili-player-video-progress-detail-sign-down"></div>
-                          <div class="bilibili-player-video-progress-detail-sign-up"></div>
-                        </div>
-                      </div>
+<!--                      <div class="bilibili-player-video-progress-detail" style="left: 656.3px;">-->
+<!--                        <div class="bilibili-player-video-progress-detail-container"-->
+<!--                             style="margin-left: -80px; width: 160px;">-->
+<!--                          <div class="bilibili-player-video-progress-detail-img"-->
+<!--                               style="width: 160px; height: 90px; line-height: 90px;">-->
+<!--                            <img class="bilibili-player-video-progress-detail-cut-img"-->
+<!--                                 src="data:image/jpeg;base64,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">-->
+<!--                            <div class="bilibili-player-video-progress-detail-time">{{}}</div>-->
+<!--                          </div>-->
+<!--                          <div class="bilibili-player-video-progress-detail-content"></div>-->
+<!--                          <div class="bilibili-player-video-progress-detail-skip-tips"></div>-->
+<!--                        </div>-->
+<!--                        <div class="bilibili-player-video-progress-detail-sign">-->
+<!--                          <div class="bilibili-player-video-progress-detail-sign-down"></div>-->
+<!--                          <div class="bilibili-player-video-progress-detail-sign-up"></div>-->
+<!--                        </div>-->
+<!--                      </div>-->
                     </div>
                   </div>
                   <div class="bilibili-player-video-control-bottom">
@@ -300,7 +300,7 @@
                       <div class="bilibili-player-video-time" name="time_textarea">
                         <input class="bilibili-player-video-time-seek" value="">
                         <div class="bilibili-player-video-time-wrap" name="time_textarea">
-                          <span class="bilibili-player-video-time-now" name="time_textarea">{{video_duration_current_str}}</span>
+                          <span class="bilibili-player-video-time-now" name="time_textarea">{{format_time(currentTime)}}</span>
                           <span class="bilibili-player-video-divider" name="time_textarea">/</span>
                           <span class="bilibili-player-video-time-total" name="time_textarea">
                             {{format_time(video_duration)}}
@@ -900,41 +900,41 @@
                 <div class="bilibili-player-drag-mask-progress-buffer" style="transform: scaleX(0.0408163);"></div>
                 <div class="bilibili-player-drag-mask-progress-tempo" style="transform: scaleX(0.001);"></div>
               </div>
-              <div class="bilibili-player-dm-tip-wrap">
-                <div class="bilibili-player-dm-tip">
-                  <div class="bilibili-player-dm-tip-svgm"><span class="bp-svgicon"><svg height="42"
-                                                                                         viewBox="0 0 106 42"
-                                                                                         width="106"
-                                                                                         xmlns="http://www.w3.org/2000/svg"><path
-                      d="M51.313.17l-4.089 5.454H19.729a18.727 18.727 0 00-12.97 5.198A18.727 18.727 0 00.95 24.33c0 4.741 1.921 9.034 5.029 12.141A17.116 17.116 0 0018.12 41.5h69.106c4.954 0 9.438-2.008 12.684-5.254a17.882 17.882 0 005.254-12.684c0-4.953-2.007-9.438-5.254-12.684a17.882 17.882 0 00-12.684-5.254H55.45L51.313.17z"
-                      fill="#000" fill-opacity=".703" fill-rule="evenodd" stroke="#FFF" stroke-linejoin="round"
-                      stroke-opacity=".496"></path></svg></span></div>
-                  <div class="bilibili-player-dm-tip-svgl"><span class="bp-svgicon"><svg height="42"
-                                                                                         viewBox="0 0 106 42"
-                                                                                         width="106"
-                                                                                         xmlns="http://www.w3.org/2000/svg"><path
-                      d="M30.708.17L26.62 5.623h-6.89a18.727 18.727 0 00-12.97 5.198A18.727 18.727 0 00.95 24.33c0 4.741 1.921 9.034 5.029 12.141A17.116 17.116 0 0018.12 41.5h69.106c4.954 0 9.438-2.008 12.684-5.254a17.882 17.882 0 005.254-12.684c0-4.953-2.007-9.438-5.254-12.684a17.882 17.882 0 00-12.684-5.254H34.845L30.708.17z"
-                      fill="#000" fill-opacity=".703" fill-rule="evenodd" stroke="#FFF" stroke-linejoin="round"
-                      stroke-opacity=".496"></path></svg></span></div>
-                  <div class="bilibili-player-dm-tip-like"></div>
-                  <div class="bilibili-player-dm-tip-back"><span class="bp-svgicon"><svg height="17" viewBox="0 0 19 17"
-                                                                                         width="19"
-                                                                                         xmlns="http://www.w3.org/2000/svg"
-                                                                                         xmlns:xlink="http://www.w3.org/1999/xlink"><defs><filter
-                      id="pid-37-svgo-a" filterUnits="objectBoundingBox" height="127.9%" width="123.3%" x="-11.6%"
-                      y="-7%"><feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset><feGaussianBlur
-                      in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation=".5"></feGaussianBlur><feColorMatrix
-                      in="shadowBlurOuter1"
-                      values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.20074847 0"></feColorMatrix></filter><path
-                      id="pid-37-svgo-b"
-                      d="M75.6 9l.081.005a2.53 2.53 0 012.076 1.254l6.036 9.519c.254.387.395.832.407 1.323 0 1.282-1.083 2.232-2.542 2.232H69.542c-1.46 0-2.542-.95-2.542-2.267.01-.453.149-.894.4-1.276l6.043-9.531a2.53 2.53 0 012.076-1.254L75.6 9zm.003 10.73a.968.968 0 00-.98.956c-.002.53.434.96.974.961a.97.97 0 00.98-.955.968.968 0 00-.974-.961zm-.003-7.664a.975.975 0 00-.977.973c.11 2.565.17 4.031.183 4.398.02.551.458.76.794.76s.764-.216.786-.76c.014-.362.078-1.828.191-4.399a.975.975 0 00-.977-.972z"></path></defs><g
-                      fill="none" fill-rule="nonzero" transform="translate(-66 -9)"><use
-                      fill="#000" filter="url(#pid-37-svgo-a)" xlink:href="#pid-37-svgo-b"></use><use fill="#FFF"
-                                                                                                      xlink:href="#pid-37-svgo-b"></use></g></svg></span>
-                  </div>
-                  <div class="bilibili-player-dm-tip-like-animate"></div>
-                </div>
-              </div>
+<!--              <div class="bilibili-player-dm-tip-wrap">-->
+<!--                <div class="bilibili-player-dm-tip">-->
+<!--                  <div class="bilibili-player-dm-tip-svgm"><span class="bp-svgicon"><svg height="42"-->
+<!--                                                                                         viewBox="0 0 106 42"-->
+<!--                                                                                         width="106"-->
+<!--                                                                                         xmlns="http://www.w3.org/2000/svg"><path-->
+<!--                      d="M51.313.17l-4.089 5.454H19.729a18.727 18.727 0 00-12.97 5.198A18.727 18.727 0 00.95 24.33c0 4.741 1.921 9.034 5.029 12.141A17.116 17.116 0 0018.12 41.5h69.106c4.954 0 9.438-2.008 12.684-5.254a17.882 17.882 0 005.254-12.684c0-4.953-2.007-9.438-5.254-12.684a17.882 17.882 0 00-12.684-5.254H55.45L51.313.17z"-->
+<!--                      fill="#000" fill-opacity=".703" fill-rule="evenodd" stroke="#FFF" stroke-linejoin="round"-->
+<!--                      stroke-opacity=".496"></path></svg></span></div>-->
+<!--                  <div class="bilibili-player-dm-tip-svgl"><span class="bp-svgicon"><svg height="42"-->
+<!--                                                                                         viewBox="0 0 106 42"-->
+<!--                                                                                         width="106"-->
+<!--                                                                                         xmlns="http://www.w3.org/2000/svg"><path-->
+<!--                      d="M30.708.17L26.62 5.623h-6.89a18.727 18.727 0 00-12.97 5.198A18.727 18.727 0 00.95 24.33c0 4.741 1.921 9.034 5.029 12.141A17.116 17.116 0 0018.12 41.5h69.106c4.954 0 9.438-2.008 12.684-5.254a17.882 17.882 0 005.254-12.684c0-4.953-2.007-9.438-5.254-12.684a17.882 17.882 0 00-12.684-5.254H34.845L30.708.17z"-->
+<!--                      fill="#000" fill-opacity=".703" fill-rule="evenodd" stroke="#FFF" stroke-linejoin="round"-->
+<!--                      stroke-opacity=".496"></path></svg></span></div>-->
+<!--                  <div class="bilibili-player-dm-tip-like"></div>-->
+<!--                  <div class="bilibili-player-dm-tip-back"><span class="bp-svgicon"><svg height="17" viewBox="0 0 19 17"-->
+<!--                                                                                         width="19"-->
+<!--                                                                                         xmlns="http://www.w3.org/2000/svg"-->
+<!--                                                                                         xmlns:xlink="http://www.w3.org/1999/xlink"><defs><filter-->
+<!--                      id="pid-37-svgo-a" filterUnits="objectBoundingBox" height="127.9%" width="123.3%" x="-11.6%"-->
+<!--                      y="-7%"><feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset><feGaussianBlur-->
+<!--                      in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation=".5"></feGaussianBlur><feColorMatrix-->
+<!--                      in="shadowBlurOuter1"-->
+<!--                      values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.20074847 0"></feColorMatrix></filter><path-->
+<!--                      id="pid-37-svgo-b"-->
+<!--                      d="M75.6 9l.081.005a2.53 2.53 0 012.076 1.254l6.036 9.519c.254.387.395.832.407 1.323 0 1.282-1.083 2.232-2.542 2.232H69.542c-1.46 0-2.542-.95-2.542-2.267.01-.453.149-.894.4-1.276l6.043-9.531a2.53 2.53 0 012.076-1.254L75.6 9zm.003 10.73a.968.968 0 00-.98.956c-.002.53.434.96.974.961a.97.97 0 00.98-.955.968.968 0 00-.974-.961zm-.003-7.664a.975.975 0 00-.977.973c.11 2.565.17 4.031.183 4.398.02.551.458.76.794.76s.764-.216.786-.76c.014-.362.078-1.828.191-4.399a.975.975 0 00-.977-.972z"></path></defs><g-->
+<!--                      fill="none" fill-rule="nonzero" transform="translate(-66 -9)"><use-->
+<!--                      fill="#000" filter="url(#pid-37-svgo-a)" xlink:href="#pid-37-svgo-b"></use><use fill="#FFF"-->
+<!--                                                                                                      xlink:href="#pid-37-svgo-b"></use></g></svg></span>-->
+<!--                  </div>-->
+<!--                  <div class="bilibili-player-dm-tip-like-animate"></div>-->
+<!--                </div>-->
+<!--              </div>-->
             </div>
 <!--            <div class="bilibili-player-video-bottom-area">-->
 
@@ -1435,26 +1435,24 @@ import BilibiliPlayerVideoStateBuffIcon from "./bilibili-player-video-state-buff
 export default {
   name: "Player",
   components: {BilibiliPlayerVideoStateBuffIcon},
-  metaInfo: {
-    title: "视频播放器"
-  },
+  props:["video"],
   data: function () {
     return {
       video_control_show: false,
       // 视频状态 0暂停 1播放 2缓冲 3初始化
       video_state: 0,
       video_duration:0,
-      video_duration_current_str:"00:00"
+      currentTime:0,
     };
   },
   methods: {
     format_time(second_num){
-      let minute = Math.round(second_num/60)
+
+      let minute = Math.floor(second_num/60)
       let second = Math.round(second_num%60)
       return (String(minute).length>1?minute:"0"+String(minute))+":"+(String(second).length>1?second:"0"+String(second))
     }
   },
-  props:["video"],
   watch:{
     video_state(){
       if (this.video_state===1){
@@ -1475,7 +1473,7 @@ export default {
         this.video_duration = this.$refs.video.duration
         setInterval(()=>{
           if (this.video_state===1){
-            this.video_duration_current_str = this.format_time(this.$refs.video.currentTime)
+            this.currentTime = this.$refs.video.currentTime
           }
         },500)
       }

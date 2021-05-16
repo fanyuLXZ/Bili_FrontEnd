@@ -1,15 +1,16 @@
 <!--  作者：欧阳苏蓉 子评论组件-->
 <template>
   <div>
-    <div class="reply-box">
-      <secondFloor :SubCommentsList="item.SubCommentsList"></secondFloor>
-      <div class="view-more" v-if="item.page.count>3&&!isPage">共
-        <b>{{ item.page.count }}</b>条回复,
+    <div class="reply-box" >
+      {{item.replies}}
+      <secondFloor :SubCommentsList="item.replies"></secondFloor>
+      <div class="view-more" v-if="item.count>3&&!isPage">共
+        <b>{{ item.count }}</b>条回复,
         <a class="btn-more" :data-pid="item.mid" @click="isPage = true">点击查看</a>
       </div>
     </div>
     <!--  分页  -->
-    <pagination :page="item.page" v-show="isPage" @tab-page="tab"></pagination>
+    <pagination :page="item.page?item.page:{}" v-if="isPage" @tab-page="$emit('tab-page',$event)"></pagination>
   </div>
 </template>
 
@@ -35,13 +36,11 @@ export default {
     index:Number
   },
 
-  methods: {
-
-    tab(id){
-      console.log(id)
-    },
-
-  },
+  watch:{
+    isPage(){
+      this.$emit("showC")
+    }
+  }
 }
 </script>
 

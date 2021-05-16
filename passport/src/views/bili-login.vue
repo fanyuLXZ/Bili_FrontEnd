@@ -15,10 +15,10 @@
           <div id="geetest-wrap" class="input-box">
             <div>
 
-              <div class="type-tab">
-                <span :class="{active:!this.login.status}" @click="statusclock">密码登录</span>
-                <span :class="{active:!this.login.note}" @click="noteclock">短信登录</span>
-              </div>
+<!--              <div class="type-tab">-->
+<!--                <span :class="{active:!this.login.status}" @click="statusclock">密码登录</span>-->
+<!--                <span :class="{active:!this.login.note}" @click="noteclock">短信登录</span>-->
+<!--              </div>-->
               <!--密码登录-->
 
               <div :class="{yx: this.login.status}">
@@ -97,6 +97,7 @@ import '@/assets/bili-login.css'
 import crypto from 'crypto'
 import {login_by_up,is_login} from "../api/login";
 import {getCookie} from "g-public/utils/cookie";
+import {cookie} from "g-public/js/utils";
 
 export default {
   name: 'bili-login',
@@ -180,7 +181,8 @@ export default {
               this.sjtishi = "用户名或密码错误"
             }
             if (this.code === 0) {
-              this.$router.push({path: '/bili-home'})
+              cookie.set("DedeUserID",res.data.data)
+              window.location.href="//www.bilibili.org/"
             }
             this.post_state=0
           })

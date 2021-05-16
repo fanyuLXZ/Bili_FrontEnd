@@ -4,10 +4,10 @@
       <span class="icon"></span>
       <span class="name">最新动态</span>
     </div>
-    <div class="read-push">
-      <i class="icon icon_read"></i>
-      <span class="info">换一换</span>
-    </div>
+<!--    <div class="read-push">-->
+<!--      <i class="icon icon_read"></i>-->
+<!--      <span class="info">换一换</span>-->
+<!--    </div>-->
   </div>
 </template>
 

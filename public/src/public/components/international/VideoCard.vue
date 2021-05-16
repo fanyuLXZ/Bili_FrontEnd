@@ -88,11 +88,11 @@ export default {
     },
     outlink () {
       if (this.type === 'article') {
-        return '//www.bilibili.com/read/cv' + this.info.id
+        return '//www.bilibili.org/read/cv' + this.info.id
       } else if (this.type === 'dynamic') {
-        return '//t.bilibili.com/' + this.info.id
+        return '//t.bilibili.org/' + this.info.id
       }
-      return `//www.bilibili.com/video/${this.info.bvid}`
+      return `//www.bilibili.org/video/${this.info.bvid}`
     }
   }
 }

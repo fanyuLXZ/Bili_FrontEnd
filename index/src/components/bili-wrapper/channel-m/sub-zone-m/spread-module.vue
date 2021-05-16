@@ -1,6 +1,6 @@
 <template>
   <div class="spread-module">
-    <a href="//www.bilibili.com/video/BV1Lx411973m" target="_blank">
+    <a :href="'//www.bilibili.org/video/BV'+item.aid" target="_blank">
     <div class="pic">
       <div class="lazy-img">
         <img :alt="item.title" :src="item.pic">

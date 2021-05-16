@@ -25,7 +25,7 @@
       <span v-if="!isArchive">{{ typeTitle }}</span>
       {{ info.title }}
     </a>
-    <a :href="`//space.bilibili.com/${info.owner && info.owner.mid}/`" target="_blank" class="up" v-if="showUp">
+    <a :href="`//space.bilibili.org/${info.owner && info.owner.mid}/`" target="_blank" class="up" v-if="showUp">
       <i class="bilifont bili-icon_xinxi_UPzhu"></i>{{ info.owner && info.owner.name }}
     </a>
   </div>
@@ -88,11 +88,11 @@ export default {
     },
     outlink () {
       if (this.type === 'article') {
-        return '//www.bilibili.com/read/cv' + this.info.id
+        return '//www.bilibili.org/read/cv' + this.info.id
       } else if (this.type === 'dynamic') {
-        return '//t.bilibili.com/' + this.info.id
+        return '//t.bilibili.org/' + this.info.id
       }
-      return `//www.bilibili.com/video/${this.info.bvid}`
+      return `//www.bilibili.org/video/${this.info.bvid}`
     }
   }
 }

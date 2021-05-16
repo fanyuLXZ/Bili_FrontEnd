@@ -5,7 +5,7 @@
       <ul class="clearfix">
         <li data-sort="0" class="default-sort" style="display: none;">全部评论</li>
 
-        <li data-sort="2" class="hot-sort" :class="{'on':currentSort==index}" v-for="(item,index) in sort" :key="index" @click="active(index)">{{ item }}</li>
+        <li data-sort="2" class="hot-sort" :class="{'on':currentSort===index}" v-for="(item,index) in sort" :key="index" @click="active(index)">{{ item }}</li>
       </ul>
     </div>
     <div class="header-interaction"></div>
@@ -15,17 +15,21 @@
 <script>
 export default {
   name: "Sort",
-
+  model:{
+    prop:"mode",
+    event:"modeChange"
+  },
   data(){
     return{
       currentSort:0,
       sort:["按热度排序","按时间排序"]
     }
   },
-
+  props:["mode"],
   methods: {
     active(index) {
       this.currentSort  =  index;
+      this.$emit("modeChange",index===0?3:2)
     }
   },
 

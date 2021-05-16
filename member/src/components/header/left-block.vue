@@ -1,7 +1,7 @@
 <template>
   <div class="left-block">
     <i class="logo bcc-iconfont bcc-icon-logo"></i>
-    <a href="//www.bilibili.com" target="_blank" class="main-site">
+    <a href="//www.bilibili.org" target="_blank" class="main-site">
       <i class="bcc-iconfont bcc-icon-icon_dingdao_zhuzhan"></i>
       主站
     </a>

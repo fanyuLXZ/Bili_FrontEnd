@@ -16,7 +16,7 @@ export const cookie = {
     days = days !== undefined ? days : 365
     const exp = new Date()
     exp.setTime(exp.getTime() + days * 24 * 60 * 60 * 1000)
-    document.cookie = name + '=' + escape(value) + ';expires=' + exp.toGMTString() + '; path=/; domain=.bilibili.com'
+    document.cookie = name + '=' + escape(value) + ';expires=' + exp.toGMTString() + '; path=/; domain=.bilibili.org'
   },
   delete: function(name) {
     this.set(name, '', -1)
@@ -25,7 +25,8 @@ export const cookie = {
 
 export const localStorage = {
   // eslint-disable-next-line
-  _support: process.env.VUE_ENV === 'client' && window && window.localStorage && typeof window.localStorage === 'object' ? true : false,
+  _support: window && window.localStorage && typeof window.localStorage === 'object',
+  // _support: process.env.VUE_ENV === 'client' && window && window.localStorage && typeof window.localStorage === 'object' ? true : false,
   getItem: function(key) {
     try {
       if (this._support) {

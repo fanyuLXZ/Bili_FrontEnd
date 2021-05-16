@@ -18,8 +18,8 @@
                 <!----></p></div>
             <div data-v-40886203="" class="list-link">
               <p data-v-40886203="">
-                <router-link data-v-40886203="" to="bindmail">绑定邮箱
-                </router-link>
+<!--                <router-link data-v-40886203="" to="bindmail">绑定邮箱-->
+<!--                </router-link>-->
               </p>
             </div>
           </div>
@@ -36,7 +36,7 @@
               <p data-v-40886203="" class="">已设置<!----></p></div>
             <div data-v-40886203="" class="list-link">
               <p data-v-40886203="">
-                <router-link to="setpassword">修改密码</router-link>
+<!--                <router-link to="setpassword">修改密码</router-link>-->
               </p>
             </div>
           </div>
@@ -54,7 +54,7 @@
                 <!----></p></div>
             <div data-v-40886203="" class="list-link">
               <p data-v-40886203="">
-                <router-link :to="{name:'bili-btn',params:{pan:'phone',verify:'setphones'}}">更换手机</router-link>
+<!--                <router-link :to="{name:'bili-btn',params:{pan:'phone',verify:'setphones'}}">更换手机</router-link>-->
               </p>
             </div>
           </div>
@@ -68,6 +68,8 @@
 <script>
 import '@/assets/bili-btn.css'
 import {user_info} from "../api/home";
+import {is_login} from "../api/login";
+import {getCookie} from "g-public/utils/cookie";
 
 export default {
   name: 'bili-home',
@@ -84,6 +86,26 @@ export default {
       taes: {}
     }
   },
+  beforeMount() {
+    window.islogin = setInterval(() => {
+        if (this?.post_state === 0 && !!getCookie("token")) {
+          this.post_state = 2
+          is_login().then(
+              (res) => {
+                if (res.data.data) {
+                  window.location.href = "//www.bilibili.org/"
+                }
+                this.post_state = 1
+              }
+          )
+        }
+      }
+      , 1000)
+  },
+  beforeDestroy() {
+    clearInterval(window.islogin)
+    delete window.islogin
+  },
   created() {
     user_info().then((tes) => {
       this.data.account_info.hide_tel = tes.data.data.hide_tel
@@ -92,6 +114,7 @@ export default {
       this.data.account_info.bind_mail = tes.data.data.bind_mail
     })
   },
+
 }
 </script>
 

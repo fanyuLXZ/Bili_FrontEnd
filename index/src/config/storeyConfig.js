@@ -119,23 +119,23 @@ export const ZoneConfig = [
     morelink: '/v/ent',
     component: 'Zone',
   },
-  {
-    type: 'movie',
-    name: '电影',
-    zid: 1572,
-    tid: 23,
-    morelink: '/movie',
-    component: 'Zone',
-  },
-  {
-    type: 'teleplay',
-    name: '电视剧',
-    navName: 'TV剧',
-    zid: 1574,
-    tid: 11,
-    morelink: '/tv',
-    component: 'Zone',
-  },
+  // {
+  //   type: 'movie',
+  //   name: '电影',
+  //   zid: 1572,
+  //   tid: 23,
+  //   morelink: '/movie',
+  //   component: 'Zone',
+  // },
+  // {
+  //   type: 'teleplay',
+  //   name: '电视剧',
+  //   navName: 'TV剧',
+  //   zid: 1574,
+  //   tid: 11,
+  //   morelink: '/tv',
+  //   component: 'Zone',
+  // },
   {
     type: 'cinephile',
     name: '影视',
@@ -144,14 +144,14 @@ export const ZoneConfig = [
     morelink: '/v/cinephile',
     component: 'Zone',
   },
-  {
-    type: 'documentary',
-    name: '纪录片',
-    zid: 2257,
-    tid: 177,
-    morelink: '/documentary',
-    component: 'Zone',
-  }
+  // {
+  //   type: 'documentary',
+  //   name: '纪录片',
+  //   zid: 2257,
+  //   tid: 177,
+  //   morelink: '/documentary',
+  //   component: 'Zone',
+  // }
 ]
 
 //楼层广告配置

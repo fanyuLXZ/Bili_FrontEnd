@@ -14,17 +14,21 @@
     <div ref="btn">
       <slot name="btn"/>
     </div>
+    <transition :name="transition_name">
     <div v-show="isShow" class="z-toggle-content" :style="'left: '+String(offsetX)+'px;top: '+String(offsetY)+'px;'">
       <slot name="default"/>
     </div>
+    </transition>
   </div>
   <li ref="toggle" v-else-if="tag==='li'" class="z-toggle">
     <div ref="btn">
       <slot name="btn"/>
     </div>
+    <transition :name="transition_name">
     <div v-show="isShow" class="z-toggle-content" :style="'left: '+String(offsetX)+'px;top: '+String(offsetY)+'px;'">
       <slot name="default"/>
     </div>
+    </transition>
   </li>
 </template>
 

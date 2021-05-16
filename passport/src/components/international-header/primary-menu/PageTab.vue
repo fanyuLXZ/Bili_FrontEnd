@@ -7,60 +7,60 @@
           <span>{{$HeadLang['46']}}</span>
         </a>
       </li>
-      <li>
-        <a href="//t.bilibili.com"
-           target="_blank"
-           @click="handleDynamicTabClick"
-           v-van-report:headPageTab.click="'动态'">
-          <div class="round yel">
-            <i class="bilifont bili-icon_dingdao_dongtai"></i>
-            <div class="dynamic-update">
-              <van-image 
-                v-if="['live', 'up', 'dyn'].some(v => v === info.type)"
-                :src="info.icon"
-                :options="{c: 1, q: 100}"
-                width="36" 
-                height="36">
-              </van-image>
-              <i v-if="info.type && info.type !== 'none'"></i>
-            </div>
-          </div>
-          {{$HeadLang['30']}}
-        </a>
-      </li>
+<!--      <li>-->
+<!--        <a href="//t.bilibili.org"-->
+<!--           target="_blank"-->
+<!--           @click="handleDynamicTabClick"-->
+<!--           v-van-report:headPageTab.click="'动态'">-->
+<!--          <div class="round yel">-->
+<!--            <i class="bilifont bili-icon_dingdao_dongtai"></i>-->
+<!--            <div class="dynamic-update">-->
+<!--              <van-image -->
+<!--                v-if="['live', 'up', 'dyn'].some(v => v === info.type)"-->
+<!--                :src="info.icon"-->
+<!--                :options="{c: 1, q: 100}"-->
+<!--                width="36" -->
+<!--                height="36">-->
+<!--              </van-image>-->
+<!--              <i v-if="info.type && info.type !== 'none'"></i>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          {{$HeadLang['30']}}-->
+<!--        </a>-->
+<!--      </li>-->
 
       <!-- 入口灰度中 排行榜 or 热门 -->
-      <li>
-        <a href="//www.bilibili.com/v/popular/all" target="_blank" v-van-report:headPageTab.click="`热门`">
-          <div class="round orange"><i class="bilifont bili-remen"></i></div>
-          {{$HeadLang['81']}}
-        </a>
-      </li>
+<!--      <li>-->
+<!--        <a href="//www.bilibili.org/v/popular/all" target="_blank" v-van-report:headPageTab.click="`热门`">-->
+<!--          <div class="round orange"><i class="bilifont bili-remen"></i></div>-->
+<!--          {{$HeadLang['81']}}-->
+<!--        </a>-->
+<!--      </li>-->
       <!-- <li v-else>
-        <a href="//www.bilibili.com/v/popular/rank" target="_blank" v-van-report:headPageTab.click="`排行榜`">
+        <a href="//www.bilibili.org/v/popular/rank" target="_blank" v-van-report:headPageTab.click="`排行榜`">
           <div class="round blue"><i class="bilifont bili-icon_fenqudaohang_paihangbang"></i></div>
           {{$HeadLang['47']}}
         </a>
       </li> -->
 
-      <li>
-        <a :href="channelLink" target="_blank" v-van-report:headPageTab.click="`频道`">
-          <div class="round channel">
-            <i class="bilifont bili-pindao"></i>
-            <div class="dynamic-update">
-              <van-image 
-                v-if="channelInfo.subscribed_count === 1 && channelInfo.cover"
-                :src="channelInfo.cover"
-                :options="{c: 1, q: 100}"
-                width="36" 
-                height="36">
-              </van-image>
-              <i v-if="channelInfo.notify"></i>
-            </div>
-          </div>
-          <span class="channel-name">{{$HeadLang['80']}}</span>
-        </a>
-      </li>
+<!--      <li>-->
+<!--        <a :href="channelLink" target="_blank" v-van-report:headPageTab.click="`频道`">-->
+<!--          <div class="round channel">-->
+<!--            <i class="bilifont bili-pindao"></i>-->
+<!--            <div class="dynamic-update">-->
+<!--              <van-image -->
+<!--                v-if="channelInfo.subscribed_count === 1 && channelInfo.cover"-->
+<!--                :src="channelInfo.cover"-->
+<!--                :options="{c: 1, q: 100}"-->
+<!--                width="36" -->
+<!--                height="36">-->
+<!--              </van-image>-->
+<!--              <i v-if="channelInfo.notify"></i>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <span class="channel-name">{{$HeadLang['80']}}</span>-->
+<!--        </a>-->
+<!--      </li>-->
     </ul>
   </div>
 </template>
@@ -80,7 +80,7 @@ export default {
         notify: false,
         subscribed_count: null,
       },
-      channelLink: '//www.bilibili.com/v/channel',
+      channelLink: '//www.bilibili.org/v/channel',
       dynamicShowReport: false
     }
   },
@@ -123,7 +123,7 @@ export default {
         this.channelInfo.notify = data.data.notify
         this.channelInfo.subscribed_count = data.data.subscribed_count
         if(this.channelInfo.channel_id) {
-          this.channelLink = `//www.bilibili.com/v/channel/${this.channelInfo.channel_id}`
+          this.channelLink = `//www.bilibili.org/v/channel/${this.channelInfo.channel_id}`
         }
       } catch (_) {
         console.log(_)

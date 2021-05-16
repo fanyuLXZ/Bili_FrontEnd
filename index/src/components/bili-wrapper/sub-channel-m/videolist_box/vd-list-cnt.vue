@@ -4,31 +4,31 @@
       <vd-list-li v-for="item in archives" :key="item.aid" :item="item" />
     </ul>
     <div style="clear:both"></div>
-    <div class="pager pagination">
+<!--    <div class="pager pagination">-->
 
-      <!--  分页  -->
-      <pagination :page="page" @tab-page="tab"></pagination>
-      <div class="jump-pager">
-        <div class="page-total">
-          <span class="pagination-btn count">共 {{ page_count }} 页/ {{ this.page.count }} 个 ，</span>
-        </div>
-        <span>跳至</span>
-        <input type="text" min="1" class="jump-pager-input no-spin">
-        <span>页</span>
-      </div>
-    </div>
+<!--      &lt;!&ndash;  分页  &ndash;&gt;-->
+<!--      <pagination :page="page" @tab-page="tab"></pagination>-->
+<!--      <div class="jump-pager">-->
+<!--        <div class="page-total">-->
+<!--          <span class="pagination-btn count">共 {{ page_count }} 页/ {{ this.page.count }} 个 ，</span>-->
+<!--        </div>-->
+<!--        <span>跳至</span>-->
+<!--        <input type="text" min="1" class="jump-pager-input no-spin">-->
+<!--        <span>页</span>-->
+<!--      </div>-->
+<!--    </div>-->
   </div>
 </template>
 
 <script>
 import VdListLi from "./vd-list-li";
-import Pagination from "../../Pagination";
+// import Pagination from "../../Pagination";
 import modBtn from "./modBtn";
 import {getHotRankingRegionVideo,getTimeRankingRegionVideo} from "../../../../api/region";
 export default {
   name: "vd-list-cnt",
 
-  components: {Pagination, VdListLi},
+  components: { VdListLi},
 
   computed:{
     page_count(){

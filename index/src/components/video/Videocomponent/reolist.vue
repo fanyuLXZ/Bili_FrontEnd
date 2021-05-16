@@ -9,7 +9,7 @@
         <div class="card-box">
           <div class="pic-box">
             <div class="pic">
-              <a href="#" class="">
+              <a :href="'http://www.bilibili.org/video/bv'+item.aid" class="">
                 <img :src="item.pic" :alt="item.titles" width="168" height="95"></a>
               <span class="mask-video"></span>
               <span class="duration">111</span>
@@ -19,7 +19,7 @@
             </div>
           </div>
           <div class="info">
-            <a href="#" class="">
+            <a :href="'http://www.bilibili.org/video/bv'+item.aid" class="">
               <span :title="item.titles" class="title" style=" padding: 0;">{{ item.title }}</span></a>
             <div class="count up"><a href="#" target="_blank">{{ item.owner.name }}</a></div>
             <div class="count">{{ get_views(item.stat.view) }} 播放</div>

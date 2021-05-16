@@ -1,19 +1,19 @@
 <template>
   <div class="nav-user-center">
     <div class="user-con search-icon">
-      <a href="//search.bilibili.com/" target="_blank">
+      <a href="//search.bilibili.org/" target="_blank">
         <i class="bilifont bili-icon_dingdao_sousuo"></i>
       </a>
     </div>
     <!-- nav接口异常状态显示 -->
     <div class="user-con" v-if="userInfo.fallback">
-      <div class="item fall-mini-avatar" v-van-report:fallbackMininav-click.click="`头像`"><a href="//space.bilibili.com/" target="_blank"><img :src="userInfo.face"></a></div>
-      <div class="item" v-van-report:fallbackMininav-click.click="`大会员`"><a href="//account.bilibili.com/account/big/" target="_blank"><span class="name">大会员</span></a></div>
-      <div class="item" v-van-report:fallbackMininav-click.click="`消息`"><a href="//message.bilibili.com/" target="_blank"><span class="name">消息</span></a></div>
-      <div class="item" v-van-report:fallbackMininav-click.click="`动态`"><a href="//t.bilibili.com/" target="_blank"><span class="name">动态</span></a></div>
-      <div class="item" v-van-report:fallbackMininav-click.click="`收藏`"><a href="//space.bilibili.com/" target="_blank"><span class="name">收藏</span></a></div>
-      <div class="item" v-van-report:fallbackMininav-click.click="`历史`"><a href="//www.bilibili.com/account/history/" target="_blank"><span class="name">历史</span></a></div>
-      <div class="item" v-van-report:fallbackMininav-click.click="`创作中心`"><a href="//member.bilibili.com/platform/home" target="_blank"><span class="name">创作中心</span></a></div>
+      <div class="item fall-mini-avatar" v-van-report:fallbackMininav-click.click="`头像`"><a href="//space.bilibili.org/" target="_blank"><img :src="userInfo.face"></a></div>
+      <div class="item" v-van-report:fallbackMininav-click.click="`大会员`"><a href="//account.bilibili.org/account/big/" target="_blank"><span class="name">大会员</span></a></div>
+      <div class="item" v-van-report:fallbackMininav-click.click="`消息`"><a href="//message.bilibili.org/" target="_blank"><span class="name">消息</span></a></div>
+      <div class="item" v-van-report:fallbackMininav-click.click="`动态`"><a href="//t.bilibili.org/" target="_blank"><span class="name">动态</span></a></div>
+      <div class="item" v-van-report:fallbackMininav-click.click="`收藏`"><a href="//space.bilibili.org/" target="_blank"><span class="name">收藏</span></a></div>
+      <div class="item" v-van-report:fallbackMininav-click.click="`历史`"><a href="//www.bilibili.org/account/history/" target="_blank"><span class="name">历史</span></a></div>
+      <div class="item" v-van-report:fallbackMininav-click.click="`创作中心`"><a href="//member.bilibili.org/platform/home" target="_blank"><span class="name">创作中心</span></a></div>
     </div>
     <!-- pending 状态不展示，避免展示抖动 -->
     <div class="user-con signin" v-else-if="loginStatus === 'LOGIN'">
@@ -25,10 +25,10 @@
       <NavUserCenterVip v-van-report:mininav-hover.mouseenter="`大会员`" class="item" :locsData="locsData" :userInfo="userInfo" />
 
       <!-- 消息 -->
-      <NavUserCenterMessage v-van-report:mininav-hover.mouseenter="`消息`" class="item" :userInfo="userInfo" />
+<!--      <NavUserCenterMessage v-van-report:mininav-hover.mouseenter="`消息`" class="item" :userInfo="userInfo" />-->
 
       <!-- 动态 -->
-      <NavUserCenterDynamic v-van-report:mininav-hover.mouseenter="`动态`" class="item" :userInfo="userInfo" />
+<!--      <NavUserCenterDynamic v-van-report:mininav-hover.mouseenter="`动态`" class="item" :userInfo="userInfo" />-->
 
       <!-- 收藏夹 -->
       <NavUserCenterFavorite v-van-report:mininav-hover.mouseenter="`收藏`" class="item" :mid="userInfo.mid" />
@@ -37,7 +37,7 @@
       <NavUserCenterHistory v-van-report:mininav-hover.mouseenter="`历史`" class="item" />
 
       <!-- 创作中心 -->
-      <div class="item" v-van-report:mininav-click.click="`创作中心`"><a href="//member.bilibili.com/platform/home" target="_blank"><span class="name">{{$HeadLang['8']}}</span></a></div>
+      <div class="item" v-van-report:mininav-click.click="`创作中心`"><a href="//member.bilibili.org/platform/home" target="_blank"><span class="name">{{$HeadLang['8']}}</span></a></div>
     </div>
 
     <NavUserCenterUnlogin
@@ -57,11 +57,11 @@
 <script>
 
 import NavUserCenterAvatar from './NavUserCenterAvatar'
-import NavUserCenterDynamic from './NavUserCenterDynamic'
+// import NavUserCenterDynamic from './NavUserCenterDynamic'
 import NavUserCenterHistory from './NavUserCenterHistory'
 import NavUserCenterUpload from './NavUserCenterUpload'
 import NavUserCenterFavorite from './NavUserCenterFavorite'
-import NavUserCenterMessage from './NavUserCenterMessage'
+// import NavUserCenterMessage from './NavUserCenterMessage'
 import NavUserCenterVip from './NavUserCenterVip'
 import NavUserCenterUnlogin from './NavUserCenterUnlogin'
 
@@ -71,11 +71,11 @@ export default {
   name: 'NavUserCenter',
   components: {
     NavUserCenterAvatar,
-    NavUserCenterDynamic,
+    // NavUserCenterDynamic,
     NavUserCenterHistory,
     NavUserCenterUpload,
     NavUserCenterFavorite,
-    NavUserCenterMessage,
+    // NavUserCenterMessage,
     NavUserCenterVip,
     NavUserCenterUnlogin,
   },

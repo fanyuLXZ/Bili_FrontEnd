@@ -1,20 +1,47 @@
 <!--  作者：欧阳苏蓉 文章详情 发表评论  -->
 <template>
-  <div class="comment-send ">
+  <div class="comment-send">
     <div class="user-face">
-      <img src="//i1.hdslb.com/bfs/face/31f967d648f65c5754981fe6b4b6a21def194dc2.jpg@52w_52h.webp">
+      <img :src="userInfo?userInfo.face+'@52w_52h.webp':''">
     </div>
     <div class="textarea-container">
       <i class="ipt-arrow"></i>
-      <textarea cols="80" name="msg" rows="5" placeholder="发一条友善的评论" class="ipt-txt"></textarea>
-      <button type="submit" class="comment-submit">发表评论</button>
+      <textarea v-model="message" cols="80" name="msg" rows="5" placeholder="发一条友善的评论" class="ipt-txt"></textarea>
+      <button type="submit" class="comment-submit" @click="postMessage">发表评论</button>
     </div>
   </div>
 </template>
 
 <script>
+import {getReplyAdd, getVideoReplyAdd} from "../../../api/video";
+
 export default {
   name: "PostComment",
+  props:["userInfo","aid","rid"],
+  data(){
+    return{
+      message:""
+    }
+  },
+  methods:{
+    postMessage(){
+      if(this.message&&this.message!==""){
+        if (this.aid){
+          getVideoReplyAdd(this.aid,this.message).then(res=>{
+            if (res?.data?.code===0){
+              this.$emit("addMessage",res?.data.data)
+            }
+          })
+        }else if(this.rid){
+          getReplyAdd(this.rid,this.message).then(res=>{
+            if (res?.data?.code===0){
+              this.$emit("addMessage",res?.data.data)
+            }
+          })
+        }
+      }
+    }
+  }
 }
 </script>
 

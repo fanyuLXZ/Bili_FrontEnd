@@ -36,10 +36,9 @@ export default {
     }
   },
   methods: {
-    ...mapMutations(['SET_USER_INFO','SET_NAV_TYPE']),
+    ...mapMutations(['SET_USER_INFO']),
   },
   mounted() {
-    this.SET_NAV_TYPE(1)
     // 登录后回调
     window.onLoginInfoLoaded(info => {
       this.SET_USER_INFO(info)

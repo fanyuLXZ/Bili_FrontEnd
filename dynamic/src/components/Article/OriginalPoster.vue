@@ -126,7 +126,7 @@ export default {
   },
 
   mounted() {
-    axios.get("/api/dynamic/reply",{params:{dynamic_id:this.dynamic_id,sort:this.sort}}).then((res)=>{
+    axios.get("//api.bilibili.org/dynamic/reply",{params:{dynamic_id:this.dynamic_id,sort:this.sort}}).then((res)=>{
       //获取返回的json对象
       res.data.data.replies.forEach((a)=>{
         a.ctime = formatDate(Date.parse(a.ctime))
